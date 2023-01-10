@@ -63,7 +63,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/migration-notice/{migrationCertificate}/delete', [MigrationController::class,'destroy'])->name('migration.delete');
     Route::get('/migration-notice/{migrationCertificate}/show', [MigrationController::class,'show'])->name('migration.show');
     Route::get('/migration-notice/filter', [MigrationController::class,'filter'])->name('migration.filter');
-    Route::get('/migration-notice/{migrationCertificate}/print', [MigrationController::class,'print'])->name('migration.print');
+    // Route::get('/migration-notice/{migrationCertificate}/print', [MigrationController::class,'print'])->name('migration.print');
 
     //For family add
     Route::get('/family/create', [FamilyController::class,'create'])->name('family.create');

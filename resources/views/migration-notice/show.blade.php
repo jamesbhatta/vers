@@ -15,16 +15,16 @@
                     </div>
                 </nav>
                 <div class="row d-flex justify-content-end mx-1">
-                    <a id="btnPrint" class="btn bg-[#1d4ed8] float-right text-lg font-medium text-white"><i
+                    <a href="{{route('migration.print', $migrationCertificate)}}"  class="btn bg-[#1d4ed8] float-right text-lg font-medium text-white" type="submit"><i
                             class="fa fa-print" aria-hidden="true"></i>&nbsp;Print</a>
                 </div>
-                <div class="card p-3 id="myId">
+                <div class="card p-3" id="myId">
                     <h3 class="text-center pb-2 font-weight-bold">@lang('navigation.migration-notice-form')</h3>
                     <h6 class="col-12  t-bold  text-center mt-0"> (अनुसूची-६ )</h6>
                     <h6 class="col-12  text-center mt-1">(नियम-५ संग सम्बन्धित ) </h6>
                     {{-- <label class="col-12  text-center mt-2" for=""> (अनुसूची-६ ) (नियम-५ संग सम्बन्धित ) </label> --}}
-                    <div class="d-flex">
-                        <div class="col-xl-5">
+                    <div class="row d-flex">
+                        <div class="col-xl-5" style="text-align: justify;">
                             <h5 class="col-12  mt-1" for=""> श्री स्थानीय पंजीअधिकारी ज्यु,</h5>
                             <h5 class="col-12  mt-1" for="">
                                 <i
@@ -32,12 +32,13 @@
                             </h5>
                             <h2 class="col-12 mt-3"> स्थानीय पंजीअधिकारीको कार्यालय </h5>
                                 <h5 class="col-12  mt-3" for=""> महोदय,</h5>
-                                <h5 class="col-12  mt-1" for=""> निम्न लिखित विवरण खुलाई बसाई सराईको सूचना दिन आएको
+                                <h5 class="col-12  mt-1" for="" style="text-align:justify;"> निम्न लिखित विवरण खुलाई
+                                    बसाई सराईको सूचना दिन आएको
                                     छु ।
                                     कानून
                                     अनुसार बसाई सराई दर्ता गरी पाउं । </h5>
                         </div>
-                        <div class="col-lg-3 ml-1 mt-3">
+                        <div class="col-lg-3 mt-3">
                             <table class="my_table my_table1 col-lg-12">
                                 <tr>
                                     <th class="text-center"></th>
@@ -65,16 +66,16 @@
                                 </tr>
                             </table>
                         </div>
-                        <div class="col-xl-2 ml-4 mt-3">
-                            <table class="my_table my_table1 col-12">
+                        <div class="col-lg-3 mt-3">
+                            <table class="registar_table">
                                 <tr>
                                     <th></th>
-                                    <th>नाम</th>
+                                    <th>नाम:</th>
                                     <th>नं.</th>
                                 </tr>
                                 <tr>
-                                    <td>स्थानीय पञ्जिकाधिकारी</td>
-                                    <td style="font-size: 12px"><i>{{ $migrationCertificate->administrator }}</i></td>
+                                    <td>स्थानीय पञ्जिकाधिकारी:</td>
+                                    <td style="font-size: 12px;"><i>{{ $migrationCertificate->administrator }}</i></td>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -90,8 +91,8 @@
                             </table>
                         </div>
                     </div>
-                    <h5 class="col-lg-12  mt-4 ">(१) बसाई सर्ने परिवारका सदस्यहरुको नाम/बसाई सराई व्यक्तिको</h5>
-                    <div class="my_custom_table col-lg-12 mt-2">
+                    <h5 class="col-lg-12  mt-3">(१) बसाई सर्ने परिवारका सदस्यहरुको नाम/बसाई सराई व्यक्तिको</h5>
+                    <div class="my_custom_table col-lg-12 mt-1">
                         <table class="custom_table">
                             <tr>
                                 <th style="text-align:center" rowspan="2">क्र.स. </th>
@@ -195,10 +196,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12 mt-2">
+                    <div class="col-lg-12 mt-1">
                         <h3 class="text-center h4 font-weight-bold ">सम्बन्धित फाइल</h3>
                         <img src="{{ asset('storage') }}{{ '/' }}{{ $migrationCertificate->file }}"
-                            class="img-fluid mt-4 m-auto" alt="सम्बन्धित फाइल फेला परेन"
+                            class="img-fluid m-auto" alt="सम्बन्धित फाइल फेला परेन"
                             style="width:80%;position:relative; height:40%;">
 
                     </div>
@@ -206,7 +207,9 @@
             </div>
         </div>
     </div>
-    <style>
+@endsection
+@push('styles')
+<style>
         .custom-select {
             height: 43px;
             font-size: 15px;
@@ -215,47 +218,27 @@
         .custom_table th,
         .custom_table td {
             border: 1px solid #ccc;
+            padding: 6px;
+        }
+        .registar_table {
+            width: 100%;
+        }
+        .registar_table th, .registar_table td {
+            border: 1px solid #ccc;
+            padding: 6px;
         }
     </style>
-@endsection
+@endpush
 @push('scripts')
     <script type="text/javascript">
         $('#btnPrint').on('click', function() {
-
-            var data =$('#myId').html();
-            alert(data);
-            var myWindow = window.open('', 'my div', 'height=400,width=600');
-            myWindow.document.write('<html><head><title>my div</title>');
-            /*optional stylesheet*/ //myWindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
-            myWindow.document.write('</head><body >');
-            myWindow.document.write(data);
-            myWindow.document.write('</body></html>');
-            myWindow.document.close(); // necessary for IE >= 10
-
-            myWindow.onload = function() { // necessary if the div contain images
-
-                myWindow.focus(); // necessary for IE >= 10
-                myWindow.print();
-                myWindow.close();
-            };
+            var prtContent = document.getElementById("myId");
+            var WinPrint = window.open();
+            WinPrint.document.write(prtContent.outerHTML);
+            WinPrint.document.close();
+            WinPrint.focus();
+            WinPrint.print();
+            WinPrint.close();
         });
-
-        function PrintDiv() {
-            var data = document.getElementById("myId").innerHTML;
-            var myWindow = window.open('', 'my div', 'height=400,width=600');
-            myWindow.document.write('<html><head><title>my div</title>');
-            /*optional stylesheet*/ //myWindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
-            myWindow.document.write('</head><body >');
-            myWindow.document.write(data);
-            myWindow.document.write('</body></html>');
-            myWindow.document.close(); // necessary for IE >= 10
-
-            myWindow.onload = function() { // necessary if the div contain images
-
-                myWindow.focus(); // necessary for IE >= 10
-                myWindow.print();
-                myWindow.close();
-            };
-        }
     </script>
 @endpush

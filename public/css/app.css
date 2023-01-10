@@ -720,6 +720,9 @@ video {
 .w-full {
   width: 100%;
 }
+.border-collapse {
+  border-collapse: collapse;
+}
 .resize {
   resize: both;
 }

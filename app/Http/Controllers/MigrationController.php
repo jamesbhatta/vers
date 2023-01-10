@@ -212,9 +212,86 @@ class MigrationController extends Controller
 
     public function print(MigrationCertificate $migrationCertificate)
     {
-        // $pdf=PDF::loadView('migration-notice.print', compact('migrationCertificate','families', 'family', 'mysetting'));
-        // return $pdf->stream($pdf);
-        $families = $migrationCertificate->families()->get();
-         return view('migration-notice.print', compact('migrationCertificate','families'));
+        $html = "<style>.center{font-family: kantipur;font-size: 15pt;} .kalimati{font-family: kalimati;font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;}</style>";
+        // $html .= '<h3>बसाईसराईको जानकारी खोज्नुहोस्</h3>';
+        $html .='<h6 style="text-align:center"> बसाईसराई सूचना फाराम</h6>';
+        $html .='<h6 style="text-align:center"> (अनुसूची-६ )</h6>';
+        $html .='<h6 style="text-align:center">(नियम-५ संग सम्बन्धित )</h6>';
+        $html .='<div class="row d-flex">
+        <div class="col-xl-5" style="text-align: justify;">
+            <h5 class="col-12  mt-1" for=""> श्री स्थानीय पंजीअधिकारी ज्यु,</h5>
+            <h5 class="col-12  mt-1" for="">
+                <i
+                    style="border-bottom:dashed; width:20px;">{{ $migrationCertificate->municipality }}</i>&nbsp;गा.वि.स./न.पा.
+            </h5>
+            <h2 class="col-12 mt-3"> स्थानीय पंजीअधिकारीको कार्यालय </h5>
+                <h5 class="col-12  mt-3" for=""> महोदय,</h5>
+                <h5 class="col-12  mt-1" for="" style="text-align:justify;"> निम्न लिखित विवरण खुलाई
+                    बसाई सराईको सूचना दिन आएको
+                    छु ।
+                    कानून
+                    अनुसार बसाई सराई दर्ता गरी पाउं । </h5>
+        </div>
+        <div class="col-lg-3 mt-3">
+            <table class="my_table my_table1 col-lg-12">
+                <tr>
+                    <th class="text-center"></th>
+                    <th class="text-center">नाम</th>
+                    <th class="text-center">नं.</th>
+                </tr>
+                <tr>
+                    <th class="text-center">प्रदेश</th>
+                    <td class="text-center" style="font-size: 12px">
+                        <i>{{ $migrationCertificate->province }}</i>
+                    <td>
+
+                </tr>
+                <tr>
+                    <th class="text-center">जिल्ला</th>
+                    <td class="text-center" style="font-size: 12px">
+                        <i>{{ $migrationCertificate->district }}</i></th>
+                    <td class="text-center"></td>
+                </tr>
+                <tr>
+                    <th class="text-center">ग.पा./न.पा</th>
+                    <td class="text-center"style="font-size: 12px">
+                        <i>{{ $migrationCertificate->municipality }}</i></th>
+                    <td class="text-center"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-3 mt-3">
+            <table class="registar_table">
+                <tr>
+                    <th></th>
+                    <th>नाम:</th>
+                    <th>नं.</th>
+                </tr>
+                <tr>
+                    <td>स्थानीय पञ्जिकाधिकारी:</td>
+                    <td style="font-size: 12px;"><i>{{ $migrationCertificate->administrator }}</i></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>दर्ता न.</td>
+                    <td style="font-size: 12px"><i>{{ $migrationCertificate->reg_number }}</i></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>दर्ता मिति</td>
+                    <td><i>{{ $migrationCertificate->entry_date }}</i></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>';
+        $pdf = new \Mpdf\Mpdf(['mode' => 'UTF-8', 'format' => 'A4-p', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
+        $pdf->SetTitle('मृत्युको सूचना फाराम');
+        $pdf->WriteHTML($html);
+
+        $pdf->Output('deadt.pdf', 'I');
+
+        // $families = $migrationCertificate->families()->get();
+        //  return view('migration-notice.print', compact('migrationCertificate','families'));
     }
 }
