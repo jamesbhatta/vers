@@ -3,19 +3,18 @@
     <div class="container-fluid">
         <div class="p-3">
             <div class="container-fluid">
-                <nav aria-label="breadcrumb" class="d-flex justify-content-between">
-                    <div class="mx-3">
-                        <p style="font-size: 27px">@lang('navigation.migration-notice-form')</p>
-                    </div>
-                    <div class="my-breadcrumb">
-                        <a class="breadcrumb-item" href="{{ route('dashboard') }}">@lang('navigation.dashboard')</a>
-                        <a class="breadcrumb-item" href="{{ route('migration.index') }}">@lang('navigation.migration-notice-form')</a>
-                        <a class="breadcrumb-item active"
+                <nav aria-label="breadcrumb" class="d-flex justify-content-between rounded">
+                    <nav aria-label="breadcrumb" class="d-flex justify-content-between rounded">
+                        <div class="my-breadcrumb">
+                            <a class="first-breadcrumb" href="{{ route('migration.index') }}">बसाईसराई दर्ता</a>
+                            <a class="sub-breadcrumb" href="{{ route('dashboard') }}"><i class="fas fa-home"></i></a>
+                            <a class="sub-breadcrumb ml-4">@lang('navigation.migration-notice-form')</a>
+                                <a class="breadcrumb-item active ml-4"
                             aria-current="page">{{ $migrationCertificate->id ? 'अपडेट गर्नुहोस्' : 'सृजना गर्नुहोस्' }}</a>
                     </div>
+                    </nav>
                 </nav>
-                <hr>
-                <div class="box mt-5 p-3">
+                <div class="box mt-2 p-3">
                     <form
                         action="{{ $migrationCertificate->id ? route('migration.update', $migrationCertificate) : route('migration.store') }}"
                         method="POST" enctype="multipart/form-data">
@@ -26,7 +25,7 @@
                         <div class="card  p-3">
                             <h3 class="text-left h5 font-weight-bold p-1">बसाईसराई दर्ता विवरण</h3>
                             <hr>
-                            <div class="col-lg-12 mt-3" style="line-height: 3px">
+                            <div class="col-lg-12 mt-3 p-3" style="line-height: 3px">
                                 <livewire:municipality :death="$migrationCertificate" />
                                 <x-darta :death="$migrationCertificate" />
                             </div>
@@ -35,17 +34,17 @@
                         <div class="card mt-2 p-3">
                             <h3 class="text-left h5 font-weight-bold p-1">क. कहाँ बाट सरी आएको</h3>
                             <hr>
-                            <div class="row mt-3" style="line-height: 3px">
+                            <div class="row mt-3 p-3" style="line-height: 3px">
                                 <div class="col-lg-12">
                                     <livewire:migration-from-address :migrationFromAddress="$migrationCertificate"/>
                                 </div>
                             </div>
                             <div class="d-flex">
                                 <div class="form-group col-lg-3">
-                                    <label for="">गाउँ/टोलको नाम</label>
+                                    <label for=""><span class="text-danger">*</span>&nbsp;गाउँ/टोलको नाम</label>
                                     <div class="input-group">
                                         <input type="text" name="before_village" placeholder="@lang('navigation.village-toll-name')"
-                                            class="form-control"
+                                            class="form-control myText"
                                             value="{{ old('before_village', $migrationCertificate->before_village) }}" />
                                     </div>
                                     @error('before_village')
@@ -53,9 +52,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-lg-3">
-                                    <label>वडा नं.</label>
+                                    <label><span class="text-danger">*</span>&nbsp;वडा नं.</label>
                                     <div class="input-group">
-                                        <input type="text" name="before_ward" class="form-control"
+                                        <input type="number" name="before_ward" class="form-control"
                                             placeholder="वडा नं."
                                             value="{{ old('before_ward', $migrationCertificate->before_ward) }}" />
                                     </div>
@@ -75,9 +74,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-lg-3">
-                                    <label> बसाई सराईको कारण</label>
+                                    <label><span class="text-danger">*</span>&nbsp;बसाई सराईको कारण</label>
                                     <div class="input-group">
-                                        <input type="text" name="migration_reason" class="form-control"
+                                        <input type="text" name="migration_reason" class="form-control myText"
                                             placeholder="@lang('navigation.reason')"
                                             value="{{ old('migration_reason', $migrationCertificate->migration_reason) }}" />
                                     </div>
@@ -87,7 +86,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-lg-3">
-                                <label> बसाई सराईको मिति </label>
+                                <label><span class="text-danger">*</span>&nbsp;बसाई सराईको मिति </label>
                                 <div class="input-group">
                                     <input type="text" id="nepali-datepicker5" name="migration_date"
                                         value="{{ old('migration_date', $migrationCertificate->migration_date) }}" class="form-control"
@@ -103,14 +102,14 @@
                             <h3 class="h5 font-weight-bold p-1">ख. कहाँ सरी जाने </h3>
                             <hr>
                             <div class="row mt-3">
-                                <div class="col-lg-12">
+                                <div class="col-lg-12 p-3">
                                     <livewire:after-migration :afterMigration="$migrationCertificate" />
                                 </div>
                                 <div class="col-lg-12 d-flex">
                                     <div class="form-group col-lg-3">
-                                        <label for="">गाउँ/टोलको नाम</label>
+                                        <label for=""><span class="text-danger">*</span>&nbsp;गाउँ/टोलको नाम</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="@lang('navigation.village-toll-name')"
+                                            <input type="text" class="form-control myText" placeholder="@lang('navigation.village-toll-name')"
                                                 name="after_village"
                                                 value="{{ old('after_village', $migrationCertificate->after_village) }}" />
                                         </div>
@@ -119,9 +118,9 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-lg-3">
-                                        <label for="">वडा नं.</label>
+                                        <label for=""><span class="text-danger">*</span>&nbsp;वडा नं.</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="वडा नं."
+                                            <input type="number" class="form-control" placeholder="वडा नं."
                                                 name="after_ward"
                                                 value="{{ old('after_ward', $migrationCertificate->after_ward) }}" />
                                         </div>

@@ -86,12 +86,24 @@
                         </div>
                     </a>
                 </div>
+                <div class="col-xl-3">
+                    <a href="{{ route('migration.index') }}" class="card text-decoration-none text-white bg-[#4338ca] mt-4 p-3">
+                        <div class="d-block">
+                            <div class="d-flex">
+                                <div><i class="fas fa-users fa-4x"></i></div>
+                                <div class="pt-1 col-10 text-right"><label class="px-5 col-12 "
+                                        style="font-size: 35px;">{{ App\MigrationCertificate::count() }}</label></div>
+                            </div>
+                            <div class="font-weight-bold text-uppercase mt-2">कुल बसाईसराई दर्ता</div>
+                        </div>
+                    </a>
+                </div>
             </div>
             {{-- <div class="box p-3" style="width: 50%">
                 <canvas id="myChart"></canvas>
             </div> --}}
             @if (App\Mysetting::first())
-                <h1 class="h1 font-weight-bold text-uppercase text-center mt-5">
+                <h1 class="h1 font-weight-bold text-uppercase text-center mt-1">
                     {{ App\Mysetting::first()->default_province }}
                 </h1>
                 <h2 class="h2 font-weight-bold text-uppercase text-center">{{ App\Mysetting::first()->default_district }}
@@ -100,8 +112,6 @@
                     {{ App\Mysetting::first()->default_municipality }}
                 </h3>
             @endif
-
-
         </div>
     </div>
 @endsection
@@ -135,8 +145,7 @@
         // });
         var currentYear = NepaliFunctions.GetCurrentBsYear();
         var baisakh=currentYear+'-03'+'-07';
-        console.log(baisakh);
-        // var q=""+baisakh+"'";
+        // console.log(baisakh);
         var test = "{{App\Death::where('entry_date','"+baisakh+"')->count() }}";
         console.log(test);
         new Chart(document.getElementById('myChart'), {
@@ -169,6 +178,5 @@
                 }
             }
         });
-        // console.log();
     </script>
 @endpush

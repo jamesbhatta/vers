@@ -1,7 +1,7 @@
 {{-- <h3>{{$death}}</h3> --}}
 <div class="row">
     <div class="form-group col-3">
-        <label for="">प्रदेश</label>
+        <label for=""><span class="text-danger">*</span>&nbspप्रदेश</label>
         <select class="custom-select" name="before_province" wire:model="province">
             <option class="m-5" value="">प्रदेश छान्न्नुहोस्। </option>
             @php
@@ -27,7 +27,7 @@
     </div>
 
     <div class="form-group col-3">
-        <label for="">जिल्ला </label>
+        <label for=""><span class="text-danger">*</span>&nbspजिल्ला </label>
         <select class="custom-select" name="before_district" wire:model="district">
             <option class="m-5" value="">जिल्ला छान्न्नुहोस्। </option>
             @php
@@ -67,7 +67,7 @@
         @enderror
     </div>
     <div class="form-group col-3">
-        <label for="">नगरपालिका </label>
+        <label for=""><span class="text-danger">*</span>&nbspनगरपालिका </label>
         <select class="custom-select" name="before_municipality" wire:model="municipality">
             <option class="m-5" value="">नगरपालिका छान्न्नुहोस्। </option>
             @php

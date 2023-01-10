@@ -14,10 +14,10 @@
                             aria-current="page">{{ $migrationCertificate->id ? 'अपडेट गर्नुहोस्' : 'सृजना गर्नुहोस्' }}</a>
                     </div>
                 </nav>
-                <div class="row d-flex justify-content-end mx-1">
-                    <a href="{{route('migration.print', $migrationCertificate)}}" class="btn bg-[#1d4ed8] float-right text-lg font-medium text-white" onclick="window.print()" target="_blank"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;Print</a>
+                <div class="row mt-1 d-flex justify-content-end mx-1">
+                    <a href="{{route('migration.print', $migrationCertificate)}}" class="btn bg-[#1d4ed8] float-right text-lg font-medium text-white"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;Print</a>
                 </div>
-                <div class="card p-3">
+                <div class="card p-5 mt-2">
                     <h3 class="text-center pb-2 font-weight-bold">@lang('navigation.migration-notice-form')</h3>
                     <h6 class="col-12  t-bold  text-center mt-0"> (अनुसूची-६ )</h6>
                     <h6 class="col-12  text-center mt-1">(नियम-५ संग सम्बन्धित ) </h6>
@@ -197,7 +197,7 @@
                     <div class="col-lg-12 mt-2">
                         <h3 class="text-center h4 font-weight-bold ">सम्बन्धित फाइल</h3>
                         <img src="{{ asset('storage') }}{{ '/' }}{{ $migrationCertificate->file }}"
-                            class="img-fluid mt-4 m-auto" alt="सम्बन्धित फाइल फेला परेन" style="width:80%;position:relative; height:40%;">
+                            class="img-fluid mt-2" alt="सम्बन्धित फाइल फेला परेन" style="width:100%;position:relative;">
 
                     </div>
                 </div>

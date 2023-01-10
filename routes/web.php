@@ -4,13 +4,11 @@ use App\Http\Controllers\MigrationController;
 use App\Http\Controllers\DeathController;
 use App\Http\Controllers\BirthController;
 use App\Http\Controllers\MarriageController;
-use App\Http\Controllers\DartaNoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VdcController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FamilyController;
-use App\Http\Controllers\CountryController;
 
 Auth::routes(['register' => false]);
 // Route::redirect('/', '');
@@ -64,6 +62,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/migration-notice/{migrationCertificate}/delete', [MigrationController::class,'destroy'])->name('migration.delete');
     Route::get('/migration-notice/{migrationCertificate}/show', [MigrationController::class,'show'])->name('migration.show');
     Route::get('/migration-notice/filter', [MigrationController::class,'filter'])->name('migration.filter');
+    Route::get('/migration-notice/{migrationCertificate}/print', [MigrationController::class,'print'])->name('migration.print');
 
     //For family add
     Route::get('/family/create', [FamilyController::class,'create'])->name('family.create');
@@ -85,7 +84,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/death-notice/filter', [DeathController::class,'filter'])->name('death.filter');
     Route::get('/death-notice/list-print', [DeathController::class,'listPrint'])->name('death.listprint');
     Route::get('/death-notice/excel-export', [DeathController::class,'excel'])->name('death.excel');
-    Route::get('/death-notice/print-detail/{death}', [DeathController::class,'printDetail'])->name('death.printdetail');
 
     //for birth-notice
     Route::get('/birth-notice', [BirthController::class,'index'])->name('birth.index');
@@ -98,7 +96,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/birth-notice/{birth}/show', [BirthController::class,'show'])->name('birth.show');
     Route::get('/birth-notice/list-print', [BirthController::class,'listPrint'])->name('birth.listprint');
     Route::get('/birth-notice/excel-export', [BirthController::class,'excel'])->name('birth.excel');
-    Route::get('/birth-notice/print-detail/{birth}', [BirthController::class,'printDetail'])->name('birth.printdetail');
 
     //for marriage-notice
     Route::get('/marriage-notice', [MarriageController::class,'index'])->name('marriage.index');
@@ -111,7 +108,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/marriage-notice/{marriage}/show', [MarriageController::class,'show'])->name('marriage.show');
     Route::get('/marriage-notice/list-print', [MarriageController::class,'listPrint'])->name('marriage.listprint');
     Route::get('/marriage-notice/excel-export', [MarriageController::class,'excel'])->name('marriage.excel');
-    Route::get('/marriage-notice/print-detail/{marriage}', [MarriageController::class,'printDetail'])->name('marriage.printdetail');
 
     //for VDC
     Route::get('vdc', [VdcController::class, 'index'])->name('vdc.index');

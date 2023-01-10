@@ -4,12 +4,10 @@
         <div class="p-2">
             <div class="container-fluid">
                 <nav aria-label="breadcrumb" class="d-flex justify-content-between">
-                    <div class="mx-3">
-                        <p style="font-size: 27px">@lang('navigation.migration-notice-form')</p>
-                    </div>
                     <div class="my-breadcrumb">
-                        <a class="breadcrumb-item" href="{{ route('dashboard') }}">@lang('navigation.dashboard')</a>
-                        <a class="breadcrumb-item" href="{{ route('migration.index') }}">@lang('navigation.migration-notice-form')</a>
+                        <a class="first-breadcrumb" href="{{ route('migration.index') }}">बसाईसराई दर्ता</a>
+                        <a class="sub-breadcrumb" href="{{ route('dashboard') }}"><i class="fas fa-home"></i></a>
+                        <a class="breadcrumb-item ml-4" href="{{ route('migration.index') }}">@lang('navigation.migration-notice-form')</a>
                         <a
                             class="breadcrumb-item">{{ $family->migrationCertificate ? 'अपडेट गर्नुहोस्' : 'सदस्य थप्नुहोस्' }}</a>
                     </div>
@@ -31,17 +29,17 @@
                         <div class="wrapper mt-1">
                             <div class="row" id="survey_options">
                                 <div class="form-group col-lg-3">
-                                    <label>नाम,थर </label>
-                                    <input type="text" class="form-control" name="name"
+                                    <label><span class="text-danger">*</span>&nbsp;नाम,थर </label>
+                                    <input type="text" class="form-control myText" name="name"
                                         value="{{ old('name', $family->name) }}" />
                                     @error('name')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                                 <div class="form-group col-lg-3">
-                                    <label for="">जन्मस्थान</label>
+                                    <label for=""><span class="text-danger">*</span>&nbsp;जन्मस्थान</label>
                                     <div class="input-group mb-2">
-                                        <input type="text" class="form-control" name="birthplace"
+                                        <input type="text" class="form-control myText" name="birthplace"
                                             value="{{ old('birthplace', $family->birthplace) }}" />
                                     </div>
                                     @error('birthplace')
@@ -51,16 +49,13 @@
                                 <div class="form-group col-lg-3">
                                     <label for="">नागरिकता न.</label>
                                     <div class="input-group mb-2">
-                                        <input type="number" name="citizenship"
+                                        <input type="text" name="citizenship"
                                             value="{{ old('citizenship', $family->citizenship) }}" class="form-control" />
                                     </div>
-                                    @error('citizenship')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
                                 </div>
                                 <div class="form-group col-lg-3">
                                     <label for="">स्थायी ठेगाना</label>
-                                    <input class="form-control" name="permanent_addres" placeholder="स्थायी ठेगाना"
+                                    <input class="form-control myText" name="permanent_addres" placeholder="स्थायी ठेगाना"
                                         value="{{ old('permanent_addres', $family->permanent_addres) }}" />
                                     @error('permanent_addres')
                                         <small class="text-danger">{{ $message }}</small>
@@ -72,16 +67,15 @@
                         <div class="row">
                             <div class="form-group col-lg-3">
                                 <label for="">अस्थायी ठेगाना</label>
-                                <input class="form-control" name="temporary_addres" placeholder="स्थायी ठेगाना"
+                                <input class="form-control myText" name="temporary_addres" placeholder="अस्थायी ठेगाना"
                                     value="{{ old('temporary_addres', $family->temporary_addres) }}" />
                                 @error('temporary_addres')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
                             <div class="form-group col-lg-3">
-                                <label for="">शैक्षिक योग्यता</label>
+                                <label for=""><span class="text-danger">*</span>&nbsp;शैक्षिक योग्यता</label>
                                 <div class="input-group mb-2">
-
                                     <select class="custom-select" name="education">
                                         <option selected class="m-5" value="">छान्न्नुहोस्।
                                         </option>
@@ -121,7 +115,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-lg-3">
-                                <label>धर्म</label>
+                                <label><span class="text-danger">*</span>&nbsp;धर्म</label>
                                 <select class="custom-select" name="religion">
                                     <option selected disabled class="m-5" value="">छान्न्नुहोस्। </option>
                                     <div>
@@ -147,7 +141,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-lg-3">
-                                <label for="">लिङ्ग </label>
+                                <label for=""><span class="text-danger">*</span>&nbsp;लिङ्ग </label>
                                 <select class="custom-select" name="gender">
                                     <option selected disabled class="m-5">छान्न्नुहोस्। </option>
                                     <div>
@@ -170,9 +164,9 @@
                         <div class="row" id="chk">
 
                             <div class="form-group col-lg-4">
-                                <label>उमेर </label>
+                                <label><span class="text-danger">*</span>&nbsp;उमेर </label>
                                 <div class="input-group mb-2">
-                                    <input type="number" name="age" class="form-control"
+                                    <input type="number" name="age" class="form-control myText"
                                         value="{{ old('age', $family->age) }}" />
                                 </div>
                                 @error('age')
@@ -181,7 +175,7 @@
                             </div>
 
                             <div class="form-group col-lg-4">
-                                <label for="">मातृभाषा </label>
+                                <label for=""><span class="text-danger">*</span>&nbsp;मातृभाषा </label>
                                 <select class="custom-select" name="mothertongue">
                                     <option selected disabled class="m-5">छान्न्नुहोस्। </option>
                                     <div>
@@ -203,7 +197,7 @@
                             <div class="form-group col-lg-4">
                                 <label>कैफियत </label>
                                 <div class="input-group mb-2">
-                                    <input type="text" name="description" class="form-control" />
+                                    <input type="text" name="description" class="form-control myText" />
                                 </div>
                                 @error('description')
                                     <small class="text-danger">{{ $message }}</small>

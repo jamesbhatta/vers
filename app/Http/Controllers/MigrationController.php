@@ -6,10 +6,10 @@ use Illuminate\Support\Facades\DB;
 use App\Family;
 use App\MigrationCertificate;
 use App\Mysetting;
-use App\SachiForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use PDF;
 
 
 class MigrationController extends Controller
@@ -209,5 +209,15 @@ class MigrationController extends Controller
     {
         $migrationCertificate->delete();
         return redirect()->back()->with('success', 'Data deleted successfully');
+    }
+
+    public function print(MigrationCertificate $migrationCertificate, Family $family )
+    {
+        $mysetting=Mysetting::get();
+        $family = Family::get();
+        $families = $migrationCertificate->families()->get();
+        $pdf=PDF::loadView('migration-notice.print', compact('migrationCertificate','families', 'family', 'mysetting'));
+        return $pdf->stream('migration-notice.print',$pdf);
+        // return view('migration-notice.print', compact('migrationCertificate','families', 'family', 'mysetting'));
     }
 }

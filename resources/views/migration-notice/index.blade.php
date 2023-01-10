@@ -5,6 +5,7 @@
             <div class="container-fluid font-noto">
                 <nav aria-label="breadcrumb" class="d-flex justify-content-between rounded">
                     <div class="my-breadcrumb">
+                        <a class="first-breadcrumb" href="{{ route('migration.index') }}">बसाईसराई दर्ता</a>
                         <a class="sub-breadcrumb" href="{{ route('dashboard') }}"><i class="fas fa-home"></i></a>
                         <a class="final-item ml-3" href="">@lang('navigation.migration-notice-form')</a>
                     </div>

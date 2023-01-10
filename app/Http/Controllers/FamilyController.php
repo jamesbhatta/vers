@@ -41,7 +41,7 @@ class FamilyController extends Controller
             $request->validate([
                 'name' => ['required'],
                 'birthplace' => ['required'],
-                'citizenship' => ['required'],
+                'citizenship' => ['nullable'],
                 'age' => ['required'],
                 'permanent_addres' => ['nullable'],
                 'temporary_address' => ['nullable'],
