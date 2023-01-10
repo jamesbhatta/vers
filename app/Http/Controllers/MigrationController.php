@@ -211,10 +211,10 @@ class MigrationController extends Controller
         return redirect()->back()->with('success', 'Data deleted successfully');
     }
 
-    public function print(MigrationCertificate $migrationCertificate, Family $family )
+    public function print(MigrationCertificate $migrationCertificate, Family $family, Mysetting $mysetting )
     {
         // $pdf=PDF::loadView('migration-notice.print', compact('migrationCertificate','families', 'family', 'mysetting'));
         // return $pdf->stream($pdf);
-        //  return view('migration-notice.print',['migrationCertificates'=>MigrationCertificate::find($migrationCertificate)]);
+         return view('migration-notice.print',['migrationCertificate'=>MigrationCertificate::find($migrationCertificate), 'family'=>Family::find($family), 'mysetting'=>Mysetting::find($mysetting)]);
     }
 }

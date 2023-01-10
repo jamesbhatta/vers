@@ -15,7 +15,7 @@
                     </div>
                 </nav>
                 <div class="row d-flex justify-content-end mx-1">
-                    <a href="{{route('migration.print', $migrationCertificate)}}" class="btn bg-[#1d4ed8] float-right text-lg font-medium text-white" onclick="window.print()" target="_blank"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;Print</a>
+                    <a href="{{route('migration.print', $migrationCertificate->id)}}" class="btn bg-[#1d4ed8] float-right text-lg font-medium text-white" onclick="window.print()" target="_blank"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;Print</a>
                 </div>
                 <div class="card p-3">
                     <h3 class="text-center pb-2 font-weight-bold">@lang('navigation.migration-notice-form')</h3>

@@ -104,7 +104,7 @@
                                                     class="far fa-trash-alt"></i></button>
                                         </form>
                                         <a href="{{ route('migration.print', $migrationCertificate->id) }}"
-                                            class="action-btn text-primary"><i class="fas fa-download"></i></a>
+                                            class="action-btn text-primary"><i class="fa fa-print" aria-hidden="true"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
