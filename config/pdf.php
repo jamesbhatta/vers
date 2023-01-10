@@ -36,6 +36,16 @@ return [
             'R' => "KhmerOSmuolpali.ttf",
             'useOTL' => 0xFF,
             'useKashida' => 75
+        ],
+        "kantipur" => [
+            /* Khmer */
+            'R' => "KantipurRegular.otf",
+            'useOTL' => 0xFF,
+        ],
+        "kantipur" => [
+            /* Khmer */
+            'R' => "KantipurRegular.otf",
+            'useOTL' => 0xFF,
         ]
         // ...add as many as you want.
     ]
