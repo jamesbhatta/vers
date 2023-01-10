@@ -78,7 +78,7 @@ class MigrationController extends Controller
      * @param  \App\Migration  $migration
      * @return \Illuminate\Http\Response
      */
-    public function show(MigrationCertificate $migrationCertificate, Family $family)
+    public function show(MigrationCertificate $migrationCertificate, Family $family, Mysetting $mysetting)
     {
         $mysetting=Mysetting::get();
         $family = Family::get();
