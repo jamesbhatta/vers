@@ -213,11 +213,8 @@ class MigrationController extends Controller
 
     public function print(MigrationCertificate $migrationCertificate, Family $family )
     {
-        $mysetting=Mysetting::get();
-        $family = Family::get();
-        $families = $migrationCertificate->families()->get();
-        $pdf=PDF::loadView('migration-notice.print', compact('migrationCertificate','families', 'family', 'mysetting'));
-        return $pdf->stream('migration-notice.print',$pdf);
-        // return view('migration-notice.print', compact('migrationCertificate','families', 'family', 'mysetting'));
+        // $pdf=PDF::loadView('migration-notice.print', compact('migrationCertificate','families', 'family', 'mysetting'));
+        // return $pdf->stream($pdf);
+        //  return view('migration-notice.print',['migrationCertificates'=>MigrationCertificate::find($migrationCertificate)]);
     }
 }

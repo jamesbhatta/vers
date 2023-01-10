@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('content')
+
     <div class="container-fluid">
         <div class="p-3">
             <div class="container-fluid">
@@ -215,4 +215,3 @@
             border: 1px solid #ccc;
         }
     </style>
-@endsection

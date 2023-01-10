@@ -88,14 +88,14 @@
                                     <td>{{ $migrationCertificate->entry_date }}</td>
                                     <td>{{ $migrationCertificate->migration_reason }}</td>
                                     <td>{{ $migrationCertificate->migration_date }}</td>
-                                    <td class="text-right d-flex">
+                                    <td class="float-right d-flex">
                                         <a href="{{ route('migration.add-family', $migrationCertificate->id) }}"
                                             class="action-btn text-primary"><i class="fas fa-plus-circle "></i></a>
                                         <a href="{{ route('migration.show', $migrationCertificate->id) }}"
                                             class="action-btn text-primary"><i class="fa fa-eye"></i></a>
                                         <a href="{{ route('migration.edit', $migrationCertificate->id) }}"
                                             class="action-btn text-primary"><i class="fa fa-edit"></i></a>
-                                        <form action="{{ route('migration.delete', $migrationCertificate->id) }}"
+                                    <form action="{{ route('migration.delete', $migrationCertificate->id) }}"
                                             method="post" onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
                                             class="form-inline d-inline">
                                             @csrf
@@ -103,6 +103,8 @@
                                             <button type="submit" class="action-btn text-danger"><i
                                                     class="far fa-trash-alt"></i></button>
                                         </form>
+                                        <a href="{{ route('migration.print', $migrationCertificate->id) }}"
+                                            class="action-btn text-primary"><i class="fas fa-download"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
