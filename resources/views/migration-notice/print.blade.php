@@ -11,7 +11,7 @@
                          <h5 class="col-12  mt-1" for=""> श्री स्थानीय पंजीअधिकारी ज्यु,</h5>
                          <h5 class="col-12  mt-1" for="">
                              <i
-                                 style="border-bottom:dashed; width:20px;">{{ $mysetting[0]->default_municipality }}</i>&nbsp;गा.वि.स./न.पा.
+                                 style="border-bottom:dashed; width:20px;">{{ $migrationCertificate->municipality }}</i>&nbsp;गा.वि.स./न.पा.
                          </h5>
                          <h2 class="col-12 mt-3"> स्थानीय पंजीअधिकारीको कार्यालय </h5>
                              <h5 class="col-12  mt-3" for=""> महोदय,</h5>
@@ -30,20 +30,20 @@
                              <tr>
                                  <th class="text-center">प्रदेश</th>
                                  <td class="text-center" style="font-size: 12px">
-                                     <i>{{ $mysetting[0]->default_province }}</i>
+                                     <i>{{ $migrationCertificate->province }}</i>
                                  <td>
 
                              </tr>
                              <tr>
                                  <th class="text-center">जिल्ला</th>
                                  <td class="text-center" style="font-size: 12px">
-                                     <i>{{ $mysetting[0]->default_district }}</i></th>
+                                     <i>{{ $migrationCertificate->district }}</i></th>
                                  <td class="text-center"></td>
                              </tr>
                              <tr>
                                  <th class="text-center">ग.पा./न.पा</th>
                                  <td class="text-center"style="font-size: 12px">
-                                     <i>{{ $mysetting[0]->default_municipality }}</i></th>
+                                     <i>{{ $migrationCertificate->municipality }}</i></th>
                                  <td class="text-center"></td>
                              </tr>
                          </table>
@@ -57,7 +57,7 @@
                              </tr>
                              <tr>
                                  <td>स्थानीय पञ्जिकाधिकारी</td>
-                                 <td style="font-size: 12px"><i>{{ $mysetting[0]->default_registaar }}</i></td>
+                                 <td style="font-size: 12px"><i>{{ $migrationCertificate->administrator }}</i></td>
                                  <td></td>
                              </tr>
                              <tr>

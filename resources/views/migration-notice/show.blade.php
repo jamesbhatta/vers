@@ -15,9 +15,10 @@
                     </div>
                 </nav>
                 <div class="row d-flex justify-content-end mx-1">
-                    <a href="{{route('migration.print', $migrationCertificate->id)}}" class="btn bg-[#1d4ed8] float-right text-lg font-medium text-white" onclick="window.print()" target="_blank"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;Print</a>
+                    <a id="btnPrint" class="btn bg-[#1d4ed8] float-right text-lg font-medium text-white"><i
+                            class="fa fa-print" aria-hidden="true"></i>&nbsp;Print</a>
                 </div>
-                <div class="card p-3">
+                <div class="card p-3 id="myId">
                     <h3 class="text-center pb-2 font-weight-bold">@lang('navigation.migration-notice-form')</h3>
                     <h6 class="col-12  t-bold  text-center mt-0"> (अनुसूची-६ )</h6>
                     <h6 class="col-12  text-center mt-1">(नियम-५ संग सम्बन्धित ) </h6>
@@ -27,7 +28,7 @@
                             <h5 class="col-12  mt-1" for=""> श्री स्थानीय पंजीअधिकारी ज्यु,</h5>
                             <h5 class="col-12  mt-1" for="">
                                 <i
-                                    style="border-bottom:dashed; width:20px;">{{ $mysetting[0]->default_municipality }}</i>&nbsp;गा.वि.स./न.पा.
+                                    style="border-bottom:dashed; width:20px;">{{ $migrationCertificate->municipality }}</i>&nbsp;गा.वि.स./न.पा.
                             </h5>
                             <h2 class="col-12 mt-3"> स्थानीय पंजीअधिकारीको कार्यालय </h5>
                                 <h5 class="col-12  mt-3" for=""> महोदय,</h5>
@@ -46,20 +47,20 @@
                                 <tr>
                                     <th class="text-center">प्रदेश</th>
                                     <td class="text-center" style="font-size: 12px">
-                                        <i>{{ $mysetting[0]->default_province }}</i>
+                                        <i>{{ $migrationCertificate->province }}</i>
                                     <td>
 
                                 </tr>
                                 <tr>
                                     <th class="text-center">जिल्ला</th>
                                     <td class="text-center" style="font-size: 12px">
-                                        <i>{{ $mysetting[0]->default_district }}</i></th>
+                                        <i>{{ $migrationCertificate->district }}</i></th>
                                     <td class="text-center"></td>
                                 </tr>
                                 <tr>
                                     <th class="text-center">ग.पा./न.पा</th>
                                     <td class="text-center"style="font-size: 12px">
-                                        <i>{{ $mysetting[0]->default_municipality }}</i></th>
+                                        <i>{{ $migrationCertificate->municipality }}</i></th>
                                     <td class="text-center"></td>
                                 </tr>
                             </table>
@@ -73,7 +74,7 @@
                                 </tr>
                                 <tr>
                                     <td>स्थानीय पञ्जिकाधिकारी</td>
-                                    <td style="font-size: 12px"><i>{{ $mysetting[0]->default_registaar }}</i></td>
+                                    <td style="font-size: 12px"><i>{{ $migrationCertificate->administrator }}</i></td>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -197,7 +198,8 @@
                     <div class="col-lg-12 mt-2">
                         <h3 class="text-center h4 font-weight-bold ">सम्बन्धित फाइल</h3>
                         <img src="{{ asset('storage') }}{{ '/' }}{{ $migrationCertificate->file }}"
-                            class="img-fluid mt-4 m-auto" alt="सम्बन्धित फाइल फेला परेन" style="width:80%;position:relative; height:40%;">
+                            class="img-fluid mt-4 m-auto" alt="सम्बन्धित फाइल फेला परेन"
+                            style="width:80%;position:relative; height:40%;">
 
                     </div>
                 </div>
@@ -216,3 +218,44 @@
         }
     </style>
 @endsection
+@push('scripts')
+    <script type="text/javascript">
+        $('#btnPrint').on('click', function() {
+
+            var data =$('#myId').html();
+            alert(data);
+            var myWindow = window.open('', 'my div', 'height=400,width=600');
+            myWindow.document.write('<html><head><title>my div</title>');
+            /*optional stylesheet*/ //myWindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+            myWindow.document.write('</head><body >');
+            myWindow.document.write(data);
+            myWindow.document.write('</body></html>');
+            myWindow.document.close(); // necessary for IE >= 10
+
+            myWindow.onload = function() { // necessary if the div contain images
+
+                myWindow.focus(); // necessary for IE >= 10
+                myWindow.print();
+                myWindow.close();
+            };
+        });
+
+        function PrintDiv() {
+            var data = document.getElementById("myId").innerHTML;
+            var myWindow = window.open('', 'my div', 'height=400,width=600');
+            myWindow.document.write('<html><head><title>my div</title>');
+            /*optional stylesheet*/ //myWindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+            myWindow.document.write('</head><body >');
+            myWindow.document.write(data);
+            myWindow.document.write('</body></html>');
+            myWindow.document.close(); // necessary for IE >= 10
+
+            myWindow.onload = function() { // necessary if the div contain images
+
+                myWindow.focus(); // necessary for IE >= 10
+                myWindow.print();
+                myWindow.close();
+            };
+        }
+    </script>
+@endpush

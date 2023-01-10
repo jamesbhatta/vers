@@ -78,12 +78,11 @@ class MigrationController extends Controller
      * @param  \App\Migration  $migration
      * @return \Illuminate\Http\Response
      */
-    public function show(MigrationCertificate $migrationCertificate, Family $family, Mysetting $mysetting)
+    public function show(MigrationCertificate $migrationCertificate, Family $family)
     {
-        $mysetting=Mysetting::get();
         $family = Family::get();
         $families = $migrationCertificate->families()->get();
-        return view('migration-notice.show', compact('migrationCertificate','families', 'family', 'mysetting'));
+        return view('migration-notice.show', compact('migrationCertificate','families', 'family'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -211,10 +210,11 @@ class MigrationController extends Controller
         return redirect()->back()->with('success', 'Data deleted successfully');
     }
 
-    public function print(MigrationCertificate $migrationCertificate, Family $family, Mysetting $mysetting )
+    public function print(MigrationCertificate $migrationCertificate)
     {
         // $pdf=PDF::loadView('migration-notice.print', compact('migrationCertificate','families', 'family', 'mysetting'));
         // return $pdf->stream($pdf);
-         return view('migration-notice.print',['migrationCertificate'=>MigrationCertificate::find($migrationCertificate), 'family'=>Family::find($family), 'mysetting'=>Mysetting::find($mysetting)]);
+        $families = $migrationCertificate->families()->get();
+         return view('migration-notice.print', compact('migrationCertificate','families'));
     }
 }
