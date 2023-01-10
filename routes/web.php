@@ -49,6 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('settings/registaar', 'SettingsController@registaar')->name('settings.registaar');
     Route::delete('settings/{registaar}/registaar', 'SettingsController@registaarDelete')->name('settings.registaar.delete');
     Route::get('settings/{registaar}/registaar', 'SettingsController@registaarEdit')->name('settings.registaar.edit');
+    Route::put('settings/{registaar}/registaar', 'SettingsController@registaarUpdate')->name('settings.registaar.update');
 
     Route::get('configuration-checklist', 'ConfigurationChecklistController@index')->name('configuration-checklist.index');
 

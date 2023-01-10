@@ -70,14 +70,19 @@
                 <div class="col-xl-7 col-lg-7 ">
                     <div class="box p-3">
 
-                        <form action="{{ route('settings.registaar') }}" method="POST">
+                        <form
+                            action="{{ $registaar->id ? route('settings.registaar.update', $registaar) : route('settings.registaar') }}"
+                            method="POST">
                             @csrf
-                            {{-- @method('PUT') --}}
+                            @isset($registaar->id)
+                                @method('PUT')
+                            @endisset
 
 
                             <label style="font-weight: bold">नाम</label> <br>
                             <div class="d-flex gap-3">
-                                <input type="text" class="form-control myText" name="name" value="{{ $registaar->name }}">
+                                <input type="text" class="form-control myText" name="name"
+                                    value="{{ $registaar->name }}">
                                 <button class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light"
                                     type="submit" style="background-color:#374f67; color: #fff;">Save</button>
                             </div>
@@ -147,7 +152,8 @@
 
                                 <label style="font-weight: bold">देशको नाम</label> <br>
                                 <div class="d-flex gap-3">
-                                    <input type="text" class="form-control myText" name="name" value="{{ $country->name }}">
+                                    <input type="text" class="form-control myText" name="name"
+                                        value="{{ $country->name }}">
                                     <button class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light"
                                         type="submit"
                                         style="background-color:#374f67; color: #fff;">{{ $country->id ? 'Update' : 'Save' }}</button>
@@ -203,7 +209,9 @@
                     <div class="col-xl-7 col-lg-7">
                         <div class="box p-3">
 
-                            <form action="{{ $motherTongue->id ? route('moyhertongue.update', $motherTongue) : route('moyhertongue.store') }}" method="POST">
+                            <form
+                                action="{{ $motherTongue->id ? route('moyhertongue.update', $motherTongue) : route('moyhertongue.store') }}"
+                                method="POST">
                                 @csrf
                                 @isset($motherTongue->id)
                                     @method('PUT')

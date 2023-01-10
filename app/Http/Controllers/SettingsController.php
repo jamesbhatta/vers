@@ -86,7 +86,7 @@ class SettingsController extends Controller
         return redirect()->back();
     }
 
-    public function registaarEdit(Registaar $registaar)
+    public function registaarEdit(Registaar $registaar,Country $country,MotherTongue $motherTongue)
     {
         $title = "Settings";
         $mysetting = Mysetting::first();
@@ -94,6 +94,13 @@ class SettingsController extends Controller
         // if($mysetting){
         //     $mysetting = $mysetting->default_admin_name;
         // }
-        return view('settings.index',compact('mysetting','title','registaars','registaar'));
+        return view('settings.index',compact('mysetting','title','registaars','registaar','country','motherTongue'));
+    }
+    public function registaarUpdate(Request $request,Registaar $registaar,Country $country,MotherTongue $motherTongue)
+    {
+        $registaar->update($request->validate([
+            'name' => 'required',
+        ]));
+        return redirect()->route('settings.index');
     }
 }
