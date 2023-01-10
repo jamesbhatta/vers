@@ -1,0 +1,133 @@
+ @import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+.myText{
+    font-family:kantipur;
+    font-size: 20px;
+}
+#sidenav .nav-item{
+    border-left: 10px solid #1C4267;
+    border-right: 10px solid #1C4267;
+    background-color: transparent;
+}
+#sidenav .nav-item a{
+    border-radius: 10px;
+}
+#sidenav .nav-item a:hover{
+    transform: scale(1.02);
+    color: #000;
+    background-color: #ccc;
+}
+.min-height{
+    min-height: 89vh;
+}
+.my-breadcrumb{
+    padding: 0;
+}
+.my-breadcrumb .first-breadcrumb{
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 20px 0 10px;
+    font-size: 20px;
+    border-right: 1px solid #ccc;
+    position: relative;
+    left: -10px;
+}
+.my-breadcrumb .sub-breadcrumb{
+    text-decoration: none;
+    padding: 0 5px 0 0;
+    font-size: 15px;
+    color: #000;
+    position: relative;
+    top: -3px;
+}
+.my-breadcrumb .sub-breadcrumb::after{
+    content: '>';
+    height: 20px;
+    width: 20px;
+    padding: 0 10px;
+    color: #ccc;
+    font-size: 25px;
+    position: absolute;
+    top: -7px;
+}
+.my-breadcrumb .final-item{
+    color: #000;
+    padding: 0 10px;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: auto;
+    position: relative;
+    /* top: 1px; */
+}
+.form-control{
+    padding: 20px 5px;
+}
+.select {
+    border-color: #cccccc;
+    border-radius: 5px;
+    padding: 10px 1em 10px 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+  }
+
+  input[type=file]{
+    border: 1px solid #ccc;
+  }
+  input[type=file]:focus{
+    outline: hidden;
+    border: none;
+  }
+  input[type=file]::file-selector-button {
+    background-color: #ccc;
+    color: #000;
+    border: 1px;
+    border-right: 1px solid #e5e5e5;
+    padding: 10px 15px;
+    margin-right: 20px;
+    transition: .5s;
+    position: relative;
+    left: -15px;
+  }
+
+  input[type=file]::file-selector-button:hover {
+    background-color: #eee;
+    border: 0px;
+    border-right: 1px solid #e5e5e5;
+  }
+.name-div{
+    position: absolute;
+    right: 130px;
+    top: -4px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+}
+.file-brows{
+    width: 100%;
+    border-radius: 5px;
+}
+.file-brows:focus{
+    outline: 1px solid #ccc;
+
+}
+.my_table th, .my_table td{
+border: 1px solid #ccc;
+padding: 7px 10px;
+}
+.btn-excel{
+    position: relative;
+    left: 10px;
+}
+.btn-print{
+    position: relative;
+    left: 35px;
+}

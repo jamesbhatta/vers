@@ -1,0 +1,22 @@
+
+    .nav-image img {
+        height: 80px;
+        width: 80px
+    }
+    .nav_bs_date{
+        position: relative;
+        left: 20px;
+        top: 5px;
+    }
+    .nav_digital_clock{
+        position: relative;
+        top: 15px;
+    }
+    .nav_ad_date{
+        position: relative;
+        top: -20px;
+        left: -13px;
+    }
+    .notice_board_head{
+        height: 50px;
+    }

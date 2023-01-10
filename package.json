@@ -1,0 +1,43 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.13",
+        "axios": "^1.2.1",
+        "browser-sync": "^2.11.2",
+        "browser-sync-webpack-plugin": "^2.3.0",
+        "cross-env": "^7.0",
+        "laravel-mix": "^6.0.49",
+        "lodash": "^4.17.13",
+        "postcss": "^8.4.20",
+        "resolve-url-loader": "^3.1.0",
+        "sass": "^1.15.2",
+        "sass-loader": "^8.0.0",
+        "tailwindcss": "^3.2.4",
+        "vue": "^2.7.13",
+        "vue-loader": "^15.9.8",
+        "vue-template-compiler": "^2.7.13"
+    },
+    "dependencies": {
+        "@fortawesome/free-regular-svg-icons": "^6.2.1",
+        "@fortawesome/vue-fontawesome": "^2.0.9",
+        "chart.js": "^3.9.1",
+        "form-backend-validation": "^2.4.0",
+        "laravel-vue-pagination": "^4.0.0",
+        "sweetalert2": "^11.4.8",
+        "v-nepalidatepicker": "^1.2.4",
+        "vue-chartjs": "^4.1.1",
+        "vue-router": "^2.8.1",
+        "vue-sweetalert2": "^5.0.5",
+        "vue2-quill-editor": "^2.0.26",
+        "xlsx": "https://cdn.sheetjs.com/xlsx-0.18.8/xlsx-0.18.8.tgz"
+    }
+}

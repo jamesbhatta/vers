@@ -1,0 +1,50 @@
+/*============
+* Breadcrumbs 
+*=============*/
+.breadcrumb {
+    background-color: #fff;
+}
+.breadcrumb .breadcrumb-item {
+    color: inherit;
+}
+.breadcrumb .breadcrumb-item a {
+    color: #2c353d;
+    font-weight: 600;
+    opacity: 1;
+}
+.breadcrumb .breadcrumb-item.active {
+    opacity: 0.85;
+}
+// Chart Card
+.box {
+    background-color: #fff;
+    border-radius: 5px;
+    // border: 1px solid #d8dae0;
+    box-shadow: 0 0px 1px 0 rgb(0 0 0 / 12%);
+}
+.box__header {
+    padding: 10px 25px;
+}
+.box__title {
+    font-size: 1.2rem;
+    color: #2572bc;
+    font-weight: 600;
+    font-family: "Noto Sans", sans-serif;
+}
+.box__body {
+    padding: 15px 25px;
+}
+
+// Tables
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+.project-register-no {
+    padding: .5rem 1rem;
+    border: 1px solid #1c4267;
+    background: #f2f7fb;
+    color: #1c4267;
+    border-radius: 0.5rem;
+}
