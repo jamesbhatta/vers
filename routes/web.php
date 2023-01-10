@@ -84,6 +84,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/death-notice/filter', [DeathController::class,'filter'])->name('death.filter');
     Route::get('/death-notice/list-print', [DeathController::class,'listPrint'])->name('death.listprint');
     Route::get('/death-notice/excel-export', [DeathController::class,'excel'])->name('death.excel');
+    Route::get('/death-notice/excel-detail/{death}', [DeathController::class,'printDetail'])->name('death.printdetail');
 
     //for birth-notice
     Route::get('/birth-notice', [BirthController::class,'index'])->name('birth.index');
@@ -96,6 +97,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/birth-notice/{birth}/show', [BirthController::class,'show'])->name('birth.show');
     Route::get('/birth-notice/list-print', [BirthController::class,'listPrint'])->name('birth.listprint');
     Route::get('/birth-notice/excel-export', [BirthController::class,'excel'])->name('birth.excel');
+    Route::get('/birth-notice/birth-detail/{birth}', [BirthController::class,'printDetail'])->name('birth.printdetail');
 
     //for marriage-notice
     Route::get('/marriage-notice', [MarriageController::class,'index'])->name('marriage.index');
@@ -108,6 +110,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/marriage-notice/{marriage}/show', [MarriageController::class,'show'])->name('marriage.show');
     Route::get('/marriage-notice/list-print', [MarriageController::class,'listPrint'])->name('marriage.listprint');
     Route::get('/marriage-notice/excel-export', [MarriageController::class,'excel'])->name('marriage.excel');
+    Route::get('/marriage-notice/marriage-detail/{marriage}', [MarriageController::class,'printDetail'])->name('marriage.printdetail');
 
     //for VDC
     Route::get('vdc', [VdcController::class, 'index'])->name('vdc.index');

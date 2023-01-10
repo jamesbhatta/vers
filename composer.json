@@ -30,7 +30,8 @@
         "spatie/laravel-backup": "^6.11",
         "spatie/laravel-permission": "^3.13",
         "spatie/laravel-query-builder": "^4.0",
-        "spatie/laravel-sluggable": "^2.6"
+        "spatie/laravel-sluggable": "^2.6",
+        "yajra/laravel-datatables": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
