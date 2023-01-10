@@ -169,7 +169,8 @@
 
                 <div class="box mt-3">
                     <div class="box__body" style="width: 100%;overflow-x:scroll">
-                        <table class="table table-responsive-sm" id="myTable">
+                        {!! $dataTable->table() !!}
+                        {{-- <table class="table table-responsive-sm" id="myTable">
                             <thead class="thead-light">
                                 <tr class="text-uppercase">
                                     <th>#</th>
@@ -218,7 +219,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                        </table>
+                        </table> --}}
                     </div>
                     {{-- =======modal===== --}}
                     <div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog"
@@ -505,3 +506,9 @@
     }
 </script>
 {{-- @endpush --}}
+@push('scripts')
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
+<script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+<script src="/vendor/datatables/buttons.server-side.js"></script>
+{!! $dataTable->scripts() !!}
+@endpush

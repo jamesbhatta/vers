@@ -65,24 +65,24 @@ class BirthsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            // Column::computed('action')
-            //       ->exportable(true)
-            //       ->printable(true)
-            //       ->width(60)
-            //       ->addClass('text-center'),
-            // Column::make('reg_number'),
-            // Column::make('name'),
-            // Column::make('gender'),
-            // Column::make('dob'),
-            // Column::make('father_name'),
-            // Column::make('mother_name'),
-            // Column::make('grandfather_name'),
-            // Column::make('birth_place'),
-            'reg_number',
-            'name',
-            'gender',
-            'dob',
-            'father_name'
+            Column::computed('action')
+                  ->exportable(true)
+                  ->printable(true)
+                  ->width(60)
+                  ->addClass('text-center'),
+            Column::make('reg_number'),
+            Column::make('name'),
+            Column::make('gender'),
+            Column::make('dob'),
+            Column::make('father_name'),
+            Column::make('mother_name'),
+            Column::make('grandfather_name'),
+            Column::make('birth_place'),
+            // 'reg_number',
+            // 'name',
+            // 'gender',
+            // 'dob',
+            // 'father_name'
         ];
     }
 

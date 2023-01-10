@@ -31,7 +31,8 @@
         "spatie/laravel-permission": "^3.13",
         "spatie/laravel-query-builder": "^4.0",
         "spatie/laravel-sluggable": "^2.6",
-        "yajra/laravel-datatables": "*"
+        "yajra/laravel-datatables": "*",
+        "yajra/laravel-datatables-buttons": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",

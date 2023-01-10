@@ -43,6 +43,6 @@
 @include('layouts.partials.scripts')
 
 @livewireScripts
-@stack('scripts')
+@stack('script')
 
 </html>
