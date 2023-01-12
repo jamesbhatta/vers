@@ -230,15 +230,11 @@
     </style>
 @endpush
 @push('scripts')
-    <script type="text/javascript">
-        $('#btnPrint').on('click', function() {
-            var prtContent = document.getElementById("myId");
-            var WinPrint = window.open();
-            WinPrint.document.write(prtContent.outerHTML);
-            WinPrint.document.close();
-            WinPrint.focus();
-            WinPrint.print();
-            WinPrint.close();
+<script>
+    $(document).ready(function () {
+        $('#print').click(function () {
+            window.print();
         });
-    </script>
+    });
+</script>
 @endpush

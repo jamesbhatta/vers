@@ -180,7 +180,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         App\Providers\GoogleDriveServiceProvider::class,
-        // Barryvdh\DomPDF\ServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
         // niklasravnsborg\LaravelPdf\PdfServiceProvider::class
 
     ],
@@ -236,7 +236,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-        // 'PDF' => Barryvdh\DomPDF\PDF::class,
+        'PDF' => Barryvdh\DomPDF\PDF::class,
         // 'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class
 
 
