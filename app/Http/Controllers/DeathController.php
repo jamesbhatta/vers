@@ -220,7 +220,7 @@ class DeathController extends Controller
         }
         // return $request;
         $deaths = $deaths->orderBy('id', 'desc')->get();
-        $html = "<style>.kantipur{font-family: kantipur;font-size: 15pt;} .kalimati{font-family: kalimati;font-size: 10pt;}</style>";
+        $html = "<style>.kantipur{font-size: 11pt;} .kalimati{font-size: 10pt;}</style>";
 
         $html .= '<h1 style="text-align:center">मृत्युको सूचना फाराम</h1>';
         $html .= '<table border="1" cellspacing="0" cellspadding="0" width="100%"><thead class="thead-light" >
@@ -268,7 +268,7 @@ class DeathController extends Controller
 
     public function printDetail(Death $death)
     {
-        $html = "<style>.kantipur{font-family: kantipur;font-size: 15pt;} .kalimati{font-family: kalimati;font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;}</style>";
+        $html = "<style>.kantipur{font-size: 11pt;} .kalimati{font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;}</style>";
         $html .= '<h1 style="text-align:center">मृत्युको सूचना फाराम</h1>';
         $html .= '<div class="container"><div class="col-12"><table class="my_table col-12" style="border-collapse: collapse;"><tr><td>प्रदेश</td><td>' . $death->province . '</td><td rowspan="3" style="width: 20%"></td><td>स्थानीय पञ्जिकाधिकारी</td><td class="kantipur">' . $death->administrator . '</td></tr><tr><td>जिल्ला</td><td>' . $death->district . '</td><td>दर्ता न.</td><td>' . $death->reg_number . '</td></tr><tr><td>ग.पा. / न.पा</td><td>' . $death->municipality . '</td><td>दर्ता मिति</td><td>' . $death->entry_date . '</td></tr></table></div>';
         $html .= '<h5 style="text-align:center">मृतकको विवरण</h5>';
