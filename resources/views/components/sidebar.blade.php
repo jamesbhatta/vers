@@ -18,7 +18,7 @@
         <li class="nav-item bg-transparent">
             <a class="nav-link fontSize" href="{{ route('migration.index') }}" onmouseover="this.style.color='black'"
                 onmouseout="this.style.color='white'">
-                <i class="fa fa-users pr-3"></i>@lang('navigation.migration-notice-form')
+                <i class="fas fa-exchange-alt pr-3"></i>@lang('navigation.migration-notice-form')
             </a>
         </li>
         <li class="nav-item bg-transparent">
