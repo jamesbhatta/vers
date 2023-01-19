@@ -339,6 +339,6 @@ class MigrationController extends Controller
         $pdf->SetTitle('विवाहको सूचना फाराम');
         $pdf->WriteHTML($html);
 
-        $pdf->Output('marriage.pdf', 'I');
+        $pdf->Output('migration-notice.pdf', 'I');
     }
 }
