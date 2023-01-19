@@ -81,6 +81,8 @@
                                     <th>दर्ता मिति</th>
                                     <th>बसाई सराईको कारण</th>
                                     <th>बसाई सराईको मिति </th>
+                                    {{-- <th>कहाँ बाट सार्ने</th>
+                                    <th>कहाँ सर्ने</th> --}}
 
                                     <th class="text-right">ACTION</th>
                                 </tr>
@@ -425,6 +427,10 @@
                 }
 
                 $('#family_record').html(family_data);
+
+                var route = "{{ route('migration.print', 'id') }}";
+                route = route.replace('id', $(this).attr('id'));
+                $('#detail_print').attr("href", route);
 
             })
             .catch((error) => console.log(error));

@@ -26,7 +26,7 @@ class MigrationController extends Controller
     }
     public function index()
     {
-        $mysetting=Mysetting::get();
+        $mysetting = Mysetting::get();
         $family = Family::get();
         $migrationCertificates = MigrationCertificate::get();
         return view('migration-notice.index', compact('migrationCertificates', 'family', 'mysetting'));
@@ -87,7 +87,7 @@ class MigrationController extends Controller
     {
         $family = Family::get();
         $families = $migrationCertificate->families()->get();
-        return view('migration-notice.show', compact('migrationCertificate','families', 'family'));
+        return view('migration-notice.show', compact('migrationCertificate', 'families', 'family'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -101,10 +101,10 @@ class MigrationController extends Controller
     }
 
 
-    public function store(MigrationCertificate $migrationCertificate, Request  $request)
+    public function store(MigrationCertificate $migrationCertificate, Request $request)
     {
         // return $request;
-       $data = $request->validate([
+        $data = $request->validate([
             'after_province' => ['required'],
             'after_municipality' => ['required'],
             'after_district' => ['required'],
@@ -143,7 +143,7 @@ class MigrationController extends Controller
             $data['file'] = $request->file('file')->storeAs('image', $fileName);
         }
         // return $data;
-        $migrationCertificate =MigrationCertificate::create($data);
+        $migrationCertificate = MigrationCertificate::create($data);
         $migrationCertificate->save();
         return redirect()->route('migration.add-family', $migrationCertificate)->with('success', 'Data saved successfully');
     }
@@ -158,7 +158,7 @@ class MigrationController extends Controller
      */
     public function update(MigrationCertificate $migrationCertificate, Request $request)
     {
-       $data =$request->validate([
+        $data = $request->validate([
             'after_province' => ['required'],
             'after_municipality' => ['required'],
             'after_district' => ['required'],
@@ -217,91 +217,128 @@ class MigrationController extends Controller
 
     public function print(MigrationCertificate $migrationCertificate)
     {
-    //     $html = "<style>.center{font-family: kantipur;font-size: 15pt;} .kalimati{font-family: kalimati;font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;}</style>";
-    //     // $html .= '<h3>बसाईसराईको जानकारी खोज्नुहोस्</h3>';
-    //     $html .='<h6 style="text-align:center"> बसाईसराई सूचना फाराम</h6>';
-    //     $html .='<h6 style="text-align:center"> (अनुसूची-६ )</h6>';
-    //     $html .='<h6 style="text-align:center">(नियम-५ संग सम्बन्धित )</h6>';
-    //     $html .='<div class="row d-flex">
-    //     <div class="col-xl-5" style="text-align: justify;">
-    //         <h5 class="col-12  mt-1" for=""> श्री स्थानीय पंजीअधिकारी ज्यु,</h5>
-    //         <h5 class="col-12  mt-1" for="">
-    //             <i
-    //                 style="border-bottom:dashed; width:20px;">{{ $migrationCertificate->municipality }}</i>&nbsp;गा.वि.स./न.पा.
-    //         </h5>
-    //         <h2 class="col-12 mt-3"> स्थानीय पंजीअधिकारीको कार्यालय </h5>
-    //             <h5 class="col-12  mt-3" for=""> महोदय,</h5>
-    //             <h5 class="col-12  mt-1" for="" style="text-align:justify;"> निम्न लिखित विवरण खुलाई
-    //                 बसाई सराईको सूचना दिन आएको
-    //                 छु ।
-    //                 कानून
-    //                 अनुसार बसाई सराई दर्ता गरी पाउं । </h5>
-    //     </div>
-    //     <div class="col-lg-3 mt-3">
-    //         <table class="my_table my_table1 col-lg-12">
-    //             <tr>
-    //                 <th class="text-center"></th>
-    //                 <th class="text-center">नाम</th>
-    //                 <th class="text-center">नं.</th>
-    //             </tr>
-    //             <tr>
-    //                 <th class="text-center">प्रदेश</th>
-    //                 <td class="text-center" style="font-size: 12px">
-    //                     <i>{{ $migrationCertificate->province }}</i>
-    //                 <td>
+        $html = "<style>.kantipur{font-size: 15pt;} .kalimati{font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;} .dash{border-bottom: dashed 1px rgb(132, 132, 132);}</style>";
+        $html .= '<h1 style="text-align:center">बसाईसराई सूचना फाराम</h1>';
+        $html .= '<p style="text-align:center">(अनुसूची-६ )</p>';
+        $html .= '<p style="text-align:center">(नियम-५ संग सम्बन्धित )</p>';
+        $html .= '<div class="container"><div class="col-12"><table class="my_table col-12" style="border-collapse: collapse;"><tr><td>प्रदेश</td><td>' . $migrationCertificate->province . '</td><td rowspan="3" style="width: 20%"></td><td>स्थानीय पञ्जिकाधिकारी</td><td class="kantipur">' . $migrationCertificate->administrator . '</td></tr><tr><td>जिल्ला</td><td>' . $migrationCertificate->district . '</td><td>दर्ता न.</td><td>' . $migrationCertificate->reg_number . '</td></tr><tr><td>ग.पा. / न.पा</td><td>' . $migrationCertificate->vdc . '</td><td>दर्ता मिति</td><td>' . $migrationCertificate->entry_date . '</td></tr></table></div>';
+        $html .= '<h5 style="text-align:center">(१) बसाई सर्ने परिवारका सदस्यहरुको नाम/बसाई सराई व्यक्तिको</h5>';
+        $html .= ' <div class="col-xl-12">
+                        <table class="my_table col-12" style="width:100%;border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center" rowspan="2">क्र. स. </th>
+                                    <th style="text-align:center" rowspan="2">नाम ,थर</th>
+                                    <th style="text-align:center" rowspan="2"> उमेर</th>
+                                    <th style="text-align:center" rowspan="2">लिङ्ग</th>
+                                    <th style="text-align:center" rowspan="2">जन्म स्थान
+                                    </th>
+                                    <th style="text-align:center" rowspan="2">नागरिकता न.
+                                    </th>
+                                    <th style="text-align:center" colspan="2"
+                                        align="center">
+                                        ठेगाना</th>
+                                    <th style="text-align:center" rowspan="2">शैक्षिक
+                                        योग्यता</th>
+                                    <th style="text-align:center" rowspan="2">धर्म</th>
+                                    <th style="text-align:center" rowspan="2">मातृभाषा</th>
+                                    <th style="text-align:center" rowspan="2">कैफियत</th>
+                                </tr>
+                                <tr>
+                                    <th style="text-align:center">स्थायी</th>
+                                    <th style="text-align:center">अस्थायी</th>
+                                </tr>
+                            </thead><tbody>';
+        $num = '1';
+        foreach ($migrationCertificate->families as $p) {
+            $html .= '<tr>
+                <td>' . $num . '</td>
+                <td>' . $p->name . '</td>
+                <td>' . $p->age . '</td>
+                <td>' . $p->gender . '</td>
+                <td>' . $p->birthplace . '</td>
+                <td>' . $p->citizenship . '</td>
+                <td>' . $p->permanent_addres . '</td>
+                <td>' . $p->temporary_address . '</td>
+                <td>' . $p->education . '</td>
+                <td>' . $p->religion . '</td>
+                <td>' . $p->mothertongue . '</td>
+                <td>' . $p->description . '</td>
+            </tr>';
+            $num++;
+        }
+        $html .= '</tbody></table>
+                    </div>';
 
-    //             </tr>
-    //             <tr>
-    //                 <th class="text-center">जिल्ला</th>
-    //                 <td class="text-center" style="font-size: 12px">
-    //                     <i>{{ $migrationCertificate->district }}</i></th>
-    //                 <td class="text-center"></td>
-    //             </tr>
-    //             <tr>
-    //                 <th class="text-center">ग.पा./न.पा</th>
-    //                 <td class="text-center"style="font-size: 12px">
-    //                     <i>{{ $migrationCertificate->municipality }}</i></th>
-    //                 <td class="text-center"></td>
-    //             </tr>
-    //         </table>
-    //     </div>
-    //     <div class="col-lg-3 mt-3">
-    //         <table class="registar_table">
-    //             <tr>
-    //                 <th></th>
-    //                 <th>नाम:</th>
-    //                 <th>नं.</th>
-    //             </tr>
-    //             <tr>
-    //                 <td>स्थानीय पञ्जिकाधिकारी:</td>
-    //                 <td style="font-size: 12px;"><i>{{ $migrationCertificate->administrator }}</i></td>
-    //                 <td></td>
-    //             </tr>
-    //             <tr>
-    //                 <td>दर्ता न.</td>
-    //                 <td style="font-size: 12px"><i>{{ $migrationCertificate->reg_number }}</i></td>
-    //                 <td></td>
-    //             </tr>
-    //             <tr>
-    //                 <td>दर्ता मिति</td>
-    //                 <td><i>{{ $migrationCertificate->entry_date }}</i></td>
-    //                 <td></td>
-    //             </tr>
-    //         </table>
-    //     </div>
-    // </div>';
-    //     $pdf = new \Mpdf\Mpdf(['mode' => 'UTF-8', 'format' => 'A4-p', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
-    //     $pdf->SetTitle('मृत्युको सूचना फाराम');
-    //     $pdf->WriteHTML($html);
 
-    //     $pdf->Output('deadt.pdf', 'I');
+        $html .= '<div style="margin-top:30px">
+        <div style="text-align: justify" class="">
+            <div class="row" style="text-align: justify;">
+                (२) कहाँ सरी जाने &nbsp;<span class="dash">'.$migrationCertificate->after_district.'</span>
+                &nbsp;जिल्ला&nbsp;&nbsp;<span class="dash">'.$migrationCertificate->after_municipality.'</span>
+                &nbsp;न.पा./गा.वि.स. वडा नं. &nbsp;<span class="dash">'.$migrationCertificate->after_ward.'</span>
+                &nbsp;टोलको नाम
+                &nbsp;
+                <span class="dash">'.$migrationCertificate->after_village.'</span>
+                &nbsp;घर
+                नं &nbsp;<span class="dash">'.$migrationCertificate->after_houseno.'</span>
+            </div>
+            <br>
+            <div class="row" style="text-align: justify">
+                (३) कहाँ बाट सरी आएको&nbsp;
+                <span class="dash">'.$migrationCertificate->before_district.'</span>
+                &nbsp;जिल्ला &nbsp;<span class="dash">'.$migrationCertificate->before_municipality.'</span>
 
-        // $families = $migrationCertificate->families()->get();
-        // return $families;
-        //  return view('migration-notice.print', compact('migrationCertificate','families'));
-        // $pdf = PDF::loadView('migration-notice.print', ['migrationCertificate' => $migrationCertificate,'families' => $families]);
-        $pdf = Pdf::loadView('test-print');
-        return $pdf->stream();
-        return $pdf->download('migration.pdf');
+                &nbsp;  न.पा./गा.वि.स. वडा
+                नं. &nbsp;<span class="dash">'.$migrationCertificate->before_ward.'</span>
+                &nbsp;टोलको नाम &nbsp;<span class="dash">'.$migrationCertificate->before_village.'</span>
+                &nbsp;घर
+                नं &nbsp;<span class="dash">'.$migrationCertificate->before_houseno.'</span>
+                &nbsp;बसाई सराईको मिति &nbsp;<span class="dash">'.$migrationCertificate->migration_date.'</span>
+
+            </div> <br>
+
+            <div class="row">
+                <p style="text-align: justify">
+                    (४) बसाई सराईको कारण &nbsp;<span class="dash">'.$migrationCertificate->migration_reason.'</span>
+
+
+                </p>
+            </div>
+
+        </div>
+    </div>';
+        $html .= '<h5 style="text-align:center">साक्षीको विवरण</h5>';
+        $html .= '<div class="col-12">
+                    <table class="my_table col-12" style="width:100%;border-collapse: collapse;">
+                        <tr>
+                            <td>क</td>
+                            <td>नाम</td>
+                            <td class="kantipur">' . $migrationCertificate->relative_name . '</td>
+                        </tr>
+                        <tr>
+                            <td>ख</td>
+                            <td>मृतक संगको सम्बन्ध</td>
+                            <td class="kantipur">' . $migrationCertificate->relationship . '</td>
+                        </tr>
+                        <tr>
+                            <td>ग</td>
+                            <td>ठेगाना</td>
+                            <td class="kantipur">' . $migrationCertificate->relative_address . '</td>
+                        </tr>
+                        <tr>
+                            <td>घ</td>
+                            <td>मिति</td>
+                            <td>' . $migrationCertificate->date. '</td>
+                        </tr>
+                    </table>
+
+                </div>';
+        $html .= '</div>';
+        $pdf = new \Mpdf\Mpdf(['mode' => 'UTF-8', 'format' => 'A4-p', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
+        $pdf->SetTitle('विवाहको सूचना फाराम');
+        $pdf->WriteHTML($html);
+
+        $pdf->Output('marriage.pdf', 'I');
     }
 }
