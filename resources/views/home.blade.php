@@ -50,7 +50,7 @@
                         </a>
                     </div>
                 @endrole
-                <div class="row d-flex">
+                <div class="row d-flex col-12 ml-2">
                     <div class="col-xl-3">
                         <a href="{{ route('birth.index') }}" class="card text-decoration-none text-white bg-success p-3">
                             <div class="d-block">
@@ -100,6 +100,7 @@
                             </div>
                         </a>
                     </div>
+
                 </div>
             </div>
             {{-- <div class="box p-3" style="width: 50%">
