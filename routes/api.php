@@ -26,3 +26,4 @@ use App\Http\Controllers\DeathController;
 Route::get('fetch-death/{id}', 'DeathController@getDeath');
 Route::get('fetch-birth/{id}', 'BirthController@getBirth');
 Route::get('fetch-marriage/{id}', 'MarriageController@getMarriage');
+Route::get('fetch-migration/{id}', 'MigrationController@getMigration');

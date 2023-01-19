@@ -94,7 +94,7 @@
                     </div>
                     <h5 class="col-lg-12  mt-3">(१) बसाई सर्ने परिवारका सदस्यहरुको नाम/बसाई सराई व्यक्तिको</h5>
                     <div class="my_custom_table col-lg-12 mt-1">
-                        <table class="custom_table">
+                        <table class="custom_table col-12">
                             <tr>
                                 <th style="text-align:center" rowspan="2">क्र.स. </th>
                                 <th style="text-align:center" rowspan="2">नाम ,थर</th>

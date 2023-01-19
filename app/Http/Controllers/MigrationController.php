@@ -19,6 +19,11 @@ class MigrationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function getMigration($id)
+    {
+        $migrations = MigrationCertificate::with('families')->find($id);
+        return response()->json($migrations);
+    }
     public function index()
     {
         $mysetting=Mysetting::get();
