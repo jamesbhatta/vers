@@ -39,7 +39,6 @@
     </div>
 
     @include('layouts.partials.scripts')
-</body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
 <script>
@@ -113,7 +112,7 @@
 
     while (i < week.length) {
         console.log(week[i]);
-        var todayDate = new Date().toISOString().slice(0, 10);        
+        var todayDate = new Date().toISOString().slice(0, 10);
         if(week[i]==todayDate){
             break;
         }
@@ -172,4 +171,5 @@
   }
 });
 </script>
+</body>
 </html>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid" id="DivIdToPrint">
         <div class="p-3">
             <div class="container-fluid">
                 <nav aria-label="breadcrumb" class="d-flex justify-content-between">
@@ -17,6 +17,7 @@
                 <div class="row d-flex justify-content-end mx-1">
                     <a href="{{route('migration.print', $migrationCertificate)}}"  class="btn bg-[#1d4ed8] float-right text-lg font-medium text-white" type="submit"><i
                             class="fa fa-print" aria-hidden="true"></i>&nbsp;Print</a>
+                            <button type="button" id="print">Print local</button>
                 </div>
                 <div class="card p-3" id="myId">
                     <h3 class="text-center pb-2 font-weight-bold">@lang('navigation.migration-notice-form')</h3>
@@ -229,12 +230,26 @@
         }
     </style>
 @endpush
+{{--
 @push('scripts')
 <script>
     $(document).ready(function () {
         $('#print').click(function () {
-            window.print();
+            // console.log('Printtint');
+            // var divToPrint = document.getElementById('DivIdToPrint');
+
+            // var newWin=window.open('','Print-Window');
+
+            // newWin.document.open();
+
+            // // newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+            // // newWin.document.write(divToPrint.innerHTML);
+
+            // newWin.document.close();
+
+            // setTimeout(function(){newWin.close();},10);
+
         });
     });
 </script>
-@endpush
+@endpush --}}

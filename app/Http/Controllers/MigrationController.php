@@ -9,8 +9,8 @@ use App\Mysetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use PDF;
-
+// use PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class MigrationController extends Controller
 {
@@ -291,9 +291,12 @@ class MigrationController extends Controller
 
     //     $pdf->Output('deadt.pdf', 'I');
 
-        $families = $migrationCertificate->families()->get();
+        // $families = $migrationCertificate->families()->get();
+        // return $families;
         //  return view('migration-notice.print', compact('migrationCertificate','families'));
-        $pdf = PDF::loadView('migration-notice.print', compact('migrationCertificate','families'));
+        // $pdf = PDF::loadView('migration-notice.print', ['migrationCertificate' => $migrationCertificate,'families' => $families]);
+        $pdf = Pdf::loadView('test-print');
+        return $pdf->stream();
         return $pdf->download('migration.pdf');
     }
 }

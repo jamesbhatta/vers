@@ -103,9 +103,7 @@
                                             <button type="submit" class="action-btn text-danger"><i
                                                     class="far fa-trash-alt"></i></button>
                                         </form>
-                                        <a href="{{route('migration.show', $migrationCertificate)}}"
-                                            class="action-btn text-primary" id="btnPrint"><i class="fa fa-print" aria-hidden="true"></i></a>
-                                    </td>
+                                       </td>
                                 </tr>
                             @endforeach
                         </tbody>
