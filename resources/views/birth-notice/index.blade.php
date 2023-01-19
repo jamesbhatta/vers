@@ -86,6 +86,7 @@
                                 class="fas fa-plus-circle mr-2 mt-1"></i>@lang('navigation.add_new')</a>
                     </div>
                 </nav>
+                <hr>
                 <label class="font-weight-bold pb-2 border-bottom col-12" style="font-size: 20px;padding:0"></label>
                 @if (session()->has('success'))
                     <div class="mt-2 alert alert-success" id="my_alert" role="alert">
@@ -169,8 +170,8 @@
 
                 <div class="box mt-3">
                     <div class="box__body" style="width: 100%;overflow-x:scroll">
-                        {!! $dataTable->table() !!}
-                        {{-- <table class="table table-responsive-sm" id="myTable">
+                        {{-- {!! $dataTable->table() !!} --}}
+                        <table class="table table-responsive-sm" id="myTable">
                             <thead class="thead-light">
                                 <tr class="text-uppercase">
                                     <th>#</th>
@@ -219,7 +220,7 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                        </table> --}}
+                        </table>
                     </div>
                     {{-- =======modal===== --}}
                     <div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog"
@@ -510,5 +511,5 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
 <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
 <script src="/vendor/datatables/buttons.server-side.js"></script>
-{!! $dataTable->scripts() !!}
+{{-- {!! $dataTable->scripts() !!} --}}
 @endpush

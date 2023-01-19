@@ -22,10 +22,10 @@ class BirthController extends Controller
      */
     public function index(BirthsDataTable $dataTable)
     {
-        return $dataTable->render('birth-notice.index');
-        // $title = "जन्म दर्ता सूचना फाराम ";
-        // $births = Birth::orderBy('id', 'desc')->get();
-        // return view('birth-notice.index', compact('births', 'title'));
+        // return $dataTable->render('birth-notice.index');
+        $title = "जन्म दर्ता सूचना फाराम ";
+        $births = Birth::orderBy('id', 'desc')->get();
+        return view('birth-notice.index', compact('births', 'title'));
     }
 
     /**

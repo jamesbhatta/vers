@@ -29,6 +29,7 @@
 
 
                         <h4 class="font-weight-bold pb-3">नवजात शिशु दर्ता विवरण </h4>
+
                         {{-- @livewire('municipality', ['death' => $birth]) --}}
 
                         <div class="card p-3">
