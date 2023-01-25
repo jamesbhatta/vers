@@ -233,7 +233,7 @@
                                 <h1 class="h2 text-center py-5 font-weight-bold">जन्मको सूचना फाराम </h1>
                                 <div class="container">
                                     <div class="col-12">
-                                        <table class="my_table col-12">
+                                        <table class="my_table col-12" id="myTable">
                                             <tr>
                                                 <td>प्रदेश</td>
                                                 <td id="province"></td>

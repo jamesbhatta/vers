@@ -29,71 +29,51 @@
                 <h3 class="font-weight-bold text-uppercase">{{ App\Mysetting::first()->default_municipality }}</h3>
             </div> --}}
             <div class="row pb-5">
-                @role('super-admin')
-                    <div class="col-xl-3 col-lg-4">
-                        <a href="{{ route('user.index') }}" class="card text-decoration-none text-white p-3 bg-info">
-                            {{-- <div class="d-flex">
-                                <div class="p-3"><i class="fas fa-users fa-3x"></i></div>
-                                <div class="pl-3 pt-4" style="line-height: 15px">
-                                    <h3 class="font-weight-bold text-uppercase">Total users</h3><br>
-                                    <label class="px-3">{{ App\User::count() }}</label>
-                                </div>
-                            </div> --}}
-                            <div class="d-block">
-                                <div class="d-flex">
-                                    <div><i class="fas fa-users fa-4x"></i></div>
-                                    <div class="pt-1 col-10 text-right"><label class="px-5 col-12 "
-                                            style="font-size: 35px;">{{ App\User::count() }}</label></div>
-                                </div>
-                                <div class="font-weight-bold text-uppercase mt-2">Total Users</div>
-                            </div>
-                        </a>
-                    </div>
-                @endrole
+
                 <div class="row d-flex col-12 ml-2">
-                    <div class="col-xl-3">
+                    <div class="col-xl-3 col-lg-3">
                         <a href="{{ route('birth.index') }}" class="card text-decoration-none text-white bg-success p-3">
                             <div class="d-block">
                                 <div class="d-flex">
-                                    <div><i class="fas fa-users fa-4x"></i></div>
-                                    <div class="pt-1 col-10 text-right"><label class="px-5 col-12 "
+                                    <div><i class="fas fa-users fa-3x"></i></div>
+                                    <div class="pt-1 col-10 text-right"><label class="px-2 col-12 "
                                             style="font-size: 35px;">{{ App\Birth::count() }}</label></div>
                                 </div>
                                 <div class="font-weight-bold text-uppercase mt-2">कुल जन्म दर्ता</div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-xl-3">
+                    <div class="col-xl-3 col-lg-3">
                         <a href="{{ route('marriage.index') }}" class="card text-decoration-none text-white bg-warning p-3">
                             <div class="d-block">
                                 <div class="d-flex">
-                                    <div><i class="fas fa-users fa-4x"></i></div>
-                                    <div class="pt-1 col-10 text-right"><label class="px-5 col-12 "
+                                    <div><i class="fas fa-users fa-3x"></i></div>
+                                    <div class="pt-1 col-10 text-right"><label class="px-2 col-12 "
                                             style="font-size: 35px;">{{ App\Marriage::count() }}</label></div>
                                 </div>
                                 <div class="font-weight-bold text-uppercase mt-2">कुल विवाह दर्ता</div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-xl-3">
+                    <div class="col-xl-3 col-lg-3">
                         <a href="{{ route('death.index') }}" class="card text-decoration-none text-white bg-danger p-3">
                             <div class="d-block">
                                 <div class="d-flex">
-                                    <div><i class="fas fa-users fa-4x"></i></div>
-                                    <div class="pt-1 col-10 text-right"><label class="px-5 col-12 "
+                                    <div><i class="fas fa-users fa-3x"></i></div>
+                                    <div class="pt-1 col-10 text-right"><label class="px-2 col-12 "
                                             style="font-size: 35px;">{{ App\Death::count() }}</label></div>
                                 </div>
                                 <div class="font-weight-bold text-uppercase mt-2">कुल मृत्यु दर्ता</div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-xl-3">
+                    <div class="col-xl-3 col-lg-3">
                         <a href="{{ route('migration.index') }}"
                             class="card text-decoration-none text-white bg-[#4338ca] p-3">
                             <div class="d-block">
                                 <div class="d-flex">
-                                    <div><i class="fas fa-users fa-4x"></i></div>
-                                    <div class="pt-1 col-10 text-right"><label class="px-5 col-12 "
+                                    <div><i class="fas fa-users fa-3x"></i></div>
+                                    <div class="pt-1 col-10 text-right"><label class="px-2 col-12 "
                                             style="font-size: 35px;">{{ App\MigrationCertificate::count() }}</label></div>
                                 </div>
                                 <div class="font-weight-bold text-uppercase mt-2">कुल बसाईसराई दर्ता</div>

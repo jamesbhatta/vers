@@ -14,7 +14,6 @@
                                 class="fas fa-plus-circle mr-2"></i>@lang('navigation.add_new')</a>
                     </div>
                 </nav>
-                {{-- <hr> --}}
                 <label class="font-weight-bold pb-4 border-bottom col-12" style="font-size: 20px;padding:0"></label>
 
                 @if (session()->has('success'))
@@ -81,9 +80,6 @@
                                     <th>दर्ता मिति</th>
                                     <th>बसाई सराईको कारण</th>
                                     <th>बसाई सराईको मिति </th>
-                                    {{-- <th>कहाँ बाट सार्ने</th>
-                                    <th>कहाँ सर्ने</th> --}}
-
                                     <th class="text-right">ACTION</th>
                                 </tr>
                             </thead>
@@ -118,7 +114,6 @@
                             </tbody>
                         </table>
                     </div>
-                    {{-- Bootstrap modal --}}
                     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
                         aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -133,49 +128,8 @@
                                                 <h3 class="text-center pb-2 font-weight-bold">@lang('navigation.migration-notice-form')</h3>
                                                 <h6 class="col-12  t-bold  text-center mt-0"> (अनुसूची-६ )</h6>
                                                 <h6 class="col-12  text-center mt-1">(नियम-५ संग सम्बन्धित ) </h6>
-                                                {{-- <label class="col-12  text-center mt-2" for=""> (अनुसूची-६ ) (नियम-५ संग सम्बन्धित ) </label> --}}
                                                 <div class="row d-flex">
-                                                    {{-- <div class="col-xl-5" style="text-align: justify;">
-                                                        <h5 class="col-12  mt-1" for=""> श्री स्थानीय पंजीअधिकारी ज्यु,</h5>
-                                                        <h5 class="col-12  mt-1" for="">
-                                                            <i
-                                                                style="border-bottom:dashed; width:20px;">{{ $migrationCertificate->municipality }}</i>&nbsp;गा.वि.स./न.पा.
-                                                        </h5>
-                                                        <h2 class="col-12 mt-3"> स्थानीय पंजीअधिकारीको कार्यालय </h5>
-                                                            <h5 class="col-12  mt-3" for=""> महोदय,</h5>
-                                                            <h5 class="col-12  mt-1" for="" style="text-align:justify;"> निम्न लिखित विवरण खुलाई
-                                                                बसाई सराईको सूचना दिन आएको
-                                                                छु ।
-                                                                कानून
-                                                                अनुसार बसाई सराई दर्ता गरी पाउं । </h5>
-                                                    </div> --}}
                                                     <div class="col-lg-12 mt-3">
-                                                        {{-- <table class="my_table my_table1 col-lg-12">
-                                                            <tr>
-                                                                <th class="text-center"></th>
-                                                                <th class="text-center">नाम</th>
-                                                                <th class="text-center">नं.</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <th class="text-center">प्रदेश</th>
-                                                                <td class="text-center" style="font-size: 12px">
-                                                                    <i>{{ $migrationCertificate->province }}</i>
-                                                                <td>
-
-                                                            </tr>
-                                                            <tr>
-                                                                <th class="text-center">जिल्ला</th>
-                                                                <td class="text-center" style="font-size: 12px">
-                                                                    <i>{{ $migrationCertificate->district }}</i></th>
-                                                                <td class="text-center"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th class="text-center">ग.पा./न.पा</th>
-                                                                <td class="text-center"style="font-size: 12px">
-                                                                    <i>{{ $migrationCertificate->municipality }}</i></th>
-                                                                <td class="text-center"></td>
-                                                            </tr>
-                                                        </table> --}}
                                                         <table class="my_table col-12">
                                                             <tr>
                                                                 <td>प्रदेश</td>
@@ -199,34 +153,12 @@
                                                         </table>
                                                     </div>
                                                     <div class="col-lg-3 mt-3">
-                                                        {{-- <table class="registar_table">
-                                                            <tr>
-                                                                <th></th>
-                                                                <th>नाम:</th>
-                                                                <th>नं.</th>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>स्थानीय पञ्जिकाधिकारी:</td>
-                                                                <td style="font-size: 12px;"><i>{{ $migrationCertificate->administrator }}</i></td>
-                                                                <td></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>दर्ता न.</td>
-                                                                <td style="font-size: 12px"><i>{{ $migrationCertificate->reg_number }}</i></td>
-                                                                <td></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>दर्ता मिति</td>
-                                                                <td><i>{{ $migrationCertificate->entry_date }}</i></td>
-                                                                <td></td>
-                                                            </tr>
-                                                        </table> --}}
                                                     </div>
                                                 </div>
                                                 <h5 class="col-lg-12  mt-3">(१) बसाई सर्ने परिवारका सदस्यहरुको नाम/बसाई
                                                     सराई व्यक्तिको</h5>
                                                 <div class="col-12" style="overflow-x: scroll">
-                                                    <table class="my_table">
+                                                    <table class="my_table" id="myTable">
                                                         <thead>
                                                             <tr>
                                                                 <th style="text-align:center" rowspan="2">क्र. स. </th>
@@ -255,7 +187,6 @@
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                                {{-- </div> --}}
                                                 <div class="p-3  mt-2">
                                                     <div style="text-align: justify" class="">
                                                         <div class="row" style="text-align: justify;">
@@ -346,7 +277,7 @@
                                                 </div>
                                                 <div class="col-lg-12 mt-1">
                                                     <h3 class="text-center h4 font-weight-bold ">सम्बन्धित फाइल</h3>
-                                                    <img src="{{ asset('storage') }}{{ '/' }}{{ $migrationCertificate->file }}"
+                                                    <img src="" id="related_file"
                                                         class="img-fluid m-auto" alt="सम्बन्धित फाइल फेला परेन"
                                                         style="width:80%;position:relative; height:40%;">
 
@@ -425,6 +356,13 @@
                     family_data += "<td>" + response.data.families[i].description + "</td>";
                     family_data += "</td>";
                 }
+
+                var img = response.data.file;
+                console.log(response.data.file);
+                var half_src = "{{ asset('storage') }}{{ '/' }}";
+                var src = half_src.concat(img, '');
+                $('#related_file').attr('src', src);
+
 
                 $('#family_record').html(family_data);
 

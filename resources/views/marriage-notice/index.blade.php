@@ -261,7 +261,7 @@
 
 
                                     <div class="col-xl-12">
-                                        <table class="my_table col-12">
+                                        <table class="my_table col-12" id="myTable">
                                             <tr>
                                                 <th>विवरण</th>
                                                 <th>दुलाहाको विवरण</th>
