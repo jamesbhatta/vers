@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SettingsSeeder::class);
         $this->call(MunicipalitySeeder::class);
         $this->call(VDCSeeder::class);
+        $this->call(MotherTongueSeeder::class);
         if (app()->environment() == 'production') {
         } else {
         }

@@ -39,7 +39,7 @@ class CreateMigrationCertificatesTable extends Migration
             $table->string('before_municipality');
             $table->string('before_vdc')->nullable();
             $table->string('before_village');
-            $table->string('before_houseno');
+            $table->string('before_houseno')->nullable();
             $table->string('before_ward');
             $table->string('migration_reason');
             $table->string('migration_date');
