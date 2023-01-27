@@ -38,7 +38,6 @@ class Municipality extends Component
 
     public function render()
     {
-        // $this->foo = $this->test;
         $municipalities =\App\Municipality::get();
         $vdcs = Vdc::get();
         return view('livewire.municipality', compact(['municipalities', 'vdcs']));

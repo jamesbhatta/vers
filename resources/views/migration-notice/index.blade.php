@@ -134,7 +134,7 @@
                                                             <tr>
                                                                 <td>प्रदेश</td>
                                                                 <td id="province"></td>
-                                                                <td rowspan="3" style="width: 20%"></td>
+                                                                {{-- <td rowspan="3" style="width: 0%"></td> --}}
                                                                 <td>स्थानीय पञ्जिकाधिकारी</td>
                                                                 <td class="myText" id="administrator"></td>
                                                             </tr>

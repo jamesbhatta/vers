@@ -17,7 +17,7 @@ class CreateFamiliesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('birthplace');
-            $table->string('citizenship');
+            $table->string('citizenship')->nullable();
             $table->string('education');
             $table->string('permanent_addres');
             $table->string('temporary_address');
@@ -25,7 +25,7 @@ class CreateFamiliesTable extends Migration
             $table->string('age');
             $table->string('gender');
             $table->string('mothertongue');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->unsignedBigInteger('migration_certificate_id');
             $table->timestamps();
         });

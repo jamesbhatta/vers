@@ -195,12 +195,12 @@
                                         <td>{{ $loop->iteration }}</td>
 
                                         <td>{{ $marriage->reg_number }}</td>
-                                        <td class="myText">{{ $marriage->bride_name }}</td>
-                                        <td class="myText">{{ $marriage->bride_grandfather_name }}</td>
-                                        <td class="myText">{{ $marriage->bride_father_name }}</td>
-                                        <td class="myText">{{ $marriage->groom_name }}</td>
-                                        <td class="myText">{{ $marriage->groom_grandfather_name }}</td>
-                                        <td class="myText">{{ $marriage->groom_father_name }}</td>
+                                        <td >{{ $marriage->bride_name }}</td>
+                                        <td >{{ $marriage->bride_grandfather_name }}</td>
+                                        <td >{{ $marriage->bride_father_name }}</td>
+                                        <td >{{ $marriage->groom_name }}</td>
+                                        <td >{{ $marriage->groom_grandfather_name }}</td>
+                                        <td >{{ $marriage->groom_father_name }}</td>
                                         <td class="text-right">
                                             <a class="action-btn text-primary show" id="{{ $marriage->id }}"
                                                 data-toggle="modal" data-target=".bd-example-modal-lg"
@@ -238,9 +238,9 @@
                                             <tr>
                                                 <td>प्रदेश</td>
                                                 <td id="province"></td>
-                                                <td rowspan="3" style="width: 20%"></td>
+                                                {{-- <td rowspan="3" style="width: 20%"></td> --}}
                                                 <td>स्थानीय पञ्जिकाधिकारी</td>
-                                                <td class="myText" id="administrator"></td>
+                                                <td  id="administrator"></td>
                                             </tr>
                                             <tr>
                                                 <td>जिल्ला</td>
@@ -269,8 +269,8 @@
                                             </tr>
                                             <tr>
                                                 <td>नाम,थर</td>
-                                                <td class="myText" id="bride_name"></td>
-                                                <td class="myText" id="groom_name"></td>
+                                                <td  id="bride_name"></td>
+                                                <td  id="groom_name"></td>
                                             </tr>
                                             <tr>
                                                 <td>जन्म मिति</td>
@@ -279,8 +279,8 @@
                                             </tr>
                                             <tr>
                                                 <td>जन्म भएको देश</td>
-                                                <td class="myText" id="bride_birth_country"></td>
-                                                <td class="myText" id="groom_birth_country"></td>
+                                                <td  id="bride_birth_country"></td>
+                                                <td  id="groom_birth_country"></td>
                                             </tr>
                                             <tr>
                                                 <td>नागरिकता (ना.प्र.नं)</td>
@@ -294,13 +294,13 @@
                                             </tr>
                                             <tr>
                                                 <td>नागरिकता लिएको जिल्ला</td>
-                                                <td class="myText" id="bride_citizenship_district"></td>
-                                                <td class="myText" id="groom_citizenship_district"></td>
+                                                <td  id="bride_citizenship_district"></td>
+                                                <td  id="groom_citizenship_district"></td>
                                             </tr>
                                             <tr>
                                                 <td>स्थाई ठेगाना</td>
-                                                <td class="myText" id="bride_temp_address"></td>
-                                                <td class="myText" id="groom_temp_address"></td>
+                                                <td  id="bride_temp_address"></td>
+                                                <td  id="groom_temp_address"></td>
                                             </tr>
                                             <tr>
                                                 <td>शिक्षा</td>
@@ -314,18 +314,18 @@
                                             </tr>
                                             <tr>
                                                 <td>मातृभाषा</td>
-                                                <td class="myText" id="bride_mother_tongue"></td>
-                                                <td class="myText" id="groom_mother_tongue"></td>
+                                                <td  id="bride_mother_tongue"></td>
+                                                <td  id="groom_mother_tongue"></td>
                                             </tr>
                                             <tr>
                                                 <td>बाजेको नाम</td>
-                                                <td class="myText" id="bride_grandfather_name"></td>
-                                                <td class="myText" id="groom_grandfather_name"></td>
+                                                <td  id="bride_grandfather_name"></td>
+                                                <td  id="groom_grandfather_name"></td>
                                             </tr>
                                             <tr>
                                                 <td>बाबुको नाम</td>
-                                                <td class="myText" id="bride_father_name"></td>
-                                                <td class="myText" id="groom_father_name"></td>
+                                                <td  id="bride_father_name"></td>
+                                                <td  id="groom_father_name"></td>
                                             </tr>
                                             <tr>
                                                 <td>पूर्व वैवाहिक स्थिति</td>
@@ -342,17 +342,17 @@
                                             <tr>
                                                 <td>क</td>
                                                 <td>नाम</td>
-                                                <td class="myText" id="relative_name"></td>
+                                                <td  id="relative_name"></td>
                                             </tr>
                                             <tr>
                                                 <td>ख</td>
                                                 <td>मृतक संगको सम्बन्ध</td>
-                                                <td class="myText" id="relationship"></td>
+                                                <td  id="relationship"></td>
                                             </tr>
                                             <tr>
                                                 <td>ग</td>
                                                 <td>ठेगाना</td>
-                                                <td class="myText" id="relative_address"></td>
+                                                <td  id="relative_address"></td>
                                             </tr>
                                             <tr>
                                                 <td>घ</td>

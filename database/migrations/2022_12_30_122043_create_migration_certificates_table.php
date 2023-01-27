@@ -22,7 +22,7 @@ class CreateMigrationCertificatesTable extends Migration
             $table->string('after_vdc')->nullable();
             $table->string('after_village');
             $table->string('after_ward');
-            $table->string('after_houseno');
+            $table->string('after_houseno')->nullable();
 
             //7
             $table->string('province');

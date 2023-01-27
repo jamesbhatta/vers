@@ -25,6 +25,19 @@ class MigrationFromAddress extends Component
 
             $this->municipality = $this->migrationFromAddress->before_municipality;
         }
+
+        if (old('before_province')) {
+            $this->province = old('before_province');
+        }
+        if (old('before_district')) {
+            $this->district = old('before_district');
+        }
+        if (old('before_municipality')) {
+            $this->municipality = old('before_municipality');
+        }
+        if (old('before_vdc')) {
+            $this->vdc = old('before_vdc');
+        }
     }
     public function render()
     {

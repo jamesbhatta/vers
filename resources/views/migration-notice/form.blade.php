@@ -34,13 +34,8 @@
                         <h4 class="font-weight-bold py-3">क. कहाँ बाट सरी आएको</h4>
 
                         <div class="card p-3">
-                            {{-- <h3 class="text-left h5 font-weight-bold p-1">क. कहाँ बाट सरी आएको</h3> --}}
-                            {{-- <hr> --}}
-                            {{-- <div class="row mt-3 p-3" style="line-height: 3px">
-                                <div class="col-lg-12"> --}}
+
                             <livewire:migration-from-address :migrationFromAddress="$migrationCertificate" />
-                            {{-- </div>
-                            </div> --}}
                             <div class="row">
                                 <div class="form-group col-lg-3">
                                     <label for=""><span class="text-danger">*</span>&nbsp;गाउँ/टोलको नाम</label>

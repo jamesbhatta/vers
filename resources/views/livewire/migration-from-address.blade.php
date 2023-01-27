@@ -25,7 +25,6 @@
             <small class="text-danger">{{ $message }}</small>
         @enderror
     </div>
-
     <div class="form-group col-3">
         <label for=""><span class="text-danger">*</span>&nbspजिल्ला </label>
         <select class="custom-select" name="before_district" wire:model="district">

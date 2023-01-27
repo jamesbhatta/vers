@@ -192,12 +192,12 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $birth->reg_number }}</td>
-                                        <td class="myText">{{ $birth->name }}</td>
+                                        <td>{{ $birth->name }}</td>
                                         <td>{{ $birth->gender }}</td>
                                         <td>{{ $birth->dob }}</td>
-                                        <td class="myText">{{ $birth->father_name }}</td>
-                                        <td class="myText">{{ $birth->mother_name }}</td>
-                                        <td class="myText">{{ $birth->grandfather_name }}</td>
+                                        <td>{{ $birth->father_name }}</td>
+                                        <td>{{ $birth->mother_name }}</td>
+                                        <td>{{ $birth->grandfather_name }}</td>
                                         <td>{{ $birth->birth_place }}</td>
 
                                         <td class="text-nowrap text-right">
@@ -237,9 +237,9 @@
                                             <tr>
                                                 <td>प्रदेश</td>
                                                 <td id="province"></td>
-                                                <td rowspan="3" style="width: 20%"></td>
+                                                {{-- <td rowspan="3" style="width: 20%"></td> --}}
                                                 <td>स्थानीय पञ्जिकाधिकारी</td>
-                                                <td class="myText" id="administrator"></td>
+                                                <td  id="administrator"></td>
                                             </tr>
                                             <tr>
                                                 <td>जिल्ला</td>
@@ -262,7 +262,7 @@
                                         <table class="my_table col-12">
                                             <tr>
                                                 <td>नाम</td>
-                                                <td class="myText" id="name"></td>
+                                                <td  id="name"></td>
                                             </tr>
                                             <tr>
                                                 <td>जन्म मिति</td>
@@ -286,7 +286,7 @@
                                             </tr>
                                             <tr>
                                                 <td>नवजात शिशुको हजुरबुबाको नाम</td>
-                                                <td class="myText" id="grandfather_name"></td>
+                                                <td  id="grandfather_name"></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -302,13 +302,13 @@
                                             </tr>
                                             <tr>
                                                 <td>स्थायी ठेगाना</td>
-                                                <td class="myText" id="father_parmanent_address"></td>
-                                                <td class="myText" id="mother_parmanent_address"></td>
+                                                <td  id="father_parmanent_address"></td>
+                                                <td  id="mother_parmanent_address"></td>
                                             </tr>
                                             <tr>
                                                 <td>अस्थायी ठेगाना</td>
-                                                <td class="myText" id="father_temporary_address"></td>
-                                                <td class="myText" id="mother_temporary_address"></td>
+                                                <td  id="father_temporary_address"></td>
+                                                <td  id="mother_temporary_address"></td>
                                             </tr>
                                             <tr>
                                                 <td>शिशु जन्मिदाको उमेर</td>
@@ -317,8 +317,8 @@
                                             </tr>
                                             <tr>
                                                 <td>जन्म भएको देश</td>
-                                                <td class="myText" id="father_country_where_baby_born"></td>
-                                                <td class="myText" id="mother_country_where_baby_born"></td>
+                                                <td  id="father_country_where_baby_born"></td>
+                                                <td  id="mother_country_where_baby_born"></td>
                                             </tr>
                                             <tr>
                                                 <td>नागरिकता(ना.प्र.नं.)</td>
@@ -337,13 +337,13 @@
                                             </tr>
                                             <tr>
                                                 <td>मातृभाषा</td>
-                                                <td class="myText" id="father_mother_toung"></td>
-                                                <td class="myText" id="mother_mother_toung"></td>
+                                                <td  id="father_mother_toung"></td>
+                                                <td  id="mother_mother_toung"></td>
                                             </tr>
                                             <tr>
                                                 <td>पेशा</td>
-                                                <td class="myText" id="father_occupation"></td>
-                                                <td class="myText" id="mother_occupation"></td>
+                                                <td  id="father_occupation"></td>
+                                                <td  id="mother_occupation"></td>
                                             </tr>
                                             <tr>
                                                 <td>यो शिशु समेत गरी हाल सम्म जन्मेको सन्तान संख्या</td>
@@ -374,17 +374,17 @@
                                             <tr>
                                                 <td>क</td>
                                                 <td>नाम</td>
-                                                <td class="myText" id="relative_name"></td>
+                                                <td  id="relative_name"></td>
                                             </tr>
                                             <tr>
                                                 <td>ख</td>
                                                 <td>मृतक संगको सम्बन्ध</td>
-                                                <td class="myText" id="relationship"></td>
+                                                <td  id="relationship"></td>
                                             </tr>
                                             <tr>
                                                 <td>ग</td>
                                                 <td>ठेगाना</td>
-                                                <td class="myText" id="relative_address"></td>
+                                                <td  id="relative_address"></td>
                                             </tr>
                                             <tr>
                                                 <td>घ</td>

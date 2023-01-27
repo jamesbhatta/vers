@@ -189,10 +189,10 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $death->entry_date }}</td>
-                                    <td class="myText">{{ $death->name }}</td>
+                                    <td>{{ $death->name }}</td>
                                     <td>{{ $death->dob }}</td>
                                     <td>{{ $death->death_date }}</td>
-                                    <td class="myText">{{ $death->death_place }}</td>
+                                    <td>{{ $death->death_place }}</td>
                                     <td>{{ $death->cause_death }}</td>
                                     <td>{{ $death->marital_status }}</td>
                                     <td class="text-right">
@@ -236,9 +236,9 @@
                                         <tr>
                                             <td>प्रदेश</td>
                                             <td id="province"></td>
-                                            <td rowspan="3" style="width: 20%"></td>
+                                            {{-- <td rowspan="3" style="width: 20%"></td> --}}
                                             <td>स्थानीय पञ्जिकाधिकारी</td>
-                                            <td class="myText" id="administrator"></td>
+                                            <td id="administrator" style="font-size: 18px"></td>
                                         </tr>
                                         <tr>
                                             <td>जिल्ला</td>
@@ -259,8 +259,8 @@
                                     <table class="my_table col-12">
                                         <tr>
                                             <td class="text-center">क</td>
-                                            <td>नाम</td>
-                                            <td class="myText" id="name"></td>
+                                            <td style="font-size: 18px">नाम</td>
+                                            <td  id="name"></td>
                                             <td class="text-center">ख</td>
                                             <td>लिङ्ग</td>
                                             <td id="gender"></td>
@@ -277,10 +277,10 @@
                                         <tr>
                                             <td class="text-center">ङ</td>
                                             <td>मरेको ठाउँ</td>
-                                            <td class="myText" id="death_place"></td>
+                                            <td  id="death_place"></td>
                                             <td class="text-center">च</td>
-                                            <td class="myText">जन्म भएको देश</td>
-                                            <td class="myText" id="birth_country"></td>
+                                            <td>जन्म भएको देश</td>
+                                            <td id="birth_country"></td>
                                         </tr>
                                         <tr>
                                             <td class="text-center">छ</td>
@@ -288,7 +288,7 @@
                                             <td id="citizenship_number"></td>
                                             <td class="text-center">ज</td>
                                             <td>मृतकको स्थाई ठेगाना</td>
-                                            <td class="myText" id="address"></td>
+                                            <td  id="address"></td>
                                         </tr>
                                         <tr>
                                             <td class="text-center">झ</td>
@@ -301,7 +301,7 @@
                                         <tr>
                                             <td class="text-center">ट</td>
                                             <td>मातृभाषा</td>
-                                            <td class="myText" id="mother_tongue"></td>
+                                            <td  id="mother_tongue"></td>
                                             <td class="text-center">ठ</td>
                                             <td>धर्म</td>
                                             <td id="religion"></td>
@@ -309,15 +309,15 @@
                                         <tr>
                                             <td class="text-center">ड</td>
                                             <td>हजुरबुबाको नाम</td>
-                                            <td class="myText" id="grandfather_name"></td>
+                                            <td  id="grandfather_name"></td>
                                             <td class="text-center">ढ</td>
                                             <td>बुबाको नाम</td>
-                                            <td class="myText" id="father_name"></td>
+                                            <td  id="father_name"></td>
                                         </tr>
                                         <tr>
                                             <td class="text-center">ण</td>
                                             <td>पति/पत्नीको नाम</td>
-                                            <td class="myText" id="spouse"></td>
+                                            <td  id="spouse"></td>
                                             <td class="text-center">त</td>
                                             <td>मृत्युको कारण</td>
                                             <td id="cause_death"></td>
@@ -332,17 +332,17 @@
                                         <tr>
                                             <td>क</td>
                                             <td>नाम</td>
-                                            <td class="myText" id="relative_name"></td>
+                                            <td  id="relative_name"></td>
                                         </tr>
                                         <tr>
                                             <td>ख</td>
                                             <td>मृतक संगको सम्बन्ध</td>
-                                            <td class="myText" id="relationship"></td>
+                                            <td  id="relationship"></td>
                                         </tr>
                                         <tr>
                                             <td>ग</td>
                                             <td>ठेगाना</td>
-                                            <td class="myText" id="relative_address"></td>
+                                            <td  id="relative_address"></td>
                                         </tr>
                                         <tr>
                                             <td>घ</td>
