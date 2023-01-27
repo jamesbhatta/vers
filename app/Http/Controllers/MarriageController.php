@@ -175,7 +175,7 @@ class MarriageController extends Controller
             $marriage = $marriage->where('groom_father_name', 'like', '%' . $request->groom_father_name . '%');
         }
         $marriage = $marriage->orderBy('id','desc')->get();
-        $html = "<style>.kantipur{font-size: 11pt;} .kalimati{font-size: 10pt;}</style>";
+        $html = "<style>.kantipur{} .kalimati{font-size: 10pt;}</style>";
 
         $html .= '<h1 style="text-align:center">विवाहको सूचना फाराम</h1>';
         $html .= '<table border="1" cellspacing="0" cellspadding="0" width="100%"><thead class="thead-light" >
@@ -196,12 +196,12 @@ class MarriageController extends Controller
                         $html.='<tr align="center">
                             <td class="kalimati">'.$num.'</td>
                             <td class="kalimati">'.$p->reg_number.'</td>
-                            <td class="kantipur">'.$p->bride_name.'</td>
-                            <td class="kantipur">'.$p->bride_grandfather_name.'</td>
-                            <td class="kantipur">'.$p->bride_father_name.'</td>
-                            <td class="kantipur">'.$p->groom_name.'</td>
-                            <td class="kantipur">'.$p->groom_grandfather_name.'</td>
-                            <td class="kantipur">'.$p->groom_father_name.'</td>
+                            <td >'.$p->bride_name.'</td>
+                            <td >'.$p->bride_grandfather_name.'</td>
+                            <td >'.$p->bride_father_name.'</td>
+                            <td >'.$p->groom_name.'</td>
+                            <td >'.$p->groom_grandfather_name.'</td>
+                            <td >'.$p->groom_father_name.'</td>
 
                         <tr>';
                         $num++;
@@ -229,8 +229,8 @@ class MarriageController extends Controller
     {
         $html = "<style>.kantipur{font-size: 15pt;} .kalimati{font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;}</style>";
         $html .= '<h1 style="text-align:center">विवाहको सूचना फाराम</h1>';
-        $html .= '<div class="container"><div class="col-12"><table class="my_table col-12" style="border-collapse: collapse;"><tr><td>प्रदेश</td><td>' . $marriage->province . '</td><td rowspan="3" style="width: 20%"></td><td>स्थानीय पञ्जिकाधिकारी</td><td class="kantipur">' . $marriage->administrator . '</td></tr><tr><td>जिल्ला</td><td>' . $marriage->district . '</td><td>दर्ता न.</td><td>' . $marriage->reg_number . '</td></tr><tr><td>ग.पा. / न.पा</td><td>' . $marriage->municipality . '</td><td>दर्ता मिति</td><td>' . $marriage->entry_date . '</td></tr></table></div>';
-        $html .= '<h5 style="text-align:center">दुलाहा-दुलहीको विवरण</h5>';
+        $html .= '<div class="container"><div class="col-12"><table class="my_table col-12" style="border-collapse: collapse;width:100%"><tr><td>प्रदेश</td><td>' . $marriage->province . '</td><td>स्थानीय पञ्जिकाधिकारी</td><td >' . $marriage->administrator . '</td></tr><tr><td>जिल्ला</td><td>' . $marriage->district . '</td><td>दर्ता न.</td><td>' . $marriage->reg_number . '</td></tr><tr><td>ग.पा. / न.पा</td><td>' . $marriage->municipality . '</td><td>दर्ता मिति</td><td>' . $marriage->entry_date . '</td></tr></table></div>';
+        $html .= '<h3 style="text-align:center">दुलाहा-दुलहीको विवरण</h3>';
         $html .= ' <div class="col-xl-12">
                         <table class="my_table col-12" style="width:100%;border-collapse: collapse;">
                             <tr>
@@ -240,8 +240,8 @@ class MarriageController extends Controller
                             </tr>
                             <tr>
                                 <td>नाम,थर</td>
-                                <td class="kantipur">'.$marriage->bride_name.'</td>
-                                <td class="kantipur">'.$marriage->groom_name.'</td>
+                                <td >'.$marriage->bride_name.'</td>
+                                <td >'.$marriage->groom_name.'</td>
                             </tr>
                             <tr>
                                 <td>जन्म मिति</td>
@@ -250,8 +250,8 @@ class MarriageController extends Controller
                             </tr>
                             <tr>
                                 <td>जन्म भएको देश</td>
-                                <td class="kantipur">'.$marriage->bride_birth_country.'</td>
-                                <td class="kantipur">'.$marriage->groom_birth_country.'</td>
+                                <td >'.$marriage->bride_birth_country.'</td>
+                                <td >'.$marriage->groom_birth_country.'</td>
                             </tr>
                             <tr>
                                 <td>नागरिकता (ना.प्र.नं)</td>
@@ -265,13 +265,13 @@ class MarriageController extends Controller
                             </tr>
                             <tr>
                                 <td>नागरिकता लिएको जिल्ला</td>
-                                <td class="kantipur">'.$marriage->bride_citizenship_district.'</td>
-                                <td class="kantipur">'.$marriage->groom_citizenship_district.'</td>
+                                <td >'.$marriage->bride_citizenship_district.'</td>
+                                <td >'.$marriage->groom_citizenship_district.'</td>
                             </tr>
                             <tr>
                                 <td>स्थाई ठेगाना</td>
-                                <td class="kantipur">'.$marriage->bride_temp_address.'</td>
-                                <td class="kantipur">'.$marriage->groom_temp_address.'</td>
+                                <td >'.$marriage->bride_temp_address.'</td>
+                                <td >'.$marriage->groom_temp_address.'</td>
                             </tr>
                             <tr>
                                 <td>शिक्षा</td>
@@ -285,18 +285,18 @@ class MarriageController extends Controller
                             </tr>
                             <tr>
                                 <td>मातृभाषा</td>
-                                <td class="kantipur">'.$marriage->bride_mother_tongue.'</td>
-                                <td class="kantipur">'.$marriage->groom_mother_tongue.'</td>
+                                <td >'.$marriage->bride_mother_tongue.'</td>
+                                <td >'.$marriage->groom_mother_tongue.'</td>
                             </tr>
                             <tr>
                                 <td>बाजेको नाम</td>
-                                <td class="kantipur">'.$marriage->bride_grandfather_name.'</td>
-                                <td class="kantipur">'.$marriage->groom_grandfather_name.'</td>
+                                <td >'.$marriage->bride_grandfather_name.'</td>
+                                <td >'.$marriage->groom_grandfather_name.'</td>
                             </tr>
                             <tr>
                                 <td>बाबुको नाम</td>
-                                <td class="kantipur">'.$marriage->bride_father_name.'</td>
-                                <td class="kantipur">'.$marriage->groom_father_name.'</td>
+                                <td >'.$marriage->bride_father_name.'</td>
+                                <td >'.$marriage->groom_father_name.'</td>
                             </tr>
                             <tr>
                                 <td>पूर्व वैवाहिक स्थिति</td>
@@ -307,23 +307,23 @@ class MarriageController extends Controller
                         </table>
                     </div>';
 
-        $html .= '<h5 style="text-align:center">साक्षीको विवरण</h5>';
+        $html .= '<h3 style="text-align:center">साक्षीको विवरण</h3>';
         $html .= '<div class="col-12">
                     <table class="my_table col-12" style="width:100%;border-collapse: collapse;">
                         <tr>
                             <td>क</td>
                             <td>नाम</td>
-                            <td class="kantipur">'.$marriage->relative_name.'</td>
+                            <td >'.$marriage->relative_name.'</td>
                         </tr>
                         <tr>
                             <td>ख</td>
                             <td>मृतक संगको सम्बन्ध</td>
-                            <td class="kantipur">'.$marriage->relationship.'</td>
+                            <td >'.$marriage->relationship.'</td>
                         </tr>
                         <tr>
                             <td>ग</td>
                             <td>ठेगाना</td>
-                            <td class="kantipur">'.$marriage->relative_address.'</td>
+                            <td >'.$marriage->relative_address.'</td>
                         </tr>
                         <tr>
                             <td>घ</td>
