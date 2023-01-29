@@ -16,29 +16,29 @@
             </a>
         </li>
         <li class="nav-item bg-transparent">
-            <a class="nav-link fontSize" href="{{ route('migration.index') }}" onmouseover="this.style.color='black'"
-                onmouseout="this.style.color='white'">
-                <i class="fas fa-exchange-alt pr-3"></i>@lang('navigation.migration-notice-form')
-            </a>
-        </li>
-        <li class="nav-item bg-transparent">
-            <a class="nav-link fontSize" href="{{ route('death.index') }}" onmouseover="this.style.color='black'"
-                onmouseout="this.style.color='white'">
-                <i class="fas fa-bolt pr-3"></i>@lang('navigation.death-notice-form')
-            </a>
-        </li>
-        <li class="nav-item bg-transparent">
             <a class="nav-link fontSize" href="{{ route('birth.index') }}" onmouseover="this.style.color='black'"
-                onmouseout="this.style.color='white'">
-                <i class="fas fa-baby pr-3"></i>@lang('navigation.birth-notice-form')
-            </a>
-        </li>
-        <li class="nav-item bg-transparent">
-            <a class="nav-link fontSize" href="{{ route('marriage.index') }}" onmouseover="this.style.color='black'"
-                onmouseout="this.style.color='white'">
-                <i class="fas fa-restroom pr-3"></i>@lang('navigation.marriage-notice-form')
-            </a>
-        </li>
+            onmouseout="this.style.color='white'">
+            <i class="fas fa-baby pr-3"></i>@lang('navigation.birth-notice-form')
+        </a>
+    </li>
+    <li class="nav-item bg-transparent">
+        <a class="nav-link fontSize" href="{{ route('death.index') }}" onmouseover="this.style.color='black'"
+        onmouseout="this.style.color='white'">
+        <i class="fas fa-bolt pr-3"></i>@lang('navigation.death-notice-form')
+    </a>
+</li>
+<li class="nav-item bg-transparent">
+    <a class="nav-link fontSize" href="{{ route('marriage.index') }}" onmouseover="this.style.color='black'"
+    onmouseout="this.style.color='white'">
+    <i class="fas fa-restroom pr-3"></i>@lang('navigation.marriage-notice-form')
+</a>
+</li>
+<li class="nav-item bg-transparent">
+    <a class="nav-link fontSize" href="{{ route('migration.index') }}" onmouseover="this.style.color='black'"
+        onmouseout="this.style.color='white'">
+        <i class="fas fa-exchange-alt pr-3"></i>@lang('navigation.migration-notice-form')
+    </a>
+</li>
         <li class="nav-item bg-transparent">
             <a class="nav-link fontSize" href="{{ route('vdc.index') }}" onmouseover="this.style.color='black'"
                 onmouseout="this.style.color='white'">
