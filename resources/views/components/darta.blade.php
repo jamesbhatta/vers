@@ -15,7 +15,7 @@
                     @endif
                 @endforeach
             </select> --}}
-            <input type="text" class="form-control" name="administrator" value="sdsf" readonly>
+            <input type="text" class="form-control" name="administrator" value="{{ $default_registaar }}" readonly>
         </div>
         <div class="col-xl-4 col-lg-4 col-md-6 mb-3">
             <label><span class="text-danger">*</span> दर्ता न.</label>
