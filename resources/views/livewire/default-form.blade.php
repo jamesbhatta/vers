@@ -117,7 +117,7 @@
                             <div style="line-height: 12px">
                                 <label style="font-weight: bold">पञ्जिकाधिकारी</label> <br>
                                 <label style="font-size: 15px;color:#6C757D">The default selected name of
-                                    country</label>
+                                    registar</label>
                             </div>
                             <select name="default_registaar" class="custom-select myText" wire:model="my_default_registaar">
                                 <option selected value="">पञ्जिकाधिकारी छान्न्नुहोस्।</option>
@@ -131,12 +131,26 @@
                             <div style="line-height: 12px">
                                 <label style="font-weight: bold">मातृभाषा</label> <br>
                                 <label style="font-size: 15px;color:#6C757D">The default selected name of
-                                    country</label>
+                                    mother tongue</label>
                             </div>
                             <select name="default_mother_tongue" class="custom-select myText" wire:model="my_default_tongue">
                                 <option selected value="">मातृभाषा छान्न्नुहोस्।</option>
                                 @foreach ($mothertongues as $mothertongue)
                                     <option value="{{ $mothertongue->name }}">{{ $mothertongue->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group col-12 pb-2">
+                            <div style="line-height: 12px">
+                                <label style="font-weight: bold">साबिकको ठेगाना</label> <br>
+                                <label style="font-size: 15px;color:#6C757D">The default selected name of
+                                    old address</label>
+                            </div>
+                            <select name="default_vdc" class="custom-select myText" wire:model="my_default_vdc">
+                                <option selected value="">मातृभाषा छान्न्नुहोस्।</option>
+                                @foreach ($vdcs as $vdc)
+                                    <option value="{{ $vdc->vdc }}">{{ $vdc->vdc}}</option>
                                 @endforeach
                             </select>
                         </div>

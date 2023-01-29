@@ -20,6 +20,7 @@ class DefaultForm extends Component
     public $update_id="";
     public $my_default_registaar;
     public $my_default_tongue;
+    public $my_default_vdc;
     public function mount(){
         $default = Mysetting::first();
 
@@ -28,7 +29,7 @@ class DefaultForm extends Component
             $this->province = $default->default_province;
             $this->district = $default->default_district;
             $this->municipality = $default->default_municipality;
-            $this->vdc = $default->default_vdc;
+            $this->my_default_vdc = $default->default_vdc;
             $this->update_id=$default;
             $this->my_default_registaar = $default->default_registaar;
             $this->my_default_tongue = $default->default_mother_tongue;
@@ -41,6 +42,7 @@ class DefaultForm extends Component
         $municipalities = Municipality::get();
         $registaars = Registaar::get();
         $mothertongues = MotherTongue::get();
-        return view('livewire.default-form',compact('municipalities','vdcs','registaars','mothertongues'));
+        $vdcs = Vdc::get();
+        return view('livewire.default-form',compact('municipalities','vdcs','registaars','mothertongues','vdcs'));
     }
 }

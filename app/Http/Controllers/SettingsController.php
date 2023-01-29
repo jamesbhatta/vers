@@ -31,6 +31,7 @@ class SettingsController extends Controller
             'default_municipality' => 'nullable',
             'default_registaar' => 'nullable',
             'default_mother_tongue'=>'nullable',
+            'default_vdc'=>'nullable',
         ]));
 
         return redirect()->back();
@@ -46,6 +47,7 @@ class SettingsController extends Controller
             'default_municipality' => 'nullable',
             'default_registaar' => 'nullable',
             'default_mother_tongue'=>'nullable',
+            'default_vdc'=>'nullable',
         ]));
         return redirect()->back();
 
