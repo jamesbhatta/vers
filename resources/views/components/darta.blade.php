@@ -2,7 +2,7 @@
     <div class="row py-3">
         <div class="col-xl-4 col-lg-4 col-md-6 mb-3">
             <label><span class="text-danger">*</span> पञ्जिकाधिकारीको नाम</label>
-            <select name="administrator" class="custom-select myText">
+            {{-- <select name="administrator" class="custom-select myText" aria-readonly="">
                 @foreach ($registaars as $registaar)
                     @if ($death->administrator)
                         <option value="{{ $registaar->name }}"
@@ -14,8 +14,8 @@
                         </option>
                     @endif
                 @endforeach
-            </select>
-            {{-- <input type="text" class="form-control" name="administrator" value="sdsf" readonly> --}}
+            </select> --}}
+            <input type="text" class="form-control" name="administrator" value="sdsf" readonly>
         </div>
         <div class="col-xl-4 col-lg-4 col-md-6 mb-3">
             <label><span class="text-danger">*</span> दर्ता न.</label>
