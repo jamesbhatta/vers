@@ -106,7 +106,7 @@ class MigrationController extends Controller
     public function store(MigrationCertificate $migrationCertificate, MigrationCertificateRequest $request)
     {
         //  return $request;
-     $data = $request->validated();
+        $data = $request->validated();
 
         if ($request->hasFile('file')) {
             $fileName = $request->reg_number . "-" . Str::slug($request->province) . "." . $request->file->getClientOriginalExtension();
@@ -126,40 +126,9 @@ class MigrationController extends Controller
      * @param  \App\Migration  $migration
      * @return \Illuminate\Http\Response
      */
-    public function update(MigrationCertificate $migrationCertificate, Request $request)
+    public function update(MigrationCertificate $migrationCertificate, MigrationCertificateRequest $request)
     {
-        $data = $request->validate([
-            'after_province' => ['required'],
-            'after_municipality' => ['required'],
-            'after_district' => ['required'],
-            'after_vdc' => ['nullable'],
-            'after_houseno' => ['nullable'],
-            'after_village' => ['required'],
-
-            'province' => ['required'],
-            'municipality' => ['required'],
-            'district' => ['required'],
-            'vdc' => ['nullable'],
-            'administrator' => ['required'],
-            'reg_number' => ['required'],
-            'entry_date' => ['required'],
-
-            'before_province' => ['required'],
-            'before_municipality' => ['required'],
-            'before_district' => ['required'],
-            'before_vdc' => ['nullable'],
-            'before_village' => ['required'],
-            'before_houseno' => ['nullable'],
-            'migration_reason' => ['required'],
-            'migration_date' => ['required'],
-            'relative_name' => ['required'],
-            'relationship' => ['required'],
-            'relative_address' => ['required'],
-            'date' => ['required'],
-            'file' => ['nullable'],
-        ]);
-
-
+        $data = $request->validated();
         if ($request->hasFile('file')) {
             if ($migrationCertificate->file != null) {
                 Storage::delete($migrationCertificate->file);
@@ -170,7 +139,6 @@ class MigrationController extends Controller
         $migrationCertificate->update($data);
         $migrationCertificate->save();
         return redirect()->route('migration.index', $migrationCertificate)->with('success', 'Data updated successfully');
-
     }
 
     /**
@@ -244,33 +212,33 @@ class MigrationController extends Controller
         $html .= '<div style="margin-top:30px">
         <div style="text-align: justify" class="">
             <div class="row" style="text-align: justify;">
-                (२) कहाँ सरी जाने &nbsp;<span class="dash">'.$migrationCertificate->after_district.'</span>
-                &nbsp;जिल्ला&nbsp;&nbsp;<span class="dash">'.$migrationCertificate->after_municipality.'</span>
-                &nbsp;न.पा./गा.वि.स. वडा नं. &nbsp;<span class="dash">'.$migrationCertificate->after_ward.'</span>
+                (२) कहाँ सरी जाने &nbsp;<span class="dash">' . $migrationCertificate->after_district . '</span>
+                &nbsp;जिल्ला&nbsp;&nbsp;<span class="dash">' . $migrationCertificate->after_municipality . '</span>
+                &nbsp;न.पा./गा.वि.स. वडा नं. &nbsp;<span class="dash">' . $migrationCertificate->after_ward . '</span>
                 &nbsp;टोलको नाम
                 &nbsp;
-                <span class="dash">'.$migrationCertificate->after_village.'</span>
+                <span class="dash">' . $migrationCertificate->after_village . '</span>
                 &nbsp;घर
-                नं &nbsp;<span class="dash">'.$migrationCertificate->after_houseno.'</span>
+                नं &nbsp;<span class="dash">' . $migrationCertificate->after_houseno . '</span>
             </div>
             <br>
             <div class="row" style="text-align: justify">
                 (३) कहाँ बाट सरी आएको&nbsp;
-                <span class="dash">'.$migrationCertificate->before_district.'</span>
-                &nbsp;जिल्ला &nbsp;<span class="dash">'.$migrationCertificate->before_municipality.'</span>
+                <span class="dash">' . $migrationCertificate->before_district . '</span>
+                &nbsp;जिल्ला &nbsp;<span class="dash">' . $migrationCertificate->before_municipality . '</span>
 
                 &nbsp;  न.पा./गा.वि.स. वडा
-                नं. &nbsp;<span class="dash">'.$migrationCertificate->before_ward.'</span>
-                &nbsp;टोलको नाम &nbsp;<span class="dash">'.$migrationCertificate->before_village.'</span>
+                नं. &nbsp;<span class="dash">' . $migrationCertificate->before_ward . '</span>
+                &nbsp;टोलको नाम &nbsp;<span class="dash">' . $migrationCertificate->before_village . '</span>
                 &nbsp;घर
-                नं &nbsp;<span class="dash">'.$migrationCertificate->before_houseno.'</span>
-                &nbsp;बसाई सराईको मिति &nbsp;<span class="dash">'.$migrationCertificate->migration_date.'</span>
+                नं &nbsp;<span class="dash">' . $migrationCertificate->before_houseno . '</span>
+                &nbsp;बसाई सराईको मिति &nbsp;<span class="dash">' . $migrationCertificate->migration_date . '</span>
 
             </div> <br>
 
             <div class="row">
                 <p style="text-align: justify">
-                    (४) बसाई सराईको कारण &nbsp;<span class="dash">'.$migrationCertificate->migration_reason.'</span>
+                    (४) बसाई सराईको कारण &nbsp;<span class="dash">' . $migrationCertificate->migration_reason . '</span>
 
 
                 </p>
@@ -299,7 +267,7 @@ class MigrationController extends Controller
                         <tr>
                             <td>घ</td>
                             <td>मिति</td>
-                            <td>' . $migrationCertificate->date. '</td>
+                            <td>' . $migrationCertificate->date . '</td>
                         </tr>
                     </table>
 
