@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Family;
+use App\Http\Requests\MigrationCertificateRequest;
 use App\MigrationCertificate;
 use App\Mysetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-// use PDF;
-use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Validator;
+
+
 
 class MigrationController extends Controller
 {
@@ -101,42 +103,10 @@ class MigrationController extends Controller
     }
 
 
-    public function store(MigrationCertificate $migrationCertificate, Request $request)
+    public function store(MigrationCertificate $migrationCertificate, MigrationCertificateRequest $request)
     {
-        // return $request;
-        $data = $request->validate([
-            'after_province' => ['required'],
-            'after_municipality' => ['required'],
-            'after_district' => ['required'],
-            'after_vdc' => ['nullable'],
-            'after_houseno' => ['nullable'],
-            'after_village' => ['required'],
-            'after_ward' => ['required'],
-
-            'province' => ['required'],
-            'municipality' => ['required'],
-            'district' => ['required'],
-            'vdc' => ['nullable'],
-            'administrator' => ['required'],
-            'reg_number' => ['required'],
-            'entry_date' => ['required'],
-
-            'before_province' => ['required'],
-            'before_municipality' => ['required'],
-            'before_district' => ['required'],
-            'before_vdc' => ['nullable'],
-            'before_village' => ['required'],
-            'before_houseno' => ['nullable'],
-            'before_ward' => ['required'],
-            'migration_reason' => ['required'],
-            'migration_date' => ['required'],
-            'relative_name' => ['required'],
-            'relationship' => ['required'],
-            'relative_address' => ['required'],
-            'date' => ['required'],
-            'file' => ['nullable'],
-        ]);
-
+        //  return $request;
+     $data = $request->validated();
 
         if ($request->hasFile('file')) {
             $fileName = $request->reg_number . "-" . Str::slug($request->province) . "." . $request->file->getClientOriginalExtension();
