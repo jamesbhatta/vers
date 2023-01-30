@@ -143,6 +143,10 @@ class BirthController extends Controller
         if ($request->grandfather_name) {
             $births = $births->where('grandfather_name', 'like', '%' . $request->grandfather_name . '%');
         }
+        if ($request->from) {
+            return $request;
+            $births = $births->where('grandfather_name', 'like', '%' . $request->grandfather_name . '%');
+        }
 
         $births = $births->orderBy('id', 'desc')->get();
         $old = $request;
