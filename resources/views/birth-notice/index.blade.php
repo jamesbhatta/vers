@@ -110,7 +110,24 @@
                                         <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number">
                                     @endisset
                                 </div>
-
+                                {{-- ===== --}}
+                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                    @isset($old)
+                                        <input type="text" class="form-control myText" id="nepali-datepicker" placeholder="दर्ता मिति(From)" name="name"
+                                            value="{{ $old->name }}">
+                                    @else
+                                        <input type="text" class="form-control myText" id="nepali-datepicker1" placeholder="दर्ता मिति(From)" name="name">
+                                    @endisset
+                                </div>
+                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                    @isset($old)
+                                        <input type="text" class="form-control myText" id="nepali-datepicker2" placeholder="नाम" name="name"
+                                            value="{{ $old->name }}">
+                                    @else
+                                        <input type="text" class="form-control myText" id="nepali-datepicker3" placeholder="नाम" name="name">
+                                    @endisset
+                                </div>
+                                {{-- ========== --}}
                                 <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder="नाम" name="name"
