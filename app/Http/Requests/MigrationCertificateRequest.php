@@ -53,7 +53,7 @@ class MigrationCertificateRequest extends FormRequest
             'relationship' => ['required'],
             'relative_address' => ['required'],
             'date' => ['required'],
-            'file' => ['mimetypes:image/jpeg, image/png, application/pdf'],
+            'file' => ['nullable', 'mimes:pdf,jpeg,png,jpg'],
         ];
     }
 }
