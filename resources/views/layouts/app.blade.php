@@ -38,11 +38,10 @@
 
 
 
-
+<script src="{{asset('js/app.js')}}"></script>
 </body>
 @include('layouts.partials.scripts')
 
 @livewireScripts
 @stack('script')
-
 </html>
