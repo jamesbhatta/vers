@@ -15,6 +15,9 @@ class Municipality extends Component
     public $death;
     public $vdc;
     public $municipality;
+    public $book;
+    public $book_code;
+    public $ward_num;
 
     public function mount()
     {
@@ -39,8 +42,9 @@ class Municipality extends Component
     public function render()
     {
         $municipalities =\App\Municipality::get();
+        $books =\App\Book::get();
         $vdcs = Vdc::get();
-        return view('livewire.municipality', compact(['municipalities', 'vdcs']));
+        return view('livewire.municipality', compact(['municipalities', 'vdcs','books']));
     }
 
 }

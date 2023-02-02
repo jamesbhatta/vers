@@ -27,13 +27,22 @@
                     @endisset
                     <div class="box mt-2 px-3 pt-3">
 
-
                         <h4 class="font-weight-bold pb-3">नवजात शिशु दर्ता विवरण </h4>
 
                         {{-- @livewire('municipality', ['death' => $birth]) --}}
 
                         <div class="card p-3">
-                            <livewire:municipality :death="$birth" />
+                            @php
+                                $book_id = '';
+                            @endphp
+                            @isset($_GET['book_id'])
+                                @php
+                                    $book_id = $_GET['book_id'];
+
+                                @endphp
+                            @endisset
+                            <livewire:municipality :death="$birth" :book="$book_id" />
+
                             <x-darta :death="$birth" />
                         </div>
                         <hr>
@@ -575,6 +584,7 @@
                 height: 43px;
                 font-size: 15px;
             }
+
             .btn-primary {
                 color: #fff;
                 background-color: #337ab7;
