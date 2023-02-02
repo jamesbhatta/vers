@@ -27,6 +27,8 @@ class UpdateBirthRequest extends FormRequest
             'province'=>"required",
             'district'=>"required",
             'municipality'=>"required",
+            'book_id'=>"required",
+            'ward_num'=>"nullable",
             'administrator'=>"required",
             'reg_number'=>"required",
             'vdc'=>'nullable',

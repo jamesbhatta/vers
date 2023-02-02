@@ -16,9 +16,11 @@ class CreateBirthsTable extends Migration
         Schema::create('births', function (Blueprint $table) {
             $table->id();
             $table->string('administrator');
+            $table->string('book_id');
             $table->string('province')->nullable();
             $table->string('district')->nullable();
             $table->string('municipality')->nullable();
+            $table->string('ward_num')->nullable();
             $table->string('vdc')->nullable();
             $table->string('reg_number');
             $table->string('entry_date');

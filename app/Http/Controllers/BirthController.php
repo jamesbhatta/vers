@@ -77,6 +77,8 @@ class BirthController extends Controller
     public function edit(Birth $birth)
     {
         $title = "जन्म दर्ता सूचना फाराम ";
+        $birth=Birth::where('id',$birth->id)->with('book')->first();
+        // return $birth;
         return view('birth-notice.form', compact('birth', 'title'));
     }
 

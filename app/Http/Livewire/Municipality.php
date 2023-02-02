@@ -9,6 +9,8 @@ use App\Book;
 use Route;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Illuminate\Support\Facades\DB;
+
 
 class Municipality extends Component
 {
@@ -18,6 +20,8 @@ class Municipality extends Component
     public $vdc;
     public $municipality;
     public $book;
+    public $book_id;
+    // public $books;
     public $book_code;
     public $ward_num;
 
@@ -36,6 +40,9 @@ class Municipality extends Component
             $this->district = $this->death->district;
             $this->vdc = $this->death->vdc;
             $this->municipality = $this->death->municipality;
+            $this->book_id=$this->death->book_id;
+            $this->ward_num=$this->death->ward_num;
+
         }
 
         if($this->book){
@@ -45,8 +52,8 @@ class Municipality extends Component
             $this->vdc = $book->vdc;
             $this->municipality = $book->municipality;
             $this->ward_num=$book->ward_no;
+            $this->book_id=$book->id;
         }
-
     }
 
     public function render()
@@ -54,12 +61,17 @@ class Municipality extends Component
         $municipalities =\App\Municipality::get();
         $vdcs = Vdc::get();
         $route = Route::currentRouteName();
+        $books = Book::orderBy('id','desc')->get();
+        $type="";
         if($route=="birth.create"){
-            $books =\App\Book::where('book_type','जन्म दर्ता')->get();
+            $type ='जन्म दर्ता';
         }elseif($route=="death.create"){
-            $books =\App\Book::where('book_type','मृत्यु दर्ता')->get();
+            $type = 'मृत्यु दर्ता';
+        }elseif($route=="marriage.create"){
+            $type = 'विवाह दर्ता';
         }
-        return view('livewire.municipality', compact(['municipalities', 'vdcs','books','route']));
+        // $books = $books->orderBy('id', 'desc')->get();
+        return view('livewire.municipality', compact(['municipalities', 'vdcs','books','route','type']));
     }
 
 }
