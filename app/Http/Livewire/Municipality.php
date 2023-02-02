@@ -5,6 +5,8 @@ namespace App\Http\Livewire;
 use App\Death;
 use App\Mysetting;
 use App\Vdc;
+use App\Book;
+use Route;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -36,15 +38,28 @@ class Municipality extends Component
             $this->municipality = $this->death->municipality;
         }
 
+        if($this->book){
+            $book=Book::where('id',$this->book)->first();
+            $this->province = $book->province;
+            $this->district = $book->district;
+            $this->vdc = $book->vdc;
+            $this->municipality = $book->municipality;
+            $this->ward_num=$book->ward_no;
+        }
 
     }
 
     public function render()
     {
         $municipalities =\App\Municipality::get();
-        $books =\App\Book::get();
         $vdcs = Vdc::get();
-        return view('livewire.municipality', compact(['municipalities', 'vdcs','books']));
+        $route = Route::currentRouteName();
+        if($route=="birth.create"){
+            $books =\App\Book::where('book_type','जन्म दर्ता')->get();
+        }elseif($route=="death.create"){
+            $books =\App\Book::where('book_type','मृत्यु दर्ता')->get();
+        }
+        return view('livewire.municipality', compact(['municipalities', 'vdcs','books','route']));
     }
 
 }

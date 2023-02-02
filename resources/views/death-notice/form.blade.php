@@ -29,8 +29,18 @@
                         @endisset
                         <h4 class="font-weight-bold pb-3">मृतकको दर्ता विवरण </h4>
                         <div class="card p-3">
-                            @livewire('municipality', ['death' => $death])
-                            <x-darta :death="$death" />
+                            @php
+                                $book_id = '';
+                            @endphp
+                            @isset($_GET['book_id'])
+                                @php
+                                    $book_id = $_GET['book_id'];
+
+                                @endphp
+                            @endisset
+                            <livewire:municipality :death="$death" :book="$book_id" />
+
+                            <x-darta :death="$death" :book="$book_id"/>
                         </div>
                         <hr>
 

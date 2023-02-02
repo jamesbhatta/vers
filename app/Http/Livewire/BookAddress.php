@@ -33,6 +33,7 @@ class BookAddress extends Component
             $this->vdc = $this->book->vdc;
             $this->ward_number=$this->book->ward_no;
             $this->municipality = $this->book->municipality;
+            $this->registaar = $this->book->registaar;
         }
 
 

@@ -1,25 +1,37 @@
 <div class="row">
-    <div class="form-group col-xl-3 col-lg-4 col-md-6">
-        <label for=""><span class="text-danger">*</span> Book</label>
+
+    <div class="form-group col-xl-4 col-lg-4 col-md-6">
+        <label for=""><span class="text-danger">*</span> Book Code</label>
         @php
             $selected_book_id = $book;
+            $exist = '0';
+            $book_code="";
         @endphp
-        <select class="custom-select" name="province" wire:model="book_code">
-            {{-- <option class="m-5" value="">Select Book </option> --}}
-            @if ($books[0]->id == $selected_book_id)
-            <option value="{{ $books[0]->code }}">{{ $books[0]->code }}</option>
-            @else
-                @foreach ($books as $book)
-                    <option value="{{ $book->code }}">{{ $book->code }}</option>
-                @endforeach
-            @endif
 
-        </select>
+        @foreach ($books as $mybook)
+            @if ($selected_book_id == $mybook->id)
+                @php
+                    $exist = '1';
+                    $book_code=$mybook->code;
+                @endphp
+            @endif
+        @endforeach
+
+        @if ($exist=="1")
+            <input type="text" readonly value="{{ $book_code }}" class="form-control">
+        @else
+            <select name="" class="custom-select" id="">
+                @foreach ($books as $book)
+
+                <option value="{{ $book->code }}">{{ $book->code }}</option>
+                @endforeach
+            </select>
+        @endif
         @error('province')
             <small class="text-danger">{{ $message }}</small>
         @enderror
     </div>
-    <div class="form-group col-xl-3 col-lg-4 col-md-6">
+    <div class="form-group col-xl-4 col-lg-4 col-md-6">
         <label for=""><span class="text-danger">*</span> प्रदेश</label>
         <select class="custom-select" name="province" wire:model="province">
             <option class="m-5" value="">प्रदेश छान्न्नुहोस्। </option>
@@ -45,7 +57,7 @@
         @enderror
     </div>
 
-    <div class="form-group col-xl-3 col-lg-4 col-md-6">
+    <div class="form-group col-xl-4 col-lg-4 col-md-6">
         <label for=""><span class="text-danger">*</span> जिल्ला </label>
 
         {{-- <input type="text" clasrol" /> --}}
@@ -75,7 +87,7 @@
     </div>
 
 
-    <div class="form-group col-xl-3 col-lg-4 col-md-6">
+    <div class="form-group col-xl-4 col-lg-4 col-md-6">
         <label for=""><span class="text-danger">*</span> नगरपालिका </label>
 
         {{-- <input type="text" clasrol" /> --}}
@@ -104,7 +116,7 @@
         @enderror
     </div>
 
-    <div class="form-group col-xl-3 col-lg-4 col-md-6">
+    <div class="form-group col-xl-4 col-lg-4 col-md-6">
         <label for=""><span class="text-danger">*</span> Ward number </label>
 
         <input type="text" class="form-control" wire:model="ward_num">
@@ -114,7 +126,7 @@
     </div>
 
 
-    <div class="form-group col-xl-3 col-lg-4 col-md-6">
+    <div class="form-group col-xl-4 col-lg-4 col-md-6">
         <label for="">साबिकको ठेगाना </label>
         {{-- <input type="text" clasrol" /> --}}
         <select class="custom-select" name="vdc" wire:model="vdc">
