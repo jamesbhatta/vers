@@ -1,6 +1,5 @@
 <div class="card mt-3 p-3 pb-2">
     <div class="row">
-
         <div class="form-group col-xl-3 col-lg-4 col-md-6">
             <label><span class="text-danger ">*</span> साक्षीको नाम </label>
 
@@ -48,15 +47,15 @@
         </div>
         <div class="form-group col-xl-12">
             <label for="">फोटो वा फाइल (max size: 5 MB | jpeg, png, jpg, pdf)</label>
-            <input type="file" name="file" style="display: none" class="file-brows" id="previewImage" onchange="imagePreview(this)" />
+            <input type="file" name="file" style="display: none" class="file-brows" id="previewImage"
+                onchange="imagePreview(this)" />
             <div class="card border previewImage" onclick="document.querySelector('#previewImage').click()">
                 <p class="imgPre text-[#15803d] h3">Drag Your File here or Click in this area to Upload</p>
                 <div id="previewBox" style="display: none;">
-                    <img src="" alt="" class="p-1 img-fluid" style="height: 340px; width:100%;" id="previewImg">
+                    <img src="" alt="" class="p-1 img-fluid" style="height: 340px; width:100%;"
+                        id="previewImg">
                 </div>
             </div>
-
-
             @error('file')
                 <small class="text-danger">{{ $message }}</small>
             @enderror
@@ -80,32 +79,17 @@
 
     @push('scripts')
         <script>
-            // $(document).ready(function() {
-            //     $('.file-brows').on('change', function() {
-            //         var file = $(this)[0].files[0];
-            //         var reader = new FileReader();
-            //         reader.onload = function() {
-            //             $('#previewImage').html('<img src="' + reader.result + '" class="img-fluid" />');
-            //         }
-            //         reader.readAsDataURL(file);
-            //     });
-            // });
             function imagePreview(input) {
                 let file = $("input[type=file]").get(0).files[0];
                 if (file) {
                     let reader = new FileReader();
                     reader.onload = function() {
-                        $('#previewImg').attr('src',reader.result);
+                        $('#previewImg').attr('src', reader.result);
                         $("#previewBox").css('display', 'block');
                     }
                     $(".imgPre").css('display', 'none');
                     reader.readAsDataURL(file);
                 }
-
             }
-            // function removePreview(){
-            // $("").attr('src',"");
-            // $("#previewBox").css('display', 'none');
-
         </script>
     @endpush
