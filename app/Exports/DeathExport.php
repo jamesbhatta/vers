@@ -40,6 +40,14 @@ class DeathExport implements FromCollection
         if ($this->request->grandfather_name) {
             $deaths = $deaths->where('grandfather_name', 'like', '%' . $this->request->grandfather_name . '%');
         }
+        if ($this->request->from) {
+            if($this->request->to){
+                $deaths = $deaths->whereBetween('entry_date', [date($this->request->from),date($this->request->to)]);
+                // Reservation::->get();
+            }else{
+                $deaths = $deaths->where('entry_date', $this->request->from);
+            }
+        }
         // return $request;
         $deaths = $deaths->orderBy('id', 'desc')->get();
         return $deaths;

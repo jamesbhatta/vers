@@ -146,8 +146,12 @@ class BirthController extends Controller
             $births = $births->where('grandfather_name', 'like', '%' . $request->grandfather_name . '%');
         }
         if ($request->from) {
-            return $request;
-            $births = $births->where('grandfather_name', 'like', '%' . $request->grandfather_name . '%');
+            if($request->to){
+                $births = $births->whereBetween('entry_date', [date($request->from),date($request->to)]);
+                // Reservation::->get();
+            }else{
+                $births = $births->where('entry_date', $request->from);
+            }
         }
 
         $births = $births->orderBy('id', 'desc')->get();
@@ -182,6 +186,14 @@ class BirthController extends Controller
 
         if ($request->grandfather_name) {
             $births = $births->where('grandfather_name', 'like', '%' . $request->grandfather_name . '%');
+        }
+        if ($request->from) {
+            if($request->to){
+                $births = $births->whereBetween('entry_date', [date($request->from),date($request->to)]);
+                // Reservation::->get();
+            }else{
+                $births = $births->where('entry_date', $request->from);
+            }
         }
 
         $births = $births->orderBy('id', 'desc')->get();

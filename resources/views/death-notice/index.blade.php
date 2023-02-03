@@ -37,6 +37,13 @@
                             @isset($_GET['grandfather_name'])
                                 <input type="hidden" name="grandfather_name" value="{{ $_GET['grandfather_name'] }}">
                             @endisset
+                            {{-- ==== --}}
+                            @isset($_GET['from'])
+                                <input type="hidden" name="from" value="{{ $_GET['from'] }}">
+                            @endisset
+                            @isset($_GET['to'])
+                                <input type="hidden" name="to" value="{{ $_GET['to'] }}">
+                            @endisset
 
                             <div class="col-lg-1">
                                 <button
@@ -73,6 +80,13 @@
                             @isset($_GET['grandfather_name'])
                                 <input type="hidden" name="grandfather_name" value="{{ $_GET['grandfather_name'] }}">
                             @endisset
+                            {{-- ==== --}}
+                            @isset($_GET['from'])
+                                <input type="hidden" name="from" value="{{ $_GET['from'] }}">
+                            @endisset
+                            @isset($_GET['to'])
+                                <input type="hidden" name="to" value="{{ $_GET['to'] }}">
+                            @endisset
 
                             <div class="col-lg-1">
                                 <button
@@ -102,7 +116,7 @@
                     <div class="card-body" id="cardBody">
                         <form action="{{ route('death.filter') }}" method="GET" role="search">
                             <div class="row">
-                                <div class="mb-2 col-xl-1 col-lg-2 col-md-3">
+                                <div class="mb-2 col-xl-2 col-lg-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number"
                                             value="{{ $old->reg_number }}">
@@ -110,7 +124,24 @@
                                         <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number">
                                     @endisset
                                 </div>
-
+                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                    @isset($old)
+                                        <input type="text" class="form-control myText" id="nepali-datepicker"
+                                            placeholder="दर्ता मिति(From)" name="from" value="{{ $old->from }}">
+                                    @else
+                                        <input type="text" class="form-control myText" id="nepali-datepicker1"
+                                            placeholder="दर्ता मिति(From)" name="from">
+                                    @endisset
+                                </div>
+                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                    @isset($old)
+                                        <input type="text" class="form-control myText" id="nepali-datepicker2"
+                                            placeholder="दर्ता मिति(To)" name="to" value="{{ $old->to }}">
+                                    @else
+                                        <input type="text" class="form-control myText" id="nepali-datepicker3"
+                                            placeholder="दर्ता मिति(To)" name="to">
+                                    @endisset
+                                </div>
                                 <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder="नाम" name="name"

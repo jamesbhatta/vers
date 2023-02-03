@@ -190,6 +190,14 @@ class DeathController extends Controller
         if ($request->grandfather_name) {
             $deaths = $deaths->where('grandfather_name', 'like', '%' . $request->grandfather_name . '%');
         }
+        if ($request->from) {
+            if($request->to){
+                $deaths = $deaths->whereBetween('entry_date', [date($request->from),date($request->to)]);
+                // Reservation::->get();
+            }else{
+                $deaths = $deaths->where('entry_date', $request->from);
+            }
+        }
         $old = $request;
         // return $request;
         $deaths = $deaths->orderBy('id', 'desc')->get();
@@ -219,6 +227,14 @@ class DeathController extends Controller
 
         if ($request->grandfather_name) {
             $deaths = $deaths->where('grandfather_name', 'like', '%' . $request->grandfather_name . '%');
+        }
+        if ($request->from) {
+            if($request->to){
+                $deaths = $deaths->whereBetween('entry_date', [date($request->from),date($request->to)]);
+                // Reservation::->get();
+            }else{
+                $deaths = $deaths->where('entry_date', $request->from);
+            }
         }
         // return $request;
         $deaths = $deaths->orderBy('id', 'desc')->get();
