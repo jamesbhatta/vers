@@ -60,6 +60,8 @@ class DeathController extends Controller
         $data = $request->validate([
             'administrator' => 'required',
             'reg_number' => 'required',
+            'ward_num'=>'nullable',
+            'book_id'=>'required',
             'entry_date' => 'required',
             'name' => 'required',
             'gender' => 'required',

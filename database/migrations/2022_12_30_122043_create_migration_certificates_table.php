@@ -21,6 +21,8 @@ class CreateMigrationCertificatesTable extends Migration
             $table->string('after_municipality');
             $table->string('after_vdc')->nullable();
             $table->string('after_village');
+            $table->string('book_id');
+            $table->string('ward_num')->nullable();
             $table->string('after_ward');
             $table->string('after_houseno')->nullable();
 

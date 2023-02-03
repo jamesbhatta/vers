@@ -40,7 +40,7 @@
                             @endisset
                             <livewire:municipality :death="$death" :book="$book_id" />
 
-                            <x-darta :death="$death" :book="$book_id"/>
+                            {{-- <x-darta :death="$death" :book="$book_id"/> --}}
                         </div>
                         <hr>
 

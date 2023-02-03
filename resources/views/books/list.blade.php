@@ -35,11 +35,12 @@
                                     <thead class="thead-light">
                                         <tr class="text-uppercase">
                                             <th>#</th>
-                                            <th>Book Code</th>
-                                            <th>Book type</th>
-                                            <th>Registar</th>
-                                            <th>From</th>
-                                            <th>To</th>
+                                            <th>पुस्तक कोड</th>
+                                            <th>पुस्तक प्रकार</th>
+                                            <th>पञ्जिकाधिकारी</th>
+                                            <th>देखी</th>
+                                            <th>सम्मा</th>
+                                            <th>कुल रेकर्ड</th>
                                             <th>सूचना फाराम</th>
                                             <th class="text-right">Action</th>
                                         </tr>
@@ -55,13 +56,29 @@
                                                 <td>{{ $book->to }}</td>
                                                 <td>
                                                     @if ($book->book_type == 'जन्म दर्ता')
-                                                        <a href="{{ route('birth.create') }}?book_id={{ $book->id }}" class="btn btn-info">Add</a>
+                                                        {{ \App\Birth::where('book_id', $book->id)->count() }}
                                                     @elseif($book->book_type == 'मृत्यु दर्ता')
-                                                        <a href="{{ route('death.create') }}?book_id={{ $book->id }}" class="btn btn-info">Add</a>
+                                                        {{ \App\Death::where('book_id', $book->id)->count() }}
                                                     @elseif($book->book_type == 'विवाह दर्ता')
-                                                        <a href="{{ route('marriage.create') }}?book_id={{ $book->id }}" class="btn btn-info">Add</a>
+                                                        {{ \App\Marriage::where('book_id', $book->id)->count() }}
                                                     @elseif($book->book_type == 'बसाईसराई दर्ता')
-                                                        <a href="{{ route('migration.create') }}?book_id={{ $book->id }}" class="btn btn-info">Add</a>
+                                                        <a href="{{ route('migration.create') }}?book_id={{ $book->id }}"
+                                                            class="btn btn-info">Add</a>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    @if ($book->book_type == 'जन्म दर्ता')
+                                                        <a href="{{ route('birth.create') }}?book_id={{ $book->id }}"
+                                                            class="btn btn-info">Add</a>
+                                                    @elseif($book->book_type == 'मृत्यु दर्ता')
+                                                        <a href="{{ route('death.create') }}?book_id={{ $book->id }}"
+                                                            class="btn btn-info">Add</a>
+                                                    @elseif($book->book_type == 'विवाह दर्ता')
+                                                        <a href="{{ route('marriage.create') }}?book_id={{ $book->id }}"
+                                                            class="btn btn-info">Add</a>
+                                                    @elseif($book->book_type == 'बसाईसराई दर्ता')
+                                                        <a href="{{ route('migration.create') }}?book_id={{ $book->id }}"
+                                                            class="btn btn-info">Add</a>
                                                     @endif
                                                 </td>
                                                 <td class="text-nowrap text-right">

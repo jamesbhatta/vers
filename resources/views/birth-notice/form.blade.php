@@ -43,7 +43,7 @@
                             @endisset
                             <livewire:municipality :death="$birth" :book="$book_id" />
 
-                            <x-darta :death="$birth" :book="$book_id"/>
+                            {{-- <x-darta :death="$birth" :book="$book_id"/> --}}
                         </div>
                         <hr>
                         <h4 class="font-weight-bold py-3">नवजात शिशुको व्यक्तिगत विवरण </h4>

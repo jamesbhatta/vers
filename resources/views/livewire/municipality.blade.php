@@ -19,17 +19,21 @@
         @if ($exist == '1')
             <select name="book_id" class="custom-select" id="" wire:model="book_id" aria-readonly="true">
                 @foreach ($books as $book)
-                    @if ($book->book_type == $type)
-                        <option value="{{ $book->id }}">{{ $book->code }}</option>
+                    @if ($book->book_type == $mtype)
+                        <option value="{{ $book->id }}" {{ $book_id == $book->id ? '' : 'disabled' }}>
+                            {{ $book->code }}</option>
                     @endif
                 @endforeach
             </select>
             {{-- <input type="text" name="book_id" readonly  class="form-control" wire:model="book_id"> --}}
         @else
-            <select name="book_id" class="custom-select" id="" wire:model="book_id">
+            <select name="book_id" class="custom-select" id="" wire:model="book_id"
+                wire:click="changeEvent($event.target.value)">
                 @foreach ($books as $book)
-                    @if ($book->book_type == $type)
+                    @if ($book->book_type == $mtype)
                         <option value="{{ $book->id }}">{{ $book->code }}</option>
+                    @else
+                        {{-- <option value="{{ $book->id }}">{{ $book->code }}</option> --}}
                     @endif
                 @endforeach
             </select>
@@ -38,7 +42,6 @@
             <small class="text-danger">{{ $message }}</small>
         @enderror
     </div>
-    {{ $type }}
     <div class="form-group col-xl-4 col-lg-4 col-md-6">
         <label for=""><span class="text-danger">*</span> प्रदेश</label>
         <select class="custom-select" name="province" wire:model="province">
@@ -146,6 +149,38 @@
             @endforeach
         </select>
         @error('vdc')
+            <small class="text-danger">{{ $message }}</small>
+        @enderror
+    </div>
+
+    <div class="col-xl-4 col-lg-4 col-md-6 mb-3">
+        <label><span class="text-danger">*</span> पञ्जिकाधिकारीको नाम</label>
+        {{-- <select name="administrator" class="custom-select myText" aria-readonly="">
+            @foreach ($registaars as $registaar)
+                @if ($death->administrator)
+                    <option value="{{ $registaar->name }}"
+                        {{ $death->administrator == $registaar->name ? 'selected' : '' }}>{{ $registaar->name }}
+                    </option>
+                @else
+                    <option value="{{ $registaar->name }}"
+                        {{ $default_registaar == $registaar->name ? 'selected' : '' }}>{{ $registaar->name }}
+                    </option>
+                @endif
+            @endforeach
+        </select> --}}
+        <input type="text" class="form-control" name="administrator" wire:model="administrator" readonly>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-6 mb-3">
+        <label><span class="text-danger">*</span> दर्ता न.</label>
+        <input type="text" class="form-control" name="reg_number" wire:model="reg_number">
+        @error('reg_number')
+            <small class="text-danger">{{ $message }}</small>
+        @enderror
+    </div>
+    <div class="form-group col-xl-4 col-lg-4 col-md-6 mb-3">
+        <label><span class="text-danger">*</span> दर्ता मिति</label>
+        <input type="text" name="entry_date" id="darta_miti" class="form-control" wire:model="entry_date" />
+        @error('entry_date')
             <small class="text-danger">{{ $message }}</small>
         @enderror
     </div>

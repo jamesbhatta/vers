@@ -18,7 +18,8 @@ class CreateDeathsTable extends Migration
 
             $table->string('administrator');
             $table->string('reg_number');
-
+            $table->string('book_id');
+            $table->string('ward_num')->nullable();
             $table->string('entry_date');
             $table->string('name');
             $table->string('gender');
