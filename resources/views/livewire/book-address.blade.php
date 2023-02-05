@@ -9,12 +9,10 @@
                 @endphp
                 @foreach ($municipalities ?? '' as $municipality)
                     @php
-
                         if ($provinces == $municipality->province) {
                             continue;
                         }
                         $provinces = $municipality->province;
-
                     @endphp
                     <option value="{{ $municipality->province }}">
                         {{ $municipality->province }}</option>
@@ -82,8 +80,8 @@
             <label for="">Old Address</label>
             <select name="vdc" class="custom-select" id="" wire:model="vdc">
                 @foreach ($vdcs as $vdc)
-                <option value="{{ $vdc->vdc }}">{{ $vdc->vdc }}</option>
-            @endforeach
+                    <option value="{{ $vdc->vdc }}">{{ $vdc->vdc }}</option>
+                @endforeach
             </select>
         </div>
     </div>
@@ -92,10 +90,9 @@
             <label for="">Registar</label>
             <select name="registaar" class="custom-select" id="" wire:model="registaar">
                 @foreach ($registars as $registaar)
-                    <option value="{{ $registaar->name }}">{{ $registaar->name }}</option>
+                    <option value="{{ $registaar->name }}" readonly>{{ $registaar->name }}</option>
                 @endforeach
             </select>
         </div>
     </div>
-
 </section>

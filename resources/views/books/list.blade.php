@@ -131,12 +131,9 @@
                                     </tbody>
                                 </table>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -153,7 +150,7 @@
         var WinPrint = window.open();
         WinPrint.document.write(prtContent.outerHTML);
         WinPrint.document.close();
-        WinPrint.focus();
+        WinPrint.foc    us();
         WinPrint.print();
         WinPrint.close();
     });

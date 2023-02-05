@@ -124,6 +124,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('book',[BookController::class,'index'])->name('book.index');
     Route::get('book/create',[BookController::class,'create'])->name('book.create');
     Route::post('book/store',[BookController::class,'store'])->name('book.store');
+    Route::get('book/{book}/edit',[BookController::class,'edit'])->name('book.edit');
+    Route::get('book/{book}/delete',[BookController::class,'destroy'])->name('book.delete');
 });
 
 
