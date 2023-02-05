@@ -9,6 +9,7 @@ use App\Http\Controllers\VdcController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FamilyController;
+use App\Http\Controllers\BookController;
 
 Auth::routes(['register' => false]);
 // Route::redirect('/', '');
@@ -119,6 +120,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('vdc/{vdc}/delete', [VdcController::class, 'delete'])->name('vdc.delete');
     Route::get('vdc/{vdc}/edit', [VdcController::class, 'edit'])->name('vdc.edit');
     Route::put('vdc/{vdc}/update', [VdcController::class, 'update'])->name('vdc.update');
+
+    Route::get('book',[BookController::class,'index'])->name('book.index');
+    Route::post('book',[BookController::class,'store'])->name('book.store');
 });
 
 

@@ -38,6 +38,14 @@
                                 <input type="hidden" name="grandfather_name" value="{{ $_GET['grandfather_name'] }}">
                             @endisset
 
+                            {{-- ==== --}}
+                            @isset($_GET['from'])
+                                <input type="hidden" name="from" value="{{ $_GET['from'] }}">
+                            @endisset
+                            @isset($_GET['to'])
+                                <input type="hidden" name="to" value="{{ $_GET['to'] }}">
+                            @endisset
+
                             <div class="col-lg-1">
                                 <button
                                     class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-print"
@@ -74,6 +82,14 @@
                                 <input type="hidden" name="grandfather_name" value="{{ $_GET['grandfather_name'] }}">
                             @endisset
 
+                            {{-- ==== --}}
+                            @isset($_GET['from'])
+                                <input type="hidden" name="from" value="{{ $_GET['from'] }}">
+                            @endisset
+                            @isset($_GET['to'])
+                                <input type="hidden" name="to" value="{{ $_GET['to'] }}">
+                            @endisset
+
                             <div class="col-lg-1">
                                 <button
                                     class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-excel"
@@ -81,9 +97,9 @@
                                         class="fas fa-file-excel mr-2 mt-1"></i> Excel</button>
                             </div>
                         </form>
-                        <a href="{{ route('birth.create') }}" class="btn bg-success text-white my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex"
-                        style="height:42px"><i
-                                class="fas fa-plus-circle mr-2 mt-1"></i>@lang('navigation.add_new')</a>
+                        <a href="{{ route('birth.create') }}"
+                            class="btn bg-success text-white my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex"
+                            style="height:42px"><i class="fas fa-plus-circle mr-2 mt-1"></i>@lang('navigation.add_new')</a>
                     </div>
                 </nav>
                 <hr>
@@ -102,29 +118,40 @@
                     <div class="card-body" id="cardBody">
                         <form action="{{ route('birth.filter') }}" method="GET" role="search">
                             <div class="row">
-                                <div class="mb-2 col-xl-1 col-lg-2 col-md-3">
+                                <div class="mb-2 col-xl-2 col-lg-2 col-md-3">
                                     @isset($old)
-                                        <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number"
-                                            value="{{ $old->darta_number }}">
+                                        <input type="text" class="form-control" placeholder="दर्ता न."
+                                            name="darta_number" value="{{ $old->darta_number }}">
                                     @else
-                                        <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number">
+                                        <input type="text" class="form-control" placeholder="दर्ता न."
+                                            name="darta_number">
                                     @endisset
                                 </div>
                                 {{-- ===== --}}
+                                {{-- <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                    @isset($old)
+                                        <input type="text" class="form-control myText" placeholder="Book Code" name="from"
+                                            value="{{ $old->from }}">
+                                    @else
+                                        <input type="text" class="form-control myText" placeholder="Book Code" name="from">
+                                    @endisset
+                                </div> --}}
                                 <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
                                     @isset($old)
-                                        <input type="text" class="form-control myText" id="nepali-datepicker" placeholder="दर्ता मिति(From)" name="name"
-                                            value="{{ $old->name }}">
+                                        <input type="text" class="form-control myText" id="nepali-datepicker"
+                                            placeholder="दर्ता मिति(From)" name="from" value="{{ $old->from }}">
                                     @else
-                                        <input type="text" class="form-control myText" id="nepali-datepicker1" placeholder="दर्ता मिति(From)" name="name">
+                                        <input type="text" class="form-control myText" id="nepali-datepicker1"
+                                            placeholder="दर्ता मिति(From)" name="from">
                                     @endisset
                                 </div>
                                 <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
                                     @isset($old)
-                                        <input type="text" class="form-control myText" id="nepali-datepicker2" placeholder="नाम" name="name"
-                                            value="{{ $old->name }}">
+                                        <input type="text" class="form-control myText" id="nepali-datepicker2"
+                                            placeholder="दर्ता मिति(To)" name="to" value="{{ $old->to }}">
                                     @else
-                                        <input type="text" class="form-control myText" id="nepali-datepicker3" placeholder="नाम" name="name">
+                                        <input type="text" class="form-control myText" id="nepali-datepicker3"
+                                            placeholder="दर्ता मिति(To)" name="to">
                                     @endisset
                                 </div>
                                 {{-- ========== --}}
@@ -242,7 +269,7 @@
                     {{-- =======modal===== --}}
                     <div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog"
                         aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg " >
+                        <div class="modal-dialog modal-lg ">
                             <div class="modal-content">
                                 <div class="col-12 pt-3 d-flex justify-content-end">
                                     <a href="" class="btn btn-info" id="detail_print">Print</a>
@@ -256,7 +283,7 @@
                                                 <td id="province"></td>
                                                 {{-- <td rowspan="3" style="width: 20%"></td> --}}
                                                 <td>स्थानीय पञ्जिकाधिकारी</td>
-                                                <td  id="administrator"></td>
+                                                <td id="administrator"></td>
                                             </tr>
                                             <tr>
                                                 <td>जिल्ला</td>
@@ -279,7 +306,7 @@
                                         <table class="my_table col-12">
                                             <tr>
                                                 <td>नाम</td>
-                                                <td  id="name"></td>
+                                                <td id="name"></td>
                                             </tr>
                                             <tr>
                                                 <td>जन्म मिति</td>
@@ -303,7 +330,7 @@
                                             </tr>
                                             <tr>
                                                 <td>नवजात शिशुको हजुरबुबाको नाम</td>
-                                                <td  id="grandfather_name"></td>
+                                                <td id="grandfather_name"></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -319,13 +346,13 @@
                                             </tr>
                                             <tr>
                                                 <td>स्थायी ठेगाना</td>
-                                                <td  id="father_parmanent_address"></td>
-                                                <td  id="mother_parmanent_address"></td>
+                                                <td id="father_parmanent_address"></td>
+                                                <td id="mother_parmanent_address"></td>
                                             </tr>
                                             <tr>
                                                 <td>अस्थायी ठेगाना</td>
-                                                <td  id="father_temporary_address"></td>
-                                                <td  id="mother_temporary_address"></td>
+                                                <td id="father_temporary_address"></td>
+                                                <td id="mother_temporary_address"></td>
                                             </tr>
                                             <tr>
                                                 <td>शिशु जन्मिदाको उमेर</td>
@@ -334,8 +361,8 @@
                                             </tr>
                                             <tr>
                                                 <td>जन्म भएको देश</td>
-                                                <td  id="father_country_where_baby_born"></td>
-                                                <td  id="mother_country_where_baby_born"></td>
+                                                <td id="father_country_where_baby_born"></td>
+                                                <td id="mother_country_where_baby_born"></td>
                                             </tr>
                                             <tr>
                                                 <td>नागरिकता(ना.प्र.नं.)</td>
@@ -354,13 +381,13 @@
                                             </tr>
                                             <tr>
                                                 <td>मातृभाषा</td>
-                                                <td  id="father_mother_toung"></td>
-                                                <td  id="mother_mother_toung"></td>
+                                                <td id="father_mother_toung"></td>
+                                                <td id="mother_mother_toung"></td>
                                             </tr>
                                             <tr>
                                                 <td>पेशा</td>
-                                                <td  id="father_occupation"></td>
-                                                <td  id="mother_occupation"></td>
+                                                <td id="father_occupation"></td>
+                                                <td id="mother_occupation"></td>
                                             </tr>
                                             <tr>
                                                 <td>यो शिशु समेत गरी हाल सम्म जन्मेको सन्तान संख्या</td>
@@ -391,17 +418,17 @@
                                             <tr>
                                                 <td>क</td>
                                                 <td>नाम</td>
-                                                <td  id="relative_name"></td>
+                                                <td id="relative_name"></td>
                                             </tr>
                                             <tr>
                                                 <td>ख</td>
                                                 <td>मृतक संगको सम्बन्ध</td>
-                                                <td  id="relationship"></td>
+                                                <td id="relationship"></td>
                                             </tr>
                                             <tr>
                                                 <td>ग</td>
                                                 <td>ठेगाना</td>
-                                                <td  id="relative_address"></td>
+                                                <td id="relative_address"></td>
                                             </tr>
                                             <tr>
                                                 <td>घ</td>
@@ -439,7 +466,7 @@
 <script>
     // var axios = new axios;
 
-    $(document).on('click','.btn_print',function(){
+    $(document).on('click', '.btn_print', function() {
         var prtContent = document.getElementById("my_data");
         var WinPrint = window.open();
         WinPrint.document.write(prtContent.outerHTML);
@@ -525,8 +552,8 @@
 </script>
 {{-- @endpush --}}
 @push('scripts')
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
-<script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
-<script src="/vendor/datatables/buttons.server-side.js"></script>
-{{-- {!! $dataTable->scripts() !!} --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
+    <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+    <script src="/vendor/datatables/buttons.server-side.js"></script>
+    {{-- {!! $dataTable->scripts() !!} --}}
 @endpush

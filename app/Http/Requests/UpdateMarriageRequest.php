@@ -30,6 +30,9 @@ class UpdateMarriageRequest extends FormRequest
             'vdc'=>'nullable',
             'administrator'=>'required',
             'reg_number'=>'required',
+            'book_id'=>'required',
+            'ward_num'=>'nullable',
+
             'entry_date'=>'required',
 
             'bride_name'=>'required',

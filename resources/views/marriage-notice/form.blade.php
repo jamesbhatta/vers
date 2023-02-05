@@ -31,7 +31,7 @@
 
                         <div class="card p-3">
                             <livewire:municipality :death="$marriage" />
-                            <x-darta :death="$marriage" />
+                            {{-- <x-darta :death="$marriage" /> --}}
                         </div>
                         <hr>
                         <h4 class="font-weight-bold py-3">दुलाहाको विवरण</h4>

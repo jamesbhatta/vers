@@ -4,6 +4,7 @@ namespace App\View\Components;
 
 use App\Mysetting;
 use App\Registaar;
+use App\Book;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Component;
 
@@ -15,9 +16,11 @@ class Darta extends Component
      * @return void
      */
     public $death;
-    public function __construct($death)
+    public $book;
+    public function __construct($death,$book)
     {
         $this->death = $death;
+        $this->book = $book;
     }
 
     /**
@@ -39,6 +42,10 @@ class Darta extends Component
         //     $default_registaar = $mysetting->default_registaar;
 
         // }
+        if($this->book){
+            $book=Book::where('id',$this->book)->first();
+            $default_registaar=$book->registaar;
+        }
         return view('components.darta',compact('mysetting','registaars','default_registaar'));
     }
 }

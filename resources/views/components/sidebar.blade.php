@@ -2,8 +2,8 @@
     <div class=" rounded d-flex justify-content-center align-items-center">
         <div class="d-block mt-3">
             <img src="{{ asset('assets/image/nep-gov-logo-sm.png') }}" style="height: 100px">
-            <h4 class="font-weight-bold myText text-center" style="color:#fff;margin-top:10px;font-size:30px">{{ __('app.name') }}</h4
-                class="text-uppercase font-weight-bold">
+            <h4 class="font-weight-bold myText text-center" style="color:#fff;margin-top:10px;font-size:30px">
+                {{ __('app.name') }}</h4 class="text-uppercase font-weight-bold">
         </div>
     </div>
 </div>
@@ -17,32 +17,39 @@
         </li>
         <li class="nav-item bg-transparent">
             <a class="nav-link fontSize" href="{{ route('birth.index') }}" onmouseover="this.style.color='black'"
-            onmouseout="this.style.color='white'">
-            <i class="fas fa-baby pr-3"></i>@lang('navigation.birth-notice-form')
-        </a>
-    </li>
-    <li class="nav-item bg-transparent">
-        <a class="nav-link fontSize" href="{{ route('death.index') }}" onmouseover="this.style.color='black'"
-        onmouseout="this.style.color='white'">
-        <i class="fas fa-bolt pr-3"></i>@lang('navigation.death-notice-form')
-    </a>
-</li>
-<li class="nav-item bg-transparent">
-    <a class="nav-link fontSize" href="{{ route('marriage.index') }}" onmouseover="this.style.color='black'"
-    onmouseout="this.style.color='white'">
-    <i class="fas fa-restroom pr-3"></i>@lang('navigation.marriage-notice-form')
-</a>
-</li>
-<li class="nav-item bg-transparent">
-    <a class="nav-link fontSize" href="{{ route('migration.index') }}" onmouseover="this.style.color='black'"
-        onmouseout="this.style.color='white'">
-        <i class="fas fa-exchange-alt pr-3"></i>@lang('navigation.migration-notice-form')
-    </a>
-</li>
+                onmouseout="this.style.color='white'">
+                <i class="fas fa-baby pr-3"></i>@lang('navigation.birth-notice-form')
+            </a>
+        </li>
+        <li class="nav-item bg-transparent">
+            <a class="nav-link fontSize" href="{{ route('death.index') }}" onmouseover="this.style.color='black'"
+                onmouseout="this.style.color='white'">
+                <i class="fas fa-bolt pr-3"></i>@lang('navigation.death-notice-form')
+            </a>
+        </li>
+        <li class="nav-item bg-transparent">
+            <a class="nav-link fontSize" href="{{ route('marriage.index') }}" onmouseover="this.style.color='black'"
+                onmouseout="this.style.color='white'">
+                <i class="fas fa-restroom pr-3"></i>@lang('navigation.marriage-notice-form')
+            </a>
+        </li>
+        <li class="nav-item bg-transparent">
+            <a class="nav-link fontSize" href="{{ route('migration.index') }}" onmouseover="this.style.color='black'"
+                onmouseout="this.style.color='white'">
+                <i class="fas fa-exchange-alt pr-3"></i>@lang('navigation.migration-notice-form')
+            </a>
+        </li>
         <li class="nav-item bg-transparent">
             <a class="nav-link fontSize" href="{{ route('vdc.index') }}" onmouseover="this.style.color='black'"
                 onmouseout="this.style.color='white'">
                 <i class="fas fa-city pr-3"></i>साबिकको ठेगाना
+            </a>
+        </li>
+
+        <li class="nav-item bg-transparent">
+            <a class="nav-link fontSize" href="{{ route('book.index') }}" onmouseover="this.style.color='black'"
+                onmouseout="this.style.color='white'">
+                <i class="fas fa-city pr-3"></i>पुस्तक
             </a>
         </li>
 

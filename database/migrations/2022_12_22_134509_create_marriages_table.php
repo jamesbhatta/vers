@@ -19,6 +19,8 @@ class CreateMarriagesTable extends Migration
             $table->string('district')->nullable();
             $table->string('municipality')->nullable();
             $table->string('vdc')->nullable();
+            $table->string('book_id');
+            $table->string('ward_num')->nullable();
             $table->string('administrator');
             $table->string('reg_number');
             $table->string('entry_date');

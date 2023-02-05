@@ -3,28 +3,19 @@
         <div class="form-group col-xl-3 col-lg-4 col-md-6">
             <label><span class="text-danger ">*</span> साक्षीको नाम </label>
 
-            <input type="text" name="relative_name" class="form-control myText"
-                value="{{ old('relative_name', $death->relative_name) }}">
-            @error('relative_name')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
+            <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                <label><span class="text-danger ">*</span> साक्षीको नाम </label>
 
-        <div class="form-group col-xl-3 col-lg-4 col-md-6">
-            <label for=""><span class="text-danger">*</span> साक्षीसंगको सम्बन्ध</label>
-            <div class="input-group mb-2">
-
-                <input type="text" name="relationship" class="form-control myText"
-                    value="{{ old('relationship', $death->relationship) }}" />
+                <input type="text" name="relative_name" class="form-control myText"
+                    value="{{ old('relative_name', $death->relative_name) }}">
+                @error('relative_name')
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
             </div>
-            @error('relationship')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
 
-        <div class="form-group col-xl-3 col-lg-4 col-md-6">
-            <label for=""><span class="text-danger">*</span> साक्षीको ठेगाना</label>
-            <div class="input-group mb-2">
+            <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                <label for=""><span class="text-danger">*</span> साक्षीसंगको सम्बन्ध</label>
+                <div class="input-group mb-2">
 
                 <input type="text" name="relative_address" class="form-control myText"
                     value="{{ old('relative_address', $death->relative_address) }}" />
@@ -55,6 +46,9 @@
                     <img src="" alt="" class="p-1 img-fluid" style="height: 340px; width:100%;"
                         id="previewImg">
                 </div>
+                @error('relationship')
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
             </div>
             @error('file')
                 <small class="text-danger">{{ $message }}</small>

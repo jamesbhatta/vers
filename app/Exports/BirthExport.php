@@ -41,7 +41,14 @@ class BirthExport implements FromCollection
         if ($this->request->grandfather_name) {
             $births = $births->where('grandfather_name', 'like', '%' . $this->request->grandfather_name . '%');
         }
-
+        if ($this->request->from) {
+            if($this->request->to){
+                $births = $births->whereBetween('entry_date', [date($this->request->from),date($this->request->to)]);
+                // Reservation::->get();
+            }else{
+                $births = $births->where('entry_date', $this->request->from);
+            }
+        }
         $births = $births->orderBy('id','desc')->get();
         return $births;
     }

@@ -142,8 +142,8 @@
 
                         {{-- <div class="row p-3"> --}}
                         <x-sachi-form :death="$migrationCertificate" />
-                        <div class="p-3 text-right" style="background-color:#f9fafb">
-                            <button class="btn my-0 rounded z-depth-0 font-16px px-4 waves-effect waves-light"
+                        <div class="p-3 text-right mt-2" style="background-color:#f9fafb">
+                            <button class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light"
                                 type="submit"
                                 style="background-color:#374f67; color: #fff;">{{ $migrationCertificate->id ? 'Update' : 'Save' }}</button>
                         </div>
