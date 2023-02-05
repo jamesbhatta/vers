@@ -79,7 +79,7 @@
     </div>
     <div class="col-xl-6">
         <div class="form-group">
-            <label for="">old address</label>
+            <label for="">Old Address</label>
             <select name="vdc" class="custom-select" id="" wire:model="vdc">
                 @foreach ($vdcs as $vdc)
                 <option value="{{ $vdc->vdc }}">{{ $vdc->vdc }}</option>

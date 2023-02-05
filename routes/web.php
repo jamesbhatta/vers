@@ -122,7 +122,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('vdc/{vdc}/update', [VdcController::class, 'update'])->name('vdc.update');
 
     Route::get('book',[BookController::class,'index'])->name('book.index');
-    Route::post('book',[BookController::class,'store'])->name('book.store');
+    Route::get('book/create',[BookController::class,'create'])->name('book.create');
+    Route::post('book/store',[BookController::class,'store'])->name('book.store');
 });
 
 

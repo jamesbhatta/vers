@@ -33,8 +33,7 @@
 
                         <div class="col-xl-4">
                             <div class="box mt-3">
-                                <div class="box__body" style="width: 100%;overflow-x:scroll">
-
+                                <div class="box__body" style="width: 100%;">
                                     <div class="row">
                                         <div class="col-xl-12">
                                             <div class="form-group">
@@ -79,7 +78,7 @@
                         </div>
                         <div class="col-xl-8">
                             <div class="box mt-3">
-                                <div class="box__body" style="width: 100%;overflow-x:scroll">
+                                <div class="box__body" style="width: 100%;">
 
                                     <div class="row">
 
