@@ -28,6 +28,9 @@ class MigrationCertificateRequest extends FormRequest
             'after_municipality' => ['required'],
             'after_district' => ['required'],
             'after_vdc' => ['nullable'],
+            'book_id'=>'required',
+            'ward_num'=>'nullable',
+
             'after_houseno' => ['nullable'],
             'after_village' => ['required'],
             'after_ward' => ['required'],

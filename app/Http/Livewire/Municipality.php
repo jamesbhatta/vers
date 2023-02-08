@@ -79,6 +79,39 @@ class Municipality extends Component
         }elseif($route=="marriage.create" || $route=="marriage.edit"){
             $this->mtype = 'विवाह दर्ता';
         }
+        elseif($route=="migration.create" || $route=="migration.edit"){
+            $this->mtype = 'विवाह दर्ता';
+        }
+
+        if (old('book_id')) {
+            $this->book_id = old('book_id');
+        }
+        if (old('province')) {
+            $this->province = old('province');
+        }
+        if (old('district')) {
+            $this->district = old('district');
+        }
+        if (old('vdc')) {
+            $this->vdc = old('vdc');
+        }
+        if (old('municipality')) {
+            $this->municipality = old('municipality');
+        }
+        if (old('ward_num')) {
+            $this->ward_num = old('ward_num');
+        }
+        if (old('administrator')) {
+            $this->administrator = old('administrator');
+        }
+
+        if (old('reg_number')) {
+            $this->reg_number = old('reg_number');
+        }
+        if (old('entry_date')) {
+            $this->entry_date = old('entry_date');
+        }
+
         // $books = $books->orderBy('id', 'desc')->get();
         return view('livewire.municipality', compact(['municipalities', 'vdcs','books']));
     }

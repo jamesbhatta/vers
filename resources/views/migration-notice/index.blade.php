@@ -41,6 +41,24 @@
                                         <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number">
                                     @endisset
                                 </div>
+                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                    @isset($old)
+                                        <input type="text" class="form-control myText" id="nepali-datepicker"
+                                            placeholder="दर्ता मिति(From)" name="from" value="{{ $old->from }}">
+                                    @else
+                                        <input type="text" class="form-control myText" id="nepali-datepicker"
+                                            placeholder="दर्ता मिति(From)" name="from">
+                                    @endisset
+                                </div>
+                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                    @isset($old)
+                                        <input type="text" class="form-control myText" id="nepali-datepicker2"
+                                            placeholder="दर्ता मिति(To)" name="to" value="{{ $old->to }}">
+                                    @else
+                                        <input type="text" class="form-control myText" id="nepali-datepicker2"
+                                            placeholder="दर्ता मिति(To)" name="to">
+                                    @endisset
+                                </div>
                                 <div class="col-lg-2">
                                     @isset($old)
                                         <input type="text" class="form-control" id="nepali-datepicker1"
@@ -50,16 +68,19 @@
                                             placeholder=" दर्ता मिति" name="entry_date">
                                     @endisset
                                 </div>
+
                                 <div class="col-lg-2">
                                     @isset($old)
-                                        <input type="text" class="form-control" id="nepali-datepicker2"
+                                        <input type="text" class="form-control" id="nepali-datepicker3"
                                             placeholder=" बसाई सराईको मिति" name="migration_date"
                                             value="{{ $old->migration_date }}">
                                     @else
-                                        <input type="text" class="form-control" id="nepali-datepicker2"
+                                        <input type="text" class="form-control" id="nepali-datepicker3"
                                             placeholder=" बसाई सराईको मिति" name="migration_date">
                                     @endisset
                                 </div>
+
+
 
                                 <div class="col-lg-1">
                                     <input type="submit" class="btn btn-info bg-info" value="Filter">
@@ -277,8 +298,8 @@
                                                 </div>
                                                 <div class="col-lg-12 mt-1">
                                                     <h3 class="text-center h4 font-weight-bold ">सम्बन्धित फाइल</h3>
-                                                    <img src="" id="related_file"
-                                                        class="img-fluid m-auto" alt="सम्बन्धित फाइल फेला परेन"
+                                                    <img src="" id="related_file" class="img-fluid m-auto"
+                                                        alt="सम्बन्धित फाइल फेला परेन"
                                                         style="width:80%;position:relative; height:40%;">
 
                                                 </div>
@@ -337,10 +358,10 @@
                 $('#relative_address').html(response.data.relative_address);
                 $('#relationship').html(response.data.relationship);
                 $('#date').html(response.data.date);
-                family_data="";
-                var num="";
+                family_data = "";
+                var num = "";
                 for (let i = 0; i < response.data.families.length; i++) {
-                    num=i+1;
+                    num = i + 1;
                     family_data += "<tr>";
                     family_data += "<td>" + num + "</td>";
                     family_data += "<td>" + response.data.families[i].name + "</td>";
