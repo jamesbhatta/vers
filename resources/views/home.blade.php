@@ -28,7 +28,7 @@
                 <h2 class="font-weight-bold text-uppercase">{{ App\Mysetting::first()->default_district }}</h2>
                 <h3 class="font-weight-bold text-uppercase">{{ App\Mysetting::first()->default_municipality }}</h3>
             </div> --}}
-            <div class="row pb-5">
+            {{-- <div class="row pb-5">
 
                 <div class="row d-flex col-12 ml-2">
                     <div class="col-xl-3 col-lg-3">
@@ -82,7 +82,7 @@
                     </div>
 
                 </div>
-            </div>
+            </div> --}}
             {{-- <div class="box p-3" style="width: 50%">
                 <canvas id="myChart"></canvas>
             </div> --}}

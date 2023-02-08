@@ -33,7 +33,7 @@
                         <form action="{{ route('migration.filter') }}" method="get">
                             @csrf
                             <div class="row justify-content-between">
-                                <div class="col-lg-1">
+                                <div class="col-lg-2">
                                     @isset($old)
                                         <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number"
                                             value="{{ $old->reg_number }}">
@@ -115,20 +115,21 @@
                                         <td>{{ $migrationCertificate->migration_date }}</td>
                                         <td class="float-right d-flex">
                                             <a href="{{ route('migration.add-family', $migrationCertificate->id) }}"
-                                                class="action-btn text-primary"><i class="fas fa-plus-circle "></i></a>
-                                            <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"
+                                                class="action-btn text-primary" data-toggle="tooltip" data-placement="top" title="Add Family"><i class="fas fa-plus-circle "></i></a>
+                                            <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" data-toggle="tooltip" data-placement="top" title="Show detail"
                                                 class="action-btn text-primary show"
                                                 id="{{ $migrationCertificate->id }}"><i class="fa fa-eye"></i></a>
-                                            <a href="{{ route('migration.edit', $migrationCertificate->id) }}"
+                                            <a href="{{ route('migration.edit', $migrationCertificate->id) }}" data-toggle="tooltip" data-placement="top" title="Edit migration notice"
                                                 class="action-btn text-primary"><i class="fa fa-edit"></i></a>
                                             <form action="{{ route('migration.delete', $migrationCertificate->id) }}"
                                                 method="post" onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
                                                 class="form-inline d-inline">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" class="action-btn text-danger"><i
+                                                <button type="submit" class="action-btn text-danger" data-toggle="tooltip" data-placement="top" title="Delete migration notice"><i
                                                         class="far fa-trash-alt"></i></button>
                                             </form>
+
                                         </td>
                                     </tr>
                                 @endforeach

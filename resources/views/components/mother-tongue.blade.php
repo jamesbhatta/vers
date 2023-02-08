@@ -12,7 +12,7 @@
         $my_default_mother_tongue = App\Mysetting::first()->default_mother_tongue;
     }
 @endphp
-<select class="custom-select myText" name="{{ $name }}">
+<select class="custom-select myText" name="{{ $name }}" id={{ $id }}>
     @foreach ($mothertongues as $mothertongue)
         <option value="{{ $mothertongue->name }}"
             @if ($userdata->$name) {{ $userdata->$name == $mothertongue->name ? 'selected' : '' }}

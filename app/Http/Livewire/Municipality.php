@@ -80,7 +80,7 @@ class Municipality extends Component
             $this->mtype = 'विवाह दर्ता';
         }
         elseif($route=="migration.create" || $route=="migration.edit"){
-            $this->mtype = 'विवाह दर्ता';
+            $this->mtype = 'बसाईसराई दर्ता';
         }
 
         if (old('book_id')) {

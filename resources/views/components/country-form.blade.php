@@ -13,7 +13,7 @@
             $default_country = App\Mysetting::first()->country;
         }
     @endphp
-    <select name="{{ $name }}" class="custom-select myText" id="">
+    <select name="{{ $name }}" class="custom-select myText" id="{{ $id }}">
         @foreach ($countries as $country)
             <option value="{{ $country->name }}"
                 @if ($usercountry->$name) {{ $usercountry->$name == $country->name ? 'selected' : '' }}

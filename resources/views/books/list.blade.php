@@ -62,8 +62,7 @@
                                                     @elseif($book->book_type == 'विवाह दर्ता')
                                                         {{ \App\Marriage::where('book_id', $book->id)->count() }}
                                                     @elseif($book->book_type == 'बसाईसराई दर्ता')
-                                                        <a href="{{ route('migration.create') }}?book_id={{ $book->id }}"
-                                                            class="btn btn-info">Add</a>
+                                                    {{ \App\MigrationCertificate::where('book_id', $book->id)->count() }}
                                                     @endif
                                                 </td>
                                                 <td>

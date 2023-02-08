@@ -229,19 +229,19 @@
                                     <td class="text-right">
                                         {{-- <button type="button" class="btn btn-primary" >Large modal</button> --}}
 
-                                        <a class="action-btn text-primary show" style="cursor: pointer"
+                                        <a class="action-btn text-primary show" style="cursor: pointer" data-toggle="tooltip" data-placement="top" title="Detail view"
                                             id="{{ $death->id }}" data-toggle="modal"
                                             data-target=".bd-example-modal-lg"><i class="far fa-eye"></i></a>
                                         {{-- <a class="action-btn text-primary"
                                             href="{{ route('death.show', $death->id) }}"><i class="far fa-eye"></i></a> --}}
-                                        <a class="action-btn text-primary"
+                                        <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top" title="Edit death notice"
                                             href="{{ route('death.edit', $death->id) }}"><i class="far fa-edit"></i></a>
                                         <form action="{{ route('death.delete', $death->id) }}" method="post"
                                             onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
                                             class="form-inline d-inline">
                                             @csrf
                                             @method('delete')
-                                            <button type="submit" class="action-btn text-danger"><i
+                                            <button type="submit" class="action-btn text-danger" data-toggle="tooltip" data-placement="top" title="Delete death notice"><i
                                                     class="far fa-trash-alt"></i></button>
                                         </form>
                                     </td>

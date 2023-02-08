@@ -142,6 +142,7 @@
                                     <label for=""><span class="text-danger">*</span> स्थायी ठेगाना </label>
                                     <div class="input-group mb-2">
                                         <input type="text" class="form-control myText" name="father_parmanent_address"
+                                            id="father_parmanent_address"
                                             value="{{ old('father_parmanent_address', $birth->father_parmanent_address) }}" />
                                     </div>
                                     @error('father_parmanent_address')
@@ -152,6 +153,7 @@
                                     <label for="">अस्थायी ठेगाना </label>
                                     <div class="input-group mb-2">
                                         <input type="text" class="form-control myText" name="father_temporary_address"
+                                            id="father_temporary_address"
                                             value="{{ old('father_temporary_address', $birth->father_temporary_address) }}" />
                                     </div>
                                     @error('father_temporary_address')
@@ -170,7 +172,7 @@
                                 </div>
 
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-country-form :label="'जन्म भएको देश'" :name="'father_country_where_baby_born'" :usercountry="$birth" />
+                                    <x-country-form :label="'जन्म भएको देश'" :name="'father_country_where_baby_born'" :id="'father_country_where_baby_born'" :usercountry="$birth" />
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label>नागरिकता(ना.प्र.नं.) </label>
@@ -185,7 +187,7 @@
 
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label><span class="text-danger">*</span> शिक्षा</label>
-                                    <select class="custom-select" name="father_education">
+                                    <select class="custom-select" name="father_education" id="father_education">
                                         <option selected disabled class="m-5" value="">छान्न्नुहोस्।
                                         </option>
                                         <div>
@@ -226,7 +228,7 @@
 
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label for=""><span class="text-danger">*</span> धर्म</label>
-                                    <select class="custom-select" name="father_religion">
+                                    <select class="custom-select" name="father_religion" id="father_religion">
                                         <option selected disabled class="m-5" value="">छान्न्नुहोस्।
                                         </option>
                                         <div>
@@ -252,7 +254,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6 ">
-                                    <x-mother-tongue :name="'father_mother_toung'" :userdata="$birth" />
+                                    <x-mother-tongue :name="'father_mother_toung'" :id="'father_mother_toung'" :userdata="$birth"  />
                                 </div>
 
 
@@ -260,6 +262,7 @@
                                     <label for=""><span class="text-danger">*</span> पेशा </label>
                                     <div class="input-group mb-2">
                                         <input type="" class="form-control myText" name="father_occupation"
+                                            id="father_occupation"
                                             value="{{ old('father_occupation', $birth->father_occupation) }}" />
                                     </div>
                                     @error('father_occupation')
@@ -270,6 +273,7 @@
                                     <label><span class="text-danger">*</span> हाल सम्म जन्मेको सन्तान संख्या </label>
                                     <div class="input-group mb-2">
                                         <input type="number" class="form-control" name="father_baby_number"
+                                            id="father_baby_number"
                                             value="{{ old('father_baby_number', $birth->father_baby_number) }}" />
                                     </div>
                                     @error('father_baby_number')
@@ -281,6 +285,7 @@
                                         संख्या</label>
                                     <div class="input-group mb-2">
                                         <input type="number" class="form-control" name="father_alive_baby_number"
+                                            id="father_alive_baby_number"
                                             value="{{ old('father_alive_baby_number', $birth->father_alive_baby_number) }}" />
                                     </div>
                                     @error('father_alive_baby_number')
@@ -292,7 +297,7 @@
                                     <div class="input-group mb-2">
                                         {{-- <input type="text" class="form-control" name="father_helper"
                                             value="{{ old('father_helper', $birth->father_helper) }}" /> --}}
-                                        <select class="custom-select" name="father_helper">
+                                        <select class="custom-select" name="father_helper" id="father_helper">
                                             <option selected disabled class="m-5" value="">छान्न्नुहोस्।
                                             </option>
                                             <div>
@@ -335,7 +340,15 @@
 
                         <hr>
 
-                        <h4 class="font-weight-bold mt-3 pb-3">नवजात शिशुको आमाको विवरण </h4>
+                        <div class="d-flex align-items-center gap-3">
+                            <h4 class="font-weight-bold mt-3 pb-3">नवजात शिशुको आमाको विवरण </h4>
+                            <div class="form-check" id="chkbox">
+                                <input class="form-check-input" type="checkbox" value="" id="chkbox1">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Same as father's record ?
+                                </label>
+                            </div>
+                        </div>
                         <div class="card p-3">
                             <div class="row">
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
@@ -350,6 +363,7 @@
                                     <label for=""><span class="text-danger">*</span> स्थायी ठेगाना </label>
                                     <div class="input-group mb-2">
                                         <input type="text" class="form-control myText" name="mother_parmanent_address"
+                                            id="mother_parmanent_address"
                                             value="{{ old('mother_parmanent_address', $birth->mother_parmanent_address) }}" />
                                     </div>
                                     @error('mother_parmanent_address')
@@ -361,6 +375,7 @@
                                     <label for="">अस्थायी ठेगाना </label>
                                     <div class="input-group mb-2">
                                         <input type="text" class="form-control myText" name="mother_temporary_address"
+                                            id="mother_temporary_address"
                                             value="{{ old('mother_temporary_address', $birth->mother_temporary_address) }}" />
                                     </div>
                                     @error('mother_temporary_address')
@@ -371,6 +386,7 @@
                                     <label for=""><span class="text-danger">*</span> शिशु जन्मिदाको उमेर </label>
                                     <div class="input-group mb-2">
                                         <input type="number" class="form-control" name="mother_age_while_baby_born"
+                                            id="mother_age_while_baby_born"
                                             value="{{ old('mother_age_while_baby_born', $birth->mother_age_while_baby_born) }}" />
                                     </div>
                                     @error('mother_age_while_baby_born')
@@ -378,7 +394,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-country-form :label="'जन्म भएको देश'" :name="'mother_country_where_baby_born'" :usercountry="$birth" />
+                                    <x-country-form :label="'जन्म भएको देश'" :name="'mother_country_where_baby_born'" :id="'mother_country_where_baby_born'" :usercountry="$birth" />
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label>नागरिकता(ना.प्र.नं.) </label>
@@ -392,7 +408,7 @@
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label><span class="text-danger">*</span> शिक्षा</label>
-                                    <select class="custom-select" name="mother_education">
+                                    <select class="custom-select" name="mother_education" id="mother_education">
                                         <option selected class="m-5" value="">छान्न्नुहोस्।
                                         </option>
                                         <div>
@@ -433,7 +449,7 @@
 
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label for=""><span class="text-danger">*</span> धर्म</label>
-                                    <select class="custom-select" name="mother_religion">
+                                    <select class="custom-select" name="mother_religion" id="mother_religion">
                                         <option selected disabled class="m-5" value="">छान्न्नुहोस्।
                                         </option>
                                         <div>
@@ -459,13 +475,14 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-mother-tongue :name="'mother_mother_toung'" :userdata="$birth" />
+                                    <x-mother-tongue :name="'mother_mother_toung'" :id="'mother_mother_toung'" :userdata="$birth" />
                                 </div>
 
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label for=""><span class="text-danger">*</span> पेशा </label>
                                     <div class="input-group mb-2">
                                         <input type="" class="form-control myText" name="mother_occupation"
+                                            id="mother_occupation"
                                             value="{{ old('mother_occupation', $birth->mother_occupation) }}" />
                                     </div>
                                     @error('mother_occupation')
@@ -477,6 +494,7 @@
                                     <label><span class="text-danger">*</span> हाल सम्म जन्मेको सन्तान संख्या </label>
                                     <div class="input-group mb-2">
                                         <input type="number" class="form-control" name="mother_baby_number"
+                                            id="mother_baby_number"
                                             value="{{ old('mother_baby_number', $birth->mother_baby_number) }}" />
                                     </div>
                                     @error('mother_baby_number')
@@ -488,6 +506,7 @@
                                         संख्या</label>
                                     <div class="input-group mb-2">
                                         <input type="number" class="form-control" name="mother_alive_baby_number"
+                                            id="mother_alive_baby_number"
                                             value="{{ old('mother_alive_baby_number', $birth->mother_alive_baby_number) }}" />
                                     </div>
                                     @error('mother_alive_baby_number')
@@ -500,7 +519,7 @@
                                         {{-- <input type="text" class="form-control" name="mother_helper"
                                             value="{{ old('mother_helper', $birth->mother_helper) }}" /> --}}
 
-                                        <select class="custom-select" name="mother_helper">
+                                        <select class="custom-select" name="mother_helper" id="mother_helper">
                                             <option selected disabled class="m-5" value="">छान्न्नुहोस्।
                                             </option>
                                             <div>
@@ -527,7 +546,7 @@
                                     <label for=""><span class="text-danger">*</span> विवाहा भएको साल </label>
                                     <div class="input-group mb-2">
                                         <input type="text" class="form-control" id="nepali-datepicker1"
-                                            name="mother_marige_date"
+                                            name="mother_marige_date" id="mother_marige_date"
                                             value="{{ old('mother_marige_date', $birth->mother_marige_date) }}" />
                                     </div>
                                     @error('mother_marige_date')
@@ -593,5 +612,30 @@
                 margin-top: 27px;
             }
         </style>
+    @endpush
+
+    @push('script')
+        <script>
+            $(document).ready(function() {
+                $('input[id="chkbox1"]').click(function() {
+                    // alert("fsdfs");
+                    if ($(this).prop("checked") == true) {
+                        $("#mother_parmanent_address").val($("#father_parmanent_address").val());
+                        $("#mother_temporary_address").val($("#father_temporary_address").val());
+                        $("#mother_occupation").val($("#father_occupation").val());
+                        $("#mother_baby_number").val($("#father_baby_number").val());
+                        $("#mother_alive_baby_number").val($("#father_alive_baby_number").val());
+                        $("#nepali-datepicker1").val($("#nepali-datepicker").val());
+                        $("#mother_religion").val($("#father_religion").val()).change();
+                        $("#mother_education").val($("#father_education").val()).change();
+                        $("#mother_helper").val($("#father_helper").val()).change();
+                        $("#mother_mother_toung").val($("#father_mother_toung").val()).change();
+                        $("#mother_country_where_baby_born").val($("#father_country_where_baby_born").val()).change();
+                    } else if ($("#chkbox").prop("checked") == false) {
+                        console.log("Checkbox is unchecked.");
+                    }
+                });
+            });
+        </script>
     @endpush
 @endsection

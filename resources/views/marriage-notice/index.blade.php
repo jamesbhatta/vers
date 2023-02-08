@@ -230,10 +230,10 @@
                                         <td>{{ $marriage->groom_grandfather_name }}</td>
                                         <td>{{ $marriage->groom_father_name }}</td>
                                         <td class="text-right">
-                                            <a class="action-btn text-primary show" id="{{ $marriage->id }}"
+                                            <a class="action-btn text-primary show" id="{{ $marriage->id }}" data-toggle="tooltip" data-placement="top" title="Detail view"
                                                 data-toggle="modal" data-target=".bd-example-modal-lg"
                                                 style="cursor: pointer"><i class="far fa-eye"></i></a>
-                                            <a class="action-btn text-primary"
+                                            <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top" title="Edit marriage notice"
                                                 href="{{ route('marriage.edit', $marriage->id) }}"><i
                                                     class="far fa-edit"></i></a>
                                             <form action="{{ route('marriage.delete', $marriage->id) }}" method="post"
@@ -241,7 +241,7 @@
                                                 class="form-inline d-inline">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" class="action-btn text-danger"><i
+                                                <button type="submit" class="action-btn text-danger" data-toggle="tooltip" data-placement="top" title="Delete marriage notice"><i
                                                         class="far fa-trash-alt"></i></button>
                                             </form>
                                         </td>

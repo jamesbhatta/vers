@@ -246,10 +246,10 @@
 
                                         <td class="text-nowrap text-right">
 
-                                            <a class="action-btn text-primary show" style="cursor: pointer"
+                                            <a class="action-btn text-primary show" style="cursor: pointer" data-toggle="tooltip" data-placement="top" title="Detail view"
                                                 id="{{ $birth->id }}" data-toggle="modal"
                                                 data-target=".bd-example-modal-lg"><i class="far fa-eye"></i></a>
-                                            <a class="action-btn text-primary"
+                                            <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top" title="Edit birth notice"
                                                 href="{{ route('birth.edit', $birth->id) }}"><i
                                                     class="far fa-edit"></i></a>
                                             <form action="{{ route('birth.delete', $birth->id) }}" method="post"
@@ -257,7 +257,7 @@
                                                 class="form-inline d-inline">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" class="action-btn text-danger"><i
+                                                <button type="submit" class="action-btn text-danger" data-toggle="tooltip" data-placement="top" title="Delete birth notice"><i
                                                         class="far fa-trash-alt"></i></button>
                                             </form>
                                         </td>
