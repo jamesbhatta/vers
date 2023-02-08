@@ -35,11 +35,11 @@
                                     <thead class="thead-light">
                                         <tr class="text-uppercase">
                                             <th>#</th>
-                                            <th>पुस्तक कोड</th>
-                                            <th>पुस्तक प्रकार</th>
+                                            <th>किताब कोड</th>
+                                            <th>किताब प्रकार</th>
                                             <th>पञ्जिकाधिकारी</th>
                                             <th>देखी</th>
-                                            <th>सम्मा</th>
+                                            <th>सम्म</th>
                                             <th>कुल रेकर्ड</th>
                                             <th>सूचना फाराम</th>
                                             <th class="text-right">Action</th>

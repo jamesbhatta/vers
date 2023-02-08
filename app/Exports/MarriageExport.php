@@ -43,6 +43,14 @@ class MarriageExport implements FromCollection
         if ($this->request->groom_father_name) {
             $marriage = $marriage->where('groom_father_name', 'like', '%' . $this->request->groom_father_name . '%');
         }
+if ($this->request->from) {
+            if($this->request->to){
+                $marriage = $marriage->whereBetween('entry_date', [date($this->request->from),date($this->request->to)]);
+                // Reservation::->get();
+            }else{
+                $marriage = $marriage->where('entry_date', $this->request->from);
+            }
+        }
         $marriage = $marriage->orderBy('id','desc')->get();
 
         return $marriage;

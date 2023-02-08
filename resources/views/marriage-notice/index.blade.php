@@ -37,7 +37,12 @@
                             @isset($_GET['groom_father_name'])
                                 <input type="hidden" name="groom_father_name" value="{{ $_GET['groom_father_name'] }}">
                             @endisset
-
+                            @isset($_GET['from'])
+                                <input type="hidden" name="from" value="{{ $_GET['from'] }}">
+                            @endisset
+                            @isset($_GET['to'])
+                                <input type="hidden" name="to" value="{{ $_GET['to'] }}">
+                            @endisset
                             <div class="col-lg-1">
                                 <button
                                     class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-print"
@@ -72,7 +77,12 @@
                             @isset($_GET['groom_father_name'])
                                 <input type="hidden" name="groom_father_name" value="{{ $_GET['groom_father_name'] }}">
                             @endisset
-
+                            @isset($_GET['from'])
+                                <input type="hidden" name="from" value="{{ $_GET['from'] }}">
+                            @endisset
+                            @isset($_GET['to'])
+                                <input type="hidden" name="to" value="{{ $_GET['to'] }}">
+                            @endisset
                             <div class="col-lg-1">
                                 <button
                                     class="btn my-0  rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-excel"
@@ -106,15 +116,33 @@
                         <form action="{{ route('marriage.filter') }}" method="GET" role="search">
                             {{-- @csrf --}}
                             <div class="row">
-                                <div class="mb-2 col-xl-1 col-lg-2 col-md-3">
+                                <div class="mb-2 col-xl-2 col-lg-2 col-md-3">
                                     @isset($old)
-                                        <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number"
-                                            value="{{ $old->darta_number }}">
+                                        <input type="text" class="form-control" placeholder="दर्ता न."
+                                            name="darta_number" value="{{ $old->darta_number }}">
                                     @else
-                                        <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number">
+                                        <input type="text" class="form-control" placeholder="दर्ता न."
+                                            name="darta_number">
                                     @endisset
                                 </div>
-
+                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                    @isset($old)
+                                        <input type="text" class="form-control myText" id="nepali-datepicker"
+                                            placeholder="दर्ता मिति(From)" name="from" value="{{ $old->from }}">
+                                    @else
+                                        <input type="text" class="form-control myText" id="nepali-datepicker1"
+                                            placeholder="दर्ता मिति(From)" name="from">
+                                    @endisset
+                                </div>
+                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                    @isset($old)
+                                        <input type="text" class="form-control myText" id="nepali-datepicker2"
+                                            placeholder="दर्ता मिति(To)" name="to" value="{{ $old->to }}">
+                                    @else
+                                        <input type="text" class="form-control myText" id="nepali-datepicker3"
+                                            placeholder="दर्ता मिति(To)" name="to">
+                                    @endisset
+                                </div>
                                 <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
                                     @isset($old)
                                         <input type="text" class="form-control" id="nepali-datepicker"
@@ -195,12 +223,12 @@
                                         <td>{{ $loop->iteration }}</td>
 
                                         <td>{{ $marriage->reg_number }}</td>
-                                        <td >{{ $marriage->bride_name }}</td>
-                                        <td >{{ $marriage->bride_grandfather_name }}</td>
-                                        <td >{{ $marriage->bride_father_name }}</td>
-                                        <td >{{ $marriage->groom_name }}</td>
-                                        <td >{{ $marriage->groom_grandfather_name }}</td>
-                                        <td >{{ $marriage->groom_father_name }}</td>
+                                        <td>{{ $marriage->bride_name }}</td>
+                                        <td>{{ $marriage->bride_grandfather_name }}</td>
+                                        <td>{{ $marriage->bride_father_name }}</td>
+                                        <td>{{ $marriage->groom_name }}</td>
+                                        <td>{{ $marriage->groom_grandfather_name }}</td>
+                                        <td>{{ $marriage->groom_father_name }}</td>
                                         <td class="text-right">
                                             <a class="action-btn text-primary show" id="{{ $marriage->id }}"
                                                 data-toggle="modal" data-target=".bd-example-modal-lg"
@@ -240,7 +268,7 @@
                                                 <td id="province"></td>
                                                 {{-- <td rowspan="3" style="width: 20%"></td> --}}
                                                 <td>स्थानीय पञ्जिकाधिकारी</td>
-                                                <td  id="administrator"></td>
+                                                <td id="administrator"></td>
                                             </tr>
                                             <tr>
                                                 <td>जिल्ला</td>
@@ -269,8 +297,8 @@
                                             </tr>
                                             <tr>
                                                 <td>नाम,थर</td>
-                                                <td  id="bride_name"></td>
-                                                <td  id="groom_name"></td>
+                                                <td id="bride_name"></td>
+                                                <td id="groom_name"></td>
                                             </tr>
                                             <tr>
                                                 <td>जन्म मिति</td>
@@ -279,8 +307,8 @@
                                             </tr>
                                             <tr>
                                                 <td>जन्म भएको देश</td>
-                                                <td  id="bride_birth_country"></td>
-                                                <td  id="groom_birth_country"></td>
+                                                <td id="bride_birth_country"></td>
+                                                <td id="groom_birth_country"></td>
                                             </tr>
                                             <tr>
                                                 <td>नागरिकता (ना.प्र.नं)</td>
@@ -294,13 +322,13 @@
                                             </tr>
                                             <tr>
                                                 <td>नागरिकता लिएको जिल्ला</td>
-                                                <td  id="bride_citizenship_district"></td>
-                                                <td  id="groom_citizenship_district"></td>
+                                                <td id="bride_citizenship_district"></td>
+                                                <td id="groom_citizenship_district"></td>
                                             </tr>
                                             <tr>
                                                 <td>स्थाई ठेगाना</td>
-                                                <td  id="bride_temp_address"></td>
-                                                <td  id="groom_temp_address"></td>
+                                                <td id="bride_temp_address"></td>
+                                                <td id="groom_temp_address"></td>
                                             </tr>
                                             <tr>
                                                 <td>शिक्षा</td>
@@ -314,18 +342,18 @@
                                             </tr>
                                             <tr>
                                                 <td>मातृभाषा</td>
-                                                <td  id="bride_mother_tongue"></td>
-                                                <td  id="groom_mother_tongue"></td>
+                                                <td id="bride_mother_tongue"></td>
+                                                <td id="groom_mother_tongue"></td>
                                             </tr>
                                             <tr>
                                                 <td>बाजेको नाम</td>
-                                                <td  id="bride_grandfather_name"></td>
-                                                <td  id="groom_grandfather_name"></td>
+                                                <td id="bride_grandfather_name"></td>
+                                                <td id="groom_grandfather_name"></td>
                                             </tr>
                                             <tr>
                                                 <td>बाबुको नाम</td>
-                                                <td  id="bride_father_name"></td>
-                                                <td  id="groom_father_name"></td>
+                                                <td id="bride_father_name"></td>
+                                                <td id="groom_father_name"></td>
                                             </tr>
                                             <tr>
                                                 <td>पूर्व वैवाहिक स्थिति</td>
@@ -342,17 +370,17 @@
                                             <tr>
                                                 <td>क</td>
                                                 <td>नाम</td>
-                                                <td  id="relative_name"></td>
+                                                <td id="relative_name"></td>
                                             </tr>
                                             <tr>
                                                 <td>ख</td>
                                                 <td>मृतक संगको सम्बन्ध</td>
-                                                <td  id="relationship"></td>
+                                                <td id="relationship"></td>
                                             </tr>
                                             <tr>
                                                 <td>ग</td>
                                                 <td>ठेगाना</td>
-                                                <td  id="relative_address"></td>
+                                                <td id="relative_address"></td>
                                             </tr>
                                             <tr>
                                                 <td>घ</td>

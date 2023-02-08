@@ -1,6 +1,6 @@
 <div class="row">
     <div class="form-group col-xl-4 col-lg-4 col-md-6">
-        <label for=""><span class="text-danger">*</span> Book Code</label>
+        <label for=""><span class="text-danger">*</span> किताब कोड</label>
         @php
             $selected_book_id = $book;
             $exist = '0';
@@ -29,6 +29,7 @@
         @else
             <select name="book_id" class="custom-select" id="" wire:model="book_id"
                 wire:click="changeEvent($event.target.value)">
+                <option value="">किताब छान्न्नुहोस्।</option>
                 @foreach ($books as $book)
                     @if ($book->book_type == $mtype)
                         <option value="{{ $book->id }}">{{ $book->code }}</option>
