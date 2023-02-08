@@ -11,11 +11,23 @@
 <script>
     $('#summernote').summernote({
         height: 200,
-        width:1500
+        width: 1500
     });
-    $(document).ready( function () {
-    $('#myTable').DataTable();
-} );
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
+</script>
+<script src="magnific-popup/jquery.magnific-popup.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.image-link').magnificPopup({
+            type: 'image'
+        });
+    });
+    $('.test-popup-link').magnificPopup({
+        type: 'image'
+        // other options
+    });
 </script>
 @stack('scripts')
 <script src="{{ mix('js/app.js') }}"></script>

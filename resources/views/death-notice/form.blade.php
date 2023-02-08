@@ -57,7 +57,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-mother-tongue :name="'mother_tongue'" :userdata="$death"/>
+                                    <x-mother-tongue :name="'mother_tongue'" :id="'mother_tongue1'" :userdata="$death"/>
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label for=""><span class="text-danger">*</span> मरेको मिति </label>
@@ -215,7 +215,7 @@
                                 </div>
 
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-country-form :label="'जन्म भएको देश'" :name="'birth_country'" :usercountry="$death" />
+                                    <x-country-form :label="'जन्म भएको देश'" :name="'birth_country'" :id="'birth_country1'" :usercountry="$death" />
 
                                 </div>
 
