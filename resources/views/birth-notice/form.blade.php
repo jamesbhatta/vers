@@ -631,8 +631,18 @@
                         $("#mother_helper").val($("#father_helper").val()).change();
                         $("#mother_mother_toung").val($("#father_mother_toung").val()).change();
                         $("#mother_country_where_baby_born").val($("#father_country_where_baby_born").val()).change();
-                    } else if ($("#chkbox").prop("checked") == false) {
-                        console.log("Checkbox is unchecked.");
+                    } else{
+                        $("#mother_parmanent_address").val("");
+                        $("#mother_temporary_address").val("");
+                        $("#mother_occupation").val("");
+                        $("#mother_baby_number").val("");
+                        $("#mother_alive_baby_number").val("");
+                        $("#nepali-datepicker1").val("");
+                        $("#mother_religion").val("").change();
+                        $("#mother_education").val("").change();
+                        $("#mother_helper").val("").change();
+                        $("#mother_mother_toung").val("").change();
+                        $("#mother_country_where_baby_born").val("").change();
                     }
                 });
             });
