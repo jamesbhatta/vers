@@ -246,7 +246,7 @@
 
                                         <td class="text-nowrap text-right">
 
-                                            <a class="action-btn text-primary show" style="cursor: pointer" data-toggle="tooltip" data-placement="top" title="Detail view"
+                                            <a class="action-btn text-primary show" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg"
                                                 id="{{ $birth->id }}" data-toggle="modal"
                                                 data-target=".bd-example-modal-lg"><i class="far fa-eye"></i></a>
                                             <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top" title="Edit birth notice"

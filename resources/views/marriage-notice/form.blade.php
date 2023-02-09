@@ -250,7 +250,7 @@
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label for="">नागरिकता (ना.प्र.नं) </label>
                                     <div class="input-group mb-2">
-                                        <input type="number" class="form-control" name="groom_citizenship_number"
+                                        <input type="text" class="form-control" name="groom_citizenship_number"
                                             value="{{ old('groom_citizenship_number', $marriage->groom_citizenship_number) }}" />
                                     </div>
                                     @error('groom_citizenship_number')

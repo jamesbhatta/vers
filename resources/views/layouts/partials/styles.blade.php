@@ -47,6 +47,5 @@
 
 <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-<link rel="stylesheet" href="magnific-popup/magnific-popup.css">
 
 @stack('styles')

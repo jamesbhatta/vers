@@ -229,7 +229,7 @@
                                     <td class="text-right">
                                         {{-- <button type="button" class="btn btn-primary" >Large modal</button> --}}
 
-                                        <a class="action-btn text-primary show" style="cursor: pointer" data-toggle="tooltip" data-placement="top" title="Detail view"
+                                        <a class="action-btn text-primary show" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg"
                                             id="{{ $death->id }}" data-toggle="modal"
                                             data-target=".bd-example-modal-lg"><i class="far fa-eye"></i></a>
                                         {{-- <a class="action-btn text-primary"
