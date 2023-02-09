@@ -24,7 +24,7 @@
                     </div>
                 @endif
 
-                <form action="{{ $book->id ? route('book.update',$book->id) : route('book.store') }}" method="POST">
+                <form action="{{ $book->id ? route('book.update', $book->id) : route('book.store') }}" method="POST">
                     @csrf
                     @isset($book->id)
                         @method('PUT')
@@ -38,37 +38,58 @@
                                     <div class="row">
                                         <div class="col-xl-12">
                                             <div class="form-group">
-                                                <label>Book Type</label>
+                                                <label>किताब प्रकार</label>
                                                 <select name="book_type" class="custom-select" id="">
                                                     <option value="">Please select Book type</option>
-                                                    <option value="जन्म दर्ता" {{ $book->book_type == "जन्म दर्ता" ? 'selected' : ''  }}>जन्म दर्ता</option>
-                                                    <option value="मृत्यु दर्ता" {{ $book->book_type == "मृत्यु दर्ता" ? 'selected' : ''  }}>मृत्यु दर्ता</option>
-                                                    <option value="विवाह दर्ता" {{ $book->book_type == "विवाह दर्ता" ? 'selected' : ''  }}>विवाह दर्ता</option>
-                                                    <option value="बसाईसराई दर्ता" {{ $book->book_type == "बसाईसराई दर्ता" ? 'selected' : ''  }}>बसाईसराई दर्ता</option>
+                                                    <option value="जन्म दर्ता"
+                                                        {{ $book->book_type == 'जन्म दर्ता' ? 'selected' : '' }}>जन्म दर्ता
+                                                    </option>
+                                                    <option value="मृत्यु दर्ता"
+                                                        {{ $book->book_type == 'मृत्यु दर्ता' ? 'selected' : '' }}>मृत्यु
+                                                        दर्ता</option>
+                                                    <option value="विवाह दर्ता"
+                                                        {{ $book->book_type == 'विवाह दर्ता' ? 'selected' : '' }}>विवाह
+                                                        दर्ता</option>
+                                                    <option value="बसाईसराई दर्ता"
+                                                        {{ $book->book_type == 'बसाईसराई दर्ता' ? 'selected' : '' }}>
+                                                        बसाईसराई दर्ता</option>
                                                 </select>
+                                                @error('book_type')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-xl-12">
                                             <div class="form-group">
-                                                <label>Book Code</label>
-                                                <input type="text" name="code" value="{{ old('code',$book->code) }}" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12">
-                                            <div class="form-group">
-                                                <label>From</label>
-                                                <input type="text" name="from" value="{{ old('from', $book->from) }}" id="nepali-datepicker"
+                                                <label>किताब कोड</label>
+                                                <input type="text" name="code" value="{{ old('code', $book->code) }}"
                                                     class="form-control">
+                                                @error('code')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-xl-12">
                                             <div class="form-group">
-                                                <label>To</label>
-                                                <input type="text" name="to" value="{{ old('to', $book->to) }}" id="nepali-datepicker1"
-                                                    class="form-control">
+                                                <label>देखी</label>
+                                                <input type="text" name="from" value="{{ old('from', $book->from) }}"
+                                                    id="nepali-datepicker" class="form-control">
+                                                @error('from')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
                                             </div>
                                         </div>
-{{--
+                                        <div class="col-xl-12">
+                                            <div class="form-group">
+                                                <label>सम्म</label>
+                                                <input type="text" name="to" value="{{ old('to', $book->to) }}"
+                                                    id="nepali-datepicker1" class="form-control">
+                                                @error('to')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        {{--
                                         <input type="submit" value="Submit" class="btn bg-success"> --}}
                                     </div>
 
@@ -88,7 +109,8 @@
 
 
                                         <div class="col-12 d-flex justify-content-end mt-5">
-                                            <input type="submit" value="{{ $book->id ? 'Update' : 'Save' }}" class="btn bg-info text-white">
+                                            <input type="submit" value="{{ $book->id ? 'Update' : 'Save' }}"
+                                                class="btn bg-info text-white">
                                         </div>
                                     </div>
                                 </div>

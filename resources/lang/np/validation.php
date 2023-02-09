@@ -242,5 +242,11 @@ return [
         'before_municipality'=>'नगरपालिका',
         'before_vdc'=>'साबिकको ठेगाना',
         'before_village'=>'गाउँ',
+        'book_id'=>'किताब कोड',
+        'administrator'=>'पञ्जिकाधिकारीको नाम',
+        'registaar'=>'पञ्जिकाधिकारीको नाम',
+        'from'=>'देखी',
+        'code'=>'किताब कोड',
+        'book_type'=>'किताब प्रकार',
     ]
 ];

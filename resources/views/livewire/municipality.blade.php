@@ -39,7 +39,7 @@
                 @endforeach
             </select>
         @endif
-        @error('province')
+        @error('book_id')
             <small class="text-danger">{{ $message }}</small>
         @enderror
     </div>
@@ -129,10 +129,10 @@
     </div>
 
     <div class="form-group col-xl-4 col-lg-4 col-md-6">
-        <label for=""><span class="text-danger">*</span> Ward number </label>
+        <label for="">वार्ड नम्बर</label>
 
         <input type="text" class="form-control" name="ward_num" wire:model="ward_num">
-        @error('municipality')
+        @error('ward_num')
             <small class="text-danger">{{ $message }}</small>
         @enderror
     </div>
@@ -170,6 +170,9 @@
             @endforeach
         </select> --}}
         <input type="text" class="form-control" name="administrator" wire:model="administrator" readonly>
+        @error('administrator')
+        <small class="text-danger">{{ $message }}</small>
+    @enderror
     </div>
     <div class="col-xl-4 col-lg-4 col-md-6 mb-3">
         <label><span class="text-danger">*</span> दर्ता न.</label>
