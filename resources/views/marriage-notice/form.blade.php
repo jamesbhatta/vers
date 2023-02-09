@@ -30,7 +30,16 @@
                         {{-- @livewire('municipality', ['death' => $birth]) --}}
 
                         <div class="card p-3">
-                            <livewire:municipality :death="$marriage" />
+                            @php
+                                $book_id = '';
+                            @endphp
+                            @isset($_GET['book_id'])
+                                @php
+                                    $book_id = $_GET['book_id'];
+
+                                @endphp
+                            @endisset
+                            <livewire:municipality :death="$marriage" :book="$book_id" />
                             {{-- <x-darta :death="$marriage" /> --}}
                         </div>
                         <hr>
@@ -56,7 +65,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                        <x-country-form :label="'जन्म भएको देश'" :name="'bride_birth_country'" :usercountry="$marriage"/>
+                                        <x-country-form :label="'जन्म भएको देश'" :name="'bride_birth_country'" :id="'bride_birth_country'" :usercountry="$marriage"/>
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label for="">नागरिकता (ना.प्र.नं) </label>
@@ -169,7 +178,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-mother-tongue :name="'bride_mother_tongue'" :userdata="$marriage"/>
+                                    <x-mother-tongue :name="'bride_mother_tongue'" :id="'bride_mother_tongue'" :userdata="$marriage"/>
 
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
@@ -235,7 +244,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-country-form :label="'जन्म भएको देश'" :name="'groom_birth_country'" :usercountry="$marriage"/>
+                                    <x-country-form :label="'जन्म भएको देश'" :name="'groom_birth_country'" :id="'groom_birth_country'" :usercountry="$marriage"/>
 
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
@@ -348,7 +357,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-mother-tongue :name="'groom_mother_tongue'" :userdata="$marriage"/>
+                                    <x-mother-tongue :name="'groom_mother_tongue'" :id="'groom_mother_tongue'" :userdata="$marriage"/>
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label><span class="text-danger">*</span> बाजेको नाम</label>
