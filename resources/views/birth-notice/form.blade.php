@@ -42,8 +42,16 @@
                                 @endphp
                             @endisset
                             <livewire:municipality :death="$birth" :book="$book_id" />
-
-                            {{-- <x-darta :death="$birth" :book="$book_id"/> --}}
+                            <div class="row">
+                                <div class="form-group col-xl-3 col-lg-3 col-md-4 mb-3">
+                                    <label><span class="text-danger">*</span> दर्ता मिति</label>
+                                    <input type="text" name="entry_date" id="darta_miti" class="form-control"
+                                        value="{{ old('entry_date', $birth->entry_date) }}" />
+                                    @error('entry_date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
                         <hr>
                         <h4 class="font-weight-bold py-3">नवजात शिशुको व्यक्तिगत विवरण </h4>
@@ -172,7 +180,8 @@
                                 </div>
 
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-country-form :label="'जन्म भएको देश'" :name="'father_country_where_baby_born'" :id="'father_country_where_baby_born'" :usercountry="$birth" />
+                                    <x-country-form :label="'जन्म भएको देश'" :name="'father_country_where_baby_born'" :id="'father_country_where_baby_born'"
+                                        :usercountry="$birth" />
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label>नागरिकता(ना.प्र.नं.) </label>
@@ -254,7 +263,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6 ">
-                                    <x-mother-tongue :name="'father_mother_toung'" :id="'father_mother_toung'" :userdata="$birth"  />
+                                    <x-mother-tongue :name="'father_mother_toung'" :id="'father_mother_toung'" :userdata="$birth" />
                                 </div>
 
 
@@ -394,7 +403,8 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-country-form :label="'जन्म भएको देश'" :name="'mother_country_where_baby_born'" :id="'mother_country_where_baby_born'" :usercountry="$birth" />
+                                    <x-country-form :label="'जन्म भएको देश'" :name="'mother_country_where_baby_born'" :id="'mother_country_where_baby_born'"
+                                        :usercountry="$birth" />
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label>नागरिकता(ना.प्र.नं.) </label>
@@ -630,8 +640,9 @@
                         $("#mother_education").val($("#father_education").val()).change();
                         $("#mother_helper").val($("#father_helper").val()).change();
                         $("#mother_mother_toung").val($("#father_mother_toung").val()).change();
-                        $("#mother_country_where_baby_born").val($("#father_country_where_baby_born").val()).change();
-                    } else{
+                        $("#mother_country_where_baby_born").val($("#father_country_where_baby_born").val())
+                            .change();
+                    } else {
                         $("#mother_parmanent_address").val("");
                         $("#mother_temporary_address").val("");
                         $("#mother_occupation").val("");

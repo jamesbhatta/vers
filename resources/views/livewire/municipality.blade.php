@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="form-group col-xl-4 col-lg-4 col-md-6">
+    <div class="form-group col-xl-3 col-lg-3 col-md-4">
         <label for=""><span class="text-danger">*</span> किताब कोड</label>
         @php
             $selected_book_id = $book;
@@ -43,7 +43,7 @@
             <small class="text-danger">{{ $message }}</small>
         @enderror
     </div>
-    <div class="form-group col-xl-4 col-lg-4 col-md-6">
+    <div class="form-group col-xl-3 col-lg-3 col-md-4">
         <label for=""><span class="text-danger">*</span> प्रदेश</label>
         <select class="custom-select" name="province" wire:model="province">
             <option class="m-5" value="">प्रदेश छान्न्नुहोस्। </option>
@@ -69,7 +69,7 @@
         @enderror
     </div>
 
-    <div class="form-group col-xl-4 col-lg-4 col-md-6">
+    <div class="form-group col-xl-3 col-lg-3 col-md-4">
         <label for=""><span class="text-danger">*</span> जिल्ला </label>
 
         {{-- <input type="text" clasrol" /> --}}
@@ -99,7 +99,7 @@
     </div>
 
 
-    <div class="form-group col-xl-4 col-lg-4 col-md-6">
+    <div class="form-group col-xl-3 col-lg-3 col-md-4">
         <label for=""><span class="text-danger">*</span> नगरपालिका </label>
 
         {{-- <input type="text" clasrol" /> --}}
@@ -128,7 +128,7 @@
         @enderror
     </div>
 
-    <div class="form-group col-xl-4 col-lg-4 col-md-6">
+    <div class="form-group col-xl-3 col-lg-3 col-md-4">
         <label for="">वार्ड नम्बर</label>
 
         <input type="text" class="form-control" name="ward_num" wire:model="ward_num">
@@ -138,7 +138,7 @@
     </div>
 
 
-    <div class="form-group col-xl-4 col-lg-4 col-md-6">
+    <div class="form-group col-xl-3 col-lg-3 col-md-4">
         <label for="">साबिकको ठेगाना </label>
         {{-- <input type="text" clasrol" /> --}}
         <select class="custom-select" name="vdc" wire:model="vdc">
@@ -154,7 +154,7 @@
         @enderror
     </div>
 
-    <div class="col-xl-4 col-lg-4 col-md-6 mb-3">
+    <div class="col-xl-3 col-lg-3 col-md-4 mb-3">
         <label><span class="text-danger">*</span> पञ्जिकाधिकारीको नाम</label>
         {{-- <select name="administrator" class="custom-select myText" aria-readonly="">
             @foreach ($registaars as $registaar)
@@ -174,18 +174,18 @@
         <small class="text-danger">{{ $message }}</small>
     @enderror
     </div>
-    <div class="col-xl-4 col-lg-4 col-md-6 mb-3">
+    <div class="col-xl-3 col-lg-3 col-md-4 mb-3">
         <label><span class="text-danger">*</span> दर्ता न.</label>
         <input type="text" class="form-control" name="reg_number" wire:model="reg_number">
         @error('reg_number')
             <small class="text-danger">{{ $message }}</small>
         @enderror
     </div>
-    <div class="form-group col-xl-4 col-lg-4 col-md-6 mb-3">
+    {{-- <div class="form-group col-xl-4 col-lg-4 col-md-6 mb-3">
         <label><span class="text-danger">*</span> दर्ता मिति</label>
-        <input type="text" name="entry_date" id="darta_miti" class="form-control" wire:model="entry_date" />
+        <input type="date" name="entry_date" id="darta_miti" class="form-control" wire:model="entry_date" />
         @error('entry_date')
             <small class="text-danger">{{ $message }}</small>
         @enderror
-    </div>
+    </div> --}}
 </div>

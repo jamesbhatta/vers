@@ -27,7 +27,6 @@ class Municipality extends Component
     public $mtype;
     public $administrator;
     public $reg_number;
-    public $entry_date;
     public function mount()
     {
 
@@ -48,7 +47,6 @@ class Municipality extends Component
             $this->ward_num=$this->death->ward_num;
             $this->administrator=$this->death->administrator;
             $this->reg_number=$this->death->reg_number;
-            $this->entry_date=$this->death->entry_date;
 
         }
 
@@ -107,9 +105,6 @@ class Municipality extends Component
 
         if (old('reg_number')) {
             $this->reg_number = old('reg_number');
-        }
-        if (old('entry_date')) {
-            $this->entry_date = old('entry_date');
         }
 
         // $books = $books->orderBy('id', 'desc')->get();
