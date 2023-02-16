@@ -30,7 +30,26 @@
                         {{-- @livewire('municipality', ['death' => $birth]) --}}
 
                         <div class="card p-3">
-                            <livewire:municipality :death="$marriage" />
+                            @php
+                                $book_id = '';
+                            @endphp
+                            @isset($_GET['book_id'])
+                                @php
+                                    $book_id = $_GET['book_id'];
+
+                                @endphp
+                            @endisset
+                            <livewire:municipality :death="$marriage" :book="$book_id" />
+                            <div class="row">
+                                <div class="form-group col-xl-3 col-lg-3 col-md-4 mb-3">
+                                    <label><span class="text-danger">*</span> दर्ता मिति</label>
+                                    <input type="text" name="entry_date" id="darta_miti" class="form-control"
+                                        value="{{ old('entry_date', $marriage->entry_date) }}" />
+                                    @error('entry_date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                            </div>
                             {{-- <x-darta :death="$marriage" /> --}}
                         </div>
                         <hr>
@@ -56,7 +75,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                        <x-country-form :label="'जन्म भएको देश'" :name="'bride_birth_country'" :usercountry="$marriage"/>
+                                        <x-country-form :label="'जन्म भएको देश'" :name="'bride_birth_country'" :id="'bride_birth_country'" :usercountry="$marriage"/>
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label for="">नागरिकता (ना.प्र.नं) </label>
@@ -169,7 +188,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-mother-tongue :name="'bride_mother_tongue'" :userdata="$marriage"/>
+                                    <x-mother-tongue :name="'bride_mother_tongue'" :id="'bride_mother_tongue'" :userdata="$marriage"/>
 
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
@@ -235,13 +254,13 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-country-form :label="'जन्म भएको देश'" :name="'groom_birth_country'" :usercountry="$marriage"/>
+                                    <x-country-form :label="'जन्म भएको देश'" :name="'groom_birth_country'" :id="'groom_birth_country'" :usercountry="$marriage"/>
 
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label for="">नागरिकता (ना.प्र.नं) </label>
                                     <div class="input-group mb-2">
-                                        <input type="number" class="form-control" name="groom_citizenship_number"
+                                        <input type="text" class="form-control" name="groom_citizenship_number"
                                             value="{{ old('groom_citizenship_number', $marriage->groom_citizenship_number) }}" />
                                     </div>
                                     @error('groom_citizenship_number')
@@ -348,7 +367,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-mother-tongue :name="'groom_mother_tongue'" :userdata="$marriage"/>
+                                    <x-mother-tongue :name="'groom_mother_tongue'" :id="'groom_mother_tongue'" :userdata="$marriage"/>
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label><span class="text-danger">*</span> बाजेको नाम</label>

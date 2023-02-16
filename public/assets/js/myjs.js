@@ -14,6 +14,9 @@ window.onload = function () {
         });
 
     }
+
+
+
     var mainInput1 = document.getElementById("dob");
     if (mainInput1) {
         mainInput1.nepaliDatePicker({

@@ -49,6 +49,14 @@ class MigrationController extends Controller
             $migrationCertificates = $migrationCertificates->where('migration_date', 'like', '%' . $request->migration_date . '%');
         }
 
+        if ($request->from) {
+            if($request->to){
+                $migrationCertificates = $migrationCertificates->whereBetween('entry_date', [date($request->from),date($request->to)]);
+                // Reservation::->get();
+            }else{
+                $migrationCertificates = $migrationCertificates->where('entry_date', $request->from);
+            }
+        }
         $old = $request;
 
         $migrationCertificates = $migrationCertificates->get();

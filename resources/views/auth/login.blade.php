@@ -27,12 +27,12 @@
         @endif
         <div style="height: 10%"></div>
         <div class="col-12 d-flex justify-content-center">
-            <div class="card font-roboto card-shadow z-depth-0 col-3">
+            <div class="card font-roboto card-shadow z-depth-0 col-xl-3 col-lg-4 col-md-6">
                 <div class="card-body pt-0 px-4 pb-4">
-                    <div class="text-center">
+                    <div class="col-12 d-flex justify-content-center">
                         <img class="img-responsive rounded-circle bg-white p-2"
                             src="{{ asset('assets/image/nep-gov-logo-sm.png') }}" alt=""
-                            style="height: 100px; width: 110px; margin-top: -50px;margin-left:140px">
+                            style="height: 100px; width: 110px; margin-top: -50px">
                     </div>
                     <h2 class="h2-responsive text-center font-weight-bold my-4">{{ __('Login') }}</h2>
                     <div class="my-5"></div>

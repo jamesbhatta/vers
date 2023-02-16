@@ -16,11 +16,13 @@ class CountryForm extends Component
     public $usercountry;
     public $label;
     public $name;
-    public function __construct($usercountry,$label,$name)
+    public $id;
+    public function __construct($usercountry,$label,$name,$id)
     {
         $this->usercountry = $usercountry;
         $this->label = $label;
         $this->name = $name;
+        $this->id = $id;
     }
 
     /**

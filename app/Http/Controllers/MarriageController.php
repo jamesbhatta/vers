@@ -143,6 +143,14 @@ class MarriageController extends Controller
         if ($request->groom_father_name) {
             $marriages = $marriages->where('groom_father_name', 'like', '%' . $request->groom_father_name . '%');
         }
+        if ($request->from) {
+            if($request->to){
+                $marriages = $marriages->whereBetween('entry_date', [date($request->from),date($request->to)]);
+                // Reservation::->get();
+            }else{
+                $marriages = $marriages->where('entry_date', $request->from);
+            }
+        }
         $marriages = $marriages->orderBy('id','desc')->get();
         $old = $request;
         return view('marriage-notice.index',compact('marriages','old'));
@@ -173,6 +181,14 @@ class MarriageController extends Controller
 
         if ($request->groom_father_name) {
             $marriage = $marriage->where('groom_father_name', 'like', '%' . $request->groom_father_name . '%');
+        }
+        if ($request->from) {
+            if($request->to){
+                $marriage = $marriage->whereBetween('entry_date', [date($request->from),date($request->to)]);
+                // Reservation::->get();
+            }else{
+                $marriage = $marriage->where('entry_date', $request->from);
+            }
         }
         $marriage = $marriage->orderBy('id','desc')->get();
         $html = "<style>.kantipur{} .kalimati{font-size: 10pt;}</style>";

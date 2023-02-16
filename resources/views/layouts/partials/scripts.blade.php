@@ -11,11 +11,12 @@
 <script>
     $('#summernote').summernote({
         height: 200,
-        width:1500
+        width: 1500
     });
-    $(document).ready( function () {
-    $('#myTable').DataTable();
-} );
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
 </script>
+
 @stack('scripts')
 <script src="{{ mix('js/app.js') }}"></script>

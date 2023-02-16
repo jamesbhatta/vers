@@ -13,10 +13,12 @@ class MotherTongue extends Component
      */
     public $name;
     public $userdata;
-     public function __construct($name, $userdata)
+    public $id;
+     public function __construct($name, $userdata,$id)
     {
         $this->name = $name;
         $this->userdata = $userdata;
+        $this->id = $id;
     }
 
     /**

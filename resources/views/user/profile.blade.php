@@ -43,7 +43,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="submit" type="submit" class="btn btn-success" value="Update">
+                                            <input type="submit" type="submit" class="btn bg-success text-white" value="Update">
                                         </div>
                                     </form>
                                 </div>

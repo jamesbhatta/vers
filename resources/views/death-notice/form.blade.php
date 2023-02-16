@@ -39,7 +39,16 @@
                                 @endphp
                             @endisset
                             <livewire:municipality :death="$death" :book="$book_id" />
-
+                            <div class="row">
+                                <div class="form-group col-xl-3 col-lg-3 col-md-4 mb-3">
+                                    <label><span class="text-danger">*</span> दर्ता मिति</label>
+                                    <input type="text" name="entry_date" id="darta_miti" class="form-control"
+                                        value="{{ old('entry_date', $death->entry_date) }}" />
+                                    @error('entry_date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                            </div>
                             {{-- <x-darta :death="$death" :book="$book_id"/> --}}
                         </div>
                         <hr>
@@ -57,7 +66,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-mother-tongue :name="'mother_tongue'" :userdata="$death"/>
+                                    <x-mother-tongue :name="'mother_tongue'" :id="'mother_tongue1'" :userdata="$death"/>
                                 </div>
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
                                     <label for=""><span class="text-danger">*</span> मरेको मिति </label>
@@ -215,7 +224,7 @@
                                 </div>
 
                                 <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <x-country-form :label="'जन्म भएको देश'" :name="'birth_country'" :usercountry="$death" />
+                                    <x-country-form :label="'जन्म भएको देश'" :name="'birth_country'" :id="'birth_country1'" :usercountry="$death" />
 
                                 </div>
 

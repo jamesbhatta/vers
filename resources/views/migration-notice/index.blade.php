@@ -33,12 +33,30 @@
                         <form action="{{ route('migration.filter') }}" method="get">
                             @csrf
                             <div class="row justify-content-between">
-                                <div class="col-lg-1">
+                                <div class="col-lg-2">
                                     @isset($old)
                                         <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number"
                                             value="{{ $old->reg_number }}">
                                     @else
                                         <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number">
+                                    @endisset
+                                </div>
+                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                    @isset($old)
+                                        <input type="text" class="form-control myText" id="nepali-datepicker"
+                                            placeholder="दर्ता मिति(From)" name="from" value="{{ $old->from }}">
+                                    @else
+                                        <input type="text" class="form-control myText" id="nepali-datepicker"
+                                            placeholder="दर्ता मिति(From)" name="from">
+                                    @endisset
+                                </div>
+                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                    @isset($old)
+                                        <input type="text" class="form-control myText" id="nepali-datepicker2"
+                                            placeholder="दर्ता मिति(To)" name="to" value="{{ $old->to }}">
+                                    @else
+                                        <input type="text" class="form-control myText" id="nepali-datepicker2"
+                                            placeholder="दर्ता मिति(To)" name="to">
                                     @endisset
                                 </div>
                                 <div class="col-lg-2">
@@ -50,16 +68,19 @@
                                             placeholder=" दर्ता मिति" name="entry_date">
                                     @endisset
                                 </div>
+
                                 <div class="col-lg-2">
                                     @isset($old)
-                                        <input type="text" class="form-control" id="nepali-datepicker2"
+                                        <input type="text" class="form-control" id="nepali-datepicker3"
                                             placeholder=" बसाई सराईको मिति" name="migration_date"
                                             value="{{ $old->migration_date }}">
                                     @else
-                                        <input type="text" class="form-control" id="nepali-datepicker2"
+                                        <input type="text" class="form-control" id="nepali-datepicker3"
                                             placeholder=" बसाई सराईको मिति" name="migration_date">
                                     @endisset
                                 </div>
+
+
 
                                 <div class="col-lg-1">
                                     <input type="submit" class="btn btn-info bg-info" value="Filter">
@@ -94,20 +115,21 @@
                                         <td>{{ $migrationCertificate->migration_date }}</td>
                                         <td class="float-right d-flex">
                                             <a href="{{ route('migration.add-family', $migrationCertificate->id) }}"
-                                                class="action-btn text-primary"><i class="fas fa-plus-circle "></i></a>
-                                            <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"
+                                                class="action-btn text-primary" data-toggle="tooltip" data-placement="top" title="Add Family"><i class="fas fa-plus-circle "></i></a>
+                                            <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" data-toggle="tooltip" data-placement="top" title="Show detail"
                                                 class="action-btn text-primary show"
                                                 id="{{ $migrationCertificate->id }}"><i class="fa fa-eye"></i></a>
-                                            <a href="{{ route('migration.edit', $migrationCertificate->id) }}"
+                                            <a href="{{ route('migration.edit', $migrationCertificate->id) }}" data-toggle="tooltip" data-placement="top" title="Edit migration notice"
                                                 class="action-btn text-primary"><i class="fa fa-edit"></i></a>
                                             <form action="{{ route('migration.delete', $migrationCertificate->id) }}"
                                                 method="post" onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
                                                 class="form-inline d-inline">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" class="action-btn text-danger"><i
+                                                <button type="submit" class="action-btn text-danger" data-toggle="tooltip" data-placement="top" title="Delete migration notice"><i
                                                         class="far fa-trash-alt"></i></button>
                                             </form>
+
                                         </td>
                                     </tr>
                                 @endforeach
@@ -277,8 +299,8 @@
                                                 </div>
                                                 <div class="col-lg-12 mt-1">
                                                     <h3 class="text-center h4 font-weight-bold ">सम्बन्धित फाइल</h3>
-                                                    <img src="" id="related_file"
-                                                        class="img-fluid m-auto" alt="सम्बन्धित फाइल फेला परेन"
+                                                    <img src="" id="related_file" class="img-fluid m-auto"
+                                                        alt="सम्बन्धित फाइल फेला परेन"
                                                         style="width:80%;position:relative; height:40%;">
 
                                                 </div>
@@ -337,10 +359,10 @@
                 $('#relative_address').html(response.data.relative_address);
                 $('#relationship').html(response.data.relationship);
                 $('#date').html(response.data.date);
-                family_data="";
-                var num="";
+                family_data = "";
+                var num = "";
                 for (let i = 0; i < response.data.families.length; i++) {
-                    num=i+1;
+                    num = i + 1;
                     family_data += "<tr>";
                     family_data += "<td>" + num + "</td>";
                     family_data += "<td>" + response.data.families[i].name + "</td>";
