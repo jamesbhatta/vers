@@ -15,8 +15,8 @@ class RolesSeeder extends Seeder
      */
     public function run()
     {
-        $superAdminEmail =  'jmsbhatta@gmail.com';
-        $superAdminUsername =  'jmsbhatta';
+        $superAdminEmail =  'admin@vers.ghodaghodi.com';
+        $superAdminUsername =  'admin';
 
         // create super admin and assign existing permissions
         $superAdmin = Role::firstOrCreate(['name' => 'super-admin']);
@@ -25,7 +25,7 @@ class RolesSeeder extends Seeder
             'email' => $superAdminEmail,
             'username' => $superAdminUsername,
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => bcrypt('versadmin'),
             'remember_token' => Str::random(10),
 
         ]);
