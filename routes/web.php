@@ -122,18 +122,17 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('vdc/{vdc}/update', [VdcController::class, 'update'])->name('vdc.update');
 
     Route::get('book',[BookController::class,'index'])->name('book.index');
-<<<<<<< HEAD
-    Route::get('book/create',[BookController::class,'create'])->name('book.create');
-    Route::post('book/store',[BookController::class,'store'])->name('book.store');
-    Route::get('book/{book}/edit',[BookController::class,'edit'])->name('book.edit');
-    Route::get('book/{book}/delete',[BookController::class,'destroy'])->name('book.delete');
-=======
+    
+    // Route::get('book/create',[BookController::class,'create'])->name('book.create');
+    // Route::post('book/store',[BookController::class,'store'])->name('book.store');
+    // Route::get('book/{book}/edit',[BookController::class,'edit'])->name('book.edit');
+    // Route::get('book/{book}/delete',[BookController::class,'destroy'])->name('book.delete');
+
     Route::post('book',[BookController::class,'store'])->name('book.store');
     Route::get('book/create',[BookController::class,'create'])->name('book.create');
     Route::get('book/edit/{book}',[BookController::class,'edit'])->name('book.edit');
     Route::delete('book/delete/{book}',[BookController::class,'delete'])->name('book.delete');
     Route::put('book/update/{book}',[BookController::class,'update'])->name('book.update');
->>>>>>> 64c664697223f4115f2552cfe836fcf11e330a07
 });
 
 
