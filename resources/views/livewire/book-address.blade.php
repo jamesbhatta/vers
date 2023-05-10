@@ -89,11 +89,7 @@
     </div>
     <div class="col-xl-6">
         <div class="form-group">
-<<<<<<< HEAD
-            <label for="">Old Address</label>
-=======
             <label for="">साबिकको ठेगाना</label>
->>>>>>> 64c664697223f4115f2552cfe836fcf11e330a07
             <select name="vdc" class="custom-select" id="" wire:model="vdc">
                 @foreach ($vdcs as $vdc)
                     <option value="{{ $vdc->vdc }}">{{ $vdc->vdc }}</option>
