@@ -11,12 +11,16 @@
         </div>
 
         <div class="form-group col-md-4">
-            <label for=""><span class="text-danger">*</span> साक्षीसंगको सम्बन्ध</label>
-            <div class="input-group mb-2">
+            <label for=""><span class="text-danger">*</span>साक्षीसंगको सम्बन्ध</label>
+            <input list="relationships" id="relationship" name="relationship" class="form-control myText"
+                value="{{ old('relationship', $death->relationship) }}">
+            <datalist id="relationships">
+                <option value="हजुर बुबा">
+                <option value="बुवा">
+                <option value="आमा">
+            </datalist>
 
-                <input type="text" name="relationship" class="form-control myText"
-                    value="{{ old('relationship', $death->relationship) }}" />
-            </div>
+
             @error('relationship')
                 <small class="text-danger">{{ $message }}</small>
             @enderror
