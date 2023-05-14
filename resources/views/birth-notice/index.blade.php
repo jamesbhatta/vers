@@ -26,6 +26,10 @@
                                 <input type="hidden" name="dob" value="{{ $_GET['dob'] }}">
                             @endisset
 
+                            @isset($_GET['user_id'])
+                                <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
+                            @endisset
+
                             @isset($_GET['father_name'])
                                 <input type="hidden" name="father_name" value="{{ $_GET['father_name'] }}">
                             @endisset
@@ -69,7 +73,9 @@
                             @isset($_GET['dob'])
                                 <input type="hidden" name="dob" value="{{ $_GET['dob'] }}">
                             @endisset
-
+                            @isset($_GET['user_id'])
+                                <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
+                            @endisset
                             @isset($_GET['father_name'])
                                 <input type="hidden" name="father_name" value="{{ $_GET['father_name'] }}">
                             @endisset
@@ -118,7 +124,15 @@
                     <div class="card-body" id="cardBody">
                         <form action="{{ route('birth.filter') }}" method="GET" role="search">
                             <div class="row">
-                                <div class="mb-2 col-xl-2 col-lg-2 col-md-3">
+                                <div class="mb-2 col-md-3">
+                                    @isset($old)
+                                        <input type="text" class="form-control myText" placeholder="नाम" name="name"
+                                            value="{{ $old->name }}">
+                                    @else
+                                        <input type="text" class="form-control myText" placeholder="नाम" name="name">
+                                    @endisset
+                                </div>
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control" placeholder="दर्ता न."
                                             name="darta_number" value="{{ $old->darta_number }}">
@@ -128,7 +142,7 @@
                                     @endisset
                                 </div>
                                 {{-- ===== --}}
-                                {{-- <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                {{-- <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder="Book Code" name="from"
                                             value="{{ $old->from }}">
@@ -136,7 +150,8 @@
                                         <input type="text" class="form-control myText" placeholder="Book Code" name="from">
                                     @endisset
                                 </div> --}}
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" id="nepali-datepicker"
                                             placeholder="दर्ता मिति(From)" name="from" value="{{ $old->from }}">
@@ -145,7 +160,7 @@
                                             placeholder="दर्ता मिति(From)" name="from">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" id="nepali-datepicker2"
                                             placeholder="दर्ता मिति(To)" name="to" value="{{ $old->to }}">
@@ -154,16 +169,9 @@
                                             placeholder="दर्ता मिति(To)" name="to">
                                     @endisset
                                 </div>
-                                {{-- ========== --}}
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" placeholder="नाम" name="name"
-                                            value="{{ $old->name }}">
-                                    @else
-                                        <input type="text" class="form-control myText" placeholder="नाम" name="name">
-                                    @endisset
-                                </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-5">
+
+
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control" placeholder="जन्म मिति" name="dob"
                                             id="nepali-datepicker" value="{{ $old->dob }}">
@@ -173,7 +181,7 @@
                                     @endisset
 
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder="बाबुको नाम"
                                             name="father_name" value="{{ $old->father_name }}">
@@ -182,7 +190,7 @@
                                             name="father_name">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder=" आमाको नाम"
                                             name="mother_name" value="{{ $old->mother_name }}">
@@ -192,7 +200,7 @@
                                     @endisset
                                 </div>
 
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder="  हजुरबुबाको नाम"
                                             name="grandfather_name" value="{{ $old->grandfather_name }}">
@@ -200,6 +208,9 @@
                                         <input type="text" class="form-control myText" placeholder="  हजुरबुबाको नाम"
                                             name="grandfather_name">
                                     @endisset
+                                </div>
+                                <div class="mb-2 col-md-3">
+                                    <x-user-select />
                                 </div>
                                 <div class="col-xl-1">
                                     {{-- <input type="submit" class="btn btn-info" value="Filter"> --}}
@@ -215,7 +226,8 @@
                 <div class="box mt-3">
                     <div class="box__body" style="width: 100%;overflow-x:scroll">
                         {{-- {!! $dataTable->table() !!} --}}
-                        <table class="table table-responsive-sm" id="myTable">
+                        <div class="table-responsive">
+                        <table class="table table-striped" >
                             <thead class="thead-light">
                                 <tr class="text-uppercase">
                                     <th>#</th>
@@ -246,25 +258,28 @@
 
                                         <td class="text-nowrap text-right">
 
-                                            <a class="action-btn text-primary show" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg"
+                                            <a class="action-btn text-primary show" style="cursor: pointer"
+                                                data-toggle="modal" data-target=".bd-example-modal-lg"
                                                 id="{{ $birth->id }}" data-toggle="modal"
                                                 data-target=".bd-example-modal-lg"><i class="far fa-eye"></i></a>
-                                            <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top" title="Edit birth notice"
-                                                href="{{ route('birth.edit', $birth->id) }}"><i
+                                            <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top"
+                                                title="Edit birth notice" href="{{ route('birth.edit', $birth->id) }}"><i
                                                     class="far fa-edit"></i></a>
                                             <form action="{{ route('birth.delete', $birth->id) }}" method="post"
                                                 onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
                                                 class="form-inline d-inline">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" class="action-btn text-danger" data-toggle="tooltip" data-placement="top" title="Delete birth notice"><i
-                                                        class="far fa-trash-alt"></i></button>
+                                                <button type="submit" class="action-btn text-danger"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="Delete birth notice"><i class="far fa-trash-alt"></i></button>
                                             </form>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
                     </div>
                     {{-- =======modal===== --}}
                     <div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog"
@@ -345,6 +360,11 @@
                                                 <th>आमाको विवरण</th>
                                             </tr>
                                             <tr>
+                                                <td>नाम</td>
+                                                <td id="father_name"></td>
+                                                <td id="mother_name"></td>
+                                            </tr>
+                                            <tr>
                                                 <td>स्थायी ठेगाना</td>
                                                 <td id="father_parmanent_address"></td>
                                                 <td id="mother_parmanent_address"></td>
@@ -422,7 +442,7 @@
                                             </tr>
                                             <tr>
                                                 <td>ख</td>
-                                                <td>मृतक संगको सम्बन्ध</td>
+                                                <td>नवजात शिशुसंगको सम्बन्ध</td>
                                                 <td id="relationship"></td>
                                             </tr>
                                             <tr>
@@ -501,6 +521,8 @@
                 $('#physical_disable').html(response.data.physical_disable);
                 $('#grandfather_name').html(response.data.grandfather_name);
 
+                $('#father_name').html(response.data.father_name);
+                $('#mother_name').html(response.data.mother_name);
                 $('#father_parmanent_address').html(response.data.father_parmanent_address);
                 $('#mother_parmanent_address').html(response.data.mother_parmanent_address);
                 $('#father_temporary_address').html(response.data.father_temporary_address);

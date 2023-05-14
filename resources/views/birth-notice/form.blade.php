@@ -4,7 +4,6 @@
         <div class="p-3">
             <div class="container-fluid">
                 <nav aria-label="breadcrumb" class="d-flex justify-content-between  rounded">
-
                     <div class="my-breadcrumb">
                         <a class="first-breadcrumb" href="{{ route('birth.index') }}">जन्म दर्ता</a>
                         <a class="sub-breadcrumb" href="{{ route('dashboard') }}"><i class="fas fa-home"></i></a>
@@ -27,7 +26,7 @@
                     @endisset
                     <div class="box mt-2 px-3 pt-3">
 
-                        <h4 class="font-weight-bold pb-3">नवजात शिशु दर्ता विवरण </h4>
+                        <h4 class="font-weight-bold pb-3">ठेगानाको विवरण</h4>
 
                         {{-- @livewire('municipality', ['death' => $birth]) --}}
 
@@ -38,15 +37,25 @@
                             @isset($_GET['book_id'])
                                 @php
                                     $book_id = $_GET['book_id'];
-
+                                    
                                 @endphp
                             @endisset
                             <livewire:municipality :death="$birth" :book="$book_id" />
+                        </div>
+                        <h4 class="font-weight-bold py-3">नवजात शिशु दर्ता विवरण </h4>
+                        <div class="card p-3">
                             <div class="row">
-                                <div class="form-group col-xl-3 col-lg-3 col-md-4 mb-3">
+                                <div class=" col-md-4 mb-3">
+                                    <label><span class="text-danger">*</span> दर्ता न.</label>
+                                    <input type="text" class="form-control" name="reg_number" value="{{old('reg_number', $birth->reg_number)}}">
+                                    @error('reg_number')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-xl-4 col-lg-4 col-md-6 mb-3">
                                     <label><span class="text-danger">*</span> दर्ता मिति</label>
                                     <input type="text" name="entry_date" id="darta_miti" class="form-control"
-                                        value="{{ old('entry_date', $birth->entry_date) }}" />
+                                        value="{{old("entry_date",$birth->entry_date)}}" />
                                     @error('entry_date')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -57,11 +66,8 @@
                         <h4 class="font-weight-bold py-3">नवजात शिशुको व्यक्तिगत विवरण </h4>
                         <div class="card p-3">
                             <div class="row">
-
                                 <x-general-form :death="$birth" />
-
-
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> जन्म स्थान</label>
                                     <select class="custom-select" name="birth_place">
                                         <option selected disabled class="m-5">छान्न्नुहोस्। </option>
@@ -82,10 +88,10 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> जन्मेको किसिम</label>
                                     <select class="custom-select" name="birth_type">
-                                        <option selected disabled class="m-5" value="">छान्न्नुहोस्। </option>
+                                        {{-- <option selected disabled class="m-5" value="">छान्न्नुहोस्। </option> --}}
                                         <div>
                                             <option
                                                 {{ $birth->birth_type == 'सिङ्गो' || old('birth_type') == 'सिङ्गो' ? 'selected' : '' }}
@@ -99,18 +105,18 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label><span class="text-danger">*</span> कुनै पनि शारीरिक विकृति </label>
                                     <div class="input-group mb-2">
                                         {{-- <input type="checkbox" class="mt-3 ml-3" value="yes" name="physical_disable" id=""> --}}
                                         <select name="physical_disable" class="custom-select">
-                                            <option selected disabled class="m-5" value="">छान्न्नुहोस्। </option>
+                                            {{-- <option selected disabled class="m-5" value="">छान्न्नुहोस्। </option> --}}
+                                            <option
+                                            {{ $birth->physical_disable == 'छैन' || old('physical_disable') == 'छैन' ? 'selected' : '' }}
+                                            value="छैन">छैन</option>
                                             <option
                                                 {{ $birth->physical_disable == 'छ' || old('physical_disable') == 'छ' ? 'selected' : '' }}
                                                 value="छ">छ</option>
-                                            <option
-                                                {{ $birth->physical_disable == 'छैन' || old('physical_disable') == 'छैन' ? 'selected' : '' }}
-                                                value="छैन">छैन</option>
                                         </select>
                                         {{-- <input type="text" name="" value="{{ old('physical_disable',$birth->physical_disable) }}" class="form-control" /> --}}
                                     </div>
@@ -138,7 +144,7 @@
 
                         <div class="card p-3">
                             <div class="row">
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label><span class="text-danger">*</span> नाम,थर </label>
                                     <input type="text" class="form-control myText" name="father_name"
                                         value="{{ old('father_name', $birth->father_name) }}" />
@@ -146,7 +152,7 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> स्थायी ठेगाना </label>
                                     <div class="input-group mb-2">
                                         <input type="text" class="form-control myText" name="father_parmanent_address"
@@ -157,7 +163,7 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for="">अस्थायी ठेगाना </label>
                                     <div class="input-group mb-2">
                                         <input type="text" class="form-control myText" name="father_temporary_address"
@@ -168,8 +174,8 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label for=""><span class="text-danger">*</span> शिशु जन्मिदाको उमेर </label>
+                                <div class="form-group col-md-4">
+                                    <label for=""> शिशु जन्मिदाको उमेर </label>
                                     <div class="input-group mb-2">
                                         <input type="number" class="form-control" name="father_age_while_baby_born"
                                             value="{{ old('father_age_while_baby_born', $birth->father_age_while_baby_born) }}" />
@@ -179,11 +185,11 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <x-country-form :label="'जन्म भएको देश'" :name="'father_country_where_baby_born'" :id="'father_country_where_baby_born'"
                                         :usercountry="$birth" />
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label>नागरिकता(ना.प्र.नं.) </label>
                                     <div class="input-group mb-2">
                                         <input type="text" class="form-control" name="father_citizenship_number"
@@ -194,8 +200,8 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label><span class="text-danger">*</span> शिक्षा</label>
+                                <div class="form-group col-md-4">
+                                    <label> शिक्षा</label>
                                     <select class="custom-select" name="father_education" id="father_education">
                                         <option selected disabled class="m-5" value="">छान्न्नुहोस्।
                                         </option>
@@ -235,7 +241,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> धर्म</label>
                                     <select class="custom-select" name="father_religion" id="father_religion">
                                         <option selected disabled class="m-5" value="">छान्न्नुहोस्।
@@ -262,24 +268,40 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6 ">
+                                <div class="form-group col-md-4 ">
                                     <x-mother-tongue :name="'father_mother_toung'" :id="'father_mother_toung'" :userdata="$birth" />
                                 </div>
 
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label for=""><span class="text-danger">*</span> पेशा </label>
-                                    <div class="input-group mb-2">
-                                        <input type="" class="form-control myText" name="father_occupation"
-                                            id="father_occupation"
-                                            value="{{ old('father_occupation', $birth->father_occupation) }}" />
-                                    </div>
+                                <div class="form-group col-md-4">
+                                    <label for=""><span class="text-danger">*</span> पेशा</label>
+                                    <select class="custom-select" name="father_occupation" id="father_occupation">
+                                        <option selected disabled class="m-5" value="">छान्न्नुहोस्।
+                                        </option>
+                                        <div>
+                                            <option
+                                                {{ $birth->father_occupation == 'सरकारी सेवा' || old('father_occupation') == 'सरकारी सेवा' ? 'selected' : '' }}
+                                                value="सरकारी सेवा">सरकारी सेवा</option>
+                                            <option
+                                                {{ $birth->father_occupation == 'गैर सरकारी सेवा' || old('father_occupation') == 'गैर सरकारी सेवा' ? 'selected' : '' }}
+                                                value="गैर सरकारी सेवा">गैर सरकारी सेवा </option>
+                                            <option
+                                                {{ $birth->father_occupation == 'कृषि' || old('father_occupation') == 'कृषि' ? 'selected' : '' }}
+                                                value="कृषि">कृषि </option>
+                                            <option
+                                                {{ $birth->father_occupation == 'व्यवसाय' || old('father_occupation') == 'व्यवसाय' ? 'selected' : '' }}
+                                                value="व्यवसाय">व्यवसाय </option>
+                                            <option
+                                                {{ $birth->father_occupation == 'अन्य' || old('father_occupation') == 'अन्य' ? 'selected' : '' }}
+                                                value="अन्य">अन्य</option>
+                                        </div>
+                                    </select>
                                     @error('father_occupation')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label><span class="text-danger">*</span> हाल सम्म जन्मेको सन्तान संख्या </label>
+                                <div class="form-group col-md-4">
+                                    <label> हाल सम्म जन्मेको सन्तान संख्या </label>
                                     <div class="input-group mb-2">
                                         <input type="number" class="form-control" name="father_baby_number"
                                             id="father_baby_number"
@@ -289,8 +311,8 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label for=""><span class="text-danger">*</span> यो शिशु समेत गरी जीवित सन्तान
+                                <div class="form-group col-md-4">
+                                    <label for=""> यो शिशु समेत गरी जीवित सन्तान
                                         संख्या</label>
                                     <div class="input-group mb-2">
                                         <input type="number" class="form-control" name="father_alive_baby_number"
@@ -301,8 +323,8 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label><span class="text-danger">*</span> शिशु जन्मदा मदत गर्ने व्यक्ति</label>
+                                <div class="form-group col-md-4">
+                                    <label> शिशु जन्मदा मदत गर्ने व्यक्ति</label>
                                     <div class="input-group mb-2">
                                         {{-- <input type="text" class="form-control" name="father_helper"
                                             value="{{ old('father_helper', $birth->father_helper) }}" /> --}}
@@ -311,8 +333,8 @@
                                             </option>
                                             <div>
                                                 <option
-                                                    {{ $birth->father_helper == 'वरको मानिस' || old('father_helper') == 'वरको मानिस' ? 'selected' : '' }}
-                                                    value="वरको मानिस">वरको मानिस </option>
+                                                    {{ $birth->father_helper == 'घरको मानिस' || old('father_helper') == 'घरको मानिस' ? 'selected' : '' }}
+                                                    value="घरको मानिस">घरको मानिस </option>
                                                 <option
                                                     {{ $birth->father_helper == 'सुडिनी' || old('father_helper') == 'सुडिनी' ? 'selected' : '' }}
                                                     value="सुडिनी">सुडिनी </option>
@@ -330,11 +352,11 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> विवाहा भएको साल </label>
                                     <div class="input-group mb-2">
 
-                                        <input type="text" class="form-control" id="nepali-datepicker"
+                                        <input type="text" class="form-control" id="marrage_year"
                                             name="father_marige_date"
                                             value="{{ old('father_marige_date', $birth->father_marige_date) }}" />
                                     </div>
@@ -352,15 +374,15 @@
                         <div class="d-flex align-items-center gap-3">
                             <h4 class="font-weight-bold mt-3 pb-3">नवजात शिशुको आमाको विवरण </h4>
                             <div class="form-check" id="chkbox">
-                                <input class="form-check-input" type="checkbox" value="" id="chkbox1">
-                                <label class="form-check-label" for="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" value="" id="chk-as-father">
+                                <label class="form-check-label" for="chk-as-father">
                                     Same as father's record ?
                                 </label>
                             </div>
                         </div>
                         <div class="card p-3">
                             <div class="row">
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label><span class="text-danger">*</span> नाम,थर </label>
                                     <input type="text" class="form-control myText" name="mother_name"
                                         value="{{ old('mother_name', $birth->mother_name) }}" />
@@ -368,7 +390,7 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> स्थायी ठेगाना </label>
                                     <div class="input-group mb-2">
                                         <input type="text" class="form-control myText" name="mother_parmanent_address"
@@ -380,7 +402,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for="">अस्थायी ठेगाना </label>
                                     <div class="input-group mb-2">
                                         <input type="text" class="form-control myText" name="mother_temporary_address"
@@ -391,8 +413,8 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label for=""><span class="text-danger">*</span> शिशु जन्मिदाको उमेर </label>
+                                <div class="form-group col-md-4">
+                                    <label for=""> शिशु जन्मिदाको उमेर </label>
                                     <div class="input-group mb-2">
                                         <input type="number" class="form-control" name="mother_age_while_baby_born"
                                             id="mother_age_while_baby_born"
@@ -402,11 +424,11 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <x-country-form :label="'जन्म भएको देश'" :name="'mother_country_where_baby_born'" :id="'mother_country_where_baby_born'"
                                         :usercountry="$birth" />
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label>नागरिकता(ना.प्र.नं.) </label>
                                     <div class="input-group mb-2">
                                         <input type="text" class="form-control" name="mother_citizenship_number"
@@ -416,8 +438,8 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label><span class="text-danger">*</span> शिक्षा</label>
+                                <div class="form-group col-md-4">
+                                    <label> शिक्षा</label>
                                     <select class="custom-select" name="mother_education" id="mother_education">
                                         <option selected class="m-5" value="">छान्न्नुहोस्।
                                         </option>
@@ -457,7 +479,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> धर्म</label>
                                     <select class="custom-select" name="mother_religion" id="mother_religion">
                                         <option selected disabled class="m-5" value="">छान्न्नुहोस्।
@@ -484,24 +506,41 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <x-mother-tongue :name="'mother_mother_toung'" :id="'mother_mother_toung'" :userdata="$birth" />
                                 </div>
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label for=""><span class="text-danger">*</span> पेशा </label>
-                                    <div class="input-group mb-2">
-                                        <input type="" class="form-control myText" name="mother_occupation"
-                                            id="mother_occupation"
-                                            value="{{ old('mother_occupation', $birth->mother_occupation) }}" />
-                                    </div>
+                                
+                                <div class="form-group col-md-4">
+                                    <label for=""><span class="text-danger">*</span> पेशा</label>
+                                    <select class="custom-select" name="mother_occupation" id="mother_occupation">
+                                        <option selected disabled class="m-5" value="">छान्न्नुहोस्।
+                                        </option>
+                                        <div>
+                                            <option
+                                                {{ $birth->mother_occupation == 'सरकारी सेवा' || old('mother_occupation') == 'सरकारी सेवा' ? 'selected' : '' }}
+                                                value="सरकारी सेवा">सरकारी सेवा</option>
+                                            <option
+                                                {{ $birth->mother_occupation == 'गैर सरकारी सेवा' || old('mother_occupation') == 'गैर सरकारी सेवा' ? 'selected' : '' }}
+                                                value="गैर सरकारी सेवा">गैर सरकारी सेवा </option>
+                                            <option
+                                                {{ $birth->mother_occupation == 'कृषि' || old('mother_occupation') == 'कृषि' ? 'selected' : '' }}
+                                                value="कृषि">कृषि </option>
+                                            <option
+                                                {{ $birth->mother_occupation == 'व्यवसाय' || old('mother_occupation') == 'व्यवसाय' ? 'selected' : '' }}
+                                                value="व्यवसाय">व्यवसाय </option>
+                                            <option
+                                                {{ $birth->mother_occupation == 'अन्य' || old('mother_occupation') == 'अन्य' ? 'selected' : '' }}
+                                                value="अन्य">अन्य</option>
+                                        </div>
+                                    </select>
                                     @error('mother_occupation')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label><span class="text-danger">*</span> हाल सम्म जन्मेको सन्तान संख्या </label>
+                                <div class="form-group col-md-4">
+                                    <label> हाल सम्म जन्मेको सन्तान संख्या </label>
                                     <div class="input-group mb-2">
                                         <input type="number" class="form-control" name="mother_baby_number"
                                             id="mother_baby_number"
@@ -511,8 +550,8 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label for=""><span class="text-danger">*</span> यो शिशु समेत गरी जीवित सन्तान
+                                <div class="form-group col-md-4">
+                                    <label for=""> यो शिशु समेत गरी जीवित सन्तान
                                         संख्या</label>
                                     <div class="input-group mb-2">
                                         <input type="number" class="form-control" name="mother_alive_baby_number"
@@ -523,7 +562,7 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label><span class="text-danger">*</span> शिशु जन्मदा मदत गर्ने व्यक्ति</label>
                                     <div class="input-group mb-2">
                                         {{-- <input type="text" class="form-control" name="mother_helper"
@@ -534,8 +573,8 @@
                                             </option>
                                             <div>
                                                 <option
-                                                    {{ $birth->mother_helper == 'वरको मानिस' || old('mother_helper') == 'वरको मानिस' ? 'selected' : '' }}
-                                                    value="वरको मानिस">वरको मानिस </option>
+                                                    {{ $birth->mother_helper == 'घरको मानिस' || old('mother_helper') == 'घरको मानिस' ? 'selected' : '' }}
+                                                    value="घरको मानिस">घरको मानिस </option>
                                                 <option
                                                     {{ $birth->mother_helper == 'सुडिनी' || old('mother_helper') == 'सुडिनी' ? 'selected' : '' }}
                                                     value="सुडिनी">सुडिनी </option>
@@ -552,10 +591,10 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> विवाहा भएको साल </label>
                                     <div class="input-group mb-2">
-                                        <input type="text" class="form-control" id="nepali-datepicker1"
+                                        <input type="text" class="form-control" id="marrage_year1"
                                             name="mother_marige_date" id="mother_marige_date"
                                             value="{{ old('mother_marige_date', $birth->mother_marige_date) }}" />
                                     </div>
@@ -627,7 +666,7 @@
     @push('script')
         <script>
             $(document).ready(function() {
-                $('input[id="chkbox1"]').click(function() {
+                $('input[id="chk-as-father"]').click(function() {
                     // alert("fsdfs");
                     if ($(this).prop("checked") == true) {
                         $("#mother_parmanent_address").val($("#father_parmanent_address").val());
@@ -635,7 +674,7 @@
                         $("#mother_occupation").val($("#father_occupation").val());
                         $("#mother_baby_number").val($("#father_baby_number").val());
                         $("#mother_alive_baby_number").val($("#father_alive_baby_number").val());
-                        $("#nepali-datepicker1").val($("#nepali-datepicker").val());
+                        $("#marrage_year1").val($("#marrage_year").val());
                         $("#mother_religion").val($("#father_religion").val()).change();
                         $("#mother_education").val($("#father_education").val()).change();
                         $("#mother_helper").val($("#father_helper").val()).change();
@@ -648,7 +687,7 @@
                         $("#mother_occupation").val("");
                         $("#mother_baby_number").val("");
                         $("#mother_alive_baby_number").val("");
-                        $("#nepali-datepicker1").val("");
+                        $("#marrage_year1").val("");
                         $("#mother_religion").val("").change();
                         $("#mother_education").val("").change();
                         $("#mother_helper").val("").change();

@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
 
-
 class Municipality extends Component
 {
     public $province;
@@ -29,55 +28,52 @@ class Municipality extends Component
     public $reg_number;
     public function mount()
     {
-
-        $mysetting=Mysetting::first();
+        $mysetting = Mysetting::first();
         if ($mysetting) {
-            $this->province =$mysetting->default_province;
+            $this->province = $mysetting->default_province;
             $this->district = $mysetting->default_district;
             $this->municipality = $mysetting->default_municipality;
             $this->vdc = $mysetting->default_vdc;
-            $this->administrator=$mysetting->default_registaar;
+            $this->administrator = $mysetting->default_registaar;
         }
         if ($this->death->id) {
             $this->province = $this->death->province;
             $this->district = $this->death->district;
             $this->vdc = $this->death->vdc;
             $this->municipality = $this->death->municipality;
-            $this->book_id=$this->death->book_id;
-            $this->ward_num=$this->death->ward_num;
-            $this->administrator=$this->death->administrator;
-            $this->reg_number=$this->death->reg_number;
-
+            $this->book_id = $this->death->book_id;
+            $this->ward_num = $this->death->ward_num;
+            $this->administrator = $this->death->administrator;
+            $this->reg_number = $this->death->reg_number;
         }
 
-        if($this->book){
-            $book=Book::where('id',$this->book)->first();
+        if ($this->book) {
+            $book = Book::where('id', $this->book)->first();
             $this->province = $book->province;
             $this->district = $book->district;
             $this->vdc = $book->vdc;
             $this->municipality = $book->municipality;
-            $this->ward_num=$book->ward_no;
-            $this->book_id=$book->id;
-            $this->administrator=$book->registaar;
+            $this->ward_num = $book->ward_no;
+            $this->book_id = $book->id;
+            $this->administrator = $book->registaar;
         }
     }
 
     public function render()
     {
-        $municipalities =\App\Municipality::get();
+        $municipalities = \App\Municipality::get();
         $vdcs = Vdc::get();
         $route = Route::currentRouteName();
-        $books = Book::orderBy('id','desc')->get();
-        $type="";
-        if($route=="birth.create" || $route=="birth.edit"){
+        $books = Book::orderBy('id', 'desc')->get();
+        $type = '';
+        if ($route == 'birth.create' || $route == 'birth.edit') {
             // $type ='जन्म दर्ता';
-            $this->mtype="जन्म दर्ता";
-        }elseif($route=="death.create" || $route=="death.edit"){
+            $this->mtype = 'जन्म दर्ता';
+        } elseif ($route == 'death.create' || $route == 'death.edit') {
             $this->mtype = 'मृत्यु दर्ता';
-        }elseif($route=="marriage.create" || $route=="marriage.edit"){
+        } elseif ($route == 'marriage.create' || $route == 'marriage.edit') {
             $this->mtype = 'विवाह दर्ता';
-        }
-        elseif($route=="migration.create" || $route=="migration.edit"){
+        } elseif ($route == 'migration.create' || $route == 'migration.edit') {
             $this->mtype = 'बसाईसराई दर्ता';
         }
 
@@ -108,21 +104,20 @@ class Municipality extends Component
         }
 
         // $books = $books->orderBy('id', 'desc')->get();
-        return view('livewire.municipality', compact(['municipalities', 'vdcs','books']));
+        return view('livewire.municipality', compact(['municipalities', 'vdcs', 'books']));
     }
 
     public function changeEvent($value)
     {
-        if($value){
-            $book=Book::where('id',$value)->first();
-        $this->province = $book->province;
-        $this->district = $book->district;
-        $this->vdc = $book->vdc;
-        $this->municipality = $book->municipality;
-        $this->ward_num=$book->ward_no;
-        $this->book_id=$book->id;
-        $this->administrator=$book->registaar;
-
+        if ($value) {
+            $book = Book::where('id', $value)->first();
+            $this->province = $book->province;
+            $this->district = $book->district;
+            $this->vdc = $book->vdc;
+            $this->municipality = $book->municipality;
+            $this->ward_num = $book->ward_no;
+            $this->book_id = $book->id;
+            $this->administrator = $book->registaar;
         }
     }
 }

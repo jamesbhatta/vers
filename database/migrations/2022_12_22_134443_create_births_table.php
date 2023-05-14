@@ -35,40 +35,42 @@ class CreateBirthsTable extends Migration
             $table->string('father_name');
             $table->string('father_parmanent_address');
             $table->string('father_temporary_address')->nullable();
-            $table->string('father_age_while_baby_born');
-            $table->string('father_education');
-            $table->string('father_country_where_baby_born');
+            $table->string('father_age_while_baby_born')->nullable();
+            $table->string('father_education')->nullable();
+            $table->string('father_country_where_baby_born')->nullable();
             $table->string('father_citizenship_number')->nullable();
-            $table->string('father_religion');
-            $table->string('father_mother_toung');
-            $table->string('father_occupation');
-            $table->string('father_baby_number');
-            $table->string('father_alive_baby_number');
-            $table->string('father_helper');
-            $table->string('father_marige_date');
+            $table->string('father_religion')->nullable();
+            $table->string('father_mother_toung')->nullable();
+            $table->string('father_occupation')->nullable();
+            $table->string('father_baby_number')->nullable();
+            $table->string('father_alive_baby_number')->nullable();
+            $table->string('father_helper')->nullable();
+            $table->string('father_marige_date')->nullable();
 
             $table->string('mother_name');
             $table->string('mother_parmanent_address');
             $table->string('mother_temporary_address')->nullable();
-            $table->string('mother_age_while_baby_born');
-            $table->string('mother_education');
-            $table->string('mother_country_where_baby_born');
+            $table->string('mother_age_while_baby_born')->nullable();
+            $table->string('mother_education')->nullable();
+            $table->string('mother_country_where_baby_born')->nullable();
             $table->string('mother_citizenship_number')->nullable();
-            $table->string('mother_religion');
-            $table->string('mother_mother_toung');
-            $table->string('mother_occupation');
-            $table->string('mother_baby_number');
-            $table->string('mother_alive_baby_number');
-            $table->string('mother_helper');
-            $table->string('mother_marige_date');
+            $table->string('mother_religion')->nullable();
+            $table->string('mother_mother_toung')->nullable();
+            $table->string('mother_occupation')->nullable();
+            $table->string('mother_baby_number')->nullable();
+            $table->string('mother_alive_baby_number')->nullable();
+            $table->string('mother_helper')->nullable();
+            $table->string('mother_marige_date')->nullable();
 
-            $table->string('relative_name');
-            $table->string('relationship');
-            $table->string('relative_address');
-            $table->string('date');
+            $table->string('relative_name')->nullable();
+            $table->string('relationship')->nullable();
+            $table->string('relative_address')->nullable();
+            $table->string('date')->nullable();
 
             $table->string('file')->nullable();
             $table->text('description')->nullable();
+
+            $table->unsignedBigInteger('user_id');
 
             $table->timestamps();
         });
