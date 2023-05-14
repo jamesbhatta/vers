@@ -6,11 +6,13 @@ use App\Death;
 use App\Exports\DeathExport;
 use App\Http\Requests\StoreDeathRequest;
 use App\Http\Requests\UpdateDeathRequest;
+use App\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Excel;
+use Illuminate\Support\Facades\Auth;
 
 class DeathController extends Controller
 {
@@ -31,7 +33,7 @@ class DeathController extends Controller
     public function index()
     {
         $deaths = Death::orderBy('id', 'desc')->get();
-        $title = "मृत्यु दर्ता सूचना फाराम ";
+        $title = 'मृत्यु दर्ता सूचना फाराम ';
         return view('death-notice.index', compact('deaths', 'title'));
     }
 
@@ -42,7 +44,7 @@ class DeathController extends Controller
      */
     public function create(Death $death)
     {
-        $title = "मृत्यु दर्ता सूचना फाराम ";
+        $title = 'मृत्यु दर्ता सूचना फाराम ';
         return view('death-notice.form', compact('death', 'title'));
     }
 
@@ -54,14 +56,14 @@ class DeathController extends Controller
      */
     public function store(Request $request)
     {
-
-        $date_of_birth = date("d-m-Y", strtotime($request->dob));
-        $date_of_death = date("d-m-Y", strtotime($request->death_date));
+        $user = User::findOrFail(Auth::user()->id);
+        $date_of_birth = date('d-m-Y', strtotime($request->dob));
+        $date_of_death = date('d-m-Y', strtotime($request->death_date));
         $data = $request->validate([
             'administrator' => 'required',
             'reg_number' => 'required',
-            'ward_num'=>'nullable',
-            'book_id'=>'required',
+            'ward_num' => 'nullable',
+            'book_id' => 'required',
             'entry_date' => 'required',
             'name' => 'required',
             'gender' => 'required',
@@ -73,36 +75,35 @@ class DeathController extends Controller
             'citizenship_number' => 'nullable',
             'citizenship_date' => 'nullable',
             'citizenship_district' => 'nullable',
-            'marital_status' => 'required',
-            'birth_country' => 'required',
-            'mother_tongue' => 'required',
-            'grandfather_name' => 'required',
+            'marital_status' => 'nullable',
+            'birth_country' => 'nullable',
+            'mother_tongue' => 'nullable',
+            'grandfather_name' => 'nullable',
             'spouse' => 'nullable',
-            'education' => 'required',
-            'religion' => 'required',
-            'father_name' => 'required',
-            'cause_death' => 'required',
+            'education' => 'nullable',
+            'religion' => 'nullable',
+            'father_name' => 'nullable',
+            'cause_death' => 'nullable',
             'province' => 'required',
             'district' => 'required',
             'municipality' => 'required',
             'address' => 'nullable',
             'relative_name' => 'required',
             'relationship' => 'required',
-            'relative_address' => 'required',
-            'date' => 'required',
+            'relative_address' => 'nullable',
+            'date' => 'nullable',
             'file' => 'nullable',
             'description' => 'nullable',
         ]);
         // $date=date_create();
 
-
-
         if ($request->hasFile('file')) {
             $data['file'] = $request->file('file')->store('image');
         }
-        Death::create($data);
-        return redirect()->route('death.index')->with('success', "New death notice form successfully registered.");
-
+        $user->death()->create($data);
+        return redirect()
+            ->route('death.index')
+            ->with('success', 'New death notice form successfully registered.');
     }
 
     /**
@@ -114,7 +115,6 @@ class DeathController extends Controller
     public function show(Death $death)
     {
         return view('death-notice.show', compact('death'));
-
     }
 
     /**
@@ -125,7 +125,7 @@ class DeathController extends Controller
      */
     public function edit(Death $death)
     {
-        $title = "मृत्यु दर्ता सूचना फाराम ";
+        $title = 'मृत्यु दर्ता सूचना फाराम ';
         return view('death-notice.form', compact('death', 'title'));
     }
 
@@ -138,7 +138,6 @@ class DeathController extends Controller
      */
     public function update(UpdateDeathRequest $request, Death $death)
     {
-
         $data = $request->validated();
         if ($request->hasFile('file')) {
             if ($death->file != null) {
@@ -148,7 +147,9 @@ class DeathController extends Controller
         }
 
         $death->update($data);
-        return redirect()->route('death.index')->with('success', 'Selected death record form succesfully updated.');
+        return redirect()
+            ->route('death.index')
+            ->with('success', 'Selected death record form succesfully updated.');
     }
 
     /**
@@ -163,7 +164,9 @@ class DeathController extends Controller
             Storage::delete($death->file);
         }
         $death->delete();
-        return redirect()->back()->with('success', 'Selected death record successfully removed.');
+        return redirect()
+            ->back()
+            ->with('success', 'Selected death record successfully removed.');
     }
 
     public function filter(Request $request)
@@ -180,6 +183,9 @@ class DeathController extends Controller
         if ($request->dob) {
             $deaths = $deaths->where('dob', $request->dob);
         }
+        if ($request->user_id) {
+            $deaths = $deaths->where('user_id', $request->user_id);
+        }
         if ($request->death_date) {
             $deaths = $deaths->where('death_date', $request->death_date);
         }
@@ -191,10 +197,10 @@ class DeathController extends Controller
             $deaths = $deaths->where('grandfather_name', 'like', '%' . $request->grandfather_name . '%');
         }
         if ($request->from) {
-            if($request->to){
-                $deaths = $deaths->whereBetween('entry_date', [date($request->from),date($request->to)]);
+            if ($request->to) {
+                $deaths = $deaths->whereBetween('entry_date', [date($request->from), date($request->to)]);
                 // Reservation::->get();
-            }else{
+            } else {
                 $deaths = $deaths->where('entry_date', $request->from);
             }
         }
@@ -218,6 +224,9 @@ class DeathController extends Controller
         if ($request->dob) {
             $deaths = $deaths->where('dob', $request->dob);
         }
+        if ($request->user_id) {
+            $deaths = $deaths->where('user_id', $request->user_id);
+        }
         if ($request->death_date) {
             $deaths = $deaths->where('death_date', $request->death_date);
         }
@@ -229,16 +238,16 @@ class DeathController extends Controller
             $deaths = $deaths->where('grandfather_name', 'like', '%' . $request->grandfather_name . '%');
         }
         if ($request->from) {
-            if($request->to){
-                $deaths = $deaths->whereBetween('entry_date', [date($request->from),date($request->to)]);
+            if ($request->to) {
+                $deaths = $deaths->whereBetween('entry_date', [date($request->from), date($request->to)]);
                 // Reservation::->get();
-            }else{
+            } else {
                 $deaths = $deaths->where('entry_date', $request->from);
             }
         }
         // return $request;
         $deaths = $deaths->orderBy('id', 'desc')->get();
-        $html = "<style>.kantipur{font-size: 11pt;} .kalimati{font-size: 10pt;}</style>";
+        $html = '<style>.kantipur{font-size: 11pt;} .kalimati{font-size: 10pt;}</style>';
 
         $html .= '<h1 style="text-align:center">मृत्युको सूचना फाराम</h1>';
         $html .= '<table border="1" cellspacing="0" cellspadding="0" width="100%"><thead class="thead-light" >
@@ -257,17 +266,38 @@ class DeathController extends Controller
                 </thead><tbody>';
         $num = '1';
         foreach ($deaths as $p) {
-            $html .= '<tr align="center">
-                            <td class="kalimati">' . $num . '</td>
-                            <td class="kalimati">' . $p->reg_number . '</td>
-                            <td class="kantipur">' . $p->name . '</td>
-                            <td>' . $p->gender . '</td>
-                            <td class="kalimati">' . $p->dob . '</td>
-                            <td class="kalimati">' . $p->death_date . '</td>
-                            <td class="kantipur">' . $p->death_place . '</td>
-                            <td>' . $p->cause_death . '</td>
-                            <td>' . $p->marital_status . '</td>
-                            <td class="kantipur">' . $p->father_name . '</td>
+            $html .=
+                '<tr align="center">
+                            <td class="kalimati">' .
+                $num .
+                '</td>
+                            <td class="kalimati">' .
+                $p->reg_number .
+                '</td>
+                            <td class="kantipur">' .
+                $p->name .
+                '</td>
+                            <td>' .
+                $p->gender .
+                '</td>
+                            <td class="kalimati">' .
+                $p->dob .
+                '</td>
+                            <td class="kalimati">' .
+                $p->death_date .
+                '</td>
+                            <td class="kantipur">' .
+                $p->death_place .
+                '</td>
+                            <td>' .
+                $p->cause_death .
+                '</td>
+                            <td>' .
+                $p->marital_status .
+                '</td>
+                            <td class="kantipur">' .
+                $p->father_name .
+                '</td>
                         <tr>';
             $num++;
         }
@@ -286,98 +316,140 @@ class DeathController extends Controller
 
     public function printDetail(Death $death)
     {
-        $html = "<style>.kantipur{font-size: 11pt;} .kalimati{font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;}</style>";
+        $html = '<style>.kantipur{font-size: 11pt;} .kalimati{font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;}</style>';
         $html .= '<h1 style="text-align:center">मृत्युको सूचना फाराम</h1>';
         $html .= '<div class="container"><div class="col-12"><table class="my_table col-12" style="border-collapse: collapse;width:100%"><tr><td>प्रदेश</td><td>' . $death->province . '</td><td>स्थानीय पञ्जिकाधिकारी</td><td class="kantipur">' . $death->administrator . '</td></tr><tr><td>जिल्ला</td><td>' . $death->district . '</td><td>दर्ता न.</td><td>' . $death->reg_number . '</td></tr><tr><td>ग.पा. / न.पा</td><td>' . $death->municipality . '</td><td>दर्ता मिति</td><td>' . $death->entry_date . '</td></tr></table></div>';
         $html .= '<h3 style="text-align:center">मृतकको विवरण</h3>';
-        $html .= '<div class="col-12">
+        $html .=
+            '<div class="col-12">
                     <table class="my_table col-12" style="border-collapse: collapse;width:100%">
                         <tr>
                             <td class="text-center">क</td>
                             <td>नाम</td>
-                            <td class="kantipur">' . $death->name . '</td>
+                            <td class="kantipur">' .
+            $death->name .
+            '</td>
                             <td class="text-center">ख</td>
                             <td>लिङ्ग</td>
-                            <td>' . $death->gender . '</td>
+                            <td>' .
+            $death->gender .
+            '</td>
                         </tr>
                         <tr>
                             <td class="text-center">ग</td>
                             <td>उमेर</td>
-                            <td>' . $death->age . '</td>
+                            <td>' .
+            $death->age .
+            '</td>
                             <td class="text-center">घ</td>
                             <td>मरेको मिति</td>
-                            <td>' . $death->death_date . '</td>
+                            <td>' .
+            $death->death_date .
+            '</td>
                         </tr>
                         <tr>
                             <td class="text-center">ङ</td>
                             <td>मरेको ठाउँ</td>
-                            <td class="kantipur">' . $death->death_place . '</td>
+                            <td class="kantipur">' .
+            $death->death_place .
+            '</td>
                             <td class="text-center">च</td>
                             <td class="kantipur">जन्म भएको देश</td>
-                            <td class="kantipur">' . $death->birth_country . '</td>
+                            <td class="kantipur">' .
+            $death->birth_country .
+            '</td>
                         </tr>
                         <tr>
                             <td class="text-center">छ</td>
                             <td>नागरिकता (ना. प्र. न.)</td>
-                            <td>' . $death->citizenship_number . '</td>
+                            <td>' .
+            $death->citizenship_number .
+            '</td>
                             <td class="text-center">ज</td>
                             <td>मृतकको स्थाई ठेगाना</td>
-                            <td class="kantipur">' . $death->address . '</td>
+                            <td class="kantipur">' .
+            $death->address .
+            '</td>
                         </tr>
                         <tr>
                             <td class="text-center">झ</td>
                             <td>वैवाहिक स्थिति</td>
-                            <td>' . $death->marital_status . '</td>
+                            <td>' .
+            $death->marital_status .
+            '</td>
                             <td class="text-center">ञ</td>
                             <td>शिक्षा</td>
-                            <td>' . $death->education . '</td>
+                            <td>' .
+            $death->education .
+            '</td>
                         </tr>
                         <tr>
                             <td class="text-center">ट</td>
                             <td>मातृभाषा</td>
-                            <td class="kantipur">' . $death->mother_tongue . '</td>
+                            <td class="kantipur">' .
+            $death->mother_tongue .
+            '</td>
                             <td class="text-center">ठ</td>
                             <td>धर्म</td>
-                            <td>' . $death->religion . '</td>
+                            <td>' .
+            $death->religion .
+            '</td>
                         </tr>
                         <tr>
                             <td class="text-center">ड</td>
                             <td>हजुरबुबाको नाम</td>
-                            <td class="kantipur">' . $death->grandfather_name . '</td>
+                            <td class="kantipur">' .
+            $death->grandfather_name .
+            '</td>
                             <td class="text-center">ढ</td>
                             <td>बुबाको नाम</td>
-                            <td class="kantipur">' . $death->father_name . '</td>
+                            <td class="kantipur">' .
+            $death->father_name .
+            '</td>
                         </tr>
                         <tr>
                             <td class="text-center">ण</td>
                             <td>पति/पत्नीको नाम</td>
-                            <td class="kantipur">' . $death->spouse . '</td>
+                            <td class="kantipur">' .
+            $death->spouse .
+            '</td>
                             <td class="text-center">त</td>
                             <td>मृत्युको कारण</td>
-                            <td>' . $death->cause_death . '</td>
+                            <td>' .
+            $death->cause_death .
+            '</td>
                         </tr></table></div>';
         $html .= '<h3 style="text-align:center">साक्षीको विवरण</h3>';
-        $html .= '<div class="col-12">
+        $html .=
+            '<div class="col-12">
                     <table class="my_table col-12" style="width:100%;border-collapse: collapse;">
                         <tr>
                             <td>क</td>
                             <td>नाम</td>
-                            <td class="kantipur">'.$death->relative_name.'</td>
+                            <td class="kantipur">' .
+            $death->relative_name .
+            '</td>
                         </tr>
                         <tr>
                             <td>ख</td>
                             <td>मृतक संगको सम्बन्ध</td>
-                            <td class="kantipur">'.$death->relationship.'</td>
+                            <td class="kantipur">' .
+            $death->relationship .
+            '</td>
                         </tr>
                         <tr>
                             <td>ग</td>
                             <td>ठेगाना</td>
-                            <td class="kantipur">'.$death->relative_address.'</td>
+                            <td class="kantipur">' .
+            $death->relative_address .
+            '</td>
                         </tr>
                         <tr>
                             <td>घ</td>
                             <td>मिति</td>
-                            <td>'.$death->date.'</td>
+                            <td>' .
+            $death->date .
+            '</td>
                         </tr>
                     </table>
 

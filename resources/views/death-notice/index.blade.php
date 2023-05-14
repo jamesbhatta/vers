@@ -26,6 +26,10 @@
                                 <input type="hidden" name="dob" value="{{ $_GET['dob'] }}">
                             @endisset
 
+                            @isset($_GET['user_id'])
+                                <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
+                            @endisset
+
                             @isset($_GET['death_date'])
                                 <input type="hidden" name="death_date" value="{{ $_GET['death_date'] }}">
                             @endisset
@@ -67,6 +71,10 @@
 
                             @isset($_GET['dob'])
                                 <input type="hidden" name="dob" value="{{ $_GET['dob'] }}">
+                            @endisset
+
+                            @isset($_GET['user_id'])
+                                <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
                             @endisset
 
                             @isset($_GET['death_date'])
@@ -116,7 +124,7 @@
                     <div class="card-body" id="cardBody">
                         <form action="{{ route('death.filter') }}" method="GET" role="search">
                             <div class="row">
-                                <div class="mb-2 col-xl-2 col-lg-2 col-md-3">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number"
                                             value="{{ $old->reg_number }}">
@@ -124,7 +132,7 @@
                                         <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" id="nepali-datepicker"
                                             placeholder="दर्ता मिति(From)" name="from" value="{{ $old->from }}">
@@ -133,7 +141,7 @@
                                             placeholder="दर्ता मिति(From)" name="from">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" id="nepali-datepicker2"
                                             placeholder="दर्ता मिति(To)" name="to" value="{{ $old->to }}">
@@ -142,7 +150,7 @@
                                             placeholder="दर्ता मिति(To)" name="to">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder="नाम" name="name"
                                             value="{{ $old->name }}">
@@ -150,7 +158,7 @@
                                         <input type="text" class="form-control myText" placeholder="नाम" name="name">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-5">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control" id="nepali-datepicker"
                                             placeholder="जन्म मिति" name="dob" value="{{ $old->dob }}">
@@ -159,7 +167,7 @@
                                             placeholder="जन्म मिति" name="dob">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control" id="nepali-datepicker1"
                                             placeholder=" मरेको मिति" name="death_date" value="{{ $old->death_date }}">
@@ -168,7 +176,7 @@
                                             placeholder=" मरेको मिति" name="death_date">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder=" बुबाको नाम"
                                             name="father_name" value="{{ $old->father_name }}">
@@ -177,7 +185,7 @@
                                             name="father_name">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder="हजुरबुबाको नाम"
                                             name="grandfather_name" value="{{ $old->grandfather_name }}">
@@ -185,6 +193,9 @@
                                         <input type="text" class="form-control myText" placeholder="हजुरबुबाको नाम"
                                             name="grandfather_name">
                                     @endisset
+                                </div>
+                                <div class="mb-2 col-md-3">
+                                    <x-user-select />
                                 </div>
 
                                 <div class="col-xl-1">
@@ -199,57 +210,62 @@
                 </div>
 
                 <div class="card mt-3 p-3">
-
-                    <table class="table table-responsive-sm" id="myTable">
-                        <thead class="thead-light">
-                            <tr class="text-uppercase">
-                                <th>#</th>
-                                <th>दर्ता मिति</th>
-                                <th>नाम,थर</th>
-                                <th>जन्म मिति</th>
-                                {{-- <th>उमेर</th> --}}
-                                <th>मरेको मिति</th>
-                                <th>मरेको ठाउँ</th>
-                                <th>मृत्युको कारण</th>
-                                <th>वैवाहिक स्थिति</th>
-                                <th class="text-right">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($deaths as $death)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $death->entry_date }}</td>
-                                    <td>{{ $death->name }}</td>
-                                    <td>{{ $death->dob }}</td>
-                                    <td>{{ $death->death_date }}</td>
-                                    <td>{{ $death->death_place }}</td>
-                                    <td>{{ $death->cause_death }}</td>
-                                    <td>{{ $death->marital_status }}</td>
-                                    <td class="text-right">
-                                        {{-- <button type="button" class="btn btn-primary" >Large modal</button> --}}
-
-                                        <a class="action-btn text-primary show" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg"
-                                            id="{{ $death->id }}" data-toggle="modal"
-                                            data-target=".bd-example-modal-lg"><i class="far fa-eye"></i></a>
-                                        {{-- <a class="action-btn text-primary"
-                                            href="{{ route('death.show', $death->id) }}"><i class="far fa-eye"></i></a> --}}
-                                        <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top" title="Edit death notice"
-                                            href="{{ route('death.edit', $death->id) }}"><i class="far fa-edit"></i></a>
-                                        <form action="{{ route('death.delete', $death->id) }}" method="post"
-                                            onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
-                                            class="form-inline d-inline">
-                                            @csrf
-                                            @method('delete')
-                                            <button type="submit" class="action-btn text-danger" data-toggle="tooltip" data-placement="top" title="Delete death notice"><i
-                                                    class="far fa-trash-alt"></i></button>
-                                        </form>
-                                    </td>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr class="text-uppercase">
+                                    <th>#</th>
+                                    <th>दर्ता न.</th>
+                                    <th>दर्ता मिति</th>
+                                    <th>नाम,थर</th>
+                                    <th>जन्म मिति</th>
+                                    {{-- <th>उमेर</th> --}}
+                                    <th>मरेको मिति</th>
+                                    <th>मरेको ठाउँ</th>
+                                    <th>मृत्युको कारण</th>
+                                    <th>वैवाहिक स्थिति</th>
+                                    <th class="text-right">Action</th>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($deaths as $death)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $death->reg_number }}</td>
+                                        <td>{{ $death->entry_date }}</td>
+                                        <td>{{ $death->name }}</td>
+                                        <td>{{ $death->dob }}</td>
+                                        <td>{{ $death->death_date }}</td>
+                                        <td>{{ $death->death_place }}</td>
+                                        <td>{{ $death->cause_death }}</td>
+                                        <td>{{ $death->marital_status }}</td>
+                                        <td class="text-right">
+                                            {{-- <button type="button" class="btn btn-primary" >Large modal</button> --}}
 
+                                            <a class="action-btn text-primary show" style="cursor: pointer"
+                                                data-toggle="modal" data-target=".bd-example-modal-lg"
+                                                id="{{ $death->id }}" data-toggle="modal"
+                                                data-target=".bd-example-modal-lg"><i class="far fa-eye"></i></a>
+                                            {{-- <a class="action-btn text-primary"
+                                            href="{{ route('death.show', $death->id) }}"><i class="far fa-eye"></i></a> --}}
+                                            <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top"
+                                                title="Edit death notice" href="{{ route('death.edit', $death->id) }}"><i
+                                                    class="far fa-edit"></i></a>
+                                            <form action="{{ route('death.delete', $death->id) }}" method="post"
+                                                onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
+                                                class="form-inline d-inline">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="action-btn text-danger"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="Delete death notice"><i class="far fa-trash-alt"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 {{-- =======modal===== --}}
                 <div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog"
@@ -291,7 +307,7 @@
                                         <tr>
                                             <td class="text-center">क</td>
                                             <td style="font-size: 18px">नाम</td>
-                                            <td  id="name"></td>
+                                            <td id="name"></td>
                                             <td class="text-center">ख</td>
                                             <td>लिङ्ग</td>
                                             <td id="gender"></td>
@@ -308,7 +324,7 @@
                                         <tr>
                                             <td class="text-center">ङ</td>
                                             <td>मरेको ठाउँ</td>
-                                            <td  id="death_place"></td>
+                                            <td id="death_place"></td>
                                             <td class="text-center">च</td>
                                             <td>जन्म भएको देश</td>
                                             <td id="birth_country"></td>
@@ -319,7 +335,7 @@
                                             <td id="citizenship_number"></td>
                                             <td class="text-center">ज</td>
                                             <td>मृतकको स्थाई ठेगाना</td>
-                                            <td  id="address"></td>
+                                            <td id="address"></td>
                                         </tr>
                                         <tr>
                                             <td class="text-center">झ</td>
@@ -332,7 +348,7 @@
                                         <tr>
                                             <td class="text-center">ट</td>
                                             <td>मातृभाषा</td>
-                                            <td  id="mother_tongue"></td>
+                                            <td id="mother_tongue"></td>
                                             <td class="text-center">ठ</td>
                                             <td>धर्म</td>
                                             <td id="religion"></td>
@@ -340,15 +356,15 @@
                                         <tr>
                                             <td class="text-center">ड</td>
                                             <td>हजुरबुबाको नाम</td>
-                                            <td  id="grandfather_name"></td>
+                                            <td id="grandfather_name"></td>
                                             <td class="text-center">ढ</td>
                                             <td>बुबाको नाम</td>
-                                            <td  id="father_name"></td>
+                                            <td id="father_name"></td>
                                         </tr>
                                         <tr>
                                             <td class="text-center">ण</td>
                                             <td>पति/पत्नीको नाम</td>
-                                            <td  id="spouse"></td>
+                                            <td id="spouse"></td>
                                             <td class="text-center">त</td>
                                             <td>मृत्युको कारण</td>
                                             <td id="cause_death"></td>
@@ -363,17 +379,17 @@
                                         <tr>
                                             <td>क</td>
                                             <td>नाम</td>
-                                            <td  id="relative_name"></td>
+                                            <td id="relative_name"></td>
                                         </tr>
                                         <tr>
                                             <td>ख</td>
                                             <td>मृतक संगको सम्बन्ध</td>
-                                            <td  id="relationship"></td>
+                                            <td id="relationship"></td>
                                         </tr>
                                         <tr>
                                             <td>ग</td>
                                             <td>ठेगाना</td>
-                                            <td  id="relative_address"></td>
+                                            <td id="relative_address"></td>
                                         </tr>
                                         <tr>
                                             <td>घ</td>

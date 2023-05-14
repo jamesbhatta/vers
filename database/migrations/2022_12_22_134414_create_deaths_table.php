@@ -27,18 +27,18 @@ class CreateDeathsTable extends Migration
             $table->string('dob')->nullable();
             $table->string('death_date');
             $table->string('death_place');
-            $table->string('grandfather_name');
+            $table->string('grandfather_name')->nullable();
             $table->string('citizenship_number')->nullable();
             $table->string('citizenship_date')->nullable();
             $table->string('citizenship_district')->nullable();
-            $table->string('marital_status');
-            $table->string('birth_country');
-            $table->string('mother_tongue');
+            $table->string('marital_status')->nullable();
+            $table->string('birth_country')->nullable();
+            $table->string('mother_tongue')->nullable();
             $table->string('spouse')->nullable();
-            $table->string('education');
-            $table->string('religion');
-            $table->string('father_name');
-            $table->string('cause_death');
+            $table->string('education')->nullable();
+            $table->string('religion')->nullable();
+            $table->string('father_name')->nullable();
+            $table->string('cause_death')->nullable();
 
             $table->string('province')->nullable();
             $table->string('district')->nullable();
@@ -53,6 +53,9 @@ class CreateDeathsTable extends Migration
 
             $table->string('file')->nullable();
             $table->text('description')->nullable();
+
+            $table->unsignedBigInteger('user_id');
+
             $table->timestamps();
         });
     }

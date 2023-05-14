@@ -20,4 +20,9 @@ class Death extends Model
     //     $diff = $today->diff($new_dob);
     //     return $diff->y;
     // }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -27,7 +27,7 @@
                         @isset($death->id)
                             @method('PUT')
                         @endisset
-                        <h4 class="font-weight-bold pb-3">मृतकको दर्ता विवरण </h4>
+                        <h4 class="font-weight-bold pb-3">मृतकको ठेगाना </h4>
                         <div class="card p-3">
                             @php
                                 $book_id = '';
@@ -39,14 +39,25 @@
                                 @endphp
                             @endisset
                             <livewire:municipality :death="$death" :book="$book_id" />
-                            <div class="row">
-                                <div class="form-group col-xl-3 col-lg-3 col-md-4 mb-3">
-                                    <label><span class="text-danger">*</span> दर्ता मिति</label>
-                                    <input type="text" name="entry_date" id="darta_miti" class="form-control"
-                                        value="{{ old('entry_date', $death->entry_date) }}" />
-                                    @error('entry_date')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
+
+                            <h4 class="font-weight-bold py-3">मृतकको दर्ता विवरण </h4>
+                            <div class="card p-3">
+                                <div class="row">
+                                    <div class=" col-md-4 mb-3">
+                                        <label><span class="text-danger">*</span> दर्ता न.</label>
+                                        <input type="text" class="form-control" name="reg_number" value="{{old('reg_number', $death->reg_number)}}">
+                                        @error('reg_number')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-xl-4 col-lg-4 col-md-6 mb-3">
+                                        <label><span class="text-danger">*</span> दर्ता मिति</label>
+                                        <input type="text" name="entry_date" id="darta_miti" class="form-control"
+                                            value="{{old("entry_date",$death->entry_date)}}" />
+                                        @error('entry_date')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
                                 </div>
                             </div>
                             {{-- <x-darta :death="$death" :book="$book_id"/> --}}
@@ -57,7 +68,8 @@
                         <div class="card p-3">
                             <div class="row">
                                 <x-general-form :death="$death" />
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+
+                                <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span>उमेर</label>
                                     <input type="number" name="age"  class="form-control"
                                         value="{{ old('age', $death->age) }}">
@@ -65,10 +77,10 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <x-mother-tongue :name="'mother_tongue'" :id="'mother_tongue1'" :userdata="$death"/>
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> मरेको मिति </label>
                                     <input type="text" name="death_date" id="nepali-datepicker" class="form-control"
                                         value="{{ old('death_date', $death->death_date) }}">
@@ -76,7 +88,7 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> मरेको ठाउँ</label>
                                     <div class="input-group mb-2">
 
@@ -87,7 +99,7 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for="">नागरिकता नम्बर</label>
                                     <div class="input-group mb-2">
 
@@ -99,7 +111,7 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for="">नागरिकता जारी मिति</label>
                                     <div class="input-group mb-2">
 
@@ -111,7 +123,7 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for="">नागरिकता लिएको जिल्ला</label>
                                     <div class="input-group mb-2">
 
@@ -123,8 +135,8 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label for=""><span class="text-danger">*</span> वैवाहिक स्थिति</label>
+                                <div class="form-group col-md-4">
+                                    <label for=""> वैवाहिक स्थिति</label>
                                     <div class="input-group mb-2">
 
                                         <select class="custom-select" name="marital_status">
@@ -151,7 +163,7 @@
 
 
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for="">पति/पत्नी</label>
                                     <div class="input-group mb-2">
 
@@ -166,7 +178,7 @@
 
 
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> बुबाको नाम</label>
                                     <div class="input-group mb-2">
 
@@ -177,7 +189,7 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> मृत्युको कारण</label>
                                     <div class="input-group mb-2">
 
@@ -223,14 +235,14 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <x-country-form :label="'जन्म भएको देश'" :name="'birth_country'" :id="'birth_country1'" :usercountry="$death" />
 
                                 </div>
 
 
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for="">ठेगाना</label>
                                     <div class="input-group mb-2">
 
@@ -242,8 +254,8 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label for=""><span class="text-danger">*</span> धर्म</label>
+                                <div class="form-group col-md-4">
+                                    <label for=""> धर्म</label>
                                     <div class="input-group mb-2">
 
                                         <select class="custom-select" name="religion">
@@ -277,8 +289,8 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-xl-3 col-lg-4 col-md-6">
-                                    <label for=""><span class="text-danger">*</span> शिक्षा</label>
+                                <div class="form-group col-md-4">
+                                    <label for=""> शिक्षा</label>
                                     <div class="input-group mb-2">
 
                                         <select class="custom-select" name="education">

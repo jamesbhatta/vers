@@ -227,59 +227,61 @@
                     <div class="box__body" style="width: 100%;overflow-x:scroll">
                         {{-- {!! $dataTable->table() !!} --}}
                         <div class="table-responsive">
-                        <table class="table table-striped" >
-                            <thead class="thead-light">
-                                <tr class="text-uppercase">
-                                    <th>#</th>
-                                    <th>दर्ता न.</th>
-                                    <th>नाम</th>
-                                    <th>लिङ्ग</th>
-                                    <th>जन्म मिति</th>
-                                    <th>बाबुको नाम</th>
-                                    <th>आमाको नाम</th>
-                                    <th>हजुरबुबाको नाम</th>
-                                    <th>जन्म स्थान</th>
-                                    <th class="text-right">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                @foreach ($births as $birth)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $birth->reg_number }}</td>
-                                        <td>{{ $birth->name }}</td>
-                                        <td>{{ $birth->gender }}</td>
-                                        <td>{{ $birth->dob }}</td>
-                                        <td>{{ $birth->father_name }}</td>
-                                        <td>{{ $birth->mother_name }}</td>
-                                        <td>{{ $birth->grandfather_name }}</td>
-                                        <td>{{ $birth->birth_place }}</td>
-
-                                        <td class="text-nowrap text-right">
-
-                                            <a class="action-btn text-primary show" style="cursor: pointer"
-                                                data-toggle="modal" data-target=".bd-example-modal-lg"
-                                                id="{{ $birth->id }}" data-toggle="modal"
-                                                data-target=".bd-example-modal-lg"><i class="far fa-eye"></i></a>
-                                            <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top"
-                                                title="Edit birth notice" href="{{ route('birth.edit', $birth->id) }}"><i
-                                                    class="far fa-edit"></i></a>
-                                            <form action="{{ route('birth.delete', $birth->id) }}" method="post"
-                                                onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
-                                                class="form-inline d-inline">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="submit" class="action-btn text-danger"
-                                                    data-toggle="tooltip" data-placement="top"
-                                                    title="Delete birth notice"><i class="far fa-trash-alt"></i></button>
-                                            </form>
-                                        </td>
+                            <table class="table table-striped">
+                                <thead class="thead-light">
+                                    <tr class="text-uppercase">
+                                        <th>#</th>
+                                        <th>दर्ता न.</th>
+                                        <th>नाम</th>
+                                        <th>लिङ्ग</th>
+                                        <th>जन्म मिति</th>
+                                        <th>बाबुको नाम</th>
+                                        <th>आमाको नाम</th>
+                                        <th>हजुरबुबाको नाम</th>
+                                        <th>जन्म स्थान</th>
+                                        <th class="text-right">Action</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                                </thead>
+                                <tbody>
+
+                                    @foreach ($births as $birth)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $birth->reg_number }}</td>
+                                            <td>{{ $birth->name }}</td>
+                                            <td>{{ $birth->gender }}</td>
+                                            <td>{{ $birth->dob }}</td>
+                                            <td>{{ $birth->father_name }}</td>
+                                            <td>{{ $birth->mother_name }}</td>
+                                            <td>{{ $birth->grandfather_name }}</td>
+                                            <td>{{ $birth->birth_place }}</td>
+
+                                            <td class="text-nowrap text-right">
+
+                                                <a class="action-btn text-primary show" style="cursor: pointer"
+                                                    data-toggle="modal" data-target=".bd-example-modal-lg"
+                                                    id="{{ $birth->id }}" data-toggle="modal"
+                                                    data-target=".bd-example-modal-lg"><i class="far fa-eye"></i></a>
+                                                <a class="action-btn text-primary" data-toggle="tooltip"
+                                                    data-placement="top" title="Edit birth notice"
+                                                    href="{{ route('birth.edit', $birth->id) }}"><i
+                                                        class="far fa-edit"></i></a>
+                                                <form action="{{ route('birth.delete', $birth->id) }}" method="post"
+                                                    onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
+                                                    class="form-inline d-inline">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit" class="action-btn text-danger"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Delete birth notice"><i
+                                                            class="far fa-trash-alt"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     {{-- =======modal===== --}}
                     <div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog"
