@@ -20,7 +20,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="p-3">
+        <div class="p-3 mt-5">
             {{-- <div class="card p-3 mb-5 border-0">
                 <h3>Welcome {{ Auth::user()->name }},</h3>
                 <label>In {{ __('app.full_name') }}</label>
@@ -86,13 +86,16 @@
             {{-- <div class="box p-3" style="width: 50%">
                 <canvas id="myChart"></canvas>
             </div> --}}
+            <h3 class="h3 font-weight-bold text-center">व्यक्तिगत घटना दर्ता प्रणाली</h3>
+            <h3 class="h3 font-weight-bold text-center">Vital Event Registration System</h3>
+            <br>
             @if (App\Mysetting::first())
-                <h1 class="h1 font-weight-bold text-uppercase text-center mt-1">
+                <h1 class="h4 font-weight-bold text-uppercase text-center mt-1">
                     {{ App\Mysetting::first()->default_province }}
                 </h1>
-                <h2 class="h2 font-weight-bold text-uppercase text-center">{{ App\Mysetting::first()->default_district }}
+                <h2 class="h5 font-weight-bold text-uppercase text-center">{{ App\Mysetting::first()->default_district }}
                 </h2>
-                <h3 class="h3 font-weight-bold text-uppercase text-center">
+                <h3 class="h6 font-weight-bold text-uppercase text-center">
                     {{ App\Mysetting::first()->default_municipality }}
                 </h3>
             @endif
