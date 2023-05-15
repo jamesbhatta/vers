@@ -43,7 +43,7 @@ class FamilyController extends Controller
                 'birthplace' => ['required'],
                 'citizenship' => ['nullable'],
                 'age' => ['required'],
-                'permanent_addres' => ['nullable'],
+                'permanent_address' => ['nullable'],
                 'temporary_address' => ['nullable'],
                 'education' => ['required'],
                 'religion' => ['required'],

@@ -58,4 +58,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Marriage::class);
     }
+
+    public function migrationCertificate()
+    {
+        return $this->hasMany(MigrationCertificate::class);
+    }
 }

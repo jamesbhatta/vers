@@ -52,7 +52,7 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-xl-4 col-lg-4 col-md-6 mb-3">
+                                <div class="form-group col-md-4 mb-3">
                                     <label><span class="text-danger">*</span> दर्ता मिति</label>
                                     <input type="text" name="entry_date" id="darta_miti" class="form-control"
                                         value="{{old("entry_date",$birth->entry_date)}}" />

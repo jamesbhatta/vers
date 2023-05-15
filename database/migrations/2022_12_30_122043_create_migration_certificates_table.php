@@ -16,15 +16,15 @@ class CreateMigrationCertificatesTable extends Migration
         Schema::create('migration_certificates', function (Blueprint $table) {
             $table->id();
             //6
-            $table->string('after_province');
-            $table->string('after_district');
-            $table->string('after_municipality');
-            $table->string('after_vdc')->nullable();
-            $table->string('after_village');
+            $table->string('migration_province');
+            $table->string('migration_district');
+            $table->string('migration_municipality');
+            $table->string('migration_vdc')->nullable();
+            $table->string('migration_village')->nullable();
             $table->string('book_id');
             $table->string('ward_num')->nullable();
-            $table->string('after_ward');
-            $table->string('after_houseno')->nullable();
+            $table->string('migration_ward')->nullable();
+            $table->string('migration_houseno')->nullable();
 
             //7
             $table->string('province');
@@ -34,24 +34,28 @@ class CreateMigrationCertificatesTable extends Migration
             $table->string('administrator');
             $table->string('reg_number');
             $table->string('entry_date');
+            $table->string('type');
+            $table->string('migration_reason')->nullable();
+            $table->string('migration_date')->nullable();
 
             //8
-            $table->string('before_province');
-            $table->string('before_district');
-            $table->string('before_municipality');
-            $table->string('before_vdc')->nullable();
-            $table->string('before_village');
-            $table->string('before_houseno')->nullable();
-            $table->string('before_ward');
-            $table->string('migration_reason');
-            $table->string('migration_date');
+            // $table->string('province');
+            // $table->string('district');
+            // $table->string('municipality')->nullable();
+            // $table->string('vdc')->nullable();
+            // $table->string('village')->nullable();
+            // $table->string('houseno')->nullable();
+            // $table->string('ward')->nullable();
 
             //5
             $table->string('relative_name');
-            $table->string('relative_address');
-            $table->string('relationship');
-            $table->string('date');
+            $table->string('relative_address')->nullable();
+            $table->string('relationship')->nullable();
+            $table->string('date')->nullable();
             $table->string('file')->nullable();
+
+            $table->unsignedBigInteger('user_id')->nullable();
+
             $table->timestamps();
         });
     }

@@ -14,4 +14,9 @@ class MigrationCertificate extends Model
     {
         return $this->hasMany(Family::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

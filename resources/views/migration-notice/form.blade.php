@@ -24,7 +24,7 @@
                         @method('PUT')
                     @endisset
                     <div class="box mt-2 px-3 pt-3">
-                        <h4 class="font-weight-bold pb-3">बसाईसराई दर्ता विवरण </h4>
+                        <h4 class="font-weight-bold pb-3">ठेगाना </h4>
 
                         <div class="card  p-3">
                             @php
@@ -33,12 +33,24 @@
                             @isset($_GET['book_id'])
                                 @php
                                     $book_id = $_GET['book_id'];
-
+                                    
                                 @endphp
                             @endisset
                             <livewire:municipality :death="$migrationCertificate" :book="$book_id" />
+
+                        </div>
+                        <h4 class="font-weight-bold py-3">बसाईसराई दर्ता विवरण </h4>
+                        <div class="card p-3">
                             <div class="row">
-                                <div class="form-group col-xl-3 col-lg-3 col-md-4 mb-3">
+                                <div class=" col-md-4 mb-3">
+                                    <label><span class="text-danger">*</span> दर्ता न.</label>
+                                    <input type="text" class="form-control" name="reg_number"
+                                        value="{{ old('reg_number', $migrationCertificate->reg_number) }}">
+                                    @error('reg_number')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-xl-4 col-lg-4 col-md-6 mb-3">
                                     <label><span class="text-danger">*</span> दर्ता मिति</label>
                                     <input type="text" name="entry_date" id="darta_miti" class="form-control"
                                         value="{{ old('entry_date', $migrationCertificate->entry_date) }}" />
@@ -46,48 +58,66 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
+                                <div class="form-group col-xl-4 col-lg-4 col-md-6 mb-3">
+                                    <label><span class="text-danger">*</span>बसाईसराईको प्रकार</label>
+                                    <select class="custom-select" name="type" id="mySelect"
+                                        onchange="showSelectedValue()">
+                                        <option selected disabled class="m-5" value="">छान्न्नुहोस्।
+                                        </option>
+                                        <option class="m-5" value="बसाई सरी आएको"
+                                            {{ $migrationCertificate->type == 'बसाई सरी आएको' ? 'selected' : '' }}>बसाई सरी आएको
+                                        </option>
+                                        <option class="m-5" value="बसाई सरी जाने"
+                                            {{ $migrationCertificate->type == 'बसाई सरी जाने' ? 'selected' : '' }}>बसाई सरी जाने
+                                        </option>
+                                    </select>
+                                    @error('entry_date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
                         {{-- कहाँ बाट सरी आएको --}}
-                        <h4 class="font-weight-bold py-3">क. कहाँ बाट सरी आएको</h4>
-
+                        <h4 class="font-weight-bold py-3"><span id="selectedValue"></span> ठेगाना</h4>
                         <div class="card p-3">
 
-                            <livewire:migration-from-address :migrationFromAddress="$migrationCertificate" />
+                            <livewire:after-migration :afterMigration="$migrationCertificate" />
+
                             <div class="row">
-                                <div class="form-group col-lg-3">
+                                <div class="form-group col-lg-4">
                                     <label for=""><span class="text-danger">*</span>&nbsp;गाउँ/टोलको नाम</label>
                                     <div class="input-group">
-                                        <input type="text" name="before_village" placeholder="@lang('navigation.village-toll-name')"
-                                            class="form-control myText"
-                                            value="{{ old('before_village', $migrationCertificate->before_village) }}" />
+                                        <input type="text" class="form-control myText" placeholder="@lang('navigation.village-toll-name')"
+                                            name="migration_village"
+                                            value="{{ old('migration_village', $migrationCertificate->migration_village) }}" />
                                     </div>
-                                    @error('before_village')
+                                    @error('migration_village')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-lg-3">
-                                    <label><span class="text-danger">*</span>&nbsp;वडा नं.</label>
+                                <div class="form-group col-lg-4">
+                                    <label for=""><span class="text-danger">*</span>&nbsp;वडा नं.</label>
                                     <div class="input-group">
-                                        <input type="number" name="before_ward" class="form-control" placeholder="वडा नं."
-                                            value="{{ old('before_ward', $migrationCertificate->before_ward) }}" />
+                                        <input type="number" class="form-control" placeholder="वडा नं."
+                                            name="migration_ward"
+                                            value="{{ old('migration_ward', $migrationCertificate->migration_ward) }}" />
                                     </div>
-                                    @error('before_ward')
+                                    @error('migration_ward')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-lg-3">
+                                <div class="form-group col-lg-4">
                                     <label for="">घर नं.</label>
                                     <div class="input-group">
-                                        <input type="number" name="before_houseno" class="form-control"
-                                            placeholder="@lang('navigation.houseno')"
-                                            value="{{ old('before_houseno', $migrationCertificate->before_houseno) }}" />
+                                        <input type="number" class="form-control" placeholder="@lang('navigation.houseno')"
+                                            name="migration_houseno"
+                                            value="{{ old('migration_houseno', $migrationCertificate->migration_houseno) }}" />
                                     </div>
-                                    @error('before_houseno')
+                                    @error('migration_houseno')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-lg-3">
+                                <div class="form-group col-lg-4">
                                     <label><span class="text-danger">*</span>&nbsp;बसाई सराईको कारण</label>
                                     <div class="input-group">
                                         <input type="text" name="migration_reason" class="form-control myText"
@@ -98,7 +128,7 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-lg-3">
+                                <div class="form-group col-lg-4">
                                     <label><span class="text-danger">*</span>&nbsp;बसाई सराईको मिति </label>
                                     <div class="input-group">
                                         <input type="text" id="nepali-datepicker5" name="migration_date"
@@ -110,52 +140,71 @@
                                     @enderror
                                 </div>
                             </div>
+
                         </div>
-                        <h4 class="font-weight-bold py-3">ख. कहाँ सरी जाने</h4>
+                        {{-- <div class="card p-3">
 
-                        <div class="card p-3">
-                            {{-- <h3 class="h5 font-weight-bold p-1">ख. कहाँ सरी जाने </h3> --}}
-                            {{-- <hr> --}}
-
-                            {{-- <div class="col-lg-12 p-3"> --}}
-                            <livewire:after-migration :afterMigration="$migrationCertificate" />
-                            {{-- </div> --}}
+                            <livewire:migration-from-address :migrationFromAddress="$migrationCertificate" />
                             <div class="row">
-                                <div class="form-group col-lg-3">
+                                <div class="form-group col-lg-4">
                                     <label for=""><span class="text-danger">*</span>&nbsp;गाउँ/टोलको नाम</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control myText" placeholder="@lang('navigation.village-toll-name')"
-                                            name="after_village"
-                                            value="{{ old('after_village', $migrationCertificate->after_village) }}" />
+                                        <input type="text" name="before_village" placeholder="@lang('navigation.village-toll-name')"
+                                            class="form-control myText"
+                                            value="{{ old('before_village', $migrationCertificate->before_village) }}" />
                                     </div>
-                                    @error('after_village')
+                                    @error('before_village')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-lg-3">
-                                    <label for=""><span class="text-danger">*</span>&nbsp;वडा नं.</label>
+                                <div class="form-group col-lg-4">
+                                    <label><span class="text-danger">*</span>&nbsp;वडा नं.</label>
                                     <div class="input-group">
-                                        <input type="number" class="form-control" placeholder="वडा नं." name="after_ward"
-                                            value="{{ old('after_ward', $migrationCertificate->after_ward) }}" />
+                                        <input type="number" name="before_ward" class="form-control" placeholder="वडा नं."
+                                            value="{{ old('before_ward', $migrationCertificate->before_ward) }}" />
                                     </div>
-                                    @error('after_ward')
+                                    @error('before_ward')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                                <div class="form-group col-lg-3">
+                                <div class="form-group col-lg-4">
                                     <label for="">घर नं.</label>
                                     <div class="input-group">
-                                        <input type="number" class="form-control" placeholder="@lang('navigation.houseno')"
-                                            name="after_houseno"
-                                            value="{{ old('after_houseno', $migrationCertificate->after_houseno) }}" />
+                                        <input type="number" name="before_houseno" class="form-control"
+                                            placeholder="@lang('navigation.houseno')"
+                                            value="{{ old('before_houseno', $migrationCertificate->before_houseno) }}" />
                                     </div>
-                                    @error('after_houseno')
+                                    @error('before_houseno')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-lg-4">
+                                    <label><span class="text-danger">*</span>&nbsp;बसाई सराईको कारण</label>
+                                    <div class="input-group">
+                                        <input type="text" name="migration_reason" class="form-control myText"
+                                            placeholder="@lang('navigation.reason')"
+                                            value="{{ old('migration_reason', $migrationCertificate->migration_reason) }}" />
+                                    </div>
+                                    @error('migration_reason')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-lg-4">
+                                    <label><span class="text-danger">*</span>&nbsp;बसाई सराईको मिति </label>
+                                    <div class="input-group">
+                                        <input type="text" id="nepali-datepicker5" name="migration_date"
+                                            value="{{ old('migration_date', $migrationCertificate->migration_date) }}"
+                                            class="form-control" placeholder="मिति चयन गर्नुहोस्" />
+                                    </div>
+                                    @error('migration_date')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                             </div>
+                        </div> --}}
+                        {{-- <h4 class="font-weight-bold py-3">ख. कहाँ सरी जाने</h4>
 
-                        </div>
+                         --}}
                         <h4 class="font-weight-bold mt-3">साक्षी विवरण</h4>
 
                         {{-- <div class="row p-3"> --}}
@@ -187,4 +236,14 @@
             margin-top: 27px;
         }
     </style>
+
+    @push('scripts')
+        <script>
+            function showSelectedValue() {
+                var selectElement = document.getElementById("mySelect");
+                var selectedOption = selectElement.options[selectElement.selectedIndex].text;
+                document.getElementById("selectedValue").textContent = selectedOption;
+            }
+        </script>
+    @endpush
 @endsection

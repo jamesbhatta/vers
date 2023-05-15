@@ -10,7 +10,7 @@ window.onload = function () {
             ndpYear: true,
             ndpMonth: true,
             disableAfter: todayDate,
-            ndpYearCount: 200
+            ndpYearCount: 100
         });
 
     }
@@ -23,7 +23,7 @@ window.onload = function () {
             ndpYear: true,
             ndpMonth: true,
             disableAfter: todayDate,
-            ndpYearCount: 200
+            ndpYearCount: 100
         });
     }
     var mymainInput = document.getElementById("sachi_nepali_datepicker");
@@ -32,7 +32,7 @@ window.onload = function () {
             ndpYear: true,
             ndpMonth: true,
             disableAfter: todayDate,
-            ndpYearCount: 200
+            ndpYearCount: 100
         });
     }
 
@@ -42,7 +42,7 @@ window.onload = function () {
             ndpYear: true,
             ndpMonth: true,
             disableAfter: todayDate,
-            ndpYearCount: 200
+            ndpYearCount: 100
         });
     }
 
@@ -52,7 +52,7 @@ window.onload = function () {
             ndpYear: true,
             ndpMonth: true,
             disableAfter: todayDate,
-            ndpYearCount: 200
+            ndpYearCount: 100
         });
     }
 
@@ -62,7 +62,7 @@ window.onload = function () {
             ndpYear: true,
             ndpMonth: true,
             disableAfter: todayDate,
-            ndpYearCount: 200
+            ndpYearCount: 100
         });
     }
     var mainInput5 = document.getElementById("nepali-datepicker3");
@@ -71,7 +71,7 @@ window.onload = function () {
             ndpYear: true,
             ndpMonth: true,
             disableAfter: todayDate,
-            ndpYearCount: 200
+            ndpYearCount: 100
         });
     }
     var mainInput5 = document.getElementById("nepali-datepicker4");
@@ -79,7 +79,7 @@ window.onload = function () {
         mainInput5.nepaliDatePicker({
             ndpYear: true,
             ndpMonth: true,
-            ndpYearCount: 200
+            ndpYearCount: 100
         });
     }
     var mainInput5 = document.getElementById("nepali-datepicker5");
@@ -87,7 +87,7 @@ window.onload = function () {
         mainInput5.nepaliDatePicker({
             ndpYear: true,
             ndpMonth: true,
-            ndpYearCount: 200
+            ndpYearCount: 100
         });
     }
 
@@ -106,7 +106,7 @@ $(function () {
             ndpYear: true,
             ndpMonth: true,
             disableAfter: todayDate,
-            ndpYearCount: 200,
+            ndpYearCount: 100,
 
         });
     }

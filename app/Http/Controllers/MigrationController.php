@@ -7,12 +7,12 @@ use App\Family;
 use App\Http\Requests\MigrationCertificateRequest;
 use App\MigrationCertificate;
 use App\Mysetting;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
-
-
 
 class MigrationController extends Controller
 {
@@ -44,16 +44,18 @@ class MigrationController extends Controller
         if ($request->entry_date) {
             $migrationCertificates = $migrationCertificates->where('entry_date', 'like', '%' . $request->entry_date . '%');
         }
-
+        if ($request->user_id) {
+            $migrationCertificates = $migrationCertificates->where('user_id', $request->user_id);
+        }
         if ($request->migration_date) {
             $migrationCertificates = $migrationCertificates->where('migration_date', 'like', '%' . $request->migration_date . '%');
         }
 
         if ($request->from) {
-            if($request->to){
-                $migrationCertificates = $migrationCertificates->whereBetween('entry_date', [date($request->from),date($request->to)]);
+            if ($request->to) {
+                $migrationCertificates = $migrationCertificates->whereBetween('entry_date', [date($request->from), date($request->to)]);
                 // Reservation::->get();
-            }else{
+            } else {
                 $migrationCertificates = $migrationCertificates->where('entry_date', $request->from);
             }
         }
@@ -82,7 +84,6 @@ class MigrationController extends Controller
 
     public function add_family(MigrationCertificate $migrationCertificate, Family $family)
     {
-
         $families = $migrationCertificate->families()->get();
         return view('migration-notice.family', compact('migrationCertificate', 'families', 'family'));
     }
@@ -110,22 +111,21 @@ class MigrationController extends Controller
         return view('migration-notice.form', compact('migrationCertificate'));
     }
 
-
     public function store(MigrationCertificate $migrationCertificate, MigrationCertificateRequest $request)
     {
-        //  return $request;
+        $user = User::findOrFail(Auth::user()->id);
         $data = $request->validated();
 
         if ($request->hasFile('file')) {
-            $fileName = $request->reg_number . "-" . Str::slug($request->province) . "." . $request->file->getClientOriginalExtension();
+            $fileName = $request->reg_number . '-' . Str::slug($request->province) . '.' . $request->file->getClientOriginalExtension();
             $data['file'] = $request->file('file')->storeAs('image', $fileName);
         }
         // return $data;
-        $migrationCertificate = MigrationCertificate::create($data);
-        $migrationCertificate->save();
-        return redirect()->route('migration.add-family', $migrationCertificate)->with('success', 'Data saved successfully');
+        $migrationCertificate = $user->migrationCertificate()->create($data);
+        return redirect()
+            ->route('migration.add-family', $migrationCertificate)
+            ->with('success', 'Data saved successfully');
     }
-
 
     /**
      * Update the specified resource in storage.
@@ -141,12 +141,13 @@ class MigrationController extends Controller
             if ($migrationCertificate->file != null) {
                 Storage::delete($migrationCertificate->file);
             }
-            $fileName = $request->reg_number . "-" . Str::slug($request->after_province) . "." . $request->file->getClientOriginalExtension();
+            $fileName = $request->reg_number . '-' . Str::slug($request->after_province) . '.' . $request->file->getClientOriginalExtension();
             $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
         $migrationCertificate->update($data);
-        $migrationCertificate->save();
-        return redirect()->route('migration.index', $migrationCertificate)->with('success', 'Data updated successfully');
+        return redirect()
+            ->route('migration.index', $migrationCertificate)
+            ->with('success', 'Data updated successfully');
     }
 
     /**
@@ -158,12 +159,14 @@ class MigrationController extends Controller
     public function destroy(MigrationCertificate $migrationCertificate)
     {
         $migrationCertificate->delete();
-        return redirect()->back()->with('success', 'Data deleted successfully');
+        return redirect()
+            ->back()
+            ->with('success', 'Data deleted successfully');
     }
 
     public function print(MigrationCertificate $migrationCertificate)
     {
-        $html = "<style>.kantipur{font-size: 15pt;} .kalimati{font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;} .dash{border-bottom: dashed 1px rgb(132, 132, 132);}</style>";
+        $html = '<style>.kantipur{font-size: 15pt;} .kalimati{font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;} .dash{border-bottom: dashed 1px rgb(132, 132, 132);}</style>';
         $html .= '<h1 style="text-align:center">बसाईसराई सूचना फाराम</h1>';
         $html .= '<p style="text-align:center">(अनुसूची-६ )</p>';
         $html .= '<p style="text-align:center">(नियम-५ संग सम्बन्धित )</p>';
@@ -197,56 +200,105 @@ class MigrationController extends Controller
                             </thead><tbody>';
         $num = '1';
         foreach ($migrationCertificate->families as $p) {
-            $html .= '<tr>
-                <td>' . $num . '</td>
-                <td>' . $p->name . '</td>
-                <td>' . $p->age . '</td>
-                <td>' . $p->gender . '</td>
-                <td>' . $p->birthplace . '</td>
-                <td>' . $p->citizenship . '</td>
-                <td>' . $p->permanent_addres . '</td>
-                <td>' . $p->temporary_address . '</td>
-                <td>' . $p->education . '</td>
-                <td>' . $p->religion . '</td>
-                <td>' . $p->mothertongue . '</td>
-                <td>' . $p->description . '</td>
+            $html .=
+                '<tr>
+                <td>' .
+                $num .
+                '</td>
+                <td>' .
+                $p->name .
+                '</td>
+                <td>' .
+                $p->age .
+                '</td>
+                <td>' .
+                $p->gender .
+                '</td>
+                <td>' .
+                $p->birthplace .
+                '</td>
+                <td>' .
+                $p->citizenship .
+                '</td>
+                <td>' .
+                $p->permanent_addres .
+                '</td>
+                <td>' .
+                $p->temporary_address .
+                '</td>
+                <td>' .
+                $p->education .
+                '</td>
+                <td>' .
+                $p->religion .
+                '</td>
+                <td>' .
+                $p->mothertongue .
+                '</td>
+                <td>' .
+                $p->description .
+                '</td>
             </tr>';
             $num++;
         }
         $html .= '</tbody></table>
                     </div>';
 
-
-        $html .= '<div style="margin-top:30px">
+        $html .=
+            '<div style="margin-top:30px">
         <div style="text-align: justify" class="">
             <div class="row" style="text-align: justify;">
-                (२) कहाँ सरी जाने &nbsp;<span class="dash">' . $migrationCertificate->after_district . '</span>
-                &nbsp;जिल्ला&nbsp;&nbsp;<span class="dash">' . $migrationCertificate->after_municipality . '</span>
-                &nbsp;न.पा./गा.वि.स. वडा नं. &nbsp;<span class="dash">' . $migrationCertificate->after_ward . '</span>
+                (२) कहाँ सरी जाने &nbsp;<span class="dash">' .
+            $migrationCertificate->after_district .
+            '</span>
+                &nbsp;जिल्ला&nbsp;&nbsp;<span class="dash">' .
+            $migrationCertificate->after_municipality .
+            '</span>
+                &nbsp;न.पा./गा.वि.स. वडा नं. &nbsp;<span class="dash">' .
+            $migrationCertificate->after_ward .
+            '</span>
                 &nbsp;टोलको नाम
                 &nbsp;
-                <span class="dash">' . $migrationCertificate->after_village . '</span>
+                <span class="dash">' .
+            $migrationCertificate->after_village .
+            '</span>
                 &nbsp;घर
-                नं &nbsp;<span class="dash">' . $migrationCertificate->after_houseno . '</span>
+                नं &nbsp;<span class="dash">' .
+            $migrationCertificate->after_houseno .
+            '</span>
             </div>
             <br>
             <div class="row" style="text-align: justify">
                 (३) कहाँ बाट सरी आएको&nbsp;
-                <span class="dash">' . $migrationCertificate->before_district . '</span>
-                &nbsp;जिल्ला &nbsp;<span class="dash">' . $migrationCertificate->before_municipality . '</span>
+                <span class="dash">' .
+            $migrationCertificate->before_district .
+            '</span>
+                &nbsp;जिल्ला &nbsp;<span class="dash">' .
+            $migrationCertificate->before_municipality .
+            '</span>
 
                 &nbsp;  न.पा./गा.वि.स. वडा
-                नं. &nbsp;<span class="dash">' . $migrationCertificate->before_ward . '</span>
-                &nbsp;टोलको नाम &nbsp;<span class="dash">' . $migrationCertificate->before_village . '</span>
+                नं. &nbsp;<span class="dash">' .
+            $migrationCertificate->before_ward .
+            '</span>
+                &nbsp;टोलको नाम &nbsp;<span class="dash">' .
+            $migrationCertificate->before_village .
+            '</span>
                 &nbsp;घर
-                नं &nbsp;<span class="dash">' . $migrationCertificate->before_houseno . '</span>
-                &nbsp;बसाई सराईको मिति &nbsp;<span class="dash">' . $migrationCertificate->migration_date . '</span>
+                नं &nbsp;<span class="dash">' .
+            $migrationCertificate->before_houseno .
+            '</span>
+                &nbsp;बसाई सराईको मिति &nbsp;<span class="dash">' .
+            $migrationCertificate->migration_date .
+            '</span>
 
             </div> <br>
 
             <div class="row">
                 <p style="text-align: justify">
-                    (४) बसाई सराईको कारण &nbsp;<span class="dash">' . $migrationCertificate->migration_reason . '</span>
+                    (४) बसाई सराईको कारण &nbsp;<span class="dash">' .
+            $migrationCertificate->migration_reason .
+            '</span>
 
 
                 </p>
@@ -255,27 +307,36 @@ class MigrationController extends Controller
         </div>
     </div>';
         $html .= '<h5 style="text-align:center">साक्षीको विवरण</h5>';
-        $html .= '<div class="col-12">
+        $html .=
+            '<div class="col-12">
                     <table class="my_table col-12" style="width:100%;border-collapse: collapse;">
                         <tr>
                             <td>क</td>
                             <td>नाम</td>
-                            <td class="kantipur">' . $migrationCertificate->relative_name . '</td>
+                            <td class="kantipur">' .
+            $migrationCertificate->relative_name .
+            '</td>
                         </tr>
                         <tr>
                             <td>ख</td>
                             <td>मृतक संगको सम्बन्ध</td>
-                            <td class="kantipur">' . $migrationCertificate->relationship . '</td>
+                            <td class="kantipur">' .
+            $migrationCertificate->relationship .
+            '</td>
                         </tr>
                         <tr>
                             <td>ग</td>
                             <td>ठेगाना</td>
-                            <td class="kantipur">' . $migrationCertificate->relative_address . '</td>
+                            <td class="kantipur">' .
+            $migrationCertificate->relative_address .
+            '</td>
                         </tr>
                         <tr>
                             <td>घ</td>
                             <td>मिति</td>
-                            <td>' . $migrationCertificate->date . '</td>
+                            <td>' .
+            $migrationCertificate->date .
+            '</td>
                         </tr>
                     </table>
 

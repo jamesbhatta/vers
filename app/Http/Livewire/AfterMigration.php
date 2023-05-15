@@ -26,23 +26,23 @@ class AfterMigration extends Component
         //     $this->vdc = $mysetting->default_vdc;
         // }
         if ($this->afterMigration->id) {
-            $this->province = $this->afterMigration->after_province;
-            $this->district = $this->afterMigration->after_district;
-            $this->vdc = $this->afterMigration->after_vdc;
-            $this->municipality = $this->afterMigration->after_municipality;
+            $this->province = $this->afterMigration->migration_province;
+            $this->district = $this->afterMigration->migration_district;
+            $this->vdc = $this->afterMigration->migration_vdc;
+            $this->municipality = $this->afterMigration->migration_municipality;
         }
 
-        if (old('after_province')) {
-            $this->province = old('after_province');
+        if (old('migration_province')) {
+            $this->province = old('migration_province');
         }
-        if (old('after_district')) {
-            $this->district = old('after_district');
+        if (old('migration_district')) {
+            $this->district = old('migration_district');
         }
-        if (old('after_municipality')) {
-            $this->municipality = old('after_municipality');
+        if (old('migration_municipality')) {
+            $this->municipality = old('migration_municipality');
         }
-        if (old('after_vdc')) {
-            $this->vdc = old('after_vdc');
+        if (old('migration_vdc')) {
+            $this->vdc = old('migration_vdc');
         }
     }
 

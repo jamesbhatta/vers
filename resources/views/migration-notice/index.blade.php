@@ -32,8 +32,8 @@
                     <div class="card-body" id="cardBody">
                         <form action="{{ route('migration.filter') }}" method="get">
                             @csrf
-                            <div class="row justify-content-between">
-                                <div class="col-lg-2">
+                            <div class="row">
+                                <div class="col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number"
                                             value="{{ $old->reg_number }}">
@@ -41,7 +41,7 @@
                                         <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" id="nepali-datepicker"
                                             placeholder="दर्ता मिति(From)" name="from" value="{{ $old->from }}">
@@ -50,7 +50,7 @@
                                             placeholder="दर्ता मिति(From)" name="from">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" id="nepali-datepicker2"
                                             placeholder="दर्ता मिति(To)" name="to" value="{{ $old->to }}">
@@ -59,7 +59,7 @@
                                             placeholder="दर्ता मिति(To)" name="to">
                                     @endisset
                                 </div>
-                                <div class="col-lg-2">
+                                <div class="col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control" id="nepali-datepicker1"
                                             placeholder=" दर्ता मिति" name="entry_date" value="{{ $old->entry_date }}">
@@ -69,7 +69,7 @@
                                     @endisset
                                 </div>
 
-                                <div class="col-lg-2">
+                                <div class="col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control" id="nepali-datepicker3"
                                             placeholder=" बसाई सराईको मिति" name="migration_date"
@@ -80,10 +80,8 @@
                                     @endisset
                                 </div>
 
-
-
-                                <div class="col-lg-1">
-                                    <input type="submit" class="btn btn-info bg-info" value="Filter">
+                                <div class="col-md-1">
+                                    <button type="submit" class="btn btn-info bg-info">Filter</button>
                                 </div>
 
                             </div>
@@ -93,48 +91,58 @@
 
                 <div class="box mt-3">
                     <div class="box__body">
-                        <table class="table table-responsive-sm" id="myTable">
-                            <thead class="thead-light">
-                                <tr class="text-uppercase">
-                                    <th>#</th>
-                                    <th>दर्ता नं.</th>
-                                    <th>दर्ता मिति</th>
-                                    <th>बसाई सराईको कारण</th>
-                                    <th>बसाई सराईको मिति </th>
-                                    <th class="text-right">ACTION</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($migrationCertificates as $migrationCertificate)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $migrationCertificate->reg_number }}</td>
-
-                                        <td>{{ $migrationCertificate->entry_date }}</td>
-                                        <td>{{ $migrationCertificate->migration_reason }}</td>
-                                        <td>{{ $migrationCertificate->migration_date }}</td>
-                                        <td class="float-right d-flex">
-                                            <a href="{{ route('migration.add-family', $migrationCertificate->id) }}"
-                                                class="action-btn text-primary" data-toggle="tooltip" data-placement="top" title="Add Family"><i class="fas fa-plus-circle "></i></a>
-                                            <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" data-toggle="tooltip" data-placement="top" title="Show detail"
-                                                class="action-btn text-primary show"
-                                                id="{{ $migrationCertificate->id }}"><i class="fa fa-eye"></i></a>
-                                            <a href="{{ route('migration.edit', $migrationCertificate->id) }}" data-toggle="tooltip" data-placement="top" title="Edit migration notice"
-                                                class="action-btn text-primary"><i class="fa fa-edit"></i></a>
-                                            <form action="{{ route('migration.delete', $migrationCertificate->id) }}"
-                                                method="post" onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
-                                                class="form-inline d-inline">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="submit" class="action-btn text-danger" data-toggle="tooltip" data-placement="top" title="Delete migration notice"><i
-                                                        class="far fa-trash-alt"></i></button>
-                                            </form>
-
-                                        </td>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="thead-light">
+                                    <tr class="text-uppercase">
+                                        <th>#</th>
+                                        <th>दर्ता नं.</th>
+                                        <th>दर्ता मिति</th>
+                                        <th>बसाईसराईको प्रकार</th>
+                                        <th>बसाई सराईको मिति </th>
+                                        <th class="text-right">ACTION</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($migrationCertificates as $migrationCertificate)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $migrationCertificate->reg_number }}</td>
+
+                                            <td>{{ $migrationCertificate->entry_date }}</td>
+                                            <td>{{ $migrationCertificate->type }}</td>
+                                            <td>{{ $migrationCertificate->migration_date }}</td>
+                                            <td class="float-right d-flex">
+                                                <a href="{{ route('migration.add-family', $migrationCertificate->id) }}"
+                                                    class="action-btn text-primary" data-toggle="tooltip"
+                                                    data-placement="top" title="Add Family"><i
+                                                        class="fas fa-plus-circle "></i></a>
+                                                <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"
+                                                    data-toggle="tooltip" data-placement="top" title="Show detail"
+                                                    class="action-btn text-primary show"
+                                                    id="{{ $migrationCertificate->id }}"><i class="fa fa-eye"></i></a>
+                                                <a href="{{ route('migration.edit', $migrationCertificate->id) }}"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="Edit migration notice" class="action-btn text-primary"><i
+                                                        class="fa fa-edit"></i></a>
+                                                <form action="{{ route('migration.delete', $migrationCertificate->id) }}"
+                                                    method="post"
+                                                    onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
+                                                    class="form-inline d-inline">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit" class="action-btn text-danger"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Delete migration notice"><i
+                                                            class="far fa-trash-alt"></i></button>
+                                                </form>
+
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
                         aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -180,7 +188,7 @@
                                                 <h5 class="col-lg-12  mt-3">(१) बसाई सर्ने परिवारका सदस्यहरुको नाम/बसाई
                                                     सराई व्यक्तिको</h5>
                                                 <div class="col-12" style="overflow-x: scroll">
-                                                    <table class="my_table" id="myTable">
+                                                    <table class="my_table">
                                                         <thead>
                                                             <tr>
                                                                 <th style="text-align:center" rowspan="2">क्र. स. </th>
@@ -198,7 +206,6 @@
                                                                     योग्यता</th>
                                                                 <th style="text-align:center" rowspan="2">धर्म</th>
                                                                 <th style="text-align:center" rowspan="2">मातृभाषा</th>
-                                                                <th style="text-align:center" rowspan="2">कैफियत</th>
                                                             </tr>
                                                             <tr>
                                                                 <th style="text-align:center">स्थायी</th>
@@ -211,47 +218,28 @@
                                                 </div>
                                                 <div class="p-3  mt-2">
                                                     <div style="text-align: justify" class="">
-                                                        <div class="row" style="text-align: justify;">
-                                                            (२) कहाँ सरी जाने <p
-                                                                style="border-bottom: dashed 1px rgb(132, 132, 132);"
-                                                                class="px-3 mx-1" class="text-center"
-                                                                id="after_district"></p>
-                                                            जिल्ला
-                                                            <p style="border-bottom: dashed 1px rgb(132, 132, 132);"
-                                                                class="px-3 mx-1" id="after_municipality"></p>
-                                                            न.पा./गा.वि.स. वडा नं. &nbsp;
-                                                            <p class="mb-2 col-12"></p>
-                                                            <p style="border-bottom: dashed 1px rgb(132, 132, 132);"
-                                                                class="px-3 mx-1" id="after_ward"></p> टोलको नाम
-                                                            &nbsp;
-                                                            <p style="border-bottom: dashed 1px rgb(132, 132, 132);"
-                                                                class="px-3 mx-1" id="after_village"></p> घर
-                                                            नं &nbsp;<p
-                                                                style="border-bottom: dashed 1px rgb(132, 132, 132);"
-                                                                class="px-3 mx-1" id="after_houseno"></p>
-                                                        </div>
-                                                        <br>
                                                         <div class="row" style="text-align: justify">
-                                                            (३) कहाँ बाट सरी आएको
+                                                            (२) कहाँ
+                                                            <p class="px-3 mx-1" id="type"></p>
                                                             <p style="border-bottom: dashed 1px rgb(132, 132, 132);"
-                                                                class="px-3 mx-1" id="before_district">
+                                                                class="px-3 mx-1" id="migration_district">
                                                             </p> जिल्ला &nbsp;<p
                                                                 style="border-bottom: dashed 1px rgb(132, 132, 132);"
-                                                                class="px-3 mx-1" id="before_municipality">
+                                                                class="px-3 mx-1" id="migration_municipality">
                                                             </p>
                                                             <p class="mb-2 col-12"></p>
 
                                                             न.पा./गा.वि.स. वडा
                                                             नं. &nbsp;<p
                                                                 style="border-bottom: dashed 1px rgb(132, 132, 132);"
-                                                                class="px-3 mx-1" id="before_ward"></p>
+                                                                class="px-3 mx-1" id="migration_ward"></p>
                                                             टोलको नाम &nbsp;<p
                                                                 style="border-bottom: dashed 1px rgb(132, 132, 132);"
-                                                                class="px-3 mx-1" id="before_village"></p>
+                                                                class="px-3 mx-1" id="migration_village"></p>
                                                             घर
                                                             नं &nbsp;<p
                                                                 style="border-bottom: dashed 1px rgb(132, 132, 132);"
-                                                                class="px-3 mx-1" id="before_houseno"></p>
+                                                                class="px-3 mx-1" id="migration_houseno"></p>
                                                             बसाई सराईको मिति &nbsp;
                                                             <p class="mb-2 col-12"></p>
 
@@ -261,7 +249,7 @@
 
                                                         <div class="row">
                                                             <p style="text-align: justify">
-                                                                (४) बसाई सराईको कारण &nbsp;
+                                                                (३) बसाई सराईको कारण &nbsp;
                                                             <h4 style="border-bottom: dashed 1px rgb(132, 132, 132);"
                                                                 class="px-3 mx-1" id="migration_reason"></h4>
 
@@ -328,14 +316,13 @@
             .get(url)
             .then((response) => {
                 // var data = response.data;
-                console.log(response.data);
-                $('#after_province').html(response.data.after_province);
-                $('#after_district').html(response.data.after_district);
-                $('#after_municipality').html(response.data.after_municipality);
-                $('#after_vdc').html(response.data.after_vdc);
-                $('#after_village').html(response.data.after_village);
-                $('#after_ward').html(response.data.after_ward);
-                $('#after_houseno').html(response.data.after_houseno);
+                $('#migration_province').html(response.data.migration_province);
+                $('#migration_district').html(response.data.migration_district);
+                $('#migration_municipality').html(response.data.migration_municipality);
+                $('#migration_vdc').html(response.data.migration_vdc);
+                $('#migration_village').html(response.data.migration_village);
+                $('#migration_ward').html(response.data.migration_ward);
+                $('#migration_houseno').html(response.data.migration_houseno);
 
                 $('#province').html(response.data.province);
                 $('#district').html(response.data.district);
@@ -344,14 +331,13 @@
                 $('#administrator').html(response.data.administrator);
                 $('#reg_number').html(response.data.reg_number);
                 $('#entry_date').html(response.data.entry_date);
+                if (response.data.type == "बसाई सरी आएको") {
+                    var additionalString = "बाट ";
+                    $('#type').html(additionalString + response.data.type);
+                } else {
+                    $('#type').html(response.data.type);
 
-                $('#before_province').html(response.data.before_province);
-                $('#before_district').html(response.data.before_district);
-                $('#before_municipality').html(response.data.before_municipality);
-                $('#before_vdc').html(response.data.before_vdc);
-                $('#before_village').html(response.data.before_village);
-                $('#before_houseno').html(response.data.before_houseno);
-                $('#before_ward').html(response.data.before_ward);
+                }
                 $('#migration_reason').html(response.data.migration_reason);
                 $('#migration_date').html(response.data.migration_date);
 
@@ -370,12 +356,11 @@
                     family_data += "<td>" + response.data.families[i].gender + "</td>";
                     family_data += "<td>" + response.data.families[i].birthplace + "</td>";
                     family_data += "<td>" + response.data.families[i].citizenship + "</td>";
-                    family_data += "<td>" + response.data.families[i].permanent_addres + "</td>";
+                    family_data += "<td>" + response.data.families[i].permanent_address + "</td>";
                     family_data += "<td>" + response.data.families[i].temporary_address + "</td>";
                     family_data += "<td>" + response.data.families[i].education + "</td>";
                     family_data += "<td>" + response.data.families[i].religion + "</td>";
                     family_data += "<td>" + response.data.families[i].mothertongue + "</td>";
-                    family_data += "<td>" + response.data.families[i].description + "</td>";
                     family_data += "</td>";
                 }
 
