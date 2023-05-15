@@ -53,4 +53,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Death::class);
     }
+
+    public function marriage()
+    {
+        return $this->hasMany(Marriage::class);
+    }
 }

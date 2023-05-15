@@ -30,6 +30,10 @@
                                 <input type="hidden" name="groom_name" value="{{ $_GET['groom_name'] }}">
                             @endisset
 
+                            @isset($_GET['user_id'])
+                                <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
+                            @endisset
+
                             @isset($_GET['bride_father_name'])
                                 <input type="hidden" name="bride_father_name" value="{{ $_GET['bride_father_name'] }}">
                             @endisset
@@ -60,6 +64,10 @@
 
                             @isset($_GET['entry_date'])
                                 <input type="hidden" name="entry_date" value="{{ $_GET['entry_date'] }}">
+                            @endisset
+
+                            @isset($_GET['user_id'])
+                                <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
                             @endisset
 
                             @isset($_GET['bride_name'])
@@ -116,7 +124,7 @@
                         <form action="{{ route('marriage.filter') }}" method="GET" role="search">
                             {{-- @csrf --}}
                             <div class="row">
-                                <div class="mb-2 col-xl-2 col-lg-2 col-md-3">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control" placeholder="दर्ता न."
                                             name="darta_number" value="{{ $old->darta_number }}">
@@ -125,7 +133,7 @@
                                             name="darta_number">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" id="nepali-datepicker"
                                             placeholder="दर्ता मिति(From)" name="from" value="{{ $old->from }}">
@@ -134,7 +142,7 @@
                                             placeholder="दर्ता मिति(From)" name="from">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" id="nepali-datepicker2"
                                             placeholder="दर्ता मिति(To)" name="to" value="{{ $old->to }}">
@@ -143,7 +151,7 @@
                                             placeholder="दर्ता मिति(To)" name="to">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control" id="nepali-datepicker"
                                             placeholder="दर्ता मिति" name="entry_date" value="{{ $old->entry_date }}">
@@ -152,7 +160,7 @@
                                             placeholder="दर्ता मिति" name="entry_date">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-5">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder="दुलाहाको नाम"
                                             name="bride_name" value="{{ $old->bride_name }}">
@@ -161,7 +169,7 @@
                                             name="bride_name">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder="दुलहीको नाम"
                                             name="groom_name" value="{{ $old->groom_name }}">
@@ -170,7 +178,7 @@
                                             name="groom_name">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder="दुलहको बाबुको नाम"
                                             name="bride_father_name" value="{{ $old->bride_father_name }}">
@@ -179,7 +187,7 @@
                                             name="bride_father_name">
                                     @endisset
                                 </div>
-                                <div class="mb-2 col-xl-2 col-lg-3 col-md-4">
+                                <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder="दुलहीको बाबुको नाम"
                                             name="groom_father_name" value="{{ $old->groom_father_name }}">
@@ -188,7 +196,9 @@
                                             name="groom_father_name">
                                     @endisset
                                 </div>
-
+                                <div class="mb-2 col-md-3">
+                                    <x-user-select />
+                                </div>
                                 <div class="col-xl-1">
                                     <button class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light"
                                         type="submit" style="background-color:#374f67; color: #fff;">Filter</button>
@@ -202,9 +212,9 @@
 
                 <div class="box mt-3">
 
-                    <div class="box__body" style="width: 100%;overflow-x:scroll">
-                        <table class="table table-responsive-sm" id="myTable">
-                            <thead class="thead-light">
+                    <div class="box__body table-responsive">
+                        <table class="table table-striped">
+                            <thead class="thead-light" style="white-space: nowrap;">
                                 <tr class="text-uppercase">
                                     <th>#</th>
                                     <th>दर्ता न.</th>
@@ -229,11 +239,13 @@
                                         <td>{{ $marriage->groom_name }}</td>
                                         <td>{{ $marriage->groom_grandfather_name }}</td>
                                         <td>{{ $marriage->groom_father_name }}</td>
-                                        <td class="text-right">
-                                            <a class="action-btn text-primary show" id="{{ $marriage->id }}" data-toggle="modal" data-target=".bd-example-modal-lg"
+                                        <td class="text-right" style="white-space: nowrap;">
+                                            <a class="action-btn text-primary show" id="{{ $marriage->id }}"
+                                                data-toggle="modal" data-target=".bd-example-modal-lg"
                                                 data-toggle="modal" data-target=".bd-example-modal-lg"
                                                 style="cursor: pointer"><i class="far fa-eye"></i></a>
-                                            <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top" title="Edit marriage notice"
+                                            <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top"
+                                                title="Edit marriage notice"
                                                 href="{{ route('marriage.edit', $marriage->id) }}"><i
                                                     class="far fa-edit"></i></a>
                                             <form action="{{ route('marriage.delete', $marriage->id) }}" method="post"
@@ -241,7 +253,9 @@
                                                 class="form-inline d-inline">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" class="action-btn text-danger" data-toggle="tooltip" data-placement="top" title="Delete marriage notice"><i
+                                                <button type="submit" class="action-btn text-danger"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="Delete marriage notice"><i
                                                         class="far fa-trash-alt"></i></button>
                                             </form>
                                         </td>
@@ -374,7 +388,7 @@
                                             </tr>
                                             <tr>
                                                 <td>ख</td>
-                                                <td>मृतक संगको सम्बन्ध</td>
+                                                <td>दुलाहा संगको सम्बन्ध</td>
                                                 <td id="relationship"></td>
                                             </tr>
                                             <tr>
@@ -485,4 +499,5 @@
         alert('sdfsf')
     }
 </script>
+
 {{-- @endpush --}}

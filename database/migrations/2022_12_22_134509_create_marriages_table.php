@@ -27,41 +27,44 @@ class CreateMarriagesTable extends Migration
 
             $table->string('bride_name');
             $table->string('bride_birth_country');
-            $table->string('bride_dob');
+            $table->string('bride_dob')->nullable();
             $table->string('bride_citizenship_number')->nullable();
             $table->string('bride_citizenship_date')->nullable();
             $table->string('bride_citizenship_district')->nullable();
-            $table->string('bride_temp_address');
-            $table->string('bride_education');
-            $table->string('bride_religion');
-            $table->string('bride_mother_tongue');
-            $table->string('bride_grandfather_name');
-            $table->string('bride_father_name');
-            $table->string('bride_pre_marrige_status');
+            $table->string('bride_temp_address')->nullable();
+            $table->string('bride_education')->nullable();
+            $table->string('bride_religion')->nullable();
+            $table->string('bride_mother_tongue')->nullable();
+            $table->string('bride_grandfather_name')->nullable();
+            $table->string('bride_father_name')->nullable();
+            $table->string('bride_pre_marrige_status')->nullable();
 
 
             $table->string('groom_name');
-            $table->string('groom_dob');
-            $table->string('groom_birth_country');
+            $table->string('groom_dob')->nullable();
+            $table->string('groom_birth_country')->nullable();
             $table->string('groom_citizenship_number')->nullable();
             $table->string('groom_citizenship_date')->nullable();
             $table->string('groom_citizenship_district')->nullable();
-            $table->string('groom_education');
-            $table->string('groom_temp_address');
-            $table->string('groom_religion');
-            $table->string('groom_mother_tongue');
-            $table->string('groom_grandfather_name');
-            $table->string('groom_father_name');
-            $table->string('groom_pre_marrige_status');
+            $table->string('groom_education')->nullable();
+            $table->string('groom_temp_address')->nullable();
+            $table->string('groom_religion')->nullable();
+            $table->string('groom_mother_tongue')->nullable();
+            $table->string('groom_grandfather_name')->nullable();
+            $table->string('groom_father_name')->nullable();
+            $table->string('groom_pre_marrige_status')->nullable();
 
 
             $table->string('relative_name');
             $table->string('relationship');
-            $table->string('relative_address');
-            $table->string('date');
+            $table->string('relative_address')->nullable();
+            $table->string('date')->nullable();
 
             $table->string('file')->nullable();
             $table->text('description')->nullable();
+
+            $table->unsignedBigInteger('user_id');
+
 
             $table->timestamps();
         });

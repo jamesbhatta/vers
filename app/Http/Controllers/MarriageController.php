@@ -6,11 +6,13 @@ use App\Exports\MarriageExport;
 use App\Http\Requests\StoreMarriageRequest;
 use App\Http\Requests\UpdateMarriageRequest;
 use App\Marriage;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Str;
 use Excel;
+use Illuminate\Support\Facades\Auth;
 
 class MarriageController extends Controller
 {
@@ -21,9 +23,9 @@ class MarriageController extends Controller
      */
     public function index()
     {
-        $title = "विवाह दर्ता सूचना फाराम ";
-        $marriages = Marriage::orderBy('id','desc')->get();
-        return view('marriage-notice.index',compact('marriages','title'));
+        $title = 'विवाह दर्ता सूचना फाराम ';
+        $marriages = Marriage::orderBy('id', 'desc')->get();
+        return view('marriage-notice.index', compact('marriages', 'title'));
     }
 
     /**
@@ -33,9 +35,8 @@ class MarriageController extends Controller
      */
     public function create(Marriage $marriage)
     {
-        $title = "विवाह दर्ता सूचना फाराम ";
-        return view('marriage-notice.form', compact('marriage','title'));
-
+        $title = 'विवाह दर्ता सूचना फाराम ';
+        return view('marriage-notice.form', compact('marriage', 'title'));
     }
 
     /**
@@ -46,13 +47,16 @@ class MarriageController extends Controller
      */
     public function store(StoreMarriageRequest $request)
     {
+        $user = User::findOrFail(Auth::user()->id);
         $data = $request->validated();
         if ($request->hasFile('file')) {
-            $fileName = $request->reg_number . "-" . Str::slug($request->name) . "." . $request->file->getClientOriginalExtension();
+            $fileName = $request->reg_number . '-' . Str::slug($request->name) . '.' . $request->file->getClientOriginalExtension();
             $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
-        Marriage::create($data);
-        return redirect()->route('marriage.index')->with('success', "New marriage notice successfully registered.");
+        $user->marriage()->create($data);
+        return redirect()
+            ->route('marriage.index')
+            ->with('success', 'New marriage notice successfully registered.');
     }
 
     /**
@@ -63,8 +67,8 @@ class MarriageController extends Controller
      */
     public function show(Marriage $marriage)
     {
-        $title = "विवाह दर्ता सूचना फाराम ";
-        return view('marriage-notice.show', compact('marriage','title'));
+        $title = 'विवाह दर्ता सूचना फाराम ';
+        return view('marriage-notice.show', compact('marriage', 'title'));
     }
 
     /**
@@ -75,8 +79,8 @@ class MarriageController extends Controller
      */
     public function edit(Marriage $marriage)
     {
-        $title = "विवाह दर्ता सूचना फाराम ";
-        return view('marriage-notice.form', compact('marriage','title'));
+        $title = 'विवाह दर्ता सूचना फाराम ';
+        return view('marriage-notice.form', compact('marriage', 'title'));
     }
 
     /**
@@ -93,12 +97,14 @@ class MarriageController extends Controller
             if ($marriage->file != null) {
                 Storage::delete($marriage->file);
             }
-            $fileName = $request->reg_number . "-" . Str::slug($request->name) . "." . $request->file->getClientOriginalExtension();
+            $fileName = $request->reg_number . '-' . Str::slug($request->name) . '.' . $request->file->getClientOriginalExtension();
             $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
 
         $marriage->update($data);
-        return redirect()->route('marriage.index')->with('success', 'Selected marriage record successfully updated.');
+        return redirect()
+            ->route('marriage.index')
+            ->with('success', 'Selected marriage record successfully updated.');
     }
 
     /**
@@ -113,18 +119,20 @@ class MarriageController extends Controller
             Storage::delete($marriage->file);
         }
         $marriage->delete();
-        return redirect()->back()->with('success', 'Selected marriage record successfully removed.');
+        return redirect()
+            ->back()
+            ->with('success', 'Selected marriage record successfully removed.');
     }
 
     public function filter(Request $request)
     {
         $data = Marriage::get();
         $marriages = DB::table('marriages');
-        if($request->darta_number){
+        if ($request->darta_number) {
             $marriages = $marriages->where('reg_number', $request->darta_number);
         }
 
-        if($request->entry_date){
+        if ($request->entry_date) {
             $marriages = $marriages->where('entry_date', $request->entry_date);
         }
 
@@ -136,6 +144,9 @@ class MarriageController extends Controller
             $marriages = $marriages->where('groom_name', 'like', '%' . $request->groom_name . '%');
         }
 
+        if ($request->user_id) {
+            $marriages = $marriages->where('user_id', $request->user_id);
+        }
         if ($request->bride_father_name) {
             $marriages = $marriages->where('bride_father_name', 'like', '%' . $request->bride_father_name . '%');
         }
@@ -144,31 +155,35 @@ class MarriageController extends Controller
             $marriages = $marriages->where('groom_father_name', 'like', '%' . $request->groom_father_name . '%');
         }
         if ($request->from) {
-            if($request->to){
-                $marriages = $marriages->whereBetween('entry_date', [date($request->from),date($request->to)]);
+            if ($request->to) {
+                $marriages = $marriages->whereBetween('entry_date', [date($request->from), date($request->to)]);
                 // Reservation::->get();
-            }else{
+            } else {
                 $marriages = $marriages->where('entry_date', $request->from);
             }
         }
-        $marriages = $marriages->orderBy('id','desc')->get();
+        $marriages = $marriages->orderBy('id', 'desc')->get();
         $old = $request;
-        return view('marriage-notice.index',compact('marriages','old'));
+        return view('marriage-notice.index', compact('marriages', 'old'));
     }
 
     public function listPrint(Request $request)
     {
         $marriage = DB::table('marriages');
-        if($request->darta_number){
+        if ($request->darta_number) {
             $marriage = $marriage->where('reg_number', $request->darta_number);
         }
 
-        if($request->entry_date){
+        if ($request->entry_date) {
             $marriage = $marriage->where('entry_date', $request->entry_date);
         }
 
         if ($request->bride_name) {
             $marriage = $marriage->where('bride_name', 'like', '%' . $request->bride_name . '%');
+        }
+
+        if ($request->user_id) {
+            $marriage = $marriage->where('user_id', $request->user_id);
         }
 
         if ($request->groom_name) {
@@ -183,15 +198,15 @@ class MarriageController extends Controller
             $marriage = $marriage->where('groom_father_name', 'like', '%' . $request->groom_father_name . '%');
         }
         if ($request->from) {
-            if($request->to){
-                $marriage = $marriage->whereBetween('entry_date', [date($request->from),date($request->to)]);
+            if ($request->to) {
+                $marriage = $marriage->whereBetween('entry_date', [date($request->from), date($request->to)]);
                 // Reservation::->get();
-            }else{
+            } else {
                 $marriage = $marriage->where('entry_date', $request->from);
             }
         }
-        $marriage = $marriage->orderBy('id','desc')->get();
-        $html = "<style>.kantipur{} .kalimati{font-size: 10pt;}</style>";
+        $marriage = $marriage->orderBy('id', 'desc')->get();
+        $html = '<style>.kantipur{} .kalimati{font-size: 10pt;}</style>';
 
         $html .= '<h1 style="text-align:center">विवाहको सूचना फाराम</h1>';
         $html .= '<table border="1" cellspacing="0" cellspadding="0" width="100%"><thead class="thead-light" >
@@ -207,27 +222,44 @@ class MarriageController extends Controller
                             <th>दुलहीको बाबुको नाम</th>
                         </tr>
                 </thead><tbody>';
-                    $num = '1';
-                    foreach ($marriage as $p) {
-                        $html.='<tr align="center">
-                            <td class="kalimati">'.$num.'</td>
-                            <td class="kalimati">'.$p->reg_number.'</td>
-                            <td >'.$p->bride_name.'</td>
-                            <td >'.$p->bride_grandfather_name.'</td>
-                            <td >'.$p->bride_father_name.'</td>
-                            <td >'.$p->groom_name.'</td>
-                            <td >'.$p->groom_grandfather_name.'</td>
-                            <td >'.$p->groom_father_name.'</td>
+        $num = '1';
+        foreach ($marriage as $p) {
+            $html .=
+                '<tr align="center">
+                            <td class="kalimati">' .
+                $num .
+                '</td>
+                            <td class="kalimati">' .
+                $p->reg_number .
+                '</td>
+                            <td >' .
+                $p->bride_name .
+                '</td>
+                            <td >' .
+                $p->bride_grandfather_name .
+                '</td>
+                            <td >' .
+                $p->bride_father_name .
+                '</td>
+                            <td >' .
+                $p->groom_name .
+                '</td>
+                            <td >' .
+                $p->groom_grandfather_name .
+                '</td>
+                            <td >' .
+                $p->groom_father_name .
+                '</td>
 
                         <tr>';
-                        $num++;
-                    }
-                $html .= '</tbody></table></body></html>';
+            $num++;
+        }
+        $html .= '</tbody></table></body></html>';
         $pdf = new \Mpdf\Mpdf(['mode' => 'UTF-8', 'format' => 'A4-p', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
         // return file_get_contents('pdf.blade.php');
         $pdf->WriteHTML($html);
 
-        $pdf->Output('marriage.pdf','I');
+        $pdf->Output('marriage.pdf', 'I');
     }
 
     public function excel(Request $request)
@@ -243,11 +275,12 @@ class MarriageController extends Controller
 
     public function printDetail(Marriage $marriage)
     {
-        $html = "<style>.kantipur{font-size: 15pt;} .kalimati{font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;}</style>";
+        $html = '<style>.kantipur{font-size: 15pt;} .kalimati{font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;}</style>';
         $html .= '<h1 style="text-align:center">विवाहको सूचना फाराम</h1>';
         $html .= '<div class="container"><div class="col-12"><table class="my_table col-12" style="border-collapse: collapse;width:100%"><tr><td>प्रदेश</td><td>' . $marriage->province . '</td><td>स्थानीय पञ्जिकाधिकारी</td><td >' . $marriage->administrator . '</td></tr><tr><td>जिल्ला</td><td>' . $marriage->district . '</td><td>दर्ता न.</td><td>' . $marriage->reg_number . '</td></tr><tr><td>ग.पा. / न.पा</td><td>' . $marriage->municipality . '</td><td>दर्ता मिति</td><td>' . $marriage->entry_date . '</td></tr></table></div>';
         $html .= '<h3 style="text-align:center">दुलाहा-दुलहीको विवरण</h3>';
-        $html .= ' <div class="col-xl-12">
+        $html .=
+            ' <div class="col-xl-12">
                         <table class="my_table col-12" style="width:100%;border-collapse: collapse;">
                             <tr>
                                 <th>विवरण</th>
@@ -256,95 +289,156 @@ class MarriageController extends Controller
                             </tr>
                             <tr>
                                 <td>नाम,थर</td>
-                                <td >'.$marriage->bride_name.'</td>
-                                <td >'.$marriage->groom_name.'</td>
+                                <td >' .
+            $marriage->bride_name .
+            '</td>
+                                <td >' .
+            $marriage->groom_name .
+            '</td>
                             </tr>
                             <tr>
                                 <td>जन्म मिति</td>
-                                <td>'.$marriage->bride_dob.'</td>
-                                <td>'.$marriage->groom_dob.'</td>
+                                <td>' .
+            $marriage->bride_dob .
+            '</td>
+                                <td>' .
+            $marriage->groom_dob .
+            '</td>
                             </tr>
                             <tr>
                                 <td>जन्म भएको देश</td>
-                                <td >'.$marriage->bride_birth_country.'</td>
-                                <td >'.$marriage->groom_birth_country.'</td>
+                                <td >' .
+            $marriage->bride_birth_country .
+            '</td>
+                                <td >' .
+            $marriage->groom_birth_country .
+            '</td>
                             </tr>
                             <tr>
                                 <td>नागरिकता (ना.प्र.नं)</td>
-                                <td>'.$marriage->bride_citizenship_number.'</td>
-                                <td>'.$marriage->groom_citizenship_number.'</td>
+                                <td>' .
+            $marriage->bride_citizenship_number .
+            '</td>
+                                <td>' .
+            $marriage->groom_citizenship_number .
+            '</td>
                             </tr>
                             <tr>
                                 <td>नागरिकता जारी मिति</td>
-                                <td>'.$marriage->bride_citizenship_date.'</td>
-                                <td>'.$marriage->groom_citizenship_date.'</td>
+                                <td>' .
+            $marriage->bride_citizenship_date .
+            '</td>
+                                <td>' .
+            $marriage->groom_citizenship_date .
+            '</td>
                             </tr>
                             <tr>
                                 <td>नागरिकता लिएको जिल्ला</td>
-                                <td >'.$marriage->bride_citizenship_district.'</td>
-                                <td >'.$marriage->groom_citizenship_district.'</td>
+                                <td >' .
+            $marriage->bride_citizenship_district .
+            '</td>
+                                <td >' .
+            $marriage->groom_citizenship_district .
+            '</td>
                             </tr>
                             <tr>
                                 <td>स्थाई ठेगाना</td>
-                                <td >'.$marriage->bride_temp_address.'</td>
-                                <td >'.$marriage->groom_temp_address.'</td>
+                                <td >' .
+            $marriage->bride_temp_address .
+            '</td>
+                                <td >' .
+            $marriage->groom_temp_address .
+            '</td>
                             </tr>
                             <tr>
                                 <td>शिक्षा</td>
-                                <td>'.$marriage->bride_education.'</td>
-                                <td>'.$marriage->groom_education.'</td>
+                                <td>' .
+            $marriage->bride_education .
+            '</td>
+                                <td>' .
+            $marriage->groom_education .
+            '</td>
                             </tr>
                             <tr>
                                 <td>धर्म</td>
-                                <td>'.$marriage->bride_religion.'</td>
-                                <td>'.$marriage->groom_religion.'</td>
+                                <td>' .
+            $marriage->bride_religion .
+            '</td>
+                                <td>' .
+            $marriage->groom_religion .
+            '</td>
                             </tr>
                             <tr>
                                 <td>मातृभाषा</td>
-                                <td >'.$marriage->bride_mother_tongue.'</td>
-                                <td >'.$marriage->groom_mother_tongue.'</td>
+                                <td >' .
+            $marriage->bride_mother_tongue .
+            '</td>
+                                <td >' .
+            $marriage->groom_mother_tongue .
+            '</td>
                             </tr>
                             <tr>
                                 <td>बाजेको नाम</td>
-                                <td >'.$marriage->bride_grandfather_name.'</td>
-                                <td >'.$marriage->groom_grandfather_name.'</td>
+                                <td >' .
+            $marriage->bride_grandfather_name .
+            '</td>
+                                <td >' .
+            $marriage->groom_grandfather_name .
+            '</td>
                             </tr>
                             <tr>
                                 <td>बाबुको नाम</td>
-                                <td >'.$marriage->bride_father_name.'</td>
-                                <td >'.$marriage->groom_father_name.'</td>
+                                <td >' .
+            $marriage->bride_father_name .
+            '</td>
+                                <td >' .
+            $marriage->groom_father_name .
+            '</td>
                             </tr>
                             <tr>
                                 <td>पूर्व वैवाहिक स्थिति</td>
-                                <td>'.$marriage->bride_pre_marrige_status.'</td>
-                                <td>'.$marriage->groom_pre_marrige_status.'</td>
+                                <td>' .
+            $marriage->bride_pre_marrige_status .
+            '</td>
+                                <td>' .
+            $marriage->groom_pre_marrige_status .
+            '</td>
                             </tr>
 
                         </table>
                     </div>';
 
         $html .= '<h3 style="text-align:center">साक्षीको विवरण</h3>';
-        $html .= '<div class="col-12">
+        $html .=
+            '<div class="col-12">
                     <table class="my_table col-12" style="width:100%;border-collapse: collapse;">
                         <tr>
                             <td>क</td>
                             <td>नाम</td>
-                            <td >'.$marriage->relative_name.'</td>
+                            <td >' .
+            $marriage->relative_name .
+            '</td>
                         </tr>
                         <tr>
                             <td>ख</td>
-                            <td>मृतक संगको सम्बन्ध</td>
-                            <td >'.$marriage->relationship.'</td>
+                            <td>दुलाहा संगको सम्बन्ध</td>
+                            <td >' .
+            $marriage->relationship .
+            '</td>
                         </tr>
                         <tr>
                             <td>ग</td>
                             <td>ठेगाना</td>
-                            <td >'.$marriage->relative_address.'</td>
+                            <td >' .
+            $marriage->relative_address .
+            '</td>
                         </tr>
                         <tr>
                             <td>घ</td>
                             <td>मिति</td>
-                            <td>'.$marriage->date.'</td>
+                            <td>' .
+            $marriage->date .
+            '</td>
                         </tr>
                     </table>
 
