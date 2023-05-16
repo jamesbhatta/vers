@@ -9,9 +9,19 @@
                 <small class="text-danger">{{ $message }}</small>
             @enderror
         </div>
-
         <div class="form-group col-md-4">
-            <label for=""><span class="text-danger">*</span>{{$relation}} संगको नाता</label>
+            <label for=""><span class="text-danger">*</span> साक्षीको ठेगाना</label>
+            <div class="input-group mb-2">
+
+                <input type="text" name="relative_address" class="form-control myText"
+                    value="{{ old('relative_address', $death->relative_address) }}" />
+            </div>
+            @error('relative_address')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
+        </div>
+        <div class="form-group col-md-4">
+            <label for="">{{$relation}} संगको नाता</label>
             <input list="relationships" id="relationship" name="relationship" class="form-control myText"
                 value="{{ old('relationship', $death->relationship) }}">
             <datalist id="relationships">
@@ -26,17 +36,7 @@
             @enderror
         </div>
 
-        <div class="form-group col-md-4">
-            <label for=""><span class="text-danger">*</span> साक्षीको ठेगाना</label>
-            <div class="input-group mb-2">
-
-                <input type="text" name="relative_address" class="form-control myText"
-                    value="{{ old('relative_address', $death->relative_address) }}" />
-            </div>
-            @error('relative_address')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
+      
 
         <div class="form-group col-md-4">
             <label for=""> साक्षी मिति</label>
