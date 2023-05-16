@@ -152,7 +152,7 @@
                                     <div class="">
                                         <div class="container-fluid">
                                             <div class="col-12 pt-3 d-flex justify-content-end">
-                                                <a href="" class="btn btn-info" id="detail_print">Print</a>
+                                                <a href="" class="btn btn-info" target="_blank" id="detail_print">Print</a>
                                             </div>
                                             <div class="card p-3 border-0" id="myId">
                                                 <h3 class="text-center pb-2 font-weight-bold">@lang('navigation.migration-notice-form')</h3>
@@ -266,18 +266,18 @@
                                                                     <td>नाम</td>
                                                                     <td class="myText" id="relative_name"></td>
                                                                 </tr>
+                                                                {{-- <tr>
+                                                                    <td>ख</td>
+                                                                    <td> संगको सम्बन्ध</td>
+                                                                    <td class="myText" id="relationship"></td>
+                                                                </tr> --}}
                                                                 <tr>
                                                                     <td>ख</td>
-                                                                    <td>मृतक संगको सम्बन्ध</td>
-                                                                    <td class="myText" id="relationship"></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>ग</td>
                                                                     <td>ठेगाना</td>
                                                                     <td class="myText" id="relative_address"></td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>घ</td>
+                                                                    <td>ग</td>
                                                                     <td>मिति</td>
                                                                     <td id="date"></td>
                                                                 </tr>

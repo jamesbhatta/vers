@@ -141,7 +141,7 @@ class MigrationController extends Controller
             if ($migrationCertificate->file != null) {
                 Storage::delete($migrationCertificate->file);
             }
-            $fileName = $request->reg_number . '-' . Str::slug($request->after_province) . '.' . $request->file->getClientOriginalExtension();
+            $fileName = $request->reg_number . '-' . Str::slug($request->migration_province) . '.' . $request->file->getClientOriginalExtension();
             $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
         $migrationCertificate->update($data);
@@ -166,6 +166,12 @@ class MigrationController extends Controller
 
     public function print(MigrationCertificate $migrationCertificate)
     {
+
+        if ($migrationCertificate->type == "बसाई सरी आएको") {
+           $migrationType = "(२) कहाँ बाट बसाई सरी आएको ";
+        }else {
+            $migrationType = "(२) कहाँ बसाई सरी जाने ";
+        }
         $html = '<style>.kantipur{font-size: 15pt;} .kalimati{font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;} .dash{border-bottom: dashed 1px rgb(132, 132, 132);}</style>';
         $html .= '<h1 style="text-align:center">बसाईसराई सूचना फाराम</h1>';
         $html .= '<p style="text-align:center">(अनुसूची-६ )</p>';
@@ -221,7 +227,7 @@ class MigrationController extends Controller
                 $p->citizenship .
                 '</td>
                 <td>' .
-                $p->permanent_addres .
+                $p->permanent_address .
                 '</td>
                 <td>' .
                 $p->temporary_address .
@@ -235,9 +241,8 @@ class MigrationController extends Controller
                 <td>' .
                 $p->mothertongue .
                 '</td>
-                <td>' .
-                $p->description .
-                '</td>
+                <td>
+                </td>
             </tr>';
             $num++;
         }
@@ -247,48 +252,28 @@ class MigrationController extends Controller
         $html .=
             '<div style="margin-top:30px">
         <div style="text-align: justify" class="">
-            <div class="row" style="text-align: justify;">
-                (२) कहाँ सरी जाने &nbsp;<span class="dash">' .
-            $migrationCertificate->after_district .
+            <div class="row" style="text-align: justify;">'. $migrationType .'<span class="dash">'.
+            $migrationCertificate->migration_district .
             '</span>
                 &nbsp;जिल्ला&nbsp;&nbsp;<span class="dash">' .
-            $migrationCertificate->after_municipality .
+            $migrationCertificate->migration_municipality .
             '</span>
                 &nbsp;न.पा./गा.वि.स. वडा नं. &nbsp;<span class="dash">' .
-            $migrationCertificate->after_ward .
+            $migrationCertificate->migration_ward .
             '</span>
                 &nbsp;टोलको नाम
                 &nbsp;
                 <span class="dash">' .
-            $migrationCertificate->after_village .
+            $migrationCertificate->migration_village .
             '</span>
                 &nbsp;घर
                 नं &nbsp;<span class="dash">' .
-            $migrationCertificate->after_houseno .
+            $migrationCertificate->migration_houseno .
             '</span>
             </div>
             <br>
             <div class="row" style="text-align: justify">
-                (३) कहाँ बाट सरी आएको&nbsp;
-                <span class="dash">' .
-            $migrationCertificate->before_district .
-            '</span>
-                &nbsp;जिल्ला &nbsp;<span class="dash">' .
-            $migrationCertificate->before_municipality .
-            '</span>
-
-                &nbsp;  न.पा./गा.वि.स. वडा
-                नं. &nbsp;<span class="dash">' .
-            $migrationCertificate->before_ward .
-            '</span>
-                &nbsp;टोलको नाम &nbsp;<span class="dash">' .
-            $migrationCertificate->before_village .
-            '</span>
-                &nbsp;घर
-                नं &nbsp;<span class="dash">' .
-            $migrationCertificate->before_houseno .
-            '</span>
-                &nbsp;बसाई सराईको मिति &nbsp;<span class="dash">' .
+                (३) बसाई सराईको मिति &nbsp;<span class="dash">' .
             $migrationCertificate->migration_date .
             '</span>
 
@@ -306,7 +291,10 @@ class MigrationController extends Controller
 
         </div>
     </div>';
-        $html .= '<h5 style="text-align:center">साक्षीको विवरण</h5>';
+        $html .= '<h5 style="text-align:center">यसमा लेखिएको विवरण
+        साँचो हो झुठ
+        ठहरे कानून वमोजिम सहुँला
+        बुझाउला भनी सही छाप गर्ने सूचकको</h5>';
         $html .=
             '<div class="col-12">
                     <table class="my_table col-12" style="width:100%;border-collapse: collapse;">
@@ -317,22 +305,16 @@ class MigrationController extends Controller
             $migrationCertificate->relative_name .
             '</td>
                         </tr>
+                      
                         <tr>
                             <td>ख</td>
-                            <td>मृतक संगको सम्बन्ध</td>
-                            <td class="kantipur">' .
-            $migrationCertificate->relationship .
-            '</td>
-                        </tr>
-                        <tr>
-                            <td>ग</td>
                             <td>ठेगाना</td>
                             <td class="kantipur">' .
             $migrationCertificate->relative_address .
             '</td>
                         </tr>
                         <tr>
-                            <td>घ</td>
+                            <td>ग</td>
                             <td>मिति</td>
                             <td>' .
             $migrationCertificate->date .
