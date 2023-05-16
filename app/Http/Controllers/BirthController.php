@@ -55,7 +55,7 @@ class BirthController extends Controller
             $fileName = $request->reg_number . '-' . Str::slug($request->name) . '.' . $request->file->getClientOriginalExtension();
             $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
-        $user->birth->create($data);
+        $user->birth()->create($data);
         return redirect()
             ->route('birth.index')
             ->with('success', 'New birth notice successfully registered.');

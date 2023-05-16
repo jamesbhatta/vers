@@ -59,7 +59,7 @@
                                             placeholder="दर्ता मिति(To)" name="to">
                                     @endisset
                                 </div>
-                                <div class="col-md-3">
+                                {{-- <div class="col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control" id="nepali-datepicker1"
                                             placeholder=" दर्ता मिति" name="entry_date" value="{{ $old->entry_date }}">
@@ -67,7 +67,7 @@
                                         <input type="text" class="form-control" id="nepali-datepicker1"
                                             placeholder=" दर्ता मिति" name="entry_date">
                                     @endisset
-                                </div>
+                                </div> --}}
 
                                 <div class="col-md-3">
                                     @isset($old)
@@ -78,6 +78,9 @@
                                         <input type="text" class="form-control" id="nepali-datepicker3"
                                             placeholder=" बसाई सराईको मिति" name="migration_date">
                                     @endisset
+                                </div>
+                                <div class="mb-2 col-md-3">
+                                    <x-user-select />
                                 </div>
 
                                 <div class="col-md-1">

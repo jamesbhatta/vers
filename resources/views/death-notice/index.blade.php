@@ -274,7 +274,7 @@
 
                         <div class="modal-content">
                             <div class="col-12 pt-3 d-flex justify-content-end">
-                                <a href="" class="btn btn-info" id="detail_print">Print</a>
+                                <a href="" class="btn btn-info" target="_blank" id="detail_print">Print</a>
                             </div>
                             <h1 class="h2 text-center py-5 font-weight-bold">मृत्युको सूचना फाराम </h1>
                             <div class="container">
