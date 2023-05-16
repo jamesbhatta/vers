@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\MigrationCertificateExport;
 use Illuminate\Support\Facades\DB;
 use App\Family;
 use App\Http\Requests\MigrationCertificateRequest;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MigrationController extends Controller
 {
@@ -35,7 +37,7 @@ class MigrationController extends Controller
     }
     public function filter(Request $request)
     {
-        $migrationCertificates = DB::table('migration_certificates');
+        $migrationCertificates = new MigrationCertificate();
 
         if ($request->reg_number) {
             $migrationCertificates = $migrationCertificates->where('reg_number', $request->reg_number);
@@ -43,6 +45,49 @@ class MigrationController extends Controller
 
         if ($request->entry_date) {
             $migrationCertificates = $migrationCertificates->where('entry_date', 'like', '%' . $request->entry_date . '%');
+        }
+        if ($request->user_id) {
+            $migrationCertificates = $migrationCertificates->where('user_id', $request->user_id);
+        }
+        if ($request->migration_date) {
+            $migrationCertificates = $migrationCertificates->where('migration_date', 'like', '%' . $request->migration_date . '%');
+        }
+        if ($request->book_id) {
+            $migrationCertificates = $migrationCertificates->where('book_id', $request->book_id);
+        }
+        if ($request->user_id) {
+            $migrationCertificates = $migrationCertificates->where('user_id', $request->user_id);
+        }
+        if ($request->book_id) {
+            $migrationCertificates = $migrationCertificates->where('book_id', $request->book_id);
+        }
+
+        if ($request->from) {
+            if ($request->to) {
+                $migrationCertificates = $migrationCertificates->whereBetween('entry_date', [date($request->from), date($request->to)]);
+                // Reservation::->get();
+            } else {
+                $migrationCertificates = $migrationCertificates->where('entry_date', $request->from);
+            }
+        }
+        $old = $request;
+
+        $migrationCertificates = $migrationCertificates->with('user','book')->get();
+        return view('migration-notice.index', compact('migrationCertificates', 'old'));
+    }
+    public function listPrint(Request $request)
+    {
+        $migrationCertificates = new MigrationCertificate();
+
+        if ($request->reg_number) {
+            $migrationCertificates = $migrationCertificates->where('reg_number', $request->reg_number);
+        }
+
+        if ($request->entry_date) {
+            $migrationCertificates = $migrationCertificates->where('entry_date', 'like', '%' . $request->entry_date . '%');
+        }
+        if ($request->book_id) {
+            $migrationCertificates = $migrationCertificates->where('book_id', $request->book_id);
         }
         if ($request->user_id) {
             $migrationCertificates = $migrationCertificates->where('user_id', $request->user_id);
@@ -65,12 +110,57 @@ class MigrationController extends Controller
                 $migrationCertificates = $migrationCertificates->where('entry_date', $request->from);
             }
         }
-        $old = $request;
 
-        $migrationCertificates = $migrationCertificates->get();
-        return view('migration-notice.index', compact('migrationCertificates', 'old'));
+        $migrationCertificates = $migrationCertificates->with('user','book')->orderBy('id', 'desc')->get();
+        $html = '<style>.kantipur{font-size: 11pt;} .kalimati{font-size: 10pt;}</style>';
+
+        $html .= '<h1 style="text-align:center">मृत्युको सूचना फाराम</h1>';
+        $html .= '<table border="1" cellspacing="0" cellspadding="0" width="100%"><thead class="thead-light" >
+                        <tr class="text-uppercase">
+                        <th>#</th>
+                        <th>किताब कोड</th>
+                        <th>दर्ता नं.</th>
+                        <th>दर्ता मिति</th>
+                        <th>बसाईसराईको प्रकार</th>
+                        <th>बसाई सराईको मिति </th>
+                        </tr>
+                </thead><tbody>';
+        $num = '1';
+        foreach ($migrationCertificates as $migrationCertificate) {
+            $html .=
+                '<tr align="center">
+                            <td class="kalimati">' .
+                $num .
+                '</td>
+                <td class="kantipur">' .
+                $migrationCertificate->book->code .
+                '</td>
+                            <td class="kantipur">' .
+                $migrationCertificate->reg_number .
+                '</td>
+                            <td>' .
+                $migrationCertificate->entry_date .
+                '</td>
+                            <td class="kalimati">' .
+                $migrationCertificate->type .
+                '</td>
+                            <td class="kalimati">' .
+                $migrationCertificate->migration_date .
+                '</td>' .
+                $num++;
+        }
+        $html .= '</tbody></table></body></html>';
+        $pdf = new \Mpdf\Mpdf(['mode' => 'UTF-8', 'format' => 'A4-p', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
+        // return file_get_contents('pdf.blade.php');
+        $pdf->WriteHTML($html);
+
+        $pdf->Output('migration-certificate.pdf', 'I');
     }
 
+    public function excel(Request $request)
+    {
+        return Excel::download(new MigrationCertificateExport($request), 'migration-certificate.xlsx');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -172,11 +262,10 @@ class MigrationController extends Controller
 
     public function print(MigrationCertificate $migrationCertificate)
     {
-
-        if ($migrationCertificate->type == "बसाई सरी आएको") {
-           $migrationType = "(२) कहाँ बाट बसाई सरी आएको ";
-        }else {
-            $migrationType = "(२) कहाँ बसाई सरी जाने ";
+        if ($migrationCertificate->type == 'बसाई सरी आएको') {
+            $migrationType = '(२) कहाँ बाट बसाई सरी आएको ';
+        } else {
+            $migrationType = '(२) कहाँ बसाई सरी जाने ';
         }
         $html = '<style>.kantipur{font-size: 15pt;} .kalimati{font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;} .dash{border-bottom: dashed 1px rgb(132, 132, 132);}</style>';
         $html .= '<h1 style="text-align:center">बसाईसराई सूचना फाराम</h1>';
@@ -258,7 +347,9 @@ class MigrationController extends Controller
         $html .=
             '<div style="margin-top:30px">
         <div style="text-align: justify" class="">
-            <div class="row" style="text-align: justify;">'. $migrationType .'<span class="dash">'.
+            <div class="row" style="text-align: justify;">' .
+            $migrationType .
+            '<span class="dash">' .
             $migrationCertificate->migration_district .
             '</span>
                 &nbsp;जिल्ला&nbsp;&nbsp;<span class="dash">' .

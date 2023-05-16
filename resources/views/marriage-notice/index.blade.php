@@ -18,8 +18,8 @@
                                     value="{{ $_GET['darta_number'] ? $_GET['darta_number'] : '' }}">
                             @endisset
 
-                            @isset($_GET['entry_date'])
-                                <input type="hidden" name="entry_date" value="{{ $_GET['entry_date'] }}">
+                            @isset($_GET['marriage_date'])
+                                <input type="hidden" name="marriage_date" value="{{ $_GET['marriage_date'] }}">
                             @endisset
 
                             @isset($_GET['bride_name'])
@@ -62,8 +62,8 @@
                                     value="{{ $_GET['darta_number'] ? $_GET['darta_number'] : '' }}">
                             @endisset
 
-                            @isset($_GET['entry_date'])
-                                <input type="hidden" name="entry_date" value="{{ $_GET['entry_date'] }}">
+                            @isset($_GET['marriage_date'])
+                                <input type="hidden" name="marriage_date" value="{{ $_GET['marriage_date'] }}">
                             @endisset
 
                             @isset($_GET['user_id'])
@@ -122,7 +122,6 @@
                     </div>
                     <div class="card-body" id="cardBody">
                         <form action="{{ route('marriage.filter') }}" method="GET" role="search">
-                            {{-- @csrf --}}
                             <div class="row">
                                 <div class="mb-2 col-md-3">
                                     @isset($old)
@@ -154,12 +153,13 @@
                                 <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control" id="nepali-datepicker"
-                                            placeholder="दर्ता मिति" name="entry_date" value="{{ $old->entry_date }}">
+                                            placeholder="विवाह मिति" name="marriage_date" value="{{ $old->marriage_date }}">
                                     @else
                                         <input type="text" class="form-control" id="nepali-datepicker"
-                                            placeholder="दर्ता मिति" name="entry_date">
+                                            placeholder="विवाह मिति" name="marriage_date">
                                     @endisset
                                 </div>
+
                                 <div class="mb-2 col-md-3">
                                     @isset($old)
                                         <input type="text" class="form-control myText" placeholder="दुलाहाको नाम"
@@ -197,6 +197,9 @@
                                     @endisset
                                 </div>
                                 <div class="mb-2 col-md-3">
+                                    <x-book-select :bookType="'विवाह दर्ता'" />
+                                </div>
+                                <div class="mb-2 col-md-3">
                                     <x-user-select />
                                 </div>
                                 <div class="col-xl-1">
@@ -217,7 +220,11 @@
                             <thead class="thead-light" style="white-space: nowrap;">
                                 <tr class="text-uppercase">
                                     <th>#</th>
+                                    <th>किताब कोड</th>
                                     <th>दर्ता न.</th>
+                                    <th>दर्ता मिति</th>
+                                    <th>बिबाह मिति</th>
+                                    <th>विवाह भएको ठेगाना</th>
                                     <th>दुलाहाको नाम</th>
                                     <th>दुलाहाको बाजेको नाम</th>
                                     <th>दुलाहाको बाबुको नाम</th>
@@ -229,10 +236,14 @@
                             </thead>
                             <tbody>
                                 @foreach ($marriages as $marriage)
-                                    <tr>
+                                    <tr style="white-space: nowrap;">
                                         <td>{{ $loop->iteration }}</td>
 
+                                        <td>{{ $marriage->book->code }}</td>
                                         <td>{{ $marriage->reg_number }}</td>
+                                        <td>{{ $marriage->entry_date }}</td>
+                                        <td>{{ $marriage->marriage_date }}</td>
+                                        <td>{{ $marriage->marriage_address }}</td>
                                         <td>{{ $marriage->bride_name }}</td>
                                         <td>{{ $marriage->bride_grandfather_name }}</td>
                                         <td>{{ $marriage->bride_father_name }}</td>
@@ -271,7 +282,7 @@
                         <div class="modal-dialog modal-lg ">
                             <div class="modal-content">
                                 <div class="col-12 pt-3 d-flex justify-content-end">
-                                    <a href="" class="btn btn-info" id="detail_print">Print</a>
+                                    <a href="" class="btn btn-info" target="_blank" id="detail_print">Print</a>
                                 </div>
                                 <h1 class="h2 text-center py-5 font-weight-bold">विवाहको सूचना फाराम </h1>
                                 <div class="container">
@@ -298,6 +309,7 @@
                                             </tr>
                                         </table>
                                     </div>
+                                    <label class="col-12 text-center mt-5 font-weight-bold">सामाजिक परम्परा अनुसार विवाह दर्ता कानुन ऐन २०२८ अनुसार मिति {{$marriage->marriage_date}} मा {{ $marriage->marriage_address }} मा विवाह सम्पन्न भएको हुनाले निम्न लिखित विवरण खुलाई सूचना दिन आएको छु । कानुन अनुसार दर्ता गरिपाऊ ।</label>
 
                                     <label class="col-12 text-center mt-5 font-weight-bold">दुलाहा-दुलहीको विवरण</label>
 

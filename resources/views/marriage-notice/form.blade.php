@@ -60,6 +60,24 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
+                                <div class="form-group col-md-4">
+                                    <label for=""><span class="text-danger">*</span>विवाह मिति</label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control" name="marriage_date"
+                                            value="{{ old('marriage_date', $marriage->marriage_date) }}" id="nepali-datepicker5" />
+                                    </div>
+                                    @error('marriage_date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label><span class="text-danger">*</span>विवाह भएको ठेगाना </label>
+                                    <input type="text" class="form-control myText" name="marriage_address"
+                                        value="{{ old('marriage_address', $marriage->marriage_address) }}" />
+                                    @error('marriage_address')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
                         {{-- <x-darta :death="$marriage" /> --}}

@@ -127,13 +127,13 @@ class MarriageController extends Controller
     public function filter(Request $request)
     {
         $data = Marriage::get();
-        $marriages = DB::table('marriages');
+        $marriages = new Marriage();
         if ($request->darta_number) {
             $marriages = $marriages->where('reg_number', $request->darta_number);
         }
 
-        if ($request->entry_date) {
-            $marriages = $marriages->where('entry_date', $request->entry_date);
+        if ($request->marriage_date) {
+            $marriages = $marriages->where('marriage_date', $request->marriage_date);
         }
 
         if ($request->bride_name) {
@@ -169,13 +169,13 @@ class MarriageController extends Controller
 
     public function listPrint(Request $request)
     {
-        $marriage = DB::table('marriages');
+        $marriage = new Marriage();
         if ($request->darta_number) {
             $marriage = $marriage->where('reg_number', $request->darta_number);
         }
 
-        if ($request->entry_date) {
-            $marriage = $marriage->where('entry_date', $request->entry_date);
+        if ($request->marriage_date) {
+            $marriage = $marriage->where('marriage_date', $request->marriage_date);
         }
 
         if ($request->bride_name) {
@@ -212,7 +212,11 @@ class MarriageController extends Controller
         $html .= '<table border="1" cellspacing="0" cellspadding="0" width="100%"><thead class="thead-light" >
                         <tr class="text-uppercase">
                             <th>#</th>
+                            <th>किताब कोड</th>
                             <th>दर्ता न.</th>
+                            <th>दर्ता मिति</th>
+                            <th>बिबाह मिति</th>
+                            <th>विवाह भएको ठेगाना</th>
                             <th>दुलाहाको नाम</th>
                             <th>दुलाहाको बाजेको नाम</th>
                             <th>दुलाहाको बाबुको नाम</th>
@@ -228,9 +232,19 @@ class MarriageController extends Controller
                 '<tr align="center">
                             <td class="kalimati">' .
                 $num .
+                '</td><td class="kalimati">' .
+                $p->book->code .
                 '</td>
                             <td class="kalimati">' .
                 $p->reg_number .
+                '</td>  <td class="kalimati">' .
+                $p->entry_date .
+                '</td>
+                <td class="kalimati">' .
+                $p->marriage_date .
+                '</td>
+                <td class="kalimati">' .
+                $p->marriage_address .
                 '</td>
                             <td >' .
                 $p->bride_name .
@@ -255,7 +269,7 @@ class MarriageController extends Controller
             $num++;
         }
         $html .= '</tbody></table></body></html>';
-        $pdf = new \Mpdf\Mpdf(['mode' => 'UTF-8', 'format' => 'A4-p', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
+        $pdf = new \Mpdf\Mpdf(['mode' => 'UTF-8', 'format' => 'A4-l', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
         // return file_get_contents('pdf.blade.php');
         $pdf->WriteHTML($html);
 
@@ -278,6 +292,7 @@ class MarriageController extends Controller
         $html = '<style>.kantipur{font-size: 15pt;} .kalimati{font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;}</style>';
         $html .= '<h1 style="text-align:center">विवाहको सूचना फाराम</h1>';
         $html .= '<div class="container"><div class="col-12"><table class="my_table col-12" style="border-collapse: collapse;width:100%"><tr><td>प्रदेश</td><td>' . $marriage->province . '</td><td>स्थानीय पञ्जिकाधिकारी</td><td >' . $marriage->administrator . '</td></tr><tr><td>जिल्ला</td><td>' . $marriage->district . '</td><td>दर्ता न.</td><td>' . $marriage->reg_number . '</td></tr><tr><td>ग.पा. / न.पा</td><td>' . $marriage->municipality . '</td><td>दर्ता मिति</td><td>' . $marriage->entry_date . '</td></tr></table></div>';
+        $html .= '<br> <label class="col-12 text-center mt-5 font-weight-bold">सामाजिक परम्परा अनुसार विवाह दर्ता कानुन ऐन २०२८ अनुसार मिति '.$marriage->marriage_date.' मा '. $marriage->marriage_address .' मा विवाह सम्पन्न भएको हुनाले निम्न लिखित विवरण खुलाई सूचना दिन आएको छु । कानुन अनुसार दर्ता गरिपाऊ ।</label>';
         $html .= '<h3 style="text-align:center">दुलाहा-दुलहीको विवरण</h3>';
         $html .=
             ' <div class="col-xl-12">

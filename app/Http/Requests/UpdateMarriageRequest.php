@@ -33,6 +33,8 @@ class UpdateMarriageRequest extends FormRequest
             'book_id'=>'required',
             'ward_num'=>'nullable',
             'entry_date'=>'required',
+            'marriage_date' => 'required',
+            'marriage_address' => 'required',
 
             'bride_name'=>'required',
             'bride_birth_country'=>'required',

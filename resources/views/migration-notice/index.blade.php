@@ -9,9 +9,76 @@
                         <a class="sub-breadcrumb" href="{{ route('dashboard') }}"><i class="fas fa-home"></i></a>
                         <a class="final-item ml-3" href="">@lang('navigation.migration-notice-form')</a>
                     </div>
-                    <div>
-                        <a href="{{ route('migration.create') }}" class="btn btn-success"><i
-                                class="fas fa-plus-circle mr-2"></i>@lang('navigation.add_new')</a>
+                    <div class="d-flex">
+                        {{-- Filtered data in PDF/Print --}}
+                        <form action="{{ route('migration.listprint') }}" method="GET" role="search">
+                            @isset($_GET['reg_number'])
+                            <input type="hidden" name="reg_number"
+                                value="{{ $_GET['reg_number'] ? $_GET['reg_number'] : '' }}">
+                        @endisset
+                        @isset($_GET['user_id'])
+                            <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
+                        @endisset
+
+                        @isset($_GET['book_id'])
+                            <input type="hidden" name="book_id" value="{{ $_GET['book_id'] }}">
+                        @endisset
+
+                        @isset($_GET['migration_date'])
+                            <input type="hidden" name="migration_date" value="{{ $_GET['migration_date'] }}">
+                        @endisset
+                        @isset($_GET['from'])
+                            <input type="hidden" name="from" value="{{ $_GET['from'] }}">
+                        @endisset
+                        @isset($_GET['to'])
+                            <input type="hidden" name="to" value="{{ $_GET['to'] }}">
+                        @endisset
+
+                            <div class="col-lg-1">
+                                <button
+                                    class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-print"
+                                    type="submit" style="background-color:#17A2B8; color: #fff;"><i
+                                        class="fas fa-print mr-2 mt-1"></i> Print</button>
+                            </div>
+                        </form>
+
+
+                        {{-- Filtered data in Excel --}}
+                        <form action="{{ route('migration.excel') }}" method="GET" role="search">
+                            @isset($_GET['reg_number'])
+                                <input type="hidden" name="reg_number"
+                                    value="{{ $_GET['reg_number'] ? $_GET['reg_number'] : '' }}">
+                            @endisset
+                            @isset($_GET['user_id'])
+                                <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
+                            @endisset
+
+                            @isset($_GET['book_id'])
+                                <input type="hidden" name="book_id" value="{{ $_GET['book_id'] }}">
+                            @endisset
+
+                            @isset($_GET['migration_date'])
+                                <input type="hidden" name="migration_date" value="{{ $_GET['migration_date'] }}">
+                            @endisset
+                            @isset($_GET['from'])
+                                <input type="hidden" name="from" value="{{ $_GET['from'] }}">
+                            @endisset
+                            @isset($_GET['to'])
+                                <input type="hidden" name="to" value="{{ $_GET['to'] }}">
+                            @endisset
+
+                            <div class="col-lg-1">
+                                <button
+                                    class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-excel"
+                                    type="submit" style="background-color:#17A2B8; color: #fff;"><i
+                                        class="fas fa-file-excel mr-2 mt-1"></i> Excel</button>
+                            </div>
+                        </form>
+                        <a href="{{ route('migration.create') }}"
+                            class="btn bg-success text-white my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex"
+                            style="height:42px"><i class="fas fa-plus-circle mr-2 mt-1"></i>@lang('navigation.add_new')</a>
+
+
                     </div>
                 </nav>
                 <label class="font-weight-bold pb-4 border-bottom col-12" style="font-size: 20px;padding:0"></label>
@@ -31,7 +98,6 @@
                     </div>
                     <div class="card-body" id="cardBody">
                         <form action="{{ route('migration.filter') }}" method="get">
-                            @csrf
                             <div class="row">
                                 <div class="col-md-3">
                                     @isset($old)

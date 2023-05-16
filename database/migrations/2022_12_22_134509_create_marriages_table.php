@@ -25,6 +25,9 @@ class CreateMarriagesTable extends Migration
             $table->string('reg_number');
             $table->string('entry_date');
 
+            $table->string('marriage_date');
+            $table->string('marriage_address');
+
             $table->string('bride_name');
             $table->string('bride_birth_country');
             $table->string('bride_dob')->nullable();

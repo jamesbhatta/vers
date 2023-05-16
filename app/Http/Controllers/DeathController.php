@@ -171,7 +171,7 @@ class DeathController extends Controller
 
     public function filter(Request $request)
     {
-        $deaths = DB::table('deaths');
+        $deaths = new Death();
 
         if ($request->reg_number) {
             $deaths = $deaths->where('reg_number', $request->reg_number);
@@ -215,7 +215,7 @@ class DeathController extends Controller
 
     public function listPrint(Request $request)
     {
-        $deaths = DB::table('deaths');
+        $deaths = new Death();
 
         if ($request->reg_number) {
             $deaths = $deaths->where('reg_number', $request->reg_number);
