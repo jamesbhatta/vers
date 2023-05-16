@@ -236,7 +236,7 @@
                         {{-- {!! $dataTable->table() !!} --}}
                         <div class="table-responsive">
                             <table class="table table-striped">
-                                <thead class="thead-light">
+                                <thead class="thead-light" style="white-space: nowrap;">
                                     <tr class="text-uppercase">
                                         <th>#</th>
                                         <th>किताब कोड</th>
@@ -244,6 +244,7 @@
                                         <th>नाम</th>
                                         <th>लिङ्ग</th>
                                         <th>जन्म मिति</th>
+                                        <th>मरेको मिति</th>
                                         <th>बाबुको नाम</th>
                                         <th>आमाको नाम</th>
                                         <th>हजुरबुबाको नाम</th>
@@ -254,13 +255,14 @@
                                 <tbody>
 
                                     @foreach ($births as $birth)
-                                        <tr>
+                                        <tr style="white-space: nowrap;">
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $birth->book->code }}</td>
                                             <td>{{ $birth->reg_number }}</td>
                                             <td>{{ $birth->name }}</td>
                                             <td>{{ $birth->gender }}</td>
                                             <td>{{ $birth->dob }}</td>
+                                            <td>{{ $birth->death_date }}</td>
                                             <td>{{ $birth->father_name }}</td>
                                             <td>{{ $birth->mother_name }}</td>
                                             <td>{{ $birth->grandfather_name }}</td>

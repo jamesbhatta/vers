@@ -9,17 +9,6 @@
     </div>
 
     <div class="form-group col-md-4">
-        <label for=""><span class="text-danger">*</span> हजुरबुबाको नाम</label>
-        <div class="input-group mb-2">
-
-            <input type="text" name="grandfather_name" value="{{ old('grandfather_name',$death->grandfather_name) }}" class="form-control myText" />
-        </div>
-        @error('grandfather_name')
-            <small class="text-danger">{{ $message }}</small>
-        @enderror
-    </div>
-
-    <div class="form-group col-md-4">
         <label for=""><span class="text-danger">*</span> जन्म मिति</label>
         <div class="input-group mb-2">
             <input type="text" id="dob" name="dob" class="form-control"
@@ -47,6 +36,15 @@
             <small class="text-danger">{{ $message }}</small>
         @enderror
     </div>
+    <div class="form-group col-md-4">
+        <label for=""><span class="text-danger">*</span> हजुरबुबाको नाम</label>
+        <div class="input-group mb-2">
 
+            <input type="text" name="grandfather_name" value="{{ old('grandfather_name',$death->grandfather_name) }}" class="form-control myText" />
+        </div>
+        @error('grandfather_name')
+            <small class="text-danger">{{ $message }}</small>
+        @enderror
+    </div>
 
 {{-- </span> --}}

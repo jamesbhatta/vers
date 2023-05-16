@@ -221,7 +221,7 @@
                 <div class="card mt-3 p-3">
                     <div class="table-responsive">
                         <table class="table">
-                            <thead class="thead-light">
+                            <thead class="thead-light" style="white-space: nowrap;">
                                 <tr class="text-uppercase">
                                     <th>#</th>
                                     <th>किताब कोड</th>
@@ -239,7 +239,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($deaths as $death)
-                                    <tr>
+                                    <tr style="white-space: nowrap;">
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $death->book->code }}</td>
                                         <td>{{ $death->reg_number }}</td>
