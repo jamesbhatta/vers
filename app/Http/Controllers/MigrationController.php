@@ -424,7 +424,7 @@ class MigrationController extends Controller
                 </div>';
         $html .= '</div>';
         $pdf = new \Mpdf\Mpdf(['mode' => 'UTF-8', 'format' => 'A4-p', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
-        $pdf->SetTitle('विवाहको सूचना फाराम');
+        $pdf->SetTitle('बसाई सराईको सूचना फाराम');
         $pdf->WriteHTML($html);
 
         $pdf->Output('migration-notice.pdf', 'I');
