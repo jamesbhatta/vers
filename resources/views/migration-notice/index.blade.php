@@ -80,6 +80,9 @@
                                     @endisset
                                 </div>
                                 <div class="mb-2 col-md-3">
+                                    <x-book-select :bookType="'बसाईसराई दर्ता'" />
+                                </div>
+                                <div class="mb-2 col-md-3">
                                     <x-user-select />
                                 </div>
 
@@ -155,7 +158,8 @@
                                     <div class="">
                                         <div class="container-fluid">
                                             <div class="col-12 pt-3 d-flex justify-content-end">
-                                                <a href="" class="btn btn-info" target="_blank" id="detail_print">Print</a>
+                                                <a href="" class="btn btn-info" target="_blank"
+                                                    id="detail_print">Print</a>
                                             </div>
                                             <div class="card p-3 border-0" id="myId">
                                                 <h3 class="text-center pb-2 font-weight-bold">@lang('navigation.migration-notice-form')</h3>

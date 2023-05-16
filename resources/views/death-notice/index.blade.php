@@ -41,7 +41,9 @@
                             @isset($_GET['grandfather_name'])
                                 <input type="hidden" name="grandfather_name" value="{{ $_GET['grandfather_name'] }}">
                             @endisset
-                            {{-- ==== --}}
+                            @isset($_GET['book_id'])
+                                <input type="hidden" name="book_id" value="{{ $_GET['book_id'] }}">
+                            @endisset
                             @isset($_GET['from'])
                                 <input type="hidden" name="from" value="{{ $_GET['from'] }}">
                             @endisset
@@ -75,6 +77,10 @@
 
                             @isset($_GET['user_id'])
                                 <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
+                            @endisset
+
+                            @isset($_GET['book_id'])
+                                <input type="hidden" name="book_id" value="{{ $_GET['book_id'] }}">
                             @endisset
 
                             @isset($_GET['death_date'])
@@ -193,6 +199,9 @@
                                         <input type="text" class="form-control myText" placeholder="हजुरबुबाको नाम"
                                             name="grandfather_name">
                                     @endisset
+                                </div>
+                                <div class="mb-2 col-md-3">
+                                    <x-book-select :bookType="'मृत्यु दर्ता'" />
                                 </div>
                                 <div class="mb-2 col-md-3">
                                     <x-user-select />

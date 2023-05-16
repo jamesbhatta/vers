@@ -151,6 +151,10 @@ class BirthController extends Controller
             $births = $births->where('father_name', 'like', '%' . $request->father_name . '%');
         }
 
+        if ($request->book_id) {
+            $births = $births->where('book_id', $request->book_id);
+        }
+
         if ($request->mother_name) {
             $births = $births->where('mother_name', 'like', '%' . $request->mother_name . '%');
         }
@@ -189,6 +193,11 @@ class BirthController extends Controller
         if ($request->user_id) {
             $births = $births->where('user_id', $request->user_id);
         }
+        
+        if ($request->book_id) {
+            $births = $births->where('book_id', $request->book_id);
+        }
+
         if ($request->father_name) {
             $births = $births->where('father_name', 'like', '%' . $request->father_name . '%');
         }

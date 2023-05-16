@@ -186,6 +186,9 @@ class DeathController extends Controller
         if ($request->user_id) {
             $deaths = $deaths->where('user_id', $request->user_id);
         }
+        if ($request->book_id) {
+            $deaths = $deaths->where('book_id', $request->book_id);
+        }
         if ($request->death_date) {
             $deaths = $deaths->where('death_date', $request->death_date);
         }
@@ -226,6 +229,9 @@ class DeathController extends Controller
         }
         if ($request->user_id) {
             $deaths = $deaths->where('user_id', $request->user_id);
+        }
+        if ($request->book_id) {
+            $deaths = $deaths->where('book_id', $request->book_id);
         }
         if ($request->death_date) {
             $deaths = $deaths->where('death_date', $request->death_date);
