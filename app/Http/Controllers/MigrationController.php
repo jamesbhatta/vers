@@ -72,7 +72,7 @@ class MigrationController extends Controller
         }
         $old = $request;
 
-        $migrationCertificates = $migrationCertificates->with('user','book')->get();
+        $migrationCertificates = $migrationCertificates->with('user', 'book')->get();
         return view('migration-notice.index', compact('migrationCertificates', 'old'));
     }
     public function listPrint(Request $request)
@@ -111,10 +111,12 @@ class MigrationController extends Controller
             }
         }
 
-        $migrationCertificates = $migrationCertificates->with('user','book')->orderBy('id', 'desc')->get();
+        $migrationCertificates = $migrationCertificates
+            ->with('user', 'book')
+            ->orderBy('id', 'desc')
+            ->get();
         $html = '<style>.kantipur{font-size: 11pt;} .kalimati{font-size: 10pt;}</style>';
-
-        $html .= '<h1 style="text-align:center">मृत्युको सूचना फाराम</h1>';
+        $html .= '<h1 style="text-align:center">बसाईसराईको सूचना फाराम</h1>';
         $html .= '<table border="1" cellspacing="0" cellspadding="0" width="100%"><thead class="thead-light" >
                         <tr class="text-uppercase">
                         <th>#</th>
@@ -271,7 +273,7 @@ class MigrationController extends Controller
         $html .= '<h1 style="text-align:center">बसाईसराई सूचना फाराम</h1>';
         $html .= '<p style="text-align:center">(अनुसूची-६ )</p>';
         $html .= '<p style="text-align:center">(नियम-५ संग सम्बन्धित )</p>';
-        $html .= '<div class="container"><div class="col-12"><table class="my_table col-12" style="border-collapse: collapse;"><tr><td>प्रदेश</td><td>' . $migrationCertificate->province . '</td><td rowspan="3" style="width: 20%"></td><td>स्थानीय पञ्जिकाधिकारी</td><td class="kantipur">' . $migrationCertificate->administrator . '</td></tr><tr><td>जिल्ला</td><td>' . $migrationCertificate->district . '</td><td>दर्ता न.</td><td>' . $migrationCertificate->reg_number . '</td></tr><tr><td>ग.पा. / न.पा</td><td>' . $migrationCertificate->vdc . '</td><td>दर्ता मिति</td><td>' . $migrationCertificate->entry_date . '</td></tr></table></div>';
+        $html .= '<div class="container"><div class="col-12"><table class="my_table col-12" style="border-collapse: collapse;width:100%"><tr><td>प्रदेश</td><td>' . $migrationCertificate->province . '</td><td>स्थानीय पञ्जिकाधिकारी</td><td class="kantipur">' . $migrationCertificate->administrator . '</td></tr><tr><td>जिल्ला</td><td>' . $migrationCertificate->district . '</td><td>दर्ता न.</td><td>' . $migrationCertificate->reg_number . '</td></tr><tr><td>ग.पा. / न.पा</td><td>' . $migrationCertificate->municipality . '</td><td>दर्ता मिति</td><td>' . $migrationCertificate->entry_date . '</td></tr></table></div>';
         $html .= '<h5 style="text-align:center">(१) बसाई सर्ने परिवारका सदस्यहरुको नाम/बसाई सराई व्यक्तिको</h5>';
         $html .= ' <div class="col-xl-12">
                         <table class="my_table col-12" style="width:100%;border-collapse: collapse;">
