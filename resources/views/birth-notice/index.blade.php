@@ -239,6 +239,7 @@
                                 <thead class="thead-light">
                                     <tr class="text-uppercase">
                                         <th>#</th>
+                                        <th>किताब कोड</th>
                                         <th>दर्ता न.</th>
                                         <th>नाम</th>
                                         <th>लिङ्ग</th>
@@ -255,6 +256,7 @@
                                     @foreach ($births as $birth)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $birth->book->code }}</td>
                                             <td>{{ $birth->reg_number }}</td>
                                             <td>{{ $birth->name }}</td>
                                             <td>{{ $birth->gender }}</td>

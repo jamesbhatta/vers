@@ -16,7 +16,7 @@ class CreateBirthsTable extends Migration
         Schema::create('births', function (Blueprint $table) {
             $table->id();
             $table->string('administrator');
-            $table->string('book_id');
+            $table->unsignedBigInteger('book_id');
             $table->string('province')->nullable();
             $table->string('district')->nullable();
             $table->string('municipality')->nullable();

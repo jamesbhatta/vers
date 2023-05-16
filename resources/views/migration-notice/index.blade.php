@@ -102,6 +102,7 @@
                                 <thead class="thead-light">
                                     <tr class="text-uppercase">
                                         <th>#</th>
+                                        <th>किताब कोड</th>
                                         <th>दर्ता नं.</th>
                                         <th>दर्ता मिति</th>
                                         <th>बसाईसराईको प्रकार</th>
@@ -113,6 +114,7 @@
                                     @foreach ($migrationCertificates as $migrationCertificate)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $migrationCertificate->book->code }}</td>
                                             <td>{{ $migrationCertificate->reg_number }}</td>
 
                                             <td>{{ $migrationCertificate->entry_date }}</td>

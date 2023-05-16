@@ -224,6 +224,7 @@
                             <thead class="thead-light">
                                 <tr class="text-uppercase">
                                     <th>#</th>
+                                    <th>किताब कोड</th>
                                     <th>दर्ता न.</th>
                                     <th>दर्ता मिति</th>
                                     <th>नाम,थर</th>
@@ -240,6 +241,7 @@
                                 @foreach ($deaths as $death)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $death->book->code }}</td>
                                         <td>{{ $death->reg_number }}</td>
                                         <td>{{ $death->entry_date }}</td>
                                         <td>{{ $death->name }}</td>
