@@ -336,7 +336,7 @@
                         <hr>
                         <h4 class="font-weight-bold pt-3">मृतकको साक्षी विवरण </h4>
                         {{-- <div class="row"> --}}
-                        <x-sachi-form :death="$death" />
+                        <x-sachi-form :death="$death" :relation="'मृतक'" />
 
 
                         <div class="card mt-3 p-3">

@@ -13,9 +13,11 @@ class SachiForm extends Component
      */
 
     public $death;
-    public function __construct($death)
+    public $relation;
+    public function __construct($death, $relation)
     {
         $this->death = $death;
+        $this->relation = $relation;
     }
 
     /**

@@ -11,7 +11,7 @@
         </div>
 
         <div class="form-group col-md-4">
-            <label for=""><span class="text-danger">*</span>साक्षीसंगको सम्बन्ध</label>
+            <label for=""><span class="text-danger">*</span>{{$relation}} संगको नाता</label>
             <input list="relationships" id="relationship" name="relationship" class="form-control myText"
                 value="{{ old('relationship', $death->relationship) }}">
             <datalist id="relationships">

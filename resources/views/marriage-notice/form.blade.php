@@ -442,7 +442,7 @@
                 <hr>
                 <h4 class="font-weight-bold mt-3">साक्षी विवरण </h4>
                 {{-- <div class="row"> --}}
-                <x-sachi-form :death="$marriage" />
+                <x-sachi-form :death="$marriage" :relation="'दुलहा-दुलही'"/>
                 <div class="card mt-3 p-3">
                     <div class="row">
                         <div class="form-group col-xl-12">

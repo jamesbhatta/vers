@@ -609,7 +609,7 @@
 
                         <h4 class="font-weight-bold mt-3 ">नवजात शिशुको साक्षी विवरण </h4>
                         {{-- <div class="row"> --}}
-                        <x-sachi-form :death="$birth" />
+                        <x-sachi-form :death="$birth" :relation="'नवजात शिशु'" />
 
                         {{-- <div class="col-xl-12"> --}}
                         <div class="card mt-3 p-3">
