@@ -26,7 +26,7 @@ class CreateFamiliesTable extends Migration
             $table->string('gender')->nullable();
             $table->string('mothertongue')->nullable();
             $table->string('description')->nullable();
-            $table->unsignedBigInteger('migration_certificate_id');
+            $table->foreignId('migration_certificate_id')->constrained('migration_certificates')->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -40,19 +40,21 @@ class FamilyController extends Controller
         $migrationCertificate->families()->create(
             $request->validate([
                 'name' => ['required'],
-                'birthplace' => ['required'],
+                'birthplace' => ['nullable'],
                 'citizenship' => ['nullable'],
-                'age' => ['required'],
+                'age' => ['nullable'],
                 'permanent_address' => ['nullable'],
                 'temporary_address' => ['nullable'],
-                'education' => ['required'],
-                'religion' => ['required'],
+                'education' => ['nullable'],
+                'religion' => ['nullable'],
                 'gender' => ['required'],
-                'mothertongue' => ['required'],
+                'mothertongue' => ['nullable'],
                 'description' => ['nullable'],
             ]),
         );
-        return redirect()->route('migration.add-family', $migrationCertificate)->with('success', 'Family Member added successfully');
+        return redirect()
+            ->route('migration.add-family', $migrationCertificate)
+            ->with('success', 'Family Member added successfully');
     }
 
     /**
@@ -74,7 +76,6 @@ class FamilyController extends Controller
      */
     public function edit(Family $family, MigrationCertificate $migrationCertificate)
     {
-
         $families = $migrationCertificate->families()->get();
         return view('migration-notice.family', compact('migrationCertificate', 'families', 'family'));
     }
@@ -88,21 +89,23 @@ class FamilyController extends Controller
      */
     public function update(Request $request, Family $family)
     {
-
-        $family->update($request->validate([
-            'name' => ['required'],
-            'birthplace' => ['required'],
-            'citizenship' => ['required'],
-            'age' => ['required'],
-            'permanent_addres' => ['nullable'],
-            'temporary_address' => ['nullable'],
-            'education' => ['required'],
-            'religion' => ['required'],
-            'gender' => ['required'],
-            'mothertongue' => ['required'],
-            'description' => ['nullable'],
-        ]));
-        return redirect()->back()->with('success', 'Family Member updated successfully');
+        $family->update(
+            $request->validate([
+                'name' => ['required'],
+                'birthplace' => ['nullable'],
+                'citizenship' => ['nullable'],
+                'age' => ['nullable'],
+                'permanent_address' => ['nullable'],
+                'temporary_address' => ['nullable'],
+                'education' => ['nullable'],
+                'religion' => ['nullable'],
+                'gender' => ['required'],
+                'mothertongue' => ['nullable'],
+                'description' => ['nullable'],
+            ]),
+        );
+        $migrationCertificate = MigrationCertificate::findOrFail($family->migration_certificate_id);
+        return redirect()->route('migration.add-family', $migrationCertificate);
     }
 
     /**
@@ -114,6 +117,8 @@ class FamilyController extends Controller
     public function destroy(Family $family)
     {
         $family->delete();
-        return redirect()->back()->with('success', 'Family Member deleted successfully');
+        return redirect()
+            ->back()
+            ->with('success', 'Family Member deleted successfully');
     }
 }

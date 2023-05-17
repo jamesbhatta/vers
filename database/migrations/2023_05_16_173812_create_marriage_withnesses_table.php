@@ -15,7 +15,7 @@ class CreateMarriageWithnessesTable extends Migration
     {
         Schema::create('marriage_withnesses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('marriage_id')->constrained('marriages')->cascadeOnDelete()->nullable();
+            $table->foreignId('marriage_id')->constrained('marriages')->cascadeOnDelete();
             $table->string('relative_name');
             $table->string('relationship');
             $table->string('relative_address')->nullable();

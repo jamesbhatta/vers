@@ -21,7 +21,10 @@
                     </div>
                 @endif
                 <div class="box mt-2 p-5">
-                    <form action="{{ route('family.store', $migrationCertificate) }}" method="POST">
+                    <form action="{{ $family->id ? route('family.update', $family) : route('family.store', $migrationCertificate) }}" method="POST">
+                        @if ($family->id)
+                            @method('put')
+                        @endif
                         @csrf
                         <div class="pb-2 d-flex justify-content-between">
                             <h3 class="text-center">बसाई सर्ने परिवारका सदस्यहरुको नाम/बसाई सराई व्यक्तिको </h3>
