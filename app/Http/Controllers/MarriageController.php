@@ -53,9 +53,9 @@ class MarriageController extends Controller
             $fileName = $request->reg_number . '-' . Str::slug($request->name) . '.' . $request->file->getClientOriginalExtension();
             $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
-      $marriage =  $user->marriage()->create($data);
+        $marriage = $user->marriage()->create($data);
         return redirect()
-            ->route('marriageWithness.create',compact('marriage'))
+            ->route('marriageWithness.create', compact('marriage'))
             ->with('success', 'New marriage notice successfully registered.');
     }
 
@@ -424,11 +424,11 @@ class MarriageController extends Controller
                     </div>';
 
         $html .= '<h3 style="text-align:center">साक्षीको विवरण</h3>';
-        $html .=
-            '<div class="col-12">
-            <table class="col-12" style="width:100%;border-collapse: collapse;">
-            <tr>
-            <td>
+        $html .= '<div class="col-12">
+            <table class="my_table col-12" style="width:100%;border-collapse: collapse;">
+            <thead>
+                <tr>
+                     <td>
                         SN
                     </td>
                     <td>
@@ -443,26 +443,16 @@ class MarriageController extends Controller
                     <td>
                         मिति
                     </td>
-                 </tr>
-                 <tr>
-                    <td>
-                    1
-                    </td>
-                    <td>
-                    nam
-                    </td>
-                    <td>
-                    add
-                    </td>
-                    <td>
-                    add
-                    </td>
-                    <td>
-                    add
-                    </td>
+                </tr>
+                <thead> <tbody>';
+        $num = '1';
+        foreach ($marriage->marriageWithness as $marriageWithness) {
+            $html .= '<tr><td>' . $num . '</td><td>' . $marriageWithness->relative_name . '</td><td>' . $marriageWithness->relative_address . '</td><td>' . $marriageWithness->relationship . '</td><td>' . $marriageWithness->date . '</td></tr>';
+            $num++;
+        }
 
-                 </tr>
-                </div>';
+        $html .= '</tbody></table>
+                 </div>';
         $html .= '</div>';
         $pdf = new \Mpdf\Mpdf(['mode' => 'UTF-8', 'format' => 'A4-p', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
         $pdf->SetTitle('विवाहको सूचना फाराम');
