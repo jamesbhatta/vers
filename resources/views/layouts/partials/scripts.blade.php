@@ -2,7 +2,7 @@
 <script type="text/javascript" src="{{ asset('assets/mdb/js/popper.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/mdb/js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/mdb/js/mdb.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/mdb/js/addons/datatables.min.js') }}"></script>
+{{-- <script type="text/javascript" src="{{ asset('assets/mdb/js/addons/datatables.min.js') }}"></script> --}}
 <script type="text/javascript" src="{{ asset('assets/nepali-datepicker/js/nepali.datepicker.v4.0.1.min.js') }}" ></script>
 <script type="text/javascript" src="{{ asset('assets/js/myjs.js') }}"></script>
 

@@ -57,12 +57,6 @@ class CreateMarriagesTable extends Migration
             $table->string('groom_father_name')->nullable();
             $table->string('groom_pre_marrige_status')->nullable();
 
-
-            $table->string('relative_name');
-            $table->string('relationship');
-            $table->string('relative_address')->nullable();
-            $table->string('date')->nullable();
-
             $table->string('file')->nullable();
             $table->text('description')->nullable();
 

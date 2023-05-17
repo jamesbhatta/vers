@@ -20,5 +20,10 @@ class Marriage extends Model
     {
         return $this->belongsTo(Book::class);
     }
+
+    public function marriageWithness()
+    {
+        return $this->hasMany(MarriageWithness::class);
+    }
 }
 

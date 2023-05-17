@@ -64,11 +64,6 @@ class StoreMarriageRequest extends FormRequest
             'groom_father_name' => 'nullable',
             'groom_pre_marrige_status' => 'nullable',
 
-            'relative_name' => 'required',
-            'relationship' => 'required',
-            'relative_address' => 'nullable',
-            'date' => 'nullable',
-
             'file' => 'nullable',
             'description' => 'nullable',
         ];

@@ -251,6 +251,10 @@
                                         <td>{{ $marriage->groom_grandfather_name }}</td>
                                         <td>{{ $marriage->groom_father_name }}</td>
                                         <td class="text-right" style="white-space: nowrap;">
+                                            <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top"
+                                                title="Add withness"
+                                                href="{{ route('marriageWithness.create', $marriage) }}"><i
+                                                    class="fas fa-plus-circle"></i></a>
                                             <a class="action-btn text-primary show" id="{{ $marriage->id }}"
                                                 data-toggle="modal" data-target=".bd-example-modal-lg"
                                                 data-toggle="modal" data-target=".bd-example-modal-lg"
@@ -309,7 +313,10 @@
                                             </tr>
                                         </table>
                                     </div>
-                                    <label class="col-12 text-center mt-5 font-weight-bold">सामाजिक परम्परा अनुसार विवाह दर्ता कानुन ऐन २०२८ अनुसार मिति {{$marriage->marriage_date}} मा {{ $marriage->marriage_address }} मा विवाह सम्पन्न भएको हुनाले निम्न लिखित विवरण खुलाई सूचना दिन आएको छु । कानुन अनुसार दर्ता गरिपाऊ ।</label>
+                                    <label class="col-12 text-center mt-5 font-weight-bold">सामाजिक परम्परा अनुसार विवाह
+                                        दर्ता कानुन ऐन २०२८ अनुसार मिति <span id="marriage_date"></span> मा <span
+                                            id="marriage_address"></span> मा विवाह सम्पन्न भएको हुनाले निम्न लिखित विवरण
+                                        खुलाई सूचना दिन आएको छु । कानुन अनुसार दर्ता गरिपाऊ ।</label>
 
                                     <label class="col-12 text-center mt-5 font-weight-bold">दुलाहा-दुलहीको विवरण</label>
 
@@ -393,26 +400,26 @@
                                     <label class="col-12 text-center mt-5 font-weight-bold">साक्षीको विवरण</label>
                                     <div class="col-12">
                                         <table class="my_table col-12">
-                                            <tr>
-                                                <td>क</td>
-                                                <td>नाम</td>
-                                                <td id="relative_name"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>ख</td>
-                                                <td>दुलाहा संगको सम्बन्ध</td>
-                                                <td id="relationship"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>ग</td>
-                                                <td>ठेगाना</td>
-                                                <td id="relative_address"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>घ</td>
-                                                <td>मिति</td>
-                                                <td id="date"></td>
-                                            </tr>
+                                            <thead>
+                                                <th>
+                                                    SN
+                                                </th>
+                                                <th>
+                                                    नाम
+                                                </th>
+                                                <th>
+                                                    ठेगाना
+                                                </th>
+                                                <th>
+                                                    दुलाहा-दुलही संगको नाता
+                                                </th>
+                                                <th>
+                                                    मिति
+                                                </th>
+                                            </thead>
+                                            <tbody id="withnesss">
+                                            </tbody>
+
                                         </table>
 
                                     </div>
@@ -450,12 +457,15 @@
             .get(url)
             .then((response) => {
                 var data = response.data;
+                console.log(data);
                 $('#province').html(response.data.province);
                 $('#administrator').html(response.data.administrator);
                 $('#district').html(response.data.district);
                 $('#reg_number').html(response.data.reg_number);
                 $('#municipality').html(response.data.municipality);
                 $('#entry_date').html(response.data.entry_date);
+                $('#marriage_date').html(response.data.marriage_date);
+                $('#marriage_address').html(response.data.marriage_address);
 
                 $('#bride_name').html(response.data.bride_name);
                 $('#groom_name').html(response.data.groom_name);
@@ -488,10 +498,6 @@
 
 
 
-
-                $('#relative_name').html(response.data.relative_name);
-                $('#relationship').html(response.data.relationship);
-                $('#relative_address').html(response.data.relative_address);
                 $('#date').html(response.data.date);
                 var img = response.data.file;
                 // console.log(response.data.file);
@@ -503,6 +509,22 @@
                 var route = "{{ route('marriage.printdetail', 'id') }}";
                 route = route.replace('id', $(this).attr('id'));
                 $('#detail_print').attr("href", route);
+                
+                family_data = "";
+                var num = "";
+                for (let i = 0; i < response.data.marriage_withness.length; i++) {
+                    num = i + 1;
+                    family_data += "<tr>";
+                    family_data += "<td>" + num + "</td>";
+                    family_data += "<td>" + response.data.marriage_withness[i].relative_name + "</td>";
+                    family_data += "<td>" + response.data.marriage_withness[i].relationship + "</td>";
+                    family_data += "<td>" + response.data.marriage_withness[i].relative_address + "</td>";
+                    family_data += "<td>" + response.data.marriage_withness[i].date + "</td>";
+                    family_data += "</td>";
+                }
+
+                $('#withnesss').html(family_data);
+
             })
             .catch((error) => console.log(error));
     });

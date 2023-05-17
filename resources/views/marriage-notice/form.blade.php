@@ -6,7 +6,7 @@
                 <nav aria-label="breadcrumb" class="d-flex justify-content-between  rounded">
 
                     <div class="my-breadcrumb">
-                        <a class="first-breadcrumb" href="{{ route('death.index') }}">विवाह दर्ता</a>
+                        <a class="first-breadcrumb" href="{{ route('marriage.index') }}">विवाह दर्ता</a>
                         <a class="sub-breadcrumb" href="{{ route('dashboard') }}"><i class="fas fa-home"></i></a>
                         <a class="final-item ml-3" href="">@lang('navigation.marriage-notice-form')</a>
                     </div>
@@ -64,7 +64,8 @@
                                     <label for=""><span class="text-danger">*</span>विवाह मिति</label>
                                     <div class="input-group mb-2">
                                         <input type="text" class="form-control" name="marriage_date"
-                                            value="{{ old('marriage_date', $marriage->marriage_date) }}" id="nepali-datepicker5" />
+                                            value="{{ old('marriage_date', $marriage->marriage_date) }}"
+                                            id="nepali-datepicker5" />
                                     </div>
                                     @error('marriage_date')
                                         <small class="text-danger">{{ $message }}</small>
@@ -244,7 +245,7 @@
                         <div class="form-group col-md-4">
                             <label><span class="text-danger">*</span> पूर्व वैवाहिक स्थिति </label>
                             <select class="custom-select" name="bride_pre_marrige_status">
-                                
+
                                 <div>
                                     <option value="अविवाहित"
                                         {{ $marriage->bride_pre_marrige_status == 'अविवाहित' || old('bride_pre_marrige_status') == 'अविवाहित' ? 'selected' : '' }}>
@@ -422,7 +423,7 @@
                         <div class="form-group col-md-4">
                             <label><span class="text-danger">*</span> पूर्व वैवाहिक स्थिति </label>
                             <select class="custom-select" name="groom_pre_marrige_status">
-                                
+
                                 <div>
                                     <option value="अविवाहित"
                                         {{ $marriage->groom_pre_marrige_status == 'अविवाहित' || old('groom_pre_marrige_status') == 'अविवाहित' ? 'selected' : '' }}>
@@ -440,11 +441,35 @@
                 </div>
 
                 <hr>
-                <h4 class="font-weight-bold mt-3">साक्षी विवरण </h4>
+
                 {{-- <div class="row"> --}}
-                <x-sachi-form :death="$marriage" :relation="'दुलहा-दुलही'"/>
+
                 <div class="card mt-3 p-3">
                     <div class="row">
+                        <div class="d-flex align-items-center col-12">
+                            <div class="form-group col-xl-6">
+                                <label for="">फाइल (max size: 2 MB | jpeg, png, jpg, pdf)</label>
+                                <div class="input-group mb-2">
+
+                                    <input type="file" name=file class="file-brows" id="fileInput" />
+                                </div>
+                                @error('file')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+                            <div class="form-group col-xl-6">
+                                <img id="output" class="output_modal" src="{{ asset('storage/' . $marriage->file) }}"
+                                    style="height: 150px" data-toggle="modal" data-target=".img-model">
+                                <div class="modal fade img-model" tabindex="-1" role="dialog"
+                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content p-3">
+                                            <img id="img_model" style="height: 90vh; object-fit: contain;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group col-xl-12">
                             <label for="">कैफियत</label>
                             <div class="input-group mb-2">
@@ -470,5 +495,21 @@
 
         </div>
     </div>
-    </div>
+    @push('script')
+        <script>
+            document.getElementById('fileInput').addEventListener('change', function(event) {
+                var reader = new FileReader();
+                reader.onload = function() {
+                    var output = document.getElementById('output');
+                    output.src = reader.result;
+                };
+                reader.readAsDataURL(event.target.files[0]);
+            });
+
+            $(document).on("click", ".output_modal", function() {
+                var output = document.getElementById('img_model');
+                output.src = this.src;
+            });
+        </script>
+    @endpush
 @endsection
