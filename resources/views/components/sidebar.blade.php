@@ -2,7 +2,7 @@
     <div class=" rounded d-flex justify-content-center align-items-center">
         <div class="d-block mt-3">
             <img src="{{ asset('assets/image/nep-gov-logo-sm.png') }}" style="height: 100px">
-            <h4 class="font-weight-bold myText text-center" style="color:#fff;margin-top:10px;font-size:30px">
+            <h4 class="font-weight-bold myText text-center" style="color:#fff;margin-top:10px;font-size:20px">
                 {{ __('app.name') }}</h4 class="text-uppercase font-weight-bold">
         </div>
     </div>

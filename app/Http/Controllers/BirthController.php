@@ -132,7 +132,7 @@ class BirthController extends Controller
 
     public function filter(Request $request)
     {
-        $births = DB::table('births');
+        $births = new Birth();
         if ($request->darta_number) {
             $births = $births->where('reg_number', $request->darta_number);
         }
@@ -179,7 +179,7 @@ class BirthController extends Controller
 
     public function listPrint(Request $request)
     {
-        $births = DB::table('births');
+        $births = new Birth();
         if ($request->darta_number) {
             $births = $births->where('reg_number', $request->darta_number);
         }

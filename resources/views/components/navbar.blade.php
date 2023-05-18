@@ -3,7 +3,7 @@
         <a id="sidebar-toggler" class=" mr-3 text-white mt-2" style="cursor: pointer" onclick="toggleSidebar()">
             <i class="fas fa-bars fa-2x"></i>
         </a>
-        <a href="{{ route('dashboard') }}" class="text-decoration-none mr-3 mt-1 text-white myText" style="font-size: 30px">
+        <a href="{{ route('dashboard') }}" class="text-decoration-none mr-3 mt-1 text-white myText" style="font-size: 20px">
             {{ __('app.name') }}
         </a>
         {{-- <a class="navbar-brand" ">{{ __('app.name') }}</a> --}}
