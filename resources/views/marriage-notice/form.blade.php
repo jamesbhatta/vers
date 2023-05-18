@@ -82,434 +82,559 @@
                             </div>
                         </div>
                         {{-- <x-darta :death="$marriage" /> --}}
-                </div>
-                <hr>
-                <h4 class="font-weight-bold py-3">दुलाहाको विवरण</h4>
-                <div class="card p-3">
-                    <div class="row">
-                        <div class="form-group col-md-4">
-                            <label><span class="text-danger">*</span> नाम,थर </label>
-                            <input type="text" class="form-control myText" name="bride_name"
-                                value="{{ old('bride_name', $marriage->bride_name) }}" />
-                            @error('bride_name')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for=""> जन्म मिति</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control" name="bride_dob"
-                                    value="{{ old('bride_dob', $marriage->bride_dob) }}" id="nepali-datepicker" />
-                            </div>
-                            @error('bride_dob')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <x-country-form :label="'जन्म भएको देश'" :name="'bride_birth_country'" :id="'bride_birth_country'" :usercountry="$marriage" />
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="">नागरिकता (ना.प्र.नं) </label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control" name="bride_citizenship_number"
-                                    value="{{ old('bride_citizenship_date', $marriage->bride_citizenship_date) }}" />
-                            </div>
-                            @error('bride_citizenship_date')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
 
-                        <div class="form-group col-md-4">
-                            <label for="">नागरिकता जारी मिति </label>
-                            <div class="input-group mb-2">
-                                <input type="text" id="nepali-datepicker1" class="form-control"
-                                    name="bride_citizenship_date"
-                                    value="{{ old('bride_citizenship_date', $marriage->bride_citizenship_date) }}" />
-                            </div>
-                            @error('bride_citizenship_date')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>नागरिकता लिएको जिल्ला </label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control myText" name="bride_citizenship_district"
-                                    value="{{ old('bride_citizenship_district', $marriage->bride_citizenship_district) }}" />
-                            </div>
-                            @error('bride_citizenship_district')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label><span class="text-danger">*</span> स्थाई ठेगाना </label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control myText" name="bride_temp_address"
-                                    value="{{ old('bride_temp_address', $marriage->bride_temp_address) }}" />
-                            </div>
-                            @error('bride_temp_address')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label for=""> शिक्षा</label>
-
-                            <select class="custom-select" name="bride_education">
-                                <option selected class="m-5" value="">छान्न्नुहोस्। </option>
-                                <div>
-                                    <option value="निरक्षर"
-                                        {{ $marriage->bride_education == 'निरक्षर' || old('bride_education') == 'निरक्षर' ? 'selected' : '' }}>
-                                        निरक्षर
-                                    </option>
-                                    <option value="साधारण"
-                                        {{ $marriage->bride_education == 'साधारण' || old('bride_education') == 'साधारण' ? 'selected' : '' }}>
-                                        साधारण
-                                    </option>
-                                    <option value="एस.एल.सी."
-                                        {{ $marriage->bride_education == 'एस.एल.सी.' || old('bride_education') == 'एस.एल.सी.' ? 'selected' : '' }}>
-                                        एस.एल.सी.
-                                    </option>
-                                    <option value="रमाणपत्र"
-                                        {{ $marriage->bride_education == 'प्रमाणपत्र' || old('bride_education') == 'प्रमाणपत्र' ? 'selected' : '' }}>
-                                        प्रमाणपत्र</option>
-                                    <option value="स्नातक"
-                                        {{ $marriage->bride_education == 'स्नातक' || old('bride_education') == 'स्नातक' ? 'selected' : '' }}>
-                                        स्नातक
-                                    </option>
-                                    <option value="स्नातकोत्तर"
-                                        {{ $marriage->bride_education == 'स्नातकोत्तर' || old('bride_education') == 'स्नातकोत्तर' ? 'selected' : '' }}>
-                                        स्नातकोत्तर </option>
-                                    <option value="विद्यावारिधि"
-                                        {{ $marriage->bride_education == 'विद्यावारिधि' || old('bride_education') == 'विद्यावारिधि' ? 'selected' : '' }}>
-                                        विद्यावारिधि </option>
+                        <hr>
+                        <h4 class="font-weight-bold py-3">दुलाहाको विवरण</h4>
+                        <div class="card p-3">
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label><span class="text-danger">*</span> नाम,थर </label>
+                                    <input type="text" class="form-control myText" name="bride_name"
+                                        value="{{ old('bride_name', $marriage->bride_name) }}" />
+                                    @error('bride_name')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
-                            </select>
-                            @error('bride_education')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label> धर्म </label>
-                            <select class="custom-select" name="bride_religion">
-                                <option selected class="m-5" value="">छान्न्नुहोस्। </option>
-                                <div>
-                                    <option value="हिन्दु"
-                                        {{ $marriage->bride_religion == 'हिन्दु' || old('bride_religion') == 'हिन्दु' ? 'selected' : '' }}>
-                                        हिन्दु
-                                    </option>
-                                    <option value="बौद्ध"
-                                        {{ $marriage->bride_religion == 'बौद्ध' || old('bride_religion') == 'बौद्ध' ? 'selected' : '' }}>
-                                        बौद्ध
-                                    </option>
-                                    <option value="क्रिश्चियन"
-                                        {{ $marriage->bride_religion == 'क्रिश्चियन' || old('bride_religion') == 'क्रिश्चियन' ? 'selected' : '' }}>
-                                        क्रिश्चियन </option>
-                                    <option value="मुस्लिम"
-                                        {{ $marriage->bride_religion == 'मुस्लिम' || old('bride_religion') == 'मुस्लिम' ? 'selected' : '' }}>
-                                        मुस्लिम
-                                    </option>
-                                    <option value="अन्य"
-                                        {{ $marriage->bride_religion == 'अन्य' || old('bride_religion') == 'अन्य' ? 'selected' : '' }}>
-                                        अन्य
-                                    </option>
+                                <div class="form-group col-md-4">
+                                    <label for=""> जन्म मिति</label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control" name="bride_dob"
+                                            value="{{ old('bride_dob', $marriage->bride_dob) }}" id="nepali-datepicker" />
+                                    </div>
+                                    @error('bride_dob')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
-                            </select>
-                            @error('bride_religion')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <x-mother-tongue :name="'bride_mother_tongue'" :id="'bride_mother_tongue'" :userdata="$marriage" />
-
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label><span class="text-danger">*</span> बाजेको नाम</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control myText" name="bride_grandfather_name"
-                                    value="{{ old('bride_grandfather_name', $marriage->bride_grandfather_name) }}" />
-                            </div>
-                            @error('bride_grandfather_name')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for=""><span class="text-danger">*</span> बाबुको नाम </label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control myText" name="bride_father_name"
-                                    value="{{ old('bride_father_name', $marriage->bride_father_name) }}" />
-                            </div>
-                            @error('bride_father_name')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label><span class="text-danger">*</span> पूर्व वैवाहिक स्थिति </label>
-                            <select class="custom-select" name="bride_pre_marrige_status">
-
-                                <div>
-                                    <option value="अविवाहित"
-                                        {{ $marriage->bride_pre_marrige_status == 'अविवाहित' || old('bride_pre_marrige_status') == 'अविवाहित' ? 'selected' : '' }}>
-                                        अविवाहित</option>
-                                    <option value="विवाहित"
-                                        {{ $marriage->bride_pre_marrige_status == 'विवाहित' || old('bride_pre_marrige_status') == 'विवाहित' ? 'selected' : '' }}>
-                                        विवाहित</option>
+                                <div class="form-group col-md-4">
+                                    <x-country-form :label="'जन्म भएको देश'" :name="'bride_birth_country'" :id="'bride_birth_country'"
+                                        :usercountry="$marriage" />
                                 </div>
-                            </select>
-                            @error('bride_pre_marrige_status')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-                <hr>
-
-                <h4 class="font-weight-bold mt-3 pb-3">दुलहीको विवरण</h4>
-                <div class="card p-3">
-                    <div class="row">
-                        <div class="form-group col-md-4">
-                            <label><span class="text-danger">*</span> नाम,थर </label>
-                            <input type="text" class="form-control myText" name="groom_name"
-                                value="{{ old('groom_name', $marriage->groom_name) }}" />
-                            @error('groom_name')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for=""> जन्म मिति</label>
-                            <div class="input-group mb-2">
-                                <input type="text" id="nepali-datepicker2" class="form-control" name="groom_dob"
-                                    value="{{ old('groom_dob', $marriage->groom_dob) }}" />
-                            </div>
-                            @error('groom_dob')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <x-country-form :label="'जन्म भएको देश'" :name="'groom_birth_country'" :id="'groom_birth_country'" :usercountry="$marriage" />
-
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="">नागरिकता (ना.प्र.नं) </label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control" name="groom_citizenship_number"
-                                    value="{{ old('groom_citizenship_number', $marriage->groom_citizenship_number) }}" />
-                            </div>
-                            @error('groom_citizenship_number')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label for="">नागरिकता जारी मिति </label>
-                            <div class="input-group mb-2">
-                                <input type="text" id="nepali-datepicker3" class="form-control"
-                                    name="groom_citizenship_date"
-                                    value="{{ old('groom_citizenship_date', $marriage->groom_citizenship_date) }}" />
-                            </div>
-                            @error('groom_citizenship_date')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label>नागरिकता लिएको जिल्ला </label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control myText" name="groom_citizenship_district"
-                                    value="{{ old('groom_citizenship_district', $marriage->groom_citizenship_district) }}" />
-                            </div>
-                            @error('groom_citizenship_district')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label><span class="text-danger">*</span> स्थाई ठेगाना </label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control myText" name="groom_temp_address"
-                                    value="{{ old('groom_temp_address', $marriage->groom_temp_address) }}" />
-                            </div>
-                            @error('groom_temp_address')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for=""> शिक्षा</label>
-
-                            <select class="custom-select" name="groom_education">
-                                <option selected class="m-5" value="">छान्न्नुहोस्। </option>
-                                <div>
-                                    <option value="निरक्षर"
-                                        {{ $marriage->groom_education == 'निरक्षर' || old('groom_education') == 'निरक्षर' ? 'selected' : '' }}>
-                                        निरक्षर
-                                    </option>
-                                    <option value="साधारण"
-                                        {{ $marriage->groom_education == 'साधारण' || old('groom_education') == 'साधारण' ? 'selected' : '' }}>
-                                        साधारण
-                                    </option>
-                                    <option value="एस.एल.सी."
-                                        {{ $marriage->groom_education == 'एस.एल.सी.' || old('groom_education') == 'एस.एल.सी.' ? 'selected' : '' }}>
-                                        एस.एल.सी.
-                                    </option>
-                                    <option value="रमाणपत्र"
-                                        {{ $marriage->groom_education == 'प्रमाणपत्र' || old('groom_education') == 'प्रमाणपत्र' ? 'selected' : '' }}>
-                                        प्रमाणपत्र</option>
-                                    <option value="स्नातक"
-                                        {{ $marriage->groom_education == 'स्नातक' || old('groom_education') == 'स्नातक' ? 'selected' : '' }}>
-                                        स्नातक
-                                    </option>
-                                    <option value="स्नातकोत्तर"
-                                        {{ $marriage->groom_education == 'स्नातकोत्तर' || old('groom_education') == 'स्नातकोत्तर' ? 'selected' : '' }}>
-                                        स्नातकोत्तर </option>
-                                    <option value="विद्यावारिधि"
-                                        {{ $marriage->groom_education == 'विद्यावारिधि' || old('groom_education') == 'विद्यावारिधि' ? 'selected' : '' }}>
-                                        विद्यावारिधि </option>
+                                <div class="form-group col-md-4">
+                                    <label for="">नागरिकता (ना.प्र.नं) </label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control" name="bride_citizenship_number"
+                                            value="{{ old('bride_citizenship_date', $marriage->bride_citizenship_date) }}" />
+                                    </div>
+                                    @error('bride_citizenship_date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
-                            </select>
-                            @error('groom_education')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label> धर्म </label>
-                            <select class="custom-select" name="groom_religion">
-                                <option selected class="m-5" value="">छान्न्नुहोस्। </option>
-                                <div>
-                                    <option value="हिन्दु"
-                                        {{ $marriage->groom_religion == 'हिन्दु' || old('groom_religion') == 'हिन्दु' ? 'selected' : '' }}>
-                                        हिन्दु
-                                    </option>
-                                    <option value="बौद्ध"
-                                        {{ $marriage->groom_religion == 'बौद्ध' || old('groom_religion') == 'बौद्ध' ? 'selected' : '' }}>
-                                        बौद्ध
-                                    </option>
-                                    <option value="क्रिश्चियन"
-                                        {{ $marriage->groom_religion == 'क्रिश्चियन' || old('groom_religion') == 'क्रिश्चियन' ? 'selected' : '' }}>
-                                        क्रिश्चियन </option>
-                                    <option value="मुस्लिम"
-                                        {{ $marriage->groom_religion == 'मुस्लिम' || old('groom_religion') == 'मुस्लिम' ? 'selected' : '' }}>
-                                        मुस्लिम
-                                    </option>
-                                    <option value="अन्य"
-                                        {{ $marriage->groom_religion == 'अन्य' || old('groom_religion') == 'अन्य' ? 'selected' : '' }}>
-                                        अन्य
-                                    </option>
+
+                                <div class="form-group col-md-4">
+                                    <label for="">नागरिकता जारी मिति </label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" id="nepali-datepicker1" class="form-control"
+                                            name="bride_citizenship_date"
+                                            value="{{ old('bride_citizenship_date', $marriage->bride_citizenship_date) }}" />
+                                    </div>
+                                    @error('bride_citizenship_date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
-                            </select>
-                            @error('groom_religion')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <x-mother-tongue :name="'groom_mother_tongue'" :id="'groom_mother_tongue'" :userdata="$marriage" />
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label><span class="text-danger">*</span> बाजेको नाम</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control myText" name="groom_grandfather_name"
-                                    value="{{ old('groom_grandfather_name', $marriage->groom_grandfather_name) }}" />
-                            </div>
-                            @error('groom_grandfather_name')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for=""><span class="text-danger">*</span> बाबुको नाम </label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control myText" name="groom_father_name"
-                                    value="{{ old('groom_father_name', $marriage->groom_father_name) }}" />
-                            </div>
-                            @error('groom_father_name')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label><span class="text-danger">*</span> पूर्व वैवाहिक स्थिति </label>
-                            <select class="custom-select" name="groom_pre_marrige_status">
-
-                                <div>
-                                    <option value="अविवाहित"
-                                        {{ $marriage->groom_pre_marrige_status == 'अविवाहित' || old('groom_pre_marrige_status') == 'अविवाहित' ? 'selected' : '' }}>
-                                        अविवाहित</option>
-                                    <option value="विवाहित"
-                                        {{ $marriage->groom_pre_marrige_status == 'विवाहित' || old('groom_pre_marrige_status') == 'विवाहित' ? 'selected' : '' }}>
-                                        विवाहित</option>
+                                <div class="form-group col-md-4">
+                                    <label>नागरिकता लिएको जिल्ला </label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control myText" name="bride_citizenship_district"
+                                            value="{{ old('bride_citizenship_district', $marriage->bride_citizenship_district) }}" />
+                                    </div>
+                                    @error('bride_citizenship_district')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
-                            </select>
-                            @error('groom_pre_marrige_status')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-
-                <hr>
-
-                {{-- <div class="row"> --}}
-
-                <div class="card mt-3 p-3">
-                    <div class="row">
-                        <div class="d-flex align-items-center col-12">
-                            <div class="form-group col-xl-6">
-                                <label for="">फाइल (max size: 2 MB | jpeg, png, jpg, pdf)</label>
-                                <div class="input-group mb-2">
-
-                                    <input type="file" name=file class="file-brows" id="fileInput" />
+                                <div class="form-group col-md-4">
+                                    <label><span class="text-danger">*</span> स्थाई ठेगाना </label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control myText" name="bride_temp_address"
+                                            value="{{ old('bride_temp_address', $marriage->bride_temp_address) }}" />
+                                    </div>
+                                    @error('bride_temp_address')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
-                                @error('file')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
+
+                                <div class="form-group col-md-4">
+                                    <label for=""> शिक्षा</label>
+
+                                    <select class="custom-select" name="bride_education">
+                                        <option selected class="m-5" value="">छान्न्नुहोस्। </option>
+                                        <div>
+                                            <option value="निरक्षर"
+                                                {{ $marriage->bride_education == 'निरक्षर' || old('bride_education') == 'निरक्षर' ? 'selected' : '' }}>
+                                                निरक्षर
+                                            </option>
+                                            <option value="साधारण"
+                                                {{ $marriage->bride_education == 'साधारण' || old('bride_education') == 'साधारण' ? 'selected' : '' }}>
+                                                साधारण
+                                            </option>
+                                            <option value="एस.एल.सी."
+                                                {{ $marriage->bride_education == 'एस.एल.सी.' || old('bride_education') == 'एस.एल.सी.' ? 'selected' : '' }}>
+                                                एस.एल.सी.
+                                            </option>
+                                            <option value="रमाणपत्र"
+                                                {{ $marriage->bride_education == 'प्रमाणपत्र' || old('bride_education') == 'प्रमाणपत्र' ? 'selected' : '' }}>
+                                                प्रमाणपत्र</option>
+                                            <option value="स्नातक"
+                                                {{ $marriage->bride_education == 'स्नातक' || old('bride_education') == 'स्नातक' ? 'selected' : '' }}>
+                                                स्नातक
+                                            </option>
+                                            <option value="स्नातकोत्तर"
+                                                {{ $marriage->bride_education == 'स्नातकोत्तर' || old('bride_education') == 'स्नातकोत्तर' ? 'selected' : '' }}>
+                                                स्नातकोत्तर </option>
+                                            <option value="विद्यावारिधि"
+                                                {{ $marriage->bride_education == 'विद्यावारिधि' || old('bride_education') == 'विद्यावारिधि' ? 'selected' : '' }}>
+                                                विद्यावारिधि </option>
+                                        </div>
+                                    </select>
+                                    @error('bride_education')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label> धर्म </label>
+                                    <select class="custom-select" name="bride_religion">
+                                        <option selected class="m-5" value="">छान्न्नुहोस्। </option>
+                                        <div>
+                                            <option value="हिन्दु"
+                                                {{ $marriage->bride_religion == 'हिन्दु' || old('bride_religion') == 'हिन्दु' ? 'selected' : '' }}>
+                                                हिन्दु
+                                            </option>
+                                            <option value="बौद्ध"
+                                                {{ $marriage->bride_religion == 'बौद्ध' || old('bride_religion') == 'बौद्ध' ? 'selected' : '' }}>
+                                                बौद्ध
+                                            </option>
+                                            <option value="क्रिश्चियन"
+                                                {{ $marriage->bride_religion == 'क्रिश्चियन' || old('bride_religion') == 'क्रिश्चियन' ? 'selected' : '' }}>
+                                                क्रिश्चियन </option>
+                                            <option value="मुस्लिम"
+                                                {{ $marriage->bride_religion == 'मुस्लिम' || old('bride_religion') == 'मुस्लिम' ? 'selected' : '' }}>
+                                                मुस्लिम
+                                            </option>
+                                            <option value="अन्य"
+                                                {{ $marriage->bride_religion == 'अन्य' || old('bride_religion') == 'अन्य' ? 'selected' : '' }}>
+                                                अन्य
+                                            </option>
+                                        </div>
+                                    </select>
+                                    @error('bride_religion')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <x-mother-tongue :name="'bride_mother_tongue'" :id="'bride_mother_tongue'" :userdata="$marriage" />
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label><span class="text-danger">*</span> बाजेको नाम</label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control myText" name="bride_grandfather_name"
+                                            value="{{ old('bride_grandfather_name', $marriage->bride_grandfather_name) }}" />
+                                    </div>
+                                    @error('bride_grandfather_name')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for=""><span class="text-danger">*</span> बाबुको नाम </label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control myText" name="bride_father_name"
+                                            value="{{ old('bride_father_name', $marriage->bride_father_name) }}" />
+                                    </div>
+                                    @error('bride_father_name')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label><span class="text-danger">*</span> पूर्व वैवाहिक स्थिति </label>
+                                    <select class="custom-select" name="bride_pre_marrige_status">
+
+                                        <div>
+                                            <option value="अविवाहित"
+                                                {{ $marriage->bride_pre_marrige_status == 'अविवाहित' || old('bride_pre_marrige_status') == 'अविवाहित' ? 'selected' : '' }}>
+                                                अविवाहित</option>
+                                            <option value="विवाहित"
+                                                {{ $marriage->bride_pre_marrige_status == 'विवाहित' || old('bride_pre_marrige_status') == 'विवाहित' ? 'selected' : '' }}>
+                                                विवाहित</option>
+                                        </div>
+                                    </select>
+                                    @error('bride_pre_marrige_status')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
                             </div>
-                            <div class="form-group col-xl-6">
-                                <img id="output" class="output_modal" src="{{ asset('storage/' . $marriage->file) }}"
-                                    style="height: 150px" data-toggle="modal" data-target=".img-model">
-                                <div class="modal fade img-model" tabindex="-1" role="dialog"
-                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content p-3">
-                                            <img id="img_model" style="height: 90vh; object-fit: contain;">
+                        </div>
+                        <hr>
+
+                        <h4 class="font-weight-bold mt-3 pb-3">दुलहीको विवरण</h4>
+                        <div class="card p-3">
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label><span class="text-danger">*</span> नाम,थर </label>
+                                    <input type="text" class="form-control myText" name="groom_name"
+                                        value="{{ old('groom_name', $marriage->groom_name) }}" />
+                                    @error('groom_name')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for=""> जन्म मिति</label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" id="nepali-datepicker2" class="form-control"
+                                            name="groom_dob" value="{{ old('groom_dob', $marriage->groom_dob) }}" />
+                                    </div>
+                                    @error('groom_dob')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <x-country-form :label="'जन्म भएको देश'" :name="'groom_birth_country'" :id="'groom_birth_country'"
+                                        :usercountry="$marriage" />
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="">नागरिकता (ना.प्र.नं) </label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control" name="groom_citizenship_number"
+                                            value="{{ old('groom_citizenship_number', $marriage->groom_citizenship_number) }}" />
+                                    </div>
+                                    @error('groom_citizenship_number')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="">नागरिकता जारी मिति </label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" id="nepali-datepicker3" class="form-control"
+                                            name="groom_citizenship_date"
+                                            value="{{ old('groom_citizenship_date', $marriage->groom_citizenship_date) }}" />
+                                    </div>
+                                    @error('groom_citizenship_date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>नागरिकता लिएको जिल्ला </label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control myText"
+                                            name="groom_citizenship_district"
+                                            value="{{ old('groom_citizenship_district', $marriage->groom_citizenship_district) }}" />
+                                    </div>
+                                    @error('groom_citizenship_district')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label><span class="text-danger">*</span> स्थाई ठेगाना </label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control myText" name="groom_temp_address"
+                                            value="{{ old('groom_temp_address', $marriage->groom_temp_address) }}" />
+                                    </div>
+                                    @error('groom_temp_address')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for=""> शिक्षा</label>
+
+                                    <select class="custom-select" name="groom_education">
+                                        <option selected class="m-5" value="">छान्न्नुहोस्। </option>
+                                        <div>
+                                            <option value="निरक्षर"
+                                                {{ $marriage->groom_education == 'निरक्षर' || old('groom_education') == 'निरक्षर' ? 'selected' : '' }}>
+                                                निरक्षर
+                                            </option>
+                                            <option value="साधारण"
+                                                {{ $marriage->groom_education == 'साधारण' || old('groom_education') == 'साधारण' ? 'selected' : '' }}>
+                                                साधारण
+                                            </option>
+                                            <option value="एस.एल.सी."
+                                                {{ $marriage->groom_education == 'एस.एल.सी.' || old('groom_education') == 'एस.एल.सी.' ? 'selected' : '' }}>
+                                                एस.एल.सी.
+                                            </option>
+                                            <option value="रमाणपत्र"
+                                                {{ $marriage->groom_education == 'प्रमाणपत्र' || old('groom_education') == 'प्रमाणपत्र' ? 'selected' : '' }}>
+                                                प्रमाणपत्र</option>
+                                            <option value="स्नातक"
+                                                {{ $marriage->groom_education == 'स्नातक' || old('groom_education') == 'स्नातक' ? 'selected' : '' }}>
+                                                स्नातक
+                                            </option>
+                                            <option value="स्नातकोत्तर"
+                                                {{ $marriage->groom_education == 'स्नातकोत्तर' || old('groom_education') == 'स्नातकोत्तर' ? 'selected' : '' }}>
+                                                स्नातकोत्तर </option>
+                                            <option value="विद्यावारिधि"
+                                                {{ $marriage->groom_education == 'विद्यावारिधि' || old('groom_education') == 'विद्यावारिधि' ? 'selected' : '' }}>
+                                                विद्यावारिधि </option>
+                                        </div>
+                                    </select>
+                                    @error('groom_education')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label> धर्म </label>
+                                    <select class="custom-select" name="groom_religion">
+                                        <option selected class="m-5" value="">छान्न्नुहोस्। </option>
+                                        <div>
+                                            <option value="हिन्दु"
+                                                {{ $marriage->groom_religion == 'हिन्दु' || old('groom_religion') == 'हिन्दु' ? 'selected' : '' }}>
+                                                हिन्दु
+                                            </option>
+                                            <option value="बौद्ध"
+                                                {{ $marriage->groom_religion == 'बौद्ध' || old('groom_religion') == 'बौद्ध' ? 'selected' : '' }}>
+                                                बौद्ध
+                                            </option>
+                                            <option value="क्रिश्चियन"
+                                                {{ $marriage->groom_religion == 'क्रिश्चियन' || old('groom_religion') == 'क्रिश्चियन' ? 'selected' : '' }}>
+                                                क्रिश्चियन </option>
+                                            <option value="मुस्लिम"
+                                                {{ $marriage->groom_religion == 'मुस्लिम' || old('groom_religion') == 'मुस्लिम' ? 'selected' : '' }}>
+                                                मुस्लिम
+                                            </option>
+                                            <option value="अन्य"
+                                                {{ $marriage->groom_religion == 'अन्य' || old('groom_religion') == 'अन्य' ? 'selected' : '' }}>
+                                                अन्य
+                                            </option>
+                                        </div>
+                                    </select>
+                                    @error('groom_religion')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <x-mother-tongue :name="'groom_mother_tongue'" :id="'groom_mother_tongue'" :userdata="$marriage" />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label><span class="text-danger">*</span> बाजेको नाम</label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control myText" name="groom_grandfather_name"
+                                            value="{{ old('groom_grandfather_name', $marriage->groom_grandfather_name) }}" />
+                                    </div>
+                                    @error('groom_grandfather_name')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for=""><span class="text-danger">*</span> बाबुको नाम </label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control myText" name="groom_father_name"
+                                            value="{{ old('groom_father_name', $marriage->groom_father_name) }}" />
+                                    </div>
+                                    @error('groom_father_name')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label><span class="text-danger">*</span> पूर्व वैवाहिक स्थिति </label>
+                                    <select class="custom-select" name="groom_pre_marrige_status">
+
+                                        <div>
+                                            <option value="अविवाहित"
+                                                {{ $marriage->groom_pre_marrige_status == 'अविवाहित' || old('groom_pre_marrige_status') == 'अविवाहित' ? 'selected' : '' }}>
+                                                अविवाहित</option>
+                                            <option value="विवाहित"
+                                                {{ $marriage->groom_pre_marrige_status == 'विवाहित' || old('groom_pre_marrige_status') == 'विवाहित' ? 'selected' : '' }}>
+                                                विवाहित</option>
+                                        </div>
+                                    </select>
+                                    @error('groom_pre_marrige_status')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        {{-- <div class="row"> --}}
+
+                        <div class="card mt-3 p-3">
+                            <div class="row">
+                                <div class="d-flex align-items-center col-12">
+                                    <div class="form-group col-xl-6">
+                                        <label for="">फाइल (max size: 2 MB | jpeg, png, jpg, pdf)</label>
+                                        <div class="input-group mb-2">
+
+                                            <input type="file" name=file class="file-brows" id="fileInput" />
+                                        </div>
+                                        @error('file')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-xl-6">
+                                        <img id="output" class="output_modal"
+                                            src="{{ asset('storage/' . $marriage->file) }}" style="height: 150px"
+                                            data-toggle="modal" data-target=".img-model">
+                                        <div class="modal fade img-model" tabindex="-1" role="dialog"
+                                            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content p-3">
+                                                    <img id="img_model" style="height: 90vh; object-fit: contain;">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group col-xl-12">
+                                    <label for="">कैफियत</label>
+                                    <div class="input-group mb-2">
+                                        <textarea id="summernote" name="description">{{ old('description', $marriage->description) }}</textarea>
+                                    </div>
+                                    @error('description')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="p-3 text-right">
+                                <button class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light"
+                                    type="submit"
+                                    style="background-color:#374f67; color: #fff;">{{ $marriage->id ? 'Update' : 'Save' }}</button>
                             </div>
                         </div>
-                        <div class="form-group col-xl-12">
-                            <label for="">कैफियत</label>
-                            <div class="input-group mb-2">
-                                <textarea id="summernote" name="description">{{ old('description', $marriage->description) }}</textarea>
-                            </div>
-                            @error('description')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="p-3 text-right" style="background-color:#f9fafb">
-                        <button class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light"
-                            type="submit"
-                            style="background-color:#374f67; color: #fff;">{{ $marriage->id ? 'Update' : 'Save' }}</button>
-                    </div>
+                    </form>
 
                 </div>
+                @if ($marriage->id)
+                    <div class="box mt-3 p-5">
+                        <form
+                            action="{{ $marriageWithness->id ? route('marriageWithness.update', $marriageWithness) : route('marriageWithness.store', $marriage) }}"
+                            method="POST">
+                            @if ($marriageWithness->id)
+                                @method('put')
+                            @endif
+                            @csrf
+                            <div class="pb-2 d-flex justify-content-between">
+                                <h3 class="text-center">यसमा लेखेको विवरण साचो हो, झुठा ठहरे कानुन बमोजिम साहुला
+                                    बुझाउला भनि
+                                    सहिछाप गर्ने, सूचकको विवरण </h3>
+                            </div>
+                            <div class="wrapper mt-1">
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label><span class="text-danger ">*</span> साक्षीको नाम </label>
 
-                {{-- </div>
-                        </div> --}}
+                                        <input type="text" name="relative_name" class="form-control myText"
+                                            value="{{ old('relative_name', $marriageWithness->relative_name) }}">
+                                        @error('relative_name')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for=""><span class="text-danger">*</span> साक्षीको
+                                            ठेगाना</label>
+                                        <div class="input-group mb-2">
 
+                                            <input type="text" name="relative_address" class="form-control myText"
+                                                value="{{ old('relative_address', $marriageWithness->relative_address) }}" />
+                                        </div>
+                                        @error('relative_address')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="">दुलाह-दुलही संगको नाता</label>
+                                        <input list="relationships" id="relationship" name="relationship"
+                                            class="form-control myText"
+                                            value="{{ old('relationship', $marriageWithness->relationship) }}">
+                                        <datalist id="relationships">
+                                            <option value="हजुर बुबा">
+                                            <option value="बुवा">
+                                            <option value="आमा">
+                                        </datalist>
+
+
+                                        @error('relationship')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+
+
+
+                                    <div class="form-group col-md-4">
+                                        <label for=""> साक्षी मिति</label>
+                                        <div class="input-group mb-2">
+
+                                            <input type="text" name="date" id="sachi_nepali_datepicker"
+                                                value="{{ old('date', $marriageWithness->date) }}"
+                                                class="form-control" />
+                                        </div>
+                                        @error('date')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+
+                                </div>
+                                <div class="text-right">
+
+                                    <input type="submit" class=" btn btn-dark bg-dark"
+                                        value="{{ $marriageWithness->id ? 'Update' : 'Submit' }}" />
+                                </div>
+
+                        </form>
+                    </div>
+                    <div class="box mt-3 ">
+                        <div class="box__body">
+                            <table class="table table-responsive-sm m-3">
+                                <thead class="thead-light">
+                                    <tr class="text-uppercase">
+                                        <th>#</th>
+                                        <th>नाम,थर</th>
+                                        <th>ठेगाना </th>
+                                        <th>दुलाह / दुलही संगको नाता</th>
+                                        <th>साक्षी मिति</th>
+                                        <th class="text-right">ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($marriageWithnesss as $marriageWithness)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $marriageWithness->relative_name }}</td>
+                                            <td>{{ $marriageWithness->relative_address }}</td>
+                                            <td>{{ $marriageWithness->relationship }}</td>
+                                            <td> {{ $marriageWithness->date }}</td>
+                                            <td class="text-nowrap text-right">
+                                                <a href="{{ route('marriageWithness.edit', [$marriage, $marriageWithness]) }}"
+                                                    class="action-btn text-primary"><i class="fa fa-edit"></i></a>
+                                                <span class="mx-2"></span>
+                                                <form
+                                                    action="{{ route('marriageWithness.delete', $marriageWithness) }}"
+                                                    method="post"
+                                                    onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
+                                                    class="form-inline d-inline">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit" class="action-btn text-danger"><i
+                                                            class="far fa-trash-alt"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="8" class="text-center">No Data Found</td>
+                                        </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                @endif
             </div>
-
         </div>
-    </div>
-    @push('script')
-        <script>
-            document.getElementById('fileInput').addEventListener('change', function(event) {
-                var reader = new FileReader();
-                reader.onload = function() {
-                    var output = document.getElementById('output');
-                    output.src = reader.result;
-                };
-                reader.readAsDataURL(event.target.files[0]);
-            });
+        @push('script')
+            <script>
+                document.getElementById('fileInput').addEventListener('change', function(event) {
+                    var reader = new FileReader();
+                    reader.onload = function() {
+                        var output = document.getElementById('output');
+                        output.src = reader.result;
+                    };
+                    reader.readAsDataURL(event.target.files[0]);
+                });
 
-            $(document).on("click", ".output_modal", function() {
-                var output = document.getElementById('img_model');
-                output.src = this.src;
-            });
-        </script>
-    @endpush
-@endsection
+                $(document).on("click", ".output_modal", function() {
+                    var output = document.getElementById('img_model');
+                    output.src = this.src;
+                });
+            </script>
+        @endpush
+    @endsection

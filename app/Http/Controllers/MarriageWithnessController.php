@@ -49,7 +49,7 @@ class MarriageWithnessController extends Controller
                 'date'=>'nullable',
             ]),
         );
-        return redirect()->route('marriageWithness.create', $marriage)->with('success', 'Withness added successfully');
+        return redirect()->back()->with('success', 'Withness added successfully');
     }
 
     /**

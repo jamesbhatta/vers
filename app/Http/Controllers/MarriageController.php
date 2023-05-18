@@ -6,6 +6,7 @@ use App\Exports\MarriageExport;
 use App\Http\Requests\StoreMarriageRequest;
 use App\Http\Requests\UpdateMarriageRequest;
 use App\Marriage;
+use App\MarriageWithness;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -77,10 +78,15 @@ class MarriageController extends Controller
      * @param  \App\Marriage  $marriage
      * @return \Illuminate\Http\Response
      */
-    public function edit(Marriage $marriage)
+    public function edit(Marriage $marriage, MarriageWithness $marriageWithness = null)
     {
+        if (!$marriageWithness) {
+            $marriageWithness = new MarriageWithness();
+        }
+        $marriageWithnesss = $marriage->marriageWithness()->get();
         $title = 'विवाह दर्ता सूचना फाराम ';
-        return view('marriage-notice.form', compact('marriage', 'title'));
+        
+        return view('marriage-notice.form', compact('marriage', 'title','marriageWithnesss','marriageWithness'));
     }
 
     /**
