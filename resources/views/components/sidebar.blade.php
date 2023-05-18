@@ -49,7 +49,7 @@
         <li class="nav-item bg-transparent">
             <a class="nav-link fontSize" href="{{ route('book.index') }}" onmouseover="this.style.color='black'"
                 onmouseout="this.style.color='white'">
-                <i class="fas fa-city pr-3"></i>किताब
+                <i class="fas fa-book pr-3"></i>किताब
             </a>
         </li>
 
