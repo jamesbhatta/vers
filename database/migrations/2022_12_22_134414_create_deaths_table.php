@@ -18,7 +18,7 @@ class CreateDeathsTable extends Migration
 
             $table->string('administrator');
             $table->string('reg_number');
-            $table->unsignedBigInteger('book_id');
+            $table->unsignedBigInteger('book_id')->nullable();;
             $table->string('ward_num')->nullable();
             $table->string('entry_date');
             $table->string('name');
@@ -54,7 +54,7 @@ class CreateDeathsTable extends Migration
             $table->string('file')->nullable();
             $table->text('description')->nullable();
 
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();;
 
             $table->timestamps();
         });
