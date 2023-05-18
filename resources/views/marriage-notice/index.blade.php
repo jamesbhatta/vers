@@ -12,51 +12,53 @@
                     </div>
                     <div class="d-flex">
                         {{-- Filtered data in PDF/Print --}}
-                        <form action="{{ route('marriage.listprint') }}" method="GET" role="search">
-                            @isset($_GET['darta_number'])
-                                <input type="hidden" name="darta_number"
-                                    value="{{ $_GET['darta_number'] ? $_GET['darta_number'] : '' }}">
-                            @endisset
-
-                            @isset($_GET['marriage_date'])
-                                <input type="hidden" name="marriage_date" value="{{ $_GET['marriage_date'] }}">
-                            @endisset
-
-                            @isset($_GET['bride_name'])
-                                <input type="hidden" name="bride_name" value="{{ $_GET['bride_name'] }}">
-                            @endisset
-
-                            @isset($_GET['groom_name'])
-                                <input type="hidden" name="groom_name" value="{{ $_GET['groom_name'] }}">
-                            @endisset
-
-                            @isset($_GET['user_id'])
-                                <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
-                            @endisset
-
-                            @isset($_GET['bride_father_name'])
-                                <input type="hidden" name="bride_father_name" value="{{ $_GET['bride_father_name'] }}">
-                            @endisset
-
-                            @isset($_GET['groom_father_name'])
-                                <input type="hidden" name="groom_father_name" value="{{ $_GET['groom_father_name'] }}">
-                            @endisset
-                            @isset($_GET['from'])
-                                <input type="hidden" name="from" value="{{ $_GET['from'] }}">
-                            @endisset
-                            @isset($_GET['to'])
-                                <input type="hidden" name="to" value="{{ $_GET['to'] }}">
-                            @endisset
-                            <div class="col-lg-1">
-                                <button
-                                    class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-print"
-                                    type="submit" style="background-color:#17A2B8; color: #fff;"><i
-                                        class="fas fa-print mr-2 mt-1"></i> Print</button>
-                            </div>
-                        </form>
+                        <div class="mx-4">
+                            <form action="{{ route('marriage.listprint') }}" method="GET" target="_blank" role="search">
+                                @isset($_GET['darta_number'])
+                                    <input type="hidden" name="darta_number"
+                                        value="{{ $_GET['darta_number'] ? $_GET['darta_number'] : '' }}">
+                                @endisset
+    
+                                @isset($_GET['marriage_date'])
+                                    <input type="hidden" name="marriage_date" value="{{ $_GET['marriage_date'] }}">
+                                @endisset
+    
+                                @isset($_GET['bride_name'])
+                                    <input type="hidden" name="bride_name" value="{{ $_GET['bride_name'] }}">
+                                @endisset
+    
+                                @isset($_GET['groom_name'])
+                                    <input type="hidden" name="groom_name" value="{{ $_GET['groom_name'] }}">
+                                @endisset
+    
+                                @isset($_GET['user_id'])
+                                    <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
+                                @endisset
+    
+                                @isset($_GET['bride_father_name'])
+                                    <input type="hidden" name="bride_father_name" value="{{ $_GET['bride_father_name'] }}">
+                                @endisset
+    
+                                @isset($_GET['groom_father_name'])
+                                    <input type="hidden" name="groom_father_name" value="{{ $_GET['groom_father_name'] }}">
+                                @endisset
+                                @isset($_GET['from'])
+                                    <input type="hidden" name="from" value="{{ $_GET['from'] }}">
+                                @endisset
+                                @isset($_GET['to'])
+                                    <input type="hidden" name="to" value="{{ $_GET['to'] }}">
+                                @endisset
+                                <div class="col-lg-1">
+                                    <button
+                                        class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-print"
+                                        type="submit" style="background-color:#17A2B8; color: #fff;"><i
+                                            class="fas fa-print mr-2 mt-1"></i> Print</button>
+                                </div>
+                            </form>
+                        </div>
 
                         {{-- Filtered data in excel --}}
-                        <form action="{{ route('marriage.excel') }}" method="GET" role="search">
+                        {{-- <form action="{{ route('marriage.excel') }}" method="GET" role="search">
                             @isset($_GET['darta_number'])
                                 <input type="hidden" name="darta_number"
                                     value="{{ $_GET['darta_number'] ? $_GET['darta_number'] : '' }}">
@@ -97,7 +99,7 @@
                                     type="submit" style="background-color:#17A2B8; color: #fff;"><i
                                         class="fas fa-file-excel mr-2 mt-1"></i> Excel</button>
                             </div>
-                        </form>
+                        </form> --}}
 
                         {{-- Add new Data --}}
                         <a href="{{ route('marriage.create') }}"

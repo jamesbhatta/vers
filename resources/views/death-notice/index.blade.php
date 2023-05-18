@@ -12,56 +12,59 @@
                     </div>
                     <div class="d-flex">
                         {{-- Filtered data in PDF/Print --}}
-                        <form action="{{ route('death.listprint') }}" method="GET" role="search">
-                            @isset($_GET['reg_number'])
-                                <input type="hidden" name="reg_number"
-                                    value="{{ $_GET['reg_number'] ? $_GET['reg_number'] : '' }}">
-                            @endisset
+                        <div class="mx-4">
 
-                            @isset($_GET['name'])
-                                <input type="hidden" name="name" value="{{ $_GET['name'] }}">
-                            @endisset
+                            <form action="{{ route('death.listprint') }}" method="GET" target="_blank" role="search">
+                                @isset($_GET['reg_number'])
+                                    <input type="hidden" name="reg_number"
+                                        value="{{ $_GET['reg_number'] ? $_GET['reg_number'] : '' }}">
+                                @endisset
 
-                            @isset($_GET['dob'])
-                                <input type="hidden" name="dob" value="{{ $_GET['dob'] }}">
-                            @endisset
+                                @isset($_GET['name'])
+                                    <input type="hidden" name="name" value="{{ $_GET['name'] }}">
+                                @endisset
 
-                            @isset($_GET['user_id'])
-                                <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
-                            @endisset
+                                @isset($_GET['dob'])
+                                    <input type="hidden" name="dob" value="{{ $_GET['dob'] }}">
+                                @endisset
 
-                            @isset($_GET['death_date'])
-                                <input type="hidden" name="death_date" value="{{ $_GET['death_date'] }}">
-                            @endisset
+                                @isset($_GET['user_id'])
+                                    <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
+                                @endisset
 
-                            @isset($_GET['father_name'])
-                                <input type="hidden" name="father_name" value="{{ $_GET['father_name'] }}">
-                            @endisset
+                                @isset($_GET['death_date'])
+                                    <input type="hidden" name="death_date" value="{{ $_GET['death_date'] }}">
+                                @endisset
 
-                            @isset($_GET['grandfather_name'])
-                                <input type="hidden" name="grandfather_name" value="{{ $_GET['grandfather_name'] }}">
-                            @endisset
-                            @isset($_GET['book_id'])
-                                <input type="hidden" name="book_id" value="{{ $_GET['book_id'] }}">
-                            @endisset
-                            @isset($_GET['from'])
-                                <input type="hidden" name="from" value="{{ $_GET['from'] }}">
-                            @endisset
-                            @isset($_GET['to'])
-                                <input type="hidden" name="to" value="{{ $_GET['to'] }}">
-                            @endisset
+                                @isset($_GET['father_name'])
+                                    <input type="hidden" name="father_name" value="{{ $_GET['father_name'] }}">
+                                @endisset
 
-                            <div class="col-lg-1">
-                                <button
-                                    class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-print"
-                                    type="submit" style="background-color:#17A2B8; color: #fff;"><i
-                                        class="fas fa-print mr-2 mt-1"></i> Print</button>
-                            </div>
-                        </form>
+                                @isset($_GET['grandfather_name'])
+                                    <input type="hidden" name="grandfather_name" value="{{ $_GET['grandfather_name'] }}">
+                                @endisset
+                                @isset($_GET['book_id'])
+                                    <input type="hidden" name="book_id" value="{{ $_GET['book_id'] }}">
+                                @endisset
+                                @isset($_GET['from'])
+                                    <input type="hidden" name="from" value="{{ $_GET['from'] }}">
+                                @endisset
+                                @isset($_GET['to'])
+                                    <input type="hidden" name="to" value="{{ $_GET['to'] }}">
+                                @endisset
+
+                                <div class="col-lg-1">
+                                    <button
+                                        class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-print"
+                                        type="submit" style="background-color:#17A2B8; color: #fff;"><i
+                                            class="fas fa-print mr-2 mt-1"></i> Print</button>
+                                </div>
+                            </form>
+                        </div>
 
 
                         {{-- Filtered data in Excel --}}
-                        <form action="{{ route('death.excel') }}" method="GET" role="search">
+                        {{-- <form action="{{ route('death.excel') }}" method="GET" role="search">
                             @isset($_GET['reg_number'])
                                 <input type="hidden" name="reg_number"
                                     value="{{ $_GET['reg_number'] ? $_GET['reg_number'] : '' }}">
@@ -94,7 +97,6 @@
                             @isset($_GET['grandfather_name'])
                                 <input type="hidden" name="grandfather_name" value="{{ $_GET['grandfather_name'] }}">
                             @endisset
-                            {{-- ==== --}}
                             @isset($_GET['from'])
                                 <input type="hidden" name="from" value="{{ $_GET['from'] }}">
                             @endisset
@@ -108,11 +110,14 @@
                                     type="submit" style="background-color:#17A2B8; color: #fff;"><i
                                         class="fas fa-file-excel mr-2 mt-1"></i> Excel</button>
                             </div>
-                        </form>
-                        <a href="{{ route('death.create') }}"
-                            class="btn bg-success text-white my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex"
-                            style="height:42px"><i class="fas fa-plus-circle mr-2 mt-1"></i>@lang('navigation.add_new')</a>
+                        </form> --}}
+                        <div>
 
+                            <a href="{{ route('death.create') }}"
+                                class="btn bg-success text-white my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex"
+                                style="height:42px"><i class="fas fa-plus-circle mr-2 mt-1"></i>@lang('navigation.add_new')</a>
+
+                        </div>
 
                     </div>
                 </nav>

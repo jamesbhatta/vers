@@ -13,10 +13,8 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\MarriageWithnessController;
 
 Auth::routes(['register' => false]);
-// Route::redirect('/', '');
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-Route::get('language/{locale}', 'LanguageController@setLocale')->name('locale');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resources([
@@ -128,11 +126,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('book', [BookController::class, 'index'])->name('book.index');
 
-    // Route::get('book/create',[BookController::class,'create'])->name('book.create');
-    // Route::post('book/store',[BookController::class,'store'])->name('book.store');
-    // Route::get('book/{book}/edit',[BookController::class,'edit'])->name('book.edit');
-    // Route::get('book/{book}/delete',[BookController::class,'destroy'])->name('book.delete');
-
     Route::post('book', [BookController::class, 'store'])->name('book.store');
     Route::get('book/create', [BookController::class, 'create'])->name('book.create');
     Route::get('book/edit/{book}', [BookController::class, 'edit'])->name('book.edit');
@@ -140,9 +133,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('book/update/{book}', [BookController::class, 'update'])->name('book.update');
 });
 
-Route::any('/{all}', function () {
-    return view('app');
-})->where(['all' => '.*']);
 
 Route::group(['middleware' => ['auth', 'role:super-admin']], function () {
     Route::get('admin/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('admin.logs');
