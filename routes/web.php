@@ -34,9 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('user/{user}/profile', [UserController::class, 'profile'])->name('user.profile');
     Route::put('user/{user}/profile/update', [UserController::class, 'profileUpdate'])->name('user.profile.update');
     Route::get('user/{user}/pasword', [UserController::class, 'password'])->name('user.password');
-    Route::get('data/{slug}/create', 'ResourceTemplateController@create');
-    Route::post('data/{slug}', 'ResourceTemplateController@store');
-
+   
     Route::get('change-password/{user}', 'UserPasswordController@form')->name('password.change.form');
     Route::put('change-password/{user}', 'UserController@change')->name('password.change');
 
@@ -52,7 +50,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('settings/{registaar}/registaar', 'SettingsController@registaarEdit')->name('settings.registaar.edit');
     Route::put('settings/{registaar}/registaar', 'SettingsController@registaarUpdate')->name('settings.registaar.update');
 
-    Route::get('configuration-checklist', 'ConfigurationChecklistController@index')->name('configuration-checklist.index');
 
     //For migration-notice
     Route::get('/migration-notice', [MigrationController::class, 'index'])->name('migration.index');
