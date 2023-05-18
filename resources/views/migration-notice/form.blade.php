@@ -65,10 +65,12 @@
                                         <option selected disabled class="m-5" value="">छान्न्नुहोस्।
                                         </option>
                                         <option class="m-5" value="बसाई सरी आएको"
-                                            {{ $migrationCertificate->type == 'बसाई सरी आएको' ? 'selected' : '' }}>बसाई सरी आएको
+                                            {{ $migrationCertificate->type == 'बसाई सरी आएको' ? 'selected' : '' }}>बसाई सरी
+                                            आएको
                                         </option>
                                         <option class="m-5" value="बसाई सरी जाने"
-                                            {{ $migrationCertificate->type == 'बसाई सरी जाने' ? 'selected' : '' }}>बसाई सरी जाने
+                                            {{ $migrationCertificate->type == 'बसाई सरी जाने' ? 'selected' : '' }}>बसाई सरी
+                                            जाने
                                         </option>
                                     </select>
                                     @error('entry_date')
@@ -142,83 +144,261 @@
                             </div>
 
                         </div>
-                        {{-- <div class="card p-3">
 
-                            <livewire:migration-from-address :migrationFromAddress="$migrationCertificate" />
-                            <div class="row">
-                                <div class="form-group col-lg-4">
-                                    <label for=""><span class="text-danger">*</span>&nbsp;गाउँ/टोलको नाम</label>
-                                    <div class="input-group">
-                                        <input type="text" name="before_village" placeholder="@lang('navigation.village-toll-name')"
-                                            class="form-control myText"
-                                            value="{{ old('before_village', $migrationCertificate->before_village) }}" />
-                                    </div>
-                                    @error('before_village')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
-                                <div class="form-group col-lg-4">
-                                    <label><span class="text-danger">*</span>&nbsp;वडा नं.</label>
-                                    <div class="input-group">
-                                        <input type="number" name="before_ward" class="form-control" placeholder="वडा नं."
-                                            value="{{ old('before_ward', $migrationCertificate->before_ward) }}" />
-                                    </div>
-                                    @error('before_ward')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
-                                <div class="form-group col-lg-4">
-                                    <label for="">घर नं.</label>
-                                    <div class="input-group">
-                                        <input type="number" name="before_houseno" class="form-control"
-                                            placeholder="@lang('navigation.houseno')"
-                                            value="{{ old('before_houseno', $migrationCertificate->before_houseno) }}" />
-                                    </div>
-                                    @error('before_houseno')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
-                                <div class="form-group col-lg-4">
-                                    <label><span class="text-danger">*</span>&nbsp;बसाई सराईको कारण</label>
-                                    <div class="input-group">
-                                        <input type="text" name="migration_reason" class="form-control myText"
-                                            placeholder="@lang('navigation.reason')"
-                                            value="{{ old('migration_reason', $migrationCertificate->migration_reason) }}" />
-                                    </div>
-                                    @error('migration_reason')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
-                                <div class="form-group col-lg-4">
-                                    <label><span class="text-danger">*</span>&nbsp;बसाई सराईको मिति </label>
-                                    <div class="input-group">
-                                        <input type="text" id="nepali-datepicker5" name="migration_date"
-                                            value="{{ old('migration_date', $migrationCertificate->migration_date) }}"
-                                            class="form-control" placeholder="मिति चयन गर्नुहोस्" />
-                                    </div>
-                                    @error('migration_date')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
-                            </div>
-                        </div> --}}
-                        {{-- <h4 class="font-weight-bold py-3">ख. कहाँ सरी जाने</h4>
-
-                         --}}
                         <h4 class="font-weight-bold mt-3">साक्षी विवरण</h4>
-
-                        {{-- <div class="row p-3"> --}}
-                        <x-sachi-form :death="$migrationCertificate" :relation="'बसाई सराई गर्ने '"/>
-                        <div class="p-3 text-right mt-2" style="background-color:#f9fafb">
+                        <x-sachi-form :death="$migrationCertificate" :relation="'बसाई सराई गर्ने '" />
+                        <div class="p-3 text-right mt-2">
                             <button class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light"
                                 type="submit"
                                 style="background-color:#374f67; color: #fff;">{{ $migrationCertificate->id ? 'Update' : 'Save' }}</button>
                         </div>
-                        {{-- </div> --}}
-                        {{-- <button type="submit"
-                            class="btn btn-primary ml-3 mb-2">{{ $migrationCertificate->id ? 'Update' : 'Submit' }}</button> --}}
                     </div>
                 </form>
+                @if ($migrationCertificate->id)
+                    <div class="box mt-2 p-5">
+                        <form
+                            action="{{ $family->id ? route('family.update', $family) : route('family.store', $migrationCertificate) }}"
+                            method="POST">
+                            @if ($family->id)
+                                @method('put')
+                            @endif
+                            @csrf
+                            <div class="pb-2 d-flex justify-content-between">
+                                <h3 class="text-center">बसाई सर्ने परिवारका सदस्यहरुको नाम/बसाई सराई व्यक्तिको </h3>
+                            </div>
+                            <div class="wrapper mt-1">
+                                <div class="row" id="survey_options">
+                                    <div class="form-group col-md-4">
+                                        <label><span class="text-danger">*</span>&nbsp;नाम,थर </label>
+                                        <input type="text" class="form-control myText" name="name"
+                                            value="{{ old('name', $family->name) }}" />
+                                        @error('name')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for=""><span class="text-danger">*</span>&nbsp;जन्मस्थान</label>
+                                        <div class="input-group mb-2">
+                                            <input type="text" class="form-control myText" name="birthplace"
+                                                value="{{ old('birthplace', $family->birthplace) }}" />
+                                        </div>
+                                        @error('birthplace')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for=""><span class="text-danger">*</span>&nbsp;लिङ्ग </label>
+                                        <select class="custom-select" name="gender">
+                                            <option selected disabled class="m-5">छान्न्नुहोस्। </option>
+                                            <div>
+                                                <option value="महिला"
+                                                    {{ $family->gender == 'महिला' || old('gender') == 'महिला' ? 'selected' : '' }}>
+                                                    महिला</option>
+                                                <option value="पुरुष"
+                                                    {{ $family->gender == 'पुरुष' || old('gender') == 'पुरुष' ? 'selected' : '' }}>
+                                                    पुरुष</option>
+                                                <option value="अन्य"
+                                                    {{ $family->gender == 'अन्य' || old('gender') == 'अन्य' ? 'selected' : '' }}>
+                                                    अन्य </option>
+                                            </div>
+                                        </select>
+                                        @error('gender')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="">नागरिकता न.</label>
+                                        <div class="input-group mb-2">
+                                            <input type="text" name="citizenship"
+                                                value="{{ old('citizenship', $family->citizenship) }}"
+                                                class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="">स्थायी ठेगाना</label>
+                                        <input class="form-control myText" name="permanent_address"
+                                            placeholder="स्थायी ठेगाना"
+                                            value="{{ old('permanent_address', $family->permanent_address) }}" />
+                                        @error('permanent_address')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="">अस्थायी ठेगाना</label>
+                                        <input class="form-control myText" name="temporary_address"
+                                            placeholder="अस्थायी ठेगाना"
+                                            value="{{ old('temporary_address', $family->temporary_address) }}" />
+                                        @error('temporary_address')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="">&nbsp;शैक्षिक योग्यता</label>
+                                        <div class="input-group mb-2">
+                                            <select class="custom-select" name="education">
+                                                <option selected class="m-5" value="">छान्न्नुहोस्।
+                                                </option>
+                                                <div>
+                                                    <option value="निरक्षर"
+                                                        {{ $family->education == 'निरक्षर' || old('education') == 'निरक्षर' ? 'selected' : '' }}>
+                                                        निरक्षर
+                                                    </option>
+                                                    <option value="साधरण"
+                                                        {{ $family->education == 'साधरण' || old('education') == 'साधरण' ? 'selected' : '' }}>
+                                                        साधरण
+                                                    </option>
+                                                    <option value="एस.एल.सी"
+                                                        {{ $family->education == 'एस.एल.सी' || old('education') == 'एस.एल.सी' ? 'selected' : '' }}>
+                                                        एस.एल.सी
+                                                    </option>
+                                                    <option value="प्रमाणपत्र"
+                                                        {{ $family->education == 'प्रमाणपत्र' || old('education') == 'प्रमाणपत्र' ? 'selected' : '' }}>
+                                                        प्रमाणपत्र
+                                                    </option>
+                                                    <option value="स्नातक"
+                                                        {{ $family->education == 'स्नातक' || old('education') == 'स्नातक' ? 'selected' : '' }}>
+                                                        स्नातक
+                                                    </option>
+                                                    <option value="स्नातकोत्तर"
+                                                        {{ $family->education == 'स्नातकोत्तर' || old('education') == 'स्नातकोत्तर' ? 'selected' : '' }}>
+                                                        स्नातकोत्तर</option>
+                                                    <option value="विद्या वारिधि"
+                                                        {{ $family->education == 'विद्या वारिधि' || old('education') == 'विद्या वारिधि' ? 'selected' : '' }}>
+                                                        विद्या वारिधि
+                                                    </option>
+                                                </div>
+                                            </select>
+                                        </div>
+                                        @error('education')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>&nbsp;धर्म</label>
+                                        <select class="custom-select" name="religion">
+                                            <option selected disabled class="m-5" value="">छान्न्नुहोस्।
+                                            </option>
+                                            <div>
+                                                <option
+                                                    {{ $family->religion == 'हिन्दु' || old('religion') == 'हिन्दु' ? 'selected' : '' }}
+                                                    value="हिन्दु">हिन्दु</option>
+                                                <option
+                                                    {{ $family->religion == 'बौद्ध' || old('religion') == 'बौद्ध' ? 'selected' : '' }}
+                                                    value="बौद्ध">बौद्ध </option>
+                                                <option
+                                                    {{ $family->religion == 'क्रिश्चियन' || old('religion') == 'क्रिश्चियन' ? 'selected' : '' }}
+                                                    value="मुस्लिम">क्रिश्चियन </option>
+                                                <option
+                                                    {{ $family->religion == 'मुस्लिम' || old('religion') == 'मुस्लिम' ? 'selected' : '' }}
+                                                    value="मुस्लिम">मुस्लिम </option>
+                                                <option
+                                                    {{ $family->religion == 'अन्य' || old('religion') == 'अन्य' ? 'selected' : '' }}
+                                                    value="अन्य">अन्य</option>
+                                            </div>
+                                        </select>
+                                        @error('religion')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group col-lg-4">
+                                        <label>&nbsp;उमेर </label>
+                                        <div class="input-group mb-2">
+                                            <input type="number" name="age" class="form-control myText"
+                                                value="{{ old('age', $family->age) }}" />
+                                        </div>
+                                        @error('age')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group col-lg-4">
+                                        <label for="">&nbsp;मातृभाषा </label>
+                                        <select class="custom-select" name="mothertongue">
+                                            <option selected disabled class="m-5">छान्न्नुहोस्। </option>
+                                            <div>
+                                                <option value="थारु"
+                                                    {{ $family->mothertongue == 'थारु' || old('mothertongue') == 'थारु' ? 'selected' : '' }}>
+                                                    थारु </option>
+                                                <option value="नेपाली"
+                                                    {{ $family->mothertongue == 'नेपाली' || old('mothertongue') == 'नेपाली' ? 'selected' : '' }}>
+                                                    नेपाली </option>
+                                                <option value="अन्य"
+                                                    {{ $family->mothertongue == 'अन्य' || old('mothertongue') == 'अन्य' ? 'selected' : '' }}>
+                                                    अन्य </option>
+                                            </div>
+                                        </select>
+                                        @error('mothertongue')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    {{-- <div class="form-group col-lg-4">
+                                    <label>कैफियत </label>
+                                    <div class="input-group mb-2">
+                                        <input type="text" name="description" class="form-control myText" />
+                                    </div>
+                                    @error('description')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                    </div> --}}
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <input type="submit" class=" btn btn-dark bg-dark text-right"
+                                        value="{{ $family->id ? 'Update' : 'Submit' }}" />
+                                </div>
+
+                        </form>
+                    </div>
+
+                    <div class="box mt-3 ">
+                        <div class="box__body">
+                            <table class="table table-responsive-sm m-3" id="myTable">
+                                <thead class="thead-light">
+                                    <tr class="text-uppercase">
+                                        <th>#</th>
+                                        <th>नाम,थर</th>
+                                        <th> जन्मस्थान </th>
+                                        <th>नागरिकता न.</th>
+                                        <th> ठेगाना </th>
+                                        <th>उमेर</th>
+                                        <th>शैक्षिक योग्यता</th>
+                                        <th class="text-right">ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($families as $family)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $family->name }}</td>
+                                            <td>{{ $family->birthplace }}</td>
+                                            <td>{{ $family->citizenship }}</td>
+                                            <td> {{ $family->address }}</td>
+                                            <td>{{ $family->age }}</td>
+                                            <td>{{ $family->education }}</td>
+                                            <td class="text-nowrap text-right">
+                                                <a href="{{ route('family.edit', [$family, $family->migration_certificate_id]) }}"
+                                                    class="action-btn text-primary"><i class="fa fa-edit"></i></a>
+                                                <span class="mx-2"></span>
+                                                <form action="{{ route('family.delete', $family) }}" method="post"
+                                                    onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
+                                                    class="form-inline d-inline">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit" class="action-btn text-danger"><i
+                                                            class="far fa-trash-alt"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="8" class="text-center">No Data Found</td>
+                                        </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

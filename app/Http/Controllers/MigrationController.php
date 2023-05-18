@@ -204,9 +204,13 @@ class MigrationController extends Controller
      * @param  \App\Migration  $migration
      * @return \Illuminate\Http\Response
      */
-    public function edit(MigrationCertificate $migrationCertificate)
+    public function edit(MigrationCertificate $migrationCertificate, Family $family)
     {
-        return view('migration-notice.form', compact('migrationCertificate'));
+        $families = $migrationCertificate->families()->get();
+        if (!$family) {
+            $family = new Family();
+        }
+        return view('migration-notice.form', compact('migrationCertificate', 'families', 'family'));
     }
 
     public function store(MigrationCertificate $migrationCertificate, MigrationCertificateRequest $request)

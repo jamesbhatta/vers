@@ -40,7 +40,7 @@ class FamilyController extends Controller
         $migrationCertificate->families()->create(
             $request->validate([
                 'name' => ['required'],
-                'birthplace' => ['nullable'],
+                'birthplace' => ['required'],
                 'citizenship' => ['nullable'],
                 'age' => ['nullable'],
                 'permanent_address' => ['nullable'],
@@ -53,7 +53,7 @@ class FamilyController extends Controller
             ]),
         );
         return redirect()
-            ->route('migration.add-family', $migrationCertificate)
+            ->back()
             ->with('success', 'Family Member added successfully');
     }
 
@@ -92,7 +92,7 @@ class FamilyController extends Controller
         $family->update(
             $request->validate([
                 'name' => ['required'],
-                'birthplace' => ['nullable'],
+                'birthplace' => ['required'],
                 'citizenship' => ['nullable'],
                 'age' => ['nullable'],
                 'permanent_address' => ['nullable'],
@@ -105,7 +105,8 @@ class FamilyController extends Controller
             ]),
         );
         $migrationCertificate = MigrationCertificate::findOrFail($family->migration_certificate_id);
-        return redirect()->route('migration.add-family', $migrationCertificate);
+        
+        return redirect()->route('migration.edit', $migrationCertificate);
     }
 
     /**
