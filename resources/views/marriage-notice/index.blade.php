@@ -257,10 +257,7 @@
                                                 title="Add withness"
                                                 href="{{ route('marriageWithness.create', $marriage) }}"><i
                                                     class="fas fa-plus-circle"></i></a>
-                                            <a class="action-btn text-primary show" id="{{ $marriage->id }}"
-                                                data-toggle="modal" data-target=".bd-example-modal-lg"
-                                                data-toggle="modal" data-target=".bd-example-modal-lg"
-                                                style="cursor: pointer"><i class="far fa-eye"></i></a>
+                                            <a href="{{route('marriage.show', $marriage)}}" class="action-btn text-primary show" target="_blank"><i class="far fa-eye"></i></a>
                                             <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top"
                                                 title="Edit marriage notice"
                                                 href="{{ route('marriage.edit', $marriage->id) }}"><i
