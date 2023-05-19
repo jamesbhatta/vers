@@ -11,38 +11,38 @@
                     </div>
                     <div class="d-flex">
                         {{-- Filtered data in PDF/Print --}}
-                       <div class="mx-4">
-                           <form action="{{ route('migration.listprint') }}" method="GET" target="_blank" role="search">
-                               @isset($_GET['reg_number'])
-                                   <input type="hidden" name="reg_number"
-                                       value="{{ $_GET['reg_number'] ? $_GET['reg_number'] : '' }}">
-                               @endisset
-                               @isset($_GET['user_id'])
-                                   <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
-                               @endisset
-   
-                               @isset($_GET['book_id'])
-                                   <input type="hidden" name="book_id" value="{{ $_GET['book_id'] }}">
-                               @endisset
-   
-                               @isset($_GET['migration_date'])
-                                   <input type="hidden" name="migration_date" value="{{ $_GET['migration_date'] }}">
-                               @endisset
-                               @isset($_GET['from'])
-                                   <input type="hidden" name="from" value="{{ $_GET['from'] }}">
-                               @endisset
-                               @isset($_GET['to'])
-                                   <input type="hidden" name="to" value="{{ $_GET['to'] }}">
-                               @endisset
-   
-                               <div class="col-lg-1">
-                                   <button
-                                       class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-print"
-                                       type="submit" style="background-color:#17A2B8; color: #fff;"><i
-                                           class="fas fa-print mr-2 mt-1"></i> Print</button>
-                               </div>
-                           </form>
-                       </div>
+                        <div class="mx-4">
+                            <form action="{{ route('migration.listprint') }}" method="GET" target="_blank" role="search">
+                                @isset($_GET['reg_number'])
+                                    <input type="hidden" name="reg_number"
+                                        value="{{ $_GET['reg_number'] ? $_GET['reg_number'] : '' }}">
+                                @endisset
+                                @isset($_GET['user_id'])
+                                    <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
+                                @endisset
+
+                                @isset($_GET['book_id'])
+                                    <input type="hidden" name="book_id" value="{{ $_GET['book_id'] }}">
+                                @endisset
+
+                                @isset($_GET['migration_date'])
+                                    <input type="hidden" name="migration_date" value="{{ $_GET['migration_date'] }}">
+                                @endisset
+                                @isset($_GET['from'])
+                                    <input type="hidden" name="from" value="{{ $_GET['from'] }}">
+                                @endisset
+                                @isset($_GET['to'])
+                                    <input type="hidden" name="to" value="{{ $_GET['to'] }}">
+                                @endisset
+
+                                <div class="col-lg-1">
+                                    <button
+                                        class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-print"
+                                        type="submit" style="background-color:#17A2B8; color: #fff;"><i
+                                            class="fas fa-print mr-2 mt-1"></i> Print</button>
+                                </div>
+                            </form>
+                        </div>
 
 
                         {{-- Filtered data in Excel --}}
@@ -182,7 +182,9 @@
                                     @foreach ($migrationCertificates as $migrationCertificate)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $migrationCertificate->book->code }}</td>
+                                            
+                                                <td>{{ $migrationCertificate->book->code ?? "" }}</td>
+                                           
                                             <td>{{ $migrationCertificate->reg_number }}</td>
 
                                             <td>{{ $migrationCertificate->entry_date }}</td>

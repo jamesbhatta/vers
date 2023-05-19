@@ -1,6 +1,21 @@
 <div class="card mt-3 p-3 pb-2">
     <div class="row">
         <div class="form-group col-md-4">
+            <label for="">{{ $relation }} संगको नाता</label>
+            <input list="relationships" id="relationship" name="relationship" class="form-control myText"
+                value="{{ old('relationship', $death->relationship) }}" oninput="relationship()">
+            <datalist id="relationships">
+                <option value="हजुर बुबा">
+                <option value="बुवा">
+                <option value="आमा">
+            </datalist>
+
+
+            @error('relationship')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
+        </div>
+        <div class="form-group col-md-4">
             <label><span class="text-danger ">*</span> साक्षीको नाम </label>
 
             <input type="text" name="relative_name" class="form-control myText"
@@ -20,23 +35,9 @@
                 <small class="text-danger">{{ $message }}</small>
             @enderror
         </div>
-        <div class="form-group col-md-4">
-            <label for="">{{$relation}} संगको नाता</label>
-            <input list="relationships" id="relationship" name="relationship" class="form-control myText"
-                value="{{ old('relationship', $death->relationship) }}">
-            <datalist id="relationships">
-                <option value="हजुर बुबा">
-                <option value="बुवा">
-                <option value="आमा">
-            </datalist>
 
 
-            @error('relationship')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
 
-      
 
         <div class="form-group col-md-4">
             <label for=""> साक्षी मिति</label>
@@ -73,7 +74,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 @push('script')

@@ -419,6 +419,11 @@
 
     @push('scripts')
         <script>
+            var selectElement = document.getElementById("mySelect");
+            var selectedOption = selectElement.options[selectElement.selectedIndex].text;
+            document.getElementById("selectedValue").textContent = selectedOption;
+ 
+
             function showSelectedValue() {
                 var selectElement = document.getElementById("mySelect");
                 var selectedOption = selectElement.options[selectElement.selectedIndex].text;

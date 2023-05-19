@@ -144,15 +144,7 @@
                                         <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number">
                                     @endisset
                                 </div>
-                                {{-- ===== --}}
-                                {{-- <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" placeholder="Book Code" name="from"
-                                            value="{{ $old->from }}">
-                                    @else
-                                        <input type="text" class="form-control myText" placeholder="Book Code" name="from">
-                                    @endisset
-                                </div> --}}
+
 
                                 <div class="mb-2 col-md-3">
                                     @isset($old)
@@ -257,7 +249,9 @@
                                     @foreach ($births as $birth)
                                         <tr style="white-space: nowrap;">
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $birth->book->code }}</td>
+
+                                            <td>{{ $birth->book->code ?? "" }}</td>
+
                                             <td>{{ $birth->reg_number }}</td>
                                             <td>{{ $birth->name }}</td>
                                             <td>{{ $birth->gender }}</td>

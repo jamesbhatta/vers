@@ -14,4524 +14,4523 @@ class MunicipalitySeeder extends Seeder
     {
         $muncipalities = [
             [
-                "province" => "Province No. 1",
-                "district" => "TAPLEJUNG",
-                "municipality" => "Sidingba Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ताप्लेजुङ',
+                'municipality' => 'सिडिङबा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TAPLEJUNG",
-                "municipality" => "Meringden Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ताप्लेजुङ',
+                'municipality' => 'मेरिङडेन गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TAPLEJUNG",
-                "municipality" => "Maiwakhola Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ताप्लेजुङ',
+                'municipality' => 'माइवाखोला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TAPLEJUNG",
-                "municipality" => "Phaktanglung Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ताप्लेजुङ',
+                'municipality' => 'फाक्ताङलुङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TAPLEJUNG",
-                "municipality" => "Sirijangha Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ताप्लेजुङ',
+                'municipality' => 'सिरिजाङ्घा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TAPLEJUNG",
-                "municipality" => "Mikwakhola Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ताप्लेजुङ',
+                'municipality' => 'मिक्वाखोला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TAPLEJUNG",
-                "municipality" => "Aathrai Tribeni Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ताप्लेजुङ',
+                'municipality' => 'आठराई त्रिवेणी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TAPLEJUNG",
-                "municipality" => "Pathivara Yangwarak Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ताप्लेजुङ',
+                'municipality' => 'पाथिवरा यांगवारक गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TAPLEJUNG",
-                "municipality" => "Phungling Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ताप्लेजुङ',
+                'municipality' => 'फुङलिङ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SANKHUWASABHA",
-                "municipality" => "Makalu Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'संखुवासभा',
+                'municipality' => 'मकालु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SANKHUWASABHA",
-                "municipality" => "Chichila Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'संखुवासभा',
+                'municipality' => 'चिचिला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SANKHUWASABHA",
-                "municipality" => "Silichong Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'संखुवासभा',
+                'municipality' => 'सिलिचङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SANKHUWASABHA",
-                "municipality" => "Bhotkhola Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'संखुवासभा',
+                'municipality' => 'भोटखोला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SANKHUWASABHA",
-                "municipality" => "Sabhapokhari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'संखुवासभा',
+                'municipality' => 'सभापोखरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SANKHUWASABHA",
-                "municipality" => "Dharmadevi Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'संखुवासभा',
+                'municipality' => 'धर्मदेवी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SANKHUWASABHA",
-                "municipality" => "Madi Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'संखुवासभा',
+                'municipality' => 'माडी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SANKHUWASABHA",
-                "municipality" => "Panchakhapan Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'संखुवासभा',
+                'municipality' => 'पञ्चखापन नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SANKHUWASABHA",
-                "municipality" => "Chainpur Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'संखुवासभा',
+                'municipality' => 'चैनपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SANKHUWASABHA",
-                "municipality" => "Khandbari Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'संखुवासभा',
+                'municipality' => 'खाँदबारी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SOLUKHUMBU",
-                "municipality" => "Sotang Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सोलुखुम्बु',
+                'municipality' => 'सोटाङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SOLUKHUMBU",
-                "municipality" => "Mahakulung Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सोलुखुम्बु',
+                'municipality' => 'महाकुलुङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SOLUKHUMBU",
-                "municipality" => "Likhupike Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सोलुखुम्बु',
+                'municipality' => 'लिखुपिके गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SOLUKHUMBU",
-                "municipality" => "Nechasalyan Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सोलुखुम्बु',
+                'municipality' => 'नेचासल्यान गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SOLUKHUMBU",
-                "municipality" => "Thulung Dudhkoshi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सोलुखुम्बु',
+                'municipality' => 'थुलुङ दुधकोशी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SOLUKHUMBU",
-                "municipality" => "Maapya Dudhkoshi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सोलुखुम्बु',
+                'municipality' => 'माप्या दुधकोशी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SOLUKHUMBU",
-                "municipality" => "Khumbupasanglahmu Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सोलुखुम्बु',
+                'municipality' => 'खुम्बुपसङ्लाहमु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SOLUKHUMBU",
-                "municipality" => "Solududhakunda Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सोलुखुम्बु',
+                'municipality' => 'सोलुदुधाकुण्ड नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "OKHALDHUNGA",
-                "municipality" => "Likhu Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ओखलढुङ्गा',
+                'municipality' => 'लिखु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "OKHALDHUNGA",
-                "municipality" => "Molung Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ओखलढुङ्गा',
+                'municipality' => 'मोलुङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "OKHALDHUNGA",
-                "municipality" => "Sunkoshi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ओखलढुङ्गा',
+                'municipality' => 'सुनकोशी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "OKHALDHUNGA",
-                "municipality" => "Champadevi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ओखलढुङ्गा',
+                'municipality' => 'चम्पादेवी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "OKHALDHUNGA",
-                "municipality" => "Chisankhugadhi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ओखलढुङ्गा',
+                'municipality' => 'चिसंखुगढी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "OKHALDHUNGA",
-                "municipality" => "Khijidemba Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ओखलढुङ्गा',
+                'municipality' => 'खिजिदेम्बा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "OKHALDHUNGA",
-                "municipality" => "Manebhanjyang Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ओखलढुङ्गा',
+                'municipality' => 'मानेभञ्ज्याङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "OKHALDHUNGA",
-                "municipality" => "Siddhicharan Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'ओखलढुङ्गा',
+                'municipality' => 'सिद्धिचरण नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "KHOTANG",
-                "municipality" => "Sakela Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'खोटाङ',
+                'municipality' => 'साकेला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "KHOTANG",
-                "municipality" => "Khotehang Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'खोटाङ',
+                'municipality' => 'खोटेहाङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "KHOTANG",
-                "municipality" => "Barahapokhari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'खोटाङ',
+                'municipality' => 'बराहापोखरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "KHOTANG",
-                "municipality" => "Ainselukhark Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'खोटाङ',
+                'municipality' => 'ऐन्सेलुखर्क गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "KHOTANG",
-                "municipality" => "Rawa Besi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'खोटाङ',
+                'municipality' => 'रवा बेसी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "KHOTANG",
-                "municipality" => "Kepilasagadhi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'खोटाङ',
+                'municipality' => 'केपिलासगढी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "KHOTANG",
-                "municipality" => "Jantedhunga Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'खोटाङ',
+                'municipality' => 'जानतेढुङ्गा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "KHOTANG",
-                "municipality" => "Diprung Chuichumma Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'खोटाङ',
+                'municipality' => 'दिप्रुङ चुचुम्मा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "KHOTANG",
-                "municipality" => "Halesi Tuwachung Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'खोटाङ',
+                'municipality' => 'हलेसी तुवाचुङ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "KHOTANG",
-                "municipality" => "Diktel Rupakot Majhuwagadhi Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'खोटाङ',
+                'municipality' => 'दिक्तेल रुपाकोट मझुवागढी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "BHOJPUR",
-                "municipality" => "Arun Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'भोजपुर',
+                'municipality' => 'अरुण गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "BHOJPUR",
-                "municipality" => "Aamchowk Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'भोजपुर',
+                'municipality' => 'आमचोक गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "BHOJPUR",
-                "municipality" => "Hatuwagadhi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'भोजपुर',
+                'municipality' => 'हतुवागढी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "BHOJPUR",
-                "municipality" => "Pauwadungma Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'भोजपुर',
+                'municipality' => 'पौवाडुङ्मा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "BHOJPUR",
-                "municipality" => "Temkemaiyung Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'भोजपुर',
+                'municipality' => 'टेम्केमाइयुङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "BHOJPUR",
-                "municipality" => "Salpasilichho Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'भोजपुर',
+                'municipality' => 'साल्पसिलिछो गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "BHOJPUR",
-                "municipality" => "Ramprasad Rai Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'भोजपुर',
+                'municipality' => 'रामप्रसाद राई गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "BHOJPUR",
-                "municipality" => "Shadananda Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'भोजपुर',
+                'municipality' => 'षडानन्द नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "BHOJPUR",
-                "municipality" => "Bhojpur Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'भोजपुर',
+                'municipality' => 'भोजपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "DHANKUTA",
-                "municipality" => "Chaubise Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'धनकुटा',
+                'municipality' => 'चौबिसे गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "DHANKUTA",
-                "municipality" => "Shahidbhumi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'धनकुटा',
+                'municipality' => 'शहिदभूमि गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "DHANKUTA",
-                "municipality" => "Sangurigadhi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'धनकुटा',
+                'municipality' => 'साँगुरीगढी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "DHANKUTA",
-                "municipality" => "Chhathar Jorpati Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'धनकुटा',
+                'municipality' => 'छथर जोरपाटी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "DHANKUTA",
-                "municipality" => "Pakhribas Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'धनकुटा',
+                'municipality' => 'पाखरीबास नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "DHANKUTA",
-                "municipality" => "Mahalaxmi Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'धनकुटा',
+                'municipality' => 'महालक्ष्मी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "DHANKUTA",
-                "municipality" => "Dhankuta Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'धनकुटा',
+                'municipality' => 'धनकुटा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TERHATHUM",
-                "municipality" => "Chhathar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'तेह्रथुम',
+                'municipality' => 'छथर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TERHATHUM",
-                "municipality" => "Phedap Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'तेह्रथुम',
+                'municipality' => 'फेडाप गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TERHATHUM",
-                "municipality" => "Aathrai Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'तेह्रथुम',
+                'municipality' => 'आठराई गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TERHATHUM",
-                "municipality" => "Menchayam Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'तेह्रथुम',
+                'municipality' => 'मेन्चायम गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TERHATHUM",
-                "municipality" => "Laligurans Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'तेह्रथुम',
+                'municipality' => 'लालीगुराँस नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "TERHATHUM",
-                "municipality" => "Myanglung Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'तेह्रथुम',
+                'municipality' => 'म्याङलुङ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "PANCHTHAR",
-                "municipality" => "Yangwarak Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'पाँचथर',
+                'municipality' => 'याङ्गवारक गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "PANCHTHAR",
-                "municipality" => "Hilihang Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'पाँचथर',
+                'municipality' => 'हिलिहाङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "PANCHTHAR",
-                "municipality" => "Falelung Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'पाँचथर',
+                'municipality' => 'फालेलुङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "PANCHTHAR",
-                "municipality" => "Tumbewa Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'पाँचथर',
+                'municipality' => 'तुम्बेवा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "PANCHTHAR",
-                "municipality" => "Kummayak Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'पाँचथर',
+                'municipality' => 'कुमायक गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "PANCHTHAR",
-                "municipality" => "Miklajung Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'पाँचथर',
+                'municipality' => 'मिक्लाजुङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "PANCHTHAR",
-                "municipality" => "Falgunanda Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'पाँचथर',
+                'municipality' => 'फाल्गुनन्द गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "PANCHTHAR",
-                "municipality" => "Phidim Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'पाँचथर',
+                'municipality' => 'फिदिम नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "ILAM",
-                "municipality" => "Rong Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'इलाम',
+                'municipality' => 'रोङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "ILAM",
-                "municipality" => "Mangsebung Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'इलाम',
+                'municipality' => 'मङ्गेबुङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "ILAM",
-                "municipality" => "Chulachuli Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'इलाम',
+                'municipality' => 'चुलाचुली गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "ILAM",
-                "municipality" => "Sandakpur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'इलाम',
+                'municipality' => 'सन्दकपुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "ILAM",
-                "municipality" => "Fakphokthum Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'इलाम',
+                'municipality' => 'फाकफोकथुम गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "ILAM",
-                "municipality" => "Maijogmai Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'इलाम',
+                'municipality' => 'माइजोगमाई गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "ILAM",
-                "municipality" => "Illam Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'इलाम',
+                'municipality' => 'इलाम नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "ILAM",
-                "municipality" => "Mai Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'इलाम',
+                'municipality' => 'माई नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "ILAM",
-                "municipality" => "Deumai Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'इलाम',
+                'municipality' => 'देउमाई नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "ILAM",
-                "municipality" => "Suryodaya Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'इलाम',
+                'municipality' => 'सूर्योदय नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Kamal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'कमल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Jhapa Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'झापा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Kachankawal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'कचनकवल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Gauriganj Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'गौरीगञ्ज गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Barhadashi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'बाह्रदशी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Haldibari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'हल्दिबारी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Buddhashanti Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'बुद्धशान्ति गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Shivasataxi Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'शिवसताक्सी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Bhadrapur Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'भद्रपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Kankai Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'कनकाई नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Birtamod Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'बिर्तामोड नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Mechinagar Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'मेचीनगर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Damak Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'दमक नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Arjundhara Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'अर्जुनधारा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "JHAPA",
-                "municipality" => "Gauradhaha Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'झापा',
+                'municipality' => 'गौराधा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Jahada Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'जहादा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Katahari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'कटहरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Gramthan Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'ग्रामथान गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Dhanpalthan Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'धनपालथान गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Kerabari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'केराबारी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Budhiganga Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'बुढीगंगा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Kanepokhari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'कानेपोखरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Miklajung Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'मिक्लाजुङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Letang Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'लेटाङ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Sunwarshi Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'सुनवर्शी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Rangeli Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'रंगेली नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Patahrishanishchare Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'पत्रहर्षनिश्चरे नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Biratnagar Metropolitian City",
-                "type" => "Metropolitian City"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'विराटनगर महानगरपालिका',
+                'type' => 'महानगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Uralabari Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'उरालाबारी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Belbari Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'बेलबारी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Sundarharaicha Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'सुन्दरहरैचा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "MORANG",
-                "municipality" => "Ratuwamai Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'मोरङ',
+                'municipality' => 'रतुवामाई नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SUNSARI",
-                "municipality" => "Gadhi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सुनसरी',
+                'municipality' => 'गढी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SUNSARI",
-                "municipality" => "Koshi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सुनसरी',
+                'municipality' => 'कोशी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SUNSARI",
-                "municipality" => "Barju Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सुनसरी',
+                'municipality' => 'बर्जु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SUNSARI",
-                "municipality" => "Harinagar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सुनसरी',
+                'municipality' => 'हरिनगर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SUNSARI",
-                "municipality" => "Dewanganj Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सुनसरी',
+                'municipality' => 'देवानगन्ज गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SUNSARI",
-                "municipality" => "Bhokraha Narsing Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सुनसरी',
+                'municipality' => 'भोक्राहा नरसिङ्ग गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SUNSARI",
-                "municipality" => "Ramdhuni Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सुनसरी',
+                'municipality' => 'रामधुनी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SUNSARI",
-                "municipality" => "Barahchhetra Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सुनसरी',
+                'municipality' => 'बराहक्षेत्र नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SUNSARI",
-                "municipality" => "Duhabi Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सुनसरी',
+                'municipality' => 'दुहबी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SUNSARI",
-                "municipality" => "Inaruwa Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सुनसरी',
+                'municipality' => 'इनरुवा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SUNSARI",
-                "municipality" => "Dharan Sub-Metropolitian City",
-                "type" => "Sub-Metropolitian City"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सुनसरी',
+                'municipality' => 'धरान उप-महानगरपालिका',
+                'type' => 'उप-महानगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "SUNSARI",
-                "municipality" => "Itahari Sub-Metropolitian City",
-                "type" => "Sub-Metropolitian City"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'सुनसरी',
+                'municipality' => 'इटहरी उप-महानगरपालिका',
+                'type' => 'उप-महानगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "UDAYAPUR",
-                "municipality" => "Tapli Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'उदयपुर',
+                'municipality' => 'तापली गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "UDAYAPUR",
-                "municipality" => "Rautamai Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'उदयपुर',
+                'municipality' => 'रौतामाई गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "UDAYAPUR",
-                "municipality" => "Udayapurgadhi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'उदयपुर',
+                'municipality' => 'उदयपुरगढी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "UDAYAPUR",
-                "municipality" => "Limchungbung Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'उदयपुर',
+                'municipality' => 'Limchungbung गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "UDAYAPUR",
-                "municipality" => "Chaudandigadhi Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'उदयपुर',
+                'municipality' => 'चौदण्डीगढी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "UDAYAPUR",
-                "municipality" => "Triyuga Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'उदयपुर',
+                'municipality' => 'Triyuga नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "UDAYAPUR",
-                "municipality" => "Katari Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'उदयपुर',
+                'municipality' => 'कटारी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Province No. 1",
-                "district" => "UDAYAPUR",
-                "municipality" => "Belaka Municipality",
-                "type" => "Municipality"
+                'province' => 'कोशी प्रदेश',
+                'district' => 'उदयपुर',
+                'municipality' => 'बेलका नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Rajgadh Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'राजगढ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Rupani Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'रुपानी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Tirahut Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'तिराहुत गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Mahadeva Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'महादेव गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Bishnupur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'विष्णुपुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Chhinnamasta Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'छिन्नमस्ता गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Balan Bihul Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'बालन बिहुल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Tilathi Koiladi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'तिलाठी कोइलाडी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Agnisair Krishna Savaran Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'अग्निशैर कृष्ण सावरण गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Hanumannagar Kankalini Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'हनुमाननगर कंकालिनी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Kanchanrup Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'कञ्चनरुप नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Rajbiraj Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'Rajbiraj नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Khadak Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'खडक नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Dakneshwori Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'डाक्नेश्वरी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Saptakoshi Rural Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'सप्तकोशी गाउँपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Surunga Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'सुरुङ्गा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Shambhunath Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'शम्भुनाथ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SAPTARI",
-                "municipality" => "Bode Barsain Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सप्तरी',
+                'municipality' => 'बोडे बार्सैन नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Aurahi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'औरही गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Naraha Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'नरहा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Arnama Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'अर्नामा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Bhagawanpur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'भगवानपुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Nawarajpur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'नवराजपुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Bishnupur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'विष्णुपुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Bariyarpatti Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'बरियारपट्टी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Laxmipur Patari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'लक्ष्मीपुर पटारी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Sakhuwanankarkatti Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'सखुवानङ्करकट्टी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Mirchaiya Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'मिर्चैया नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Lahan Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'लहान नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Siraha Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'सिरहा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Dhangadhimai Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'धनगढीमाई नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Kalyanpur Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'कल्याणपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Karjanha Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'कर्जन्हा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Golbazar Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'गोलबजार नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SIRAHA",
-                "municipality" => "Sukhipur Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सिरहा',
+                'municipality' => 'सुखीपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Aaurahi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'औराही गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Dhanauji Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'धनौजी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Bateshwor Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'बटेश्वर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Janaknandani Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'जनकनन्दनी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Lakshminiya Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'लक्ष्मीनिया गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Mukhiyapatti Musarmiya Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'मुखियापट्टी मुसरमिया गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Mithila Bihari Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'मिथिला बिहारी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Kamala Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'कमला नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Nagarain Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'नगराई नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Ganeshman Charnath Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'गणेशमान चारनाथ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Mithila Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'मिथिला नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Dhanusadham Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'धनुषाधाम नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Bideha Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'बिदेहा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Sabaila Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'सबाइला नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Hansapur Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'हंसपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Janakpurdham Sub-Metropolitian City",
-                "type" => "Sub-Metropolitian City"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'जनकपुरधाम उप-महानगरपालिका',
+                'type' => 'उप-महानगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Sahidnagar Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'सहिदनगर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "DHANUSA",
-                "municipality" => "Chhireshwornath Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'धनुषा',
+                'municipality' => 'छिरेश्वरनाथ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Pipra Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'पिपरा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Sonama Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'सोनामा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Samsi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'सम्सी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Ekdanra Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'एकडानरा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Mahottari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'महोत्तरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Gaushala Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'गौशाला नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Ramgopalpur Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'रामगोपालपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Aurahi Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'औरही नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Bardibas Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'बर्दिवास नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Bhangaha Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'भङ्गाहा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Jaleswor Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'जलेश्वर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Balwa Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'बलवा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Manra Siswa Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'मनरा सिसवा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Matihani Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'मटिहानी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "MAHOTTARI",
-                "municipality" => "Loharpatti Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'महोत्तरी',
+                'municipality' => 'लोहारपट्टी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Dhankaul Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'धनकौल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Parsa Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'पर्सा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Bishnu Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'विष्णु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Ramnagar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'रामनगर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Kaudena Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'कौडेना गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Basbariya Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'बासबरिया गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Chandranagar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'चन्द्रनगर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Chakraghatta Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'चक्रघट्टा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Bramhapuri Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'ब्रम्हपुरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Barahathawa Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'बराहथवा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Haripur Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'हरिपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Ishworpur Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'ईश्वरपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Lalbandi Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'लालबन्दी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Malangawa Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'मलङ्गवा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Kabilasi Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'कबिलासी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Bagmati Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'बागमती नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Hariwan Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'हरिवान नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Balara Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'बलरा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Haripurwa Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'हरिपुरवा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "SARLAHI",
-                "municipality" => "Godaita Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'सर्लाही',
+                'municipality' => 'गोदैता नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Yemunamai Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'यमुनामाई गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Durga Bhagwati Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'दुर्गा भगवती गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Katahariya Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'कटहरिया नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Maulapur Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'मौलापुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Madhav Narayan Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'माधव नारायण नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Gaur Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'गौर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Gujara Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'गुजरा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Garuda Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'गरुड नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Ishanath Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'ईशानाथ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Chandrapur Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'चन्द्रपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Dewahhi Gonahi Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'देवाही गोनाही नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Brindaban Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'वृन्दबन नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Rajpur Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'राजपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Rajdevi Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'राजदेवी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Gadhimai Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'गढीमाई नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Phatuwa Bijayapur Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'विजयपुर फटुवा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Baudhimai Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'बौधिमाई नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "RAUTAHAT",
-                "municipality" => "Paroha Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'रौतहट',
+                'municipality' => 'पारोहा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Pheta Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'फेटा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Devtal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'देवताल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Prasauni Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'प्रसौनी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Suwarna Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'सुवर्ण गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Baragadhi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'बारागढी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Karaiyamai Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'करैयामाई गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Parwanipur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'परवानीपुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Bishrampur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'बिश्रामपुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Adarshkotwal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'आदर्शकोटवाल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Jitpur Simara Sub-Metropolitian City",
-                "type" => "Sub-Metropolitian City"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'जितपुर सिमरा उप-महानगरपालिका',
+                'type' => 'उप-महानगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Kalaiya Sub-Metropolitian City",
-                "type" => "Sub-Metropolitian City"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'कलैया उप-महानगरपालिका',
+                'type' => 'उप-महानगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Pacharauta Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'पचरौता नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Nijgadh Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'निजगढ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Simraungadh Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'सिम्रौनगढ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Mahagadhimai Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'महागढीमाई नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "BARA",
-                "municipality" => "Kolhabi Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'बारा',
+                'municipality' => 'Kolhabi नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "Thori Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'थोरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "Dhobini Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'धोबिनी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "Chhipaharmai Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'छिपहरमाई गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "Jirabhawani Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'जिरभवानी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "Jagarnathpur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'जगरनाथपुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "Kalikamai Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'कालिकामाई गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "Bindabasini Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'बिन्दवासिनी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "Pakahamainpur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'पाकहमैंपुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "SakhuwaPrasauni Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'सखुवा प्रसौनी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "Paterwasugauli Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'पटेरवा सुगौली गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "Birgunj Metropolitian City",
-                "type" => "Metropolitian City"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'वीरगन्ज महानगरपालिका',
+                'type' => 'महानगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "Bahudaramai Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'बहुदरमाई नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "Pokhariya Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'पोखरिया नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Madhesh Province",
-                "district" => "PARSA",
-                "municipality" => "Parsagadhi Municipality",
-                "type" => "Municipality"
+                'province' => 'मधेश प्रदेश',
+                'district' => 'पर्सा',
+                'municipality' => 'पर्सागढी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DOLAKHA",
-                "municipality" => "Bigu Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'दोलखा',
+                'municipality' => 'बिगु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DOLAKHA",
-                "municipality" => "Sailung Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'दोलखा',
+                'municipality' => 'सेलुङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DOLAKHA",
-                "municipality" => "Melung Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'दोलखा',
+                'municipality' => 'मेलुङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DOLAKHA",
-                "municipality" => "Baiteshwor Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'दोलखा',
+                'municipality' => 'बैतेश्वर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DOLAKHA",
-                "municipality" => "Tamakoshi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'दोलखा',
+                'municipality' => 'तामाकोशी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DOLAKHA",
-                "municipality" => "Gaurishankar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'दोलखा',
+                'municipality' => 'गौरीशंकर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DOLAKHA",
-                "municipality" => "Kalinchok Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'दोलखा',
+                'municipality' => 'कालिञ्चोक गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DOLAKHA",
-                "municipality" => "Jiri Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'दोलखा',
+                'municipality' => 'जिरी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DOLAKHA",
-                "municipality" => "Bhimeshwor Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'दोलखा',
+                'municipality' => 'भीमेश्वर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHUPALCHOK",
-                "municipality" => "Jugal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुपाल्चोक',
+                'municipality' => 'जुगल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHUPALCHOK",
-                "municipality" => "Balefi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुपाल्चोक',
+                'municipality' => 'बलेफी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHUPALCHOK",
-                "municipality" => "Sunkoshi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुपाल्चोक',
+                'municipality' => 'सुनकोशी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHUPALCHOK",
-                "municipality" => "Helambu Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुपाल्चोक',
+                'municipality' => 'हेलम्बु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHUPALCHOK",
-                "municipality" => "Bhotekoshi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुपाल्चोक',
+                'municipality' => 'भोटेकोशी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHUPALCHOK",
-                "municipality" => "Lisangkhu Pakhar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुपाल्चोक',
+                'municipality' => 'लिसाङ्खु पाखर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHUPALCHOK",
-                "municipality" => "Indrawati Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुपाल्चोक',
+                'municipality' => 'इन्द्रावती गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHUPALCHOK",
-                "municipality" => "Tripurasundari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुपाल्चोक',
+                'municipality' => 'त्रिपुरासुन्दरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHUPALCHOK",
-                "municipality" => "Panchpokhari Thangpal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुपाल्चोक',
+                'municipality' => 'पाँचपोखरी थाङ्पाल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHUPALCHOK",
-                "municipality" => "Chautara SangachokGadhi Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुपाल्चोक',
+                'municipality' => 'चौतारा साँगाचोकगढी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHUPALCHOK",
-                "municipality" => "Barhabise Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुपाल्चोक',
+                'municipality' => 'बरहाबिसे नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHUPALCHOK",
-                "municipality" => "Melamchi Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुपाल्चोक',
+                'municipality' => 'मेलम्ची नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "RASUWA",
-                "municipality" => "Kalika Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'रसुवा',
+                'municipality' => 'Kalika गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "RASUWA",
-                "municipality" => "Naukunda Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'रसुवा',
+                'municipality' => 'नौकुण्ड गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "RASUWA",
-                "municipality" => "Uttargaya Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'रसुवा',
+                'municipality' => 'उत्तरगया गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "RASUWA",
-                "municipality" => "Gosaikunda Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'रसुवा',
+                'municipality' => 'गोसाइकुण्ड गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "RASUWA",
-                "municipality" => "Amachodingmo Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'रसुवा',
+                'municipality' => 'अमाकोडिङमो गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DHADING",
-                "municipality" => "Gajuri Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'धादिङ',
+                'municipality' => 'गजुरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DHADING",
-                "municipality" => "Galchi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'धादिङ',
+                'municipality' => 'गाल्ची गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DHADING",
-                "municipality" => "Thakre Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'धादिङ',
+                'municipality' => 'ठाकरे गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DHADING",
-                "municipality" => "Siddhalek Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'धादिङ',
+                'municipality' => 'सिद्धलेक गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DHADING",
-                "municipality" => "Khaniyabash Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'धादिङ',
+                'municipality' => 'खनियाबास गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DHADING",
-                "municipality" => "Jwalamukhi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'धादिङ',
+                'municipality' => 'ज्वालामुखी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DHADING",
-                "municipality" => "Gangajamuna Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'धादिङ',
+                'municipality' => 'गंगाजमुना गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DHADING",
-                "municipality" => "Rubi Valley Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'धादिङ',
+                'municipality' => 'रुबी उपत्यका गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DHADING",
-                "municipality" => "Tripura Sundari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'धादिङ',
+                'municipality' => 'त्रिपुरा सुन्दरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DHADING",
-                "municipality" => "Netrawati Dabjong Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'धादिङ',
+                'municipality' => 'नेत्रावती डब्जोङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DHADING",
-                "municipality" => "Benighat Rorang Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'धादिङ',
+                'municipality' => 'बेनीघाट रोराङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DHADING",
-                "municipality" => "Nilakantha Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'धादिङ',
+                'municipality' => 'नीलकण्ठ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "DHADING",
-                "municipality" => "Dhunibesi Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'धादिङ',
+                'municipality' => 'धुनिबेसी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "NUWAKOT",
-                "municipality" => "Kakani Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'नुवाकोट',
+                'municipality' => 'ककनी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "NUWAKOT",
-                "municipality" => "Tadi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'नुवाकोट',
+                'municipality' => 'ताडी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "NUWAKOT",
-                "municipality" => "Likhu Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'नुवाकोट',
+                'municipality' => 'लिखु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "NUWAKOT",
-                "municipality" => "Myagang Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'नुवाकोट',
+                'municipality' => 'म्यागाङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "NUWAKOT",
-                "municipality" => "Shivapuri Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'नुवाकोट',
+                'municipality' => 'शिवपुरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "NUWAKOT",
-                "municipality" => "Kispang Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'नुवाकोट',
+                'municipality' => 'किस्पाङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "NUWAKOT",
-                "municipality" => "Suryagadhi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'नुवाकोट',
+                'municipality' => 'सुर्यगढी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "NUWAKOT",
-                "municipality" => "Tarkeshwar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'नुवाकोट',
+                'municipality' => 'तारकेश्वर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "NUWAKOT",
-                "municipality" => "Panchakanya Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'नुवाकोट',
+                'municipality' => 'पञ्चकन्या गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "NUWAKOT",
-                "municipality" => "Dupcheshwar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'नुवाकोट',
+                'municipality' => 'दुप्चेश्वर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "NUWAKOT",
-                "municipality" => "Belkotgadhi Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'नुवाकोट',
+                'municipality' => 'बेलकोटगढी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "NUWAKOT",
-                "municipality" => "Bidur Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'नुवाकोट',
+                'municipality' => 'बिदुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KATHMANDU",
-                "municipality" => "Kirtipur Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काठमाडौं',
+                'municipality' => 'कीर्तिपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KATHMANDU",
-                "municipality" => "Shankharapur Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काठमाडौं',
+                'municipality' => 'शंखरापुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KATHMANDU",
-                "municipality" => "Nagarjun Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काठमाडौं',
+                'municipality' => 'नागार्जुन नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KATHMANDU",
-                "municipality" => "Kageshwori Manahora Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काठमाडौं',
+                'municipality' => 'कागेश्वरी मनहोरा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KATHMANDU",
-                "municipality" => "Dakshinkali Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काठमाडौं',
+                'municipality' => 'दक्षिणकाली नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KATHMANDU",
-                "municipality" => "Budhanilakantha Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काठमाडौं',
+                'municipality' => 'बुढानिलकण्ठ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KATHMANDU",
-                "municipality" => "Tarakeshwor Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काठमाडौं',
+                'municipality' => 'Tarakeshwor नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KATHMANDU",
-                "municipality" => "Kathmandu Metropolitian City",
-                "type" => "Metropolitian City"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काठमाडौं',
+                'municipality' => 'काठमाडौं महानगरपालिका',
+                'type' => 'महानगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KATHMANDU",
-                "municipality" => "Tokha Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काठमाडौं',
+                'municipality' => 'Tokha नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KATHMANDU",
-                "municipality" => "Chandragiri Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काठमाडौं',
+                'municipality' => 'चन्द्रागिरि नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KATHMANDU",
-                "municipality" => "Gokarneshwor Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काठमाडौं',
+                'municipality' => 'गोकर्णेश्वर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "BHAKTAPUR",
-                "municipality" => "Changunarayan Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'भक्तपुर',
+                'municipality' => 'चाँगुनारायण नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "BHAKTAPUR",
-                "municipality" => "Suryabinayak Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'भक्तपुर',
+                'municipality' => 'सूर्यविनायक नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "BHAKTAPUR",
-                "municipality" => "Bhaktapur Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'भक्तपुर',
+                'municipality' => 'भक्तपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "BHAKTAPUR",
-                "municipality" => "Madhyapur Thimi Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'भक्तपुर',
+                'municipality' => 'मध्यपुरथिमि नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "LALITPUR",
-                "municipality" => "Bagmati Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'ललितपुर',
+                'municipality' => 'बागमती गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "LALITPUR",
-                "municipality" => "Mahankal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'ललितपुर',
+                'municipality' => 'महांकाल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "LALITPUR",
-                "municipality" => "Konjyosom Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'ललितपुर',
+                'municipality' => 'कोन्ज्योसोम गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "LALITPUR",
-                "municipality" => "Lalitpur Metropolitian City",
-                "type" => "Metropolitian City"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'ललितपुर',
+                'municipality' => 'ललितपुर महानगरपालिका',
+                'type' => 'महानगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "LALITPUR",
-                "municipality" => "Mahalaxmi Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'ललितपुर',
+                'municipality' => 'महालक्ष्मी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "LALITPUR",
-                "municipality" => "Godawari Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'ललितपुर',
+                'municipality' => 'गोदावरी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KAVREPALANCHOK",
-                "municipality" => "Roshi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काभ्रेपलाञ्चोक',
+                'municipality' => 'रोशी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KAVREPALANCHOK",
-                "municipality" => "Temal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काभ्रेपलाञ्चोक',
+                'municipality' => 'तेमल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KAVREPALANCHOK",
-                "municipality" => "Bhumlu Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काभ्रेपलाञ्चोक',
+                'municipality' => 'भुम्लु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KAVREPALANCHOK",
-                "municipality" => "Mahabharat Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काभ्रेपलाञ्चोक',
+                'municipality' => 'महाभारत गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KAVREPALANCHOK",
-                "municipality" => "Bethanchowk Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काभ्रेपलाञ्चोक',
+                'municipality' => 'बेथानचोक गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KAVREPALANCHOK",
-                "municipality" => "Khanikhola Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काभ्रेपलाञ्चोक',
+                'municipality' => 'खानीखोला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KAVREPALANCHOK",
-                "municipality" => "Chaurideurali Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काभ्रेपलाञ्चोक',
+                'municipality' => 'चौरीदेउराली गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KAVREPALANCHOK",
-                "municipality" => "Banepa Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काभ्रेपलाञ्चोक',
+                'municipality' => 'बनेपा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KAVREPALANCHOK",
-                "municipality" => "Mandandeupur Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काभ्रेपलाञ्चोक',
+                'municipality' => 'मण्डनदेउपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KAVREPALANCHOK",
-                "municipality" => "Dhulikhel Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काभ्रेपलाञ्चोक',
+                'municipality' => 'धुलिखेल नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KAVREPALANCHOK",
-                "municipality" => "Panauti Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काभ्रेपलाञ्चोक',
+                'municipality' => 'पनौती नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KAVREPALANCHOK",
-                "municipality" => "Namobuddha Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काभ्रेपलाञ्चोक',
+                'municipality' => 'नमोबुद्ध नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "KAVREPALANCHOK",
-                "municipality" => "Panchkhal Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'काभ्रेपलाञ्चोक',
+                'municipality' => 'पाँचखाल नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "RAMECHHAP",
-                "municipality" => "Sunapati Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'रामेछाप',
+                'municipality' => 'सुनापति गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "RAMECHHAP",
-                "municipality" => "Doramba Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'रामेछाप',
+                'municipality' => 'दोरम्बा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "RAMECHHAP",
-                "municipality" => "Umakunda Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'रामेछाप',
+                'municipality' => 'उमाकुण्ड गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "RAMECHHAP",
-                "municipality" => "Khadadevi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'रामेछाप',
+                'municipality' => 'खाडादेवी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "RAMECHHAP",
-                "municipality" => "Gokulganga Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'रामेछाप',
+                'municipality' => 'गोकुलगंगा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "RAMECHHAP",
-                "municipality" => "Likhu Tamakoshi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'रामेछाप',
+                'municipality' => 'लिखु तामाकोशीi गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "RAMECHHAP",
-                "municipality" => "Manthali Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'रामेछाप',
+                'municipality' => 'मन्थली नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "RAMECHHAP",
-                "municipality" => "Ramechhap Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'रामेछाप',
+                'municipality' => 'रामेछाप नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHULI",
-                "municipality" => "Marin Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुली',
+                'municipality' => 'मारिन गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHULI",
-                "municipality" => "Phikkal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुली',
+                'municipality' => 'फिक्कल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHULI",
-                "municipality" => "Tinpatan Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुली',
+                'municipality' => 'तीनपाटन गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHULI",
-                "municipality" => "Sunkoshi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुली',
+                'municipality' => 'सुनकोशी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHULI",
-                "municipality" => "Golanjor Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुली',
+                'municipality' => 'गोलन्जोर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHULI",
-                "municipality" => "Ghanglekh Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुली',
+                'municipality' => 'घाङ्लेख गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHULI",
-                "municipality" => "Hariharpurgadhi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुली',
+                'municipality' => 'हरिहरपुरगढी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHULI",
-                "municipality" => "Dudhouli Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुली',
+                'municipality' => 'दुधौली नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "SINDHULI",
-                "municipality" => "Kamalamai Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'सिन्धुली',
+                'municipality' => 'कमलामाई नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "MAKWANPUR",
-                "municipality" => "Bakaiya Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'मकवानपुर',
+                'municipality' => 'बकैया गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "MAKWANPUR",
-                "municipality" => "Kailash Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'मकवानपुर',
+                'municipality' => 'कैलाश गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "MAKWANPUR",
-                "municipality" => "Manahari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'मकवानपुर',
+                'municipality' => 'मनहरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "MAKWANPUR",
-                "municipality" => "Bhimphedi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'मकवानपुर',
+                'municipality' => 'भीमफेदी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "MAKWANPUR",
-                "municipality" => "Bagmati Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'मकवानपुर',
+                'municipality' => 'बागमती गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "MAKWANPUR",
-                "municipality" => "Raksirang Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'मकवानपुर',
+                'municipality' => 'रक्सिराङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "MAKWANPUR",
-                "municipality" => "Makawanpurgadhi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'मकवानपुर',
+                'municipality' => 'मकवानपुरगढी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "MAKWANPUR",
-                "municipality" => "Indrasarowar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'मकवानपुर',
+                'municipality' => 'इन्द्रसरोवर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "MAKWANPUR",
-                "municipality" => "Hetauda Sub-Metropolitian City",
-                "type" => "Sub-Metropolitian City"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'मकवानपुर',
+                'municipality' => 'हेटौंडा उप-महानगरपालिका',
+                'type' => 'उप-महानगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "MAKWANPUR",
-                "municipality" => "Thaha Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'मकवानपुर',
+                'municipality' => 'थाहा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "CHITAWAN",
-                "municipality" => "Ichchhyakamana Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'चितवन',
+                'municipality' => 'इच्छाकामना गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "CHITAWAN",
-                "municipality" => "Bharatpur Metropolitian City",
-                "type" => "Metropolitian City"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'चितवन',
+                'municipality' => 'भरतपुर महानगरपालिका',
+                'type' => 'महानगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "CHITAWAN",
-                "municipality" => "Kalika Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'चितवन',
+                'municipality' => 'कालिका नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "CHITAWAN",
-                "municipality" => "Khairahani Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'चितवन',
+                'municipality' => 'खैरहनी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "CHITAWAN",
-                "municipality" => "Madi Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'चितवन',
+                'municipality' => 'माडी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "CHITAWAN",
-                "municipality" => "Rapti Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'चितवन',
+                'municipality' => 'राप्ती नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Bagmati",
-                "district" => "CHITAWAN",
-                "municipality" => "Ratnanagar Municipality",
-                "type" => "Municipality"
+                'province' => 'बागमती प्रदेश',
+                'district' => 'चितवन',
+                'municipality' => 'रत्ननगर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "GORKHA",
-                "municipality" => "Gandaki Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'गोरखा',
+                'municipality' => 'गण्डकी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "GORKHA",
-                "municipality" => "Dharche Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'गोरखा',
+                'municipality' => 'धार्चे गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "GORKHA",
-                "municipality" => "Aarughat Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'गोरखा',
+                'municipality' => 'आरुघाट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "GORKHA",
-                "municipality" => "Ajirkot Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'गोरखा',
+                'municipality' => 'अजिरकोट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "GORKHA",
-                "municipality" => "Sahid Lakhan Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'गोरखा',
+                'municipality' => 'सहिद लखन गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "GORKHA",
-                "municipality" => "Siranchok Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'गोरखा',
+                'municipality' => 'सिरञ्चोक गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "GORKHA",
-                "municipality" => "Bhimsenthapa Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'गोरखा',
+                'municipality' => 'भीमसेनथापा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "GORKHA",
-                "municipality" => "Chum Nubri Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'गोरखा',
+                'municipality' => 'चुम नुब्रि गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "GORKHA",
-                "municipality" => "Barpak Sulikot Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'गोरखा',
+                'municipality' => 'बारपाक सुलिकोट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "GORKHA",
-                "municipality" => "Palungtar Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'गोरखा',
+                'municipality' => 'पालुङटार नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "GORKHA",
-                "municipality" => "Gorkha Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'गोरखा',
+                'municipality' => 'गोरखा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MANANG",
-                "municipality" => "Chame Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'मनाङ',
+                'municipality' => 'चामे गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MANANG",
-                "municipality" => "Narshon Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'मनाङ',
+                'municipality' => 'नरशोन गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MANANG",
-                "municipality" => "Narpa Bhumi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'मनाङ',
+                'municipality' => 'नरपा भूमि गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MANANG",
-                "municipality" => "Manang Ingshyang Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'मनाङ',
+                'municipality' => 'मनाङ इङ्स्याङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MUSTANG",
-                "municipality" => "Thasang Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'मुस्ताङ',
+                'municipality' => 'थासाङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MUSTANG",
-                "municipality" => "Gharapjhong Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'मुस्ताङ',
+                'municipality' => 'घरापझोङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MUSTANG",
-                "municipality" => "Lomanthang Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'मुस्ताङ',
+                'municipality' => 'लोमान्थाङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MUSTANG",
-                "municipality" => "Lo-Ghekar Damodarkunda Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'मुस्ताङ',
+                'municipality' => 'लो-घेकर दामोदरकुण्ड गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MUSTANG",
-                "municipality" => "Waragung Muktikhsetra Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'मुस्ताङ',
+                'municipality' => 'वारागुङ मुक्तिक्षेत्र गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MYAGDI",
-                "municipality" => "Mangala Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'म्याग्दी',
+                'municipality' => 'मंगला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MYAGDI",
-                "municipality" => "Malika Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'म्याग्दी',
+                'municipality' => 'मलिका गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MYAGDI",
-                "municipality" => "Raghuganga Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'म्याग्दी',
+                'municipality' => 'रघुगंगा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MYAGDI",
-                "municipality" => "Dhaulagiri Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'म्याग्दी',
+                'municipality' => 'धौलागिरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MYAGDI",
-                "municipality" => "Annapurna Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'म्याग्दी',
+                'municipality' => 'अन्नपूर्ण गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "MYAGDI",
-                "municipality" => "Beni Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'म्याग्दी',
+                'municipality' => 'बेनी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "KASKI",
-                "municipality" => "Rupa Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'कास्की',
+                'municipality' => 'रुपा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "KASKI",
-                "municipality" => "Madi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'कास्की',
+                'municipality' => 'माडी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "KASKI",
-                "municipality" => "Annapurna Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'कास्की',
+                'municipality' => 'अन्नपूर्ण गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "KASKI",
-                "municipality" => "Machhapuchchhre Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'कास्की',
+                'municipality' => 'माछापुच्छ्रे गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "KASKI",
-                "municipality" => "Pokhara Metropolitian City",
-                "type" => "Metropolitian City"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'कास्की',
+                'municipality' => 'पोखरा महानगरपालिका',
+                'type' => 'महानगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "LAMJUNG",
-                "municipality" => "Dordi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'लमजुङ',
+                'municipality' => 'दोर्दी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "LAMJUNG",
-                "municipality" => "Dudhpokhari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'लमजुङ',
+                'municipality' => 'दूधपोखरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "LAMJUNG",
-                "municipality" => "Marsyangdi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'लमजुङ',
+                'municipality' => 'मर्स्याङ्दी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "LAMJUNG",
-                "municipality" => "Kwholasothar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'लमजुङ',
+                'municipality' => 'क्वालासोथर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "LAMJUNG",
-                "municipality" => "Sundarbazar Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'लमजुङ',
+                'municipality' => 'सुन्दरबजार नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "LAMJUNG",
-                "municipality" => "Besishahar Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'लमजुङ',
+                'municipality' => 'बेशिशहर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "LAMJUNG",
-                "municipality" => "Rainas Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'लमजुङ',
+                'municipality' => 'रैनास नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "LAMJUNG",
-                "municipality" => "MadhyaNepal Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'लमजुङ',
+                'municipality' => 'मध्यनेपाल नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "TANAHU",
-                "municipality" => "Ghiring Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'तनहुँ',
+                'municipality' => 'घिरिङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "TANAHU",
-                "municipality" => "Devghat Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'तनहुँ',
+                'municipality' => 'देवघाट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "TANAHU",
-                "municipality" => "Rhishing Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'तनहुँ',
+                'municipality' => 'रिसिङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "TANAHU",
-                "municipality" => "Myagde Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'तनहुँ',
+                'municipality' => 'म्याग्दे गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "TANAHU",
-                "municipality" => "Bandipur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'तनहुँ',
+                'municipality' => 'बन्दीपुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "TANAHU",
-                "municipality" => "Anbukhaireni Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'तनहुँ',
+                'municipality' => 'अन्बुखैरेनी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "TANAHU",
-                "municipality" => "Byas Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'तनहुँ',
+                'municipality' => 'ब्यास नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "TANAHU",
-                "municipality" => "Shuklagandaki Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'तनहुँ',
+                'municipality' => 'शुक्लागण्डकी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "TANAHU",
-                "municipality" => "Bhimad Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'तनहुँ',
+                'municipality' => 'भीमद नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "TANAHU",
-                "municipality" => "Bhanu Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'तनहुँ',
+                'municipality' => 'भानु नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "NAWALPARASI EAST",
-                "municipality" => "Baudeekali Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'नवलपरासी पूर्व',
+                'municipality' => 'बौदेकाली गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "NAWALPARASI EAST",
-                "municipality" => "Bulingtar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'नवलपरासी पूर्व',
+                'municipality' => 'बुलिङटार गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "NAWALPARASI EAST",
-                "municipality" => "Hupsekot Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'नवलपरासी पूर्व',
+                'municipality' => 'हुप्सेकोट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "NAWALPARASI EAST",
-                "municipality" => "Binayee Tribeni Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'नवलपरासी पूर्व',
+                'municipality' => 'विनयी त्रिवेणी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "NAWALPARASI EAST",
-                "municipality" => "Madhyabindu Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'नवलपरासी पूर्व',
+                'municipality' => 'मध्यविन्दु नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "NAWALPARASI EAST",
-                "municipality" => "Devchuli Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'नवलपरासी पूर्व',
+                'municipality' => 'देवचुली नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "NAWALPARASI EAST",
-                "municipality" => "Gaidakot Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'नवलपरासी पूर्व',
+                'municipality' => 'गैडाकोट नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "NAWALPARASI EAST",
-                "municipality" => "Kawasoti Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'नवलपरासी पूर्व',
+                'municipality' => 'कावासोती नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "SYANGJA",
-                "municipality" => "Harinas Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'स्याङ्जा',
+                'municipality' => 'हरिनास गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "SYANGJA",
-                "municipality" => "Biruwa Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'स्याङ्जा',
+                'municipality' => 'बिरुवा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "SYANGJA",
-                "municipality" => "Aandhikhola Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'स्याङ्जा',
+                'municipality' => 'आँधीखोला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "SYANGJA",
-                "municipality" => "Phedikhola Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'स्याङ्जा',
+                'municipality' => 'फेदीखोला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "SYANGJA",
-                "municipality" => "Kaligandagi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'स्याङ्जा',
+                'municipality' => 'कालीगण्डगी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "SYANGJA",
-                "municipality" => "Arjunchaupari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'स्याङ्जा',
+                'municipality' => 'अर्जुनचौपरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "SYANGJA",
-                "municipality" => "Putalibazar Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'स्याङ्जा',
+                'municipality' => 'पुतलीबजार नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "SYANGJA",
-                "municipality" => "Bhirkot Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'स्याङ्जा',
+                'municipality' => 'भिरकोट नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "SYANGJA",
-                "municipality" => "Galyang Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'स्याङ्जा',
+                'municipality' => 'गल्याङ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "SYANGJA",
-                "municipality" => "Chapakot Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'स्याङ्जा',
+                'municipality' => 'चापाकोट नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "SYANGJA",
-                "municipality" => "Waling Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'स्याङ्जा',
+                'municipality' => 'वालिङ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "PARBAT",
-                "municipality" => "Modi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'पर्बत',
+                'municipality' => 'मोदी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "PARBAT",
-                "municipality" => "Painyu Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'पर्बत',
+                'municipality' => 'पाइन्यु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "PARBAT",
-                "municipality" => "Jaljala Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'पर्बत',
+                'municipality' => 'जलजला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "PARBAT",
-                "municipality" => "Bihadi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'पर्बत',
+                'municipality' => 'बिहादी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "PARBAT",
-                "municipality" => "Mahashila Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'पर्बत',
+                'municipality' => 'महाशिला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "PARBAT",
-                "municipality" => "Kushma Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'पर्बत',
+                'municipality' => 'कुश्मा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "PARBAT",
-                "municipality" => "Phalebas Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'पर्बत',
+                'municipality' => 'फलेबास नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "BAGLUNG",
-                "municipality" => "Bareng Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'बागलुङ',
+                'municipality' => 'बरेङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "BAGLUNG",
-                "municipality" => "Badigad Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'बागलुङ',
+                'municipality' => 'बडिगाड गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "BAGLUNG",
-                "municipality" => "Nisikhola Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'बागलुङ',
+                'municipality' => 'निसिखोला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "BAGLUNG",
-                "municipality" => "Kanthekhola Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'बागलुङ',
+                'municipality' => 'कान्ठेखोला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "BAGLUNG",
-                "municipality" => "Tara Khola Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'बागलुङ',
+                'municipality' => 'तारा खोला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "BAGLUNG",
-                "municipality" => "Taman Khola Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'बागलुङ',
+                'municipality' => 'तमन खोला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "BAGLUNG",
-                "municipality" => "Jaimuni Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'बागलुङ',
+                'municipality' => 'जैमुनी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "BAGLUNG",
-                "municipality" => "Baglung Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'बागलुङ',
+                'municipality' => 'बागलुङ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "BAGLUNG",
-                "municipality" => "Galkot Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'बागलुङ',
+                'municipality' => 'गलकोट नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Gandaki Province",
-                "district" => "BAGLUNG",
-                "municipality" => "Dhorpatan Municipality",
-                "type" => "Municipality"
+                'province' => 'गण्डकी प्रदेश',
+                'district' => 'बागलुङ',
+                'municipality' => 'ढोरपाटन नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUKUM EAST",
-                "municipality" => "Bhume Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'पूर्वी रुकुम',
+                'municipality' => 'भुमे गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUKUM EAST",
-                "municipality" => "Sisne Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'पूर्वी रुकुम',
+                'municipality' => 'सिस्ने गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUKUM EAST",
-                "municipality" => "Putha Uttarganga Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'पूर्वी रुकुम',
+                'municipality' => 'पुथा उत्तरगंगा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ROLPA",
-                "municipality" => "Madi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रोल्पा',
+                'municipality' => 'माडी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ROLPA",
-                "municipality" => "Thawang Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रोल्पा',
+                'municipality' => 'थवाङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ROLPA",
-                "municipality" => "Sunchhahari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रोल्पा',
+                'municipality' => 'सुनछहरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ROLPA",
-                "municipality" => "Lungri Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रोल्पा',
+                'municipality' => 'लुङ्गरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ROLPA",
-                "municipality" => "Gangadev Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रोल्पा',
+                'municipality' => 'गंगादेव गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ROLPA",
-                "municipality" => "Tribeni Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रोल्पा',
+                'municipality' => 'त्रिवेणी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ROLPA",
-                "municipality" => "Pariwartan Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रोल्पा',
+                'municipality' => 'परिवर्तन गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ROLPA",
-                "municipality" => "Runtigadi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रोल्पा',
+                'municipality' => 'रुन्टीगढी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ROLPA",
-                "municipality" => "Sunil Smriti Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रोल्पा',
+                'municipality' => 'सुनिल स्मृति गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ROLPA",
-                "municipality" => "Rolpa Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रोल्पा',
+                'municipality' => 'रोल्पा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PYUTHAN",
-                "municipality" => "Ayirabati Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'प्युठान',
+                'municipality' => 'आइराबती गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PYUTHAN",
-                "municipality" => "Gaumukhi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'प्युठान',
+                'municipality' => 'गौमुखी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PYUTHAN",
-                "municipality" => "Jhimruk Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'प्युठान',
+                'municipality' => 'झिमरुक गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PYUTHAN",
-                "municipality" => "Naubahini Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'प्युठान',
+                'municipality' => 'नौवहिनी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PYUTHAN",
-                "municipality" => "Mandavi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'प्युठान',
+                'municipality' => 'मांडवी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PYUTHAN",
-                "municipality" => "Mallarani Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'प्युठान',
+                'municipality' => 'मल्लरानी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PYUTHAN",
-                "municipality" => "Sarumarani Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'प्युठान',
+                'municipality' => 'सरूमरानी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PYUTHAN",
-                "municipality" => "Pyuthan Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'प्युठान',
+                'municipality' => 'प्युठान नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PYUTHAN",
-                "municipality" => "Sworgadwary Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'प्युठान',
+                'municipality' => 'स्वर्गद्वारी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "GULMI",
-                "municipality" => "Ruru Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'गुल्मी',
+                'municipality' => 'रुरु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "GULMI",
-                "municipality" => "Isma Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'गुल्मी',
+                'municipality' => 'इस्मा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "GULMI",
-                "municipality" => "Madane Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'गुल्मी',
+                'municipality' => 'मदने गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "GULMI",
-                "municipality" => "Malika Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'गुल्मी',
+                'municipality' => 'मलिका गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "GULMI",
-                "municipality" => "Chatrakot Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'गुल्मी',
+                'municipality' => 'चत्रकोट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "GULMI",
-                "municipality" => "Dhurkot Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'गुल्मी',
+                'municipality' => 'धुर्कोट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "GULMI",
-                "municipality" => "Satyawati Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'गुल्मी',
+                'municipality' => 'सत्यवती गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "GULMI",
-                "municipality" => "Chandrakot Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'गुल्मी',
+                'municipality' => 'चन्द्रकोट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "GULMI",
-                "municipality" => "Kaligandaki Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'गुल्मी',
+                'municipality' => 'कालीगण्डकी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "GULMI",
-                "municipality" => "Gulmidarbar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'गुल्मी',
+                'municipality' => 'गुल्मीदरबार गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "GULMI",
-                "municipality" => "Resunga Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'गुल्मी',
+                'municipality' => 'रेसुंगा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "GULMI",
-                "municipality" => "Musikot Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'गुल्मी',
+                'municipality' => 'मुसिकोट नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ARGHAKHANCHI",
-                "municipality" => "Panini Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'अर्घाखाँची',
+                'municipality' => 'पाणिनी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ARGHAKHANCHI",
-                "municipality" => "Chhatradev Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'अर्घाखाँची',
+                'municipality' => 'छत्रदेव गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ARGHAKHANCHI",
-                "municipality" => "Malarani Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'अर्घाखाँची',
+                'municipality' => 'मलारानी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ARGHAKHANCHI",
-                "municipality" => "Bhumekasthan Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'अर्घाखाँची',
+                'municipality' => 'भुमेकस्थान नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ARGHAKHANCHI",
-                "municipality" => "Sitganga Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'अर्घाखाँची',
+                'municipality' => 'सितगंगा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "ARGHAKHANCHI",
-                "municipality" => "Sandhikharka Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'अर्घाखाँची',
+                'municipality' => 'सन्धिखर्क नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PALPA",
-                "municipality" => "Rambha Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'पाल्पा',
+                'municipality' => 'रम्भा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PALPA",
-                "municipality" => "Tinau Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'पाल्पा',
+                'municipality' => 'तिनाउ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PALPA",
-                "municipality" => "Nisdi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'पाल्पा',
+                'municipality' => 'निस्दी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PALPA",
-                "municipality" => "Mathagadhi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'पाल्पा',
+                'municipality' => 'मठगढी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PALPA",
-                "municipality" => "Ribdikot Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'पाल्पा',
+                'municipality' => 'रिब्दीकोट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PALPA",
-                "municipality" => "Purbakhola Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'पाल्पा',
+                'municipality' => 'पूर्वखोला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PALPA",
-                "municipality" => "Bagnaskali Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'पाल्पा',
+                'municipality' => 'बागनास्कली गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PALPA",
-                "municipality" => "Rainadevi Chhahara Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'पाल्पा',
+                'municipality' => 'रैनादेवी छहरा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PALPA",
-                "municipality" => "Tansen Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'पाल्पा',
+                'municipality' => 'तानसेन नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "PALPA",
-                "municipality" => "Rampur Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'पाल्पा',
+                'municipality' => 'रामपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "NAWALPARASI WEST",
-                "municipality" => "Sarawal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'नवलपरासी पश्चिम',
+                'municipality' => 'सरवल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "NAWALPARASI WEST",
-                "municipality" => "Susta Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'नवलपरासी पश्चिम',
+                'municipality' => 'सुस्ता गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "NAWALPARASI WEST",
-                "municipality" => "Pratappur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'नवलपरासी पश्चिम',
+                'municipality' => 'प्रतापपुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "NAWALPARASI WEST",
-                "municipality" => "Palhi Nandan Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'नवलपरासी पश्चिम',
+                'municipality' => 'पाल्ही नन्दन गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "NAWALPARASI WEST",
-                "municipality" => "Bardaghat Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'नवलपरासी पश्चिम',
+                'municipality' => 'बर्दघाट नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "NAWALPARASI WEST",
-                "municipality" => "Sunwal Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'नवलपरासी पश्चिम',
+                'municipality' => 'सुनवल नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "NAWALPARASI WEST",
-                "municipality" => "Ramgram Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'नवलपरासी पश्चिम',
+                'municipality' => 'रामग्राम नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Kanchan Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'कञ्चन गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Siyari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'सियारी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Rohini Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'रोहिणी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Gaidahawa Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'गैडहवा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Omsatiya Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'ओमसतिया गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Sudhdhodhan Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'शुद्धोधन गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Mayadevi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'मायादेवी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Marchawari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'मार्चवारी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Kotahimai Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'कोटाहिमाई गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Sammarimai Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'समरीमाई गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Butwal Sub-Metropolitian City",
-                "type" => "Sub-Metropolitian City"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'बुटवल उप-महानगरपालिका',
+                'type' => 'उप-महानगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Lumbini Sanskritik Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'लुम्बिनी संस्कृतिक नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Devdaha Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'देवदह नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Sainamaina Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'सैनामैना नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Siddharthanagar Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'सिद्धार्थनगर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "RUPANDEHI",
-                "municipality" => "Tillotama Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'रुपन्देही',
+                'municipality' => 'तिलोतमा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "KAPILBASTU",
-                "municipality" => "Yashodhara Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'कपिलवस्तु',
+                'municipality' => 'यशोधरा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "KAPILBASTU",
-                "municipality" => "Bijayanagar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'कपिलवस्तु',
+                'municipality' => 'विजयनगर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "KAPILBASTU",
-                "municipality" => "Mayadevi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'कपिलवस्तु',
+                'municipality' => 'मायादेवी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "KAPILBASTU",
-                "municipality" => "Suddhodhan Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'कपिलवस्तु',
+                'municipality' => 'शुद्धोधन गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "KAPILBASTU",
-                "municipality" => "Shivaraj Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'कपिलवस्तु',
+                'municipality' => 'शिवराज नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "KAPILBASTU",
-                "municipality" => "Kapilbastu Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'कपिलवस्तु',
+                'municipality' => 'कपिलवस्तु नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "KAPILBASTU",
-                "municipality" => "Buddhabhumi Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'कपिलवस्तु',
+                'municipality' => 'बुद्धभूमि नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "KAPILBASTU",
-                "municipality" => "Maharajgunj Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'कपिलवस्तु',
+                'municipality' => 'महाराजगन्ज नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "KAPILBASTU",
-                "municipality" => "Banganga Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'कपिलवस्तु',
+                'municipality' => 'बाणगंगा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "KAPILBASTU",
-                "municipality" => "Krishnanagar Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'कपिलवस्तु',
+                'municipality' => 'कृष्णनगर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "DANG",
-                "municipality" => "Babai Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'दाङ',
+                'municipality' => 'बबई गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "DANG",
-                "municipality" => "Gadhawa Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'दाङ',
+                'municipality' => 'गढवा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "DANG",
-                "municipality" => "Rapti Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'दाङ',
+                'municipality' => 'राप्ती गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "DANG",
-                "municipality" => "Rajpur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'दाङ',
+                'municipality' => 'राजपुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "DANG",
-                "municipality" => "Dangisharan Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'दाङ',
+                'municipality' => 'दंगिशरण गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "DANG",
-                "municipality" => "Shantinagar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'दाङ',
+                'municipality' => 'शान्तिनगर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "DANG",
-                "municipality" => "Banglachuli Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'दाङ',
+                'municipality' => 'बंगलाचुली गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "DANG",
-                "municipality" => "Tulsipur Sub-Metropolitian City",
-                "type" => "Sub-Metropolitian City"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'दाङ',
+                'municipality' => 'तुलसीपुर उप-महानगरपालिका',
+                'type' => 'उप-महानगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "DANG",
-                "municipality" => "Ghorahi Sub-Metropolitian City",
-                "type" => "Sub-Metropolitian City"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'दाङ',
+                'municipality' => 'घोराही उप-महानगरपालिका',
+                'type' => 'उप-महानगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "DANG",
-                "municipality" => "Lamahi Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'दाङ',
+                'municipality' => 'लमही नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BANKE",
-                "municipality" => "Khajura Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बाँके',
+                'municipality' => 'खजुरा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BANKE",
-                "municipality" => "Janki Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बाँके',
+                'municipality' => 'जानकी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BANKE",
-                "municipality" => "Baijanath Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बाँके',
+                'municipality' => 'बैजनाथ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BANKE",
-                "municipality" => "Duduwa Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बाँके',
+                'municipality' => 'डुडुवा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BANKE",
-                "municipality" => "Narainapur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बाँके',
+                'municipality' => 'नरैनापुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BANKE",
-                "municipality" => "Rapti Sonari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बाँके',
+                'municipality' => 'राप्ती सोनारी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BANKE",
-                "municipality" => "Kohalpur Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बाँके',
+                'municipality' => 'कोहलपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BANKE",
-                "municipality" => "Nepalgunj Sub-Metropolitian City",
-                "type" => "Sub-Metropolitian City"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बाँके',
+                'municipality' => 'नेपालगन्ज उप-महानगरपालिका',
+                'type' => 'उप-महानगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BARDIYA",
-                "municipality" => "Geruwa Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बर्दिया',
+                'municipality' => 'गेरुवा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BARDIYA",
-                "municipality" => "Badhaiyatal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बर्दिया',
+                'municipality' => 'बढैयाताल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BARDIYA",
-                "municipality" => "Thakurbaba Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बर्दिया',
+                'municipality' => 'ठाकुरबाबा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BARDIYA",
-                "municipality" => "Bansagadhi Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बर्दिया',
+                'municipality' => 'बाँसागढी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BARDIYA",
-                "municipality" => "Barbardiya Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बर्दिया',
+                'municipality' => 'बारबर्दिया नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BARDIYA",
-                "municipality" => "Rajapur Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बर्दिया',
+                'municipality' => 'राजापुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BARDIYA",
-                "municipality" => "Madhuwan Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बर्दिया',
+                'municipality' => 'मधुवन नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Lumbini Province",
-                "district" => "BARDIYA",
-                "municipality" => "Gulariya Municipality",
-                "type" => "Municipality"
+                'province' => 'लुम्बिनी प्रदेश',
+                'district' => 'बर्दिया',
+                'municipality' => 'गुलरिया नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DOLPA",
-                "municipality" => "Kaike Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'डोल्पा',
+                'municipality' => 'काइके गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DOLPA",
-                "municipality" => "Jagadulla Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'डोल्पा',
+                'municipality' => 'जगदुल्ला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DOLPA",
-                "municipality" => "Mudkechula Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'डोल्पा',
+                'municipality' => 'मुड्केचुला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DOLPA",
-                "municipality" => "Dolpo Buddha Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'डोल्पा',
+                'municipality' => 'डोल्पो बुद्ध गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DOLPA",
-                "municipality" => "Shey Phoksundo Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'डोल्पा',
+                'municipality' => 'शे-फोक्सुण्डो गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DOLPA",
-                "municipality" => "Chharka Tangsong Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'डोल्पा',
+                'municipality' => 'छर्का ताङसोङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DOLPA",
-                "municipality" => "Tripurasundari Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'डोल्पा',
+                'municipality' => 'त्रिपुरासुन्दरी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DOLPA",
-                "municipality" => "Thuli Bheri Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'डोल्पा',
+                'municipality' => 'ठुली भेरी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "MUGU",
-                "municipality" => "Soru Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'मुगु',
+                'municipality' => 'सोरु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "MUGU",
-                "municipality" => "Khatyad Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'मुगु',
+                'municipality' => 'खत्याड गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "MUGU",
-                "municipality" => "Mugum Karmarong Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'मुगु',
+                'municipality' => 'मुगूम कार्मारोङ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "MUGU",
-                "municipality" => "Chhayanath Rara Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'मुगु',
+                'municipality' => 'छायानाथ रारा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "HUMLA",
-                "municipality" => "Simkot Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'हुम्ला',
+                'municipality' => 'सिमकोट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "HUMLA",
-                "municipality" => "Namkha Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'हुम्ला',
+                'municipality' => 'नम्खा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "HUMLA",
-                "municipality" => "Chankheli Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'हुम्ला',
+                'municipality' => 'चनखेली गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "HUMLA",
-                "municipality" => "Tanjakot Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'हुम्ला',
+                'municipality' => 'तान्जाकोट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "HUMLA",
-                "municipality" => "Sarkegad Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'हुम्ला',
+                'municipality' => 'सार्केगड गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "HUMLA",
-                "municipality" => "Adanchuli Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'हुम्ला',
+                'municipality' => 'अडांचुली गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "HUMLA",
-                "municipality" => "Kharpunath Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'हुम्ला',
+                'municipality' => 'खार्पुनाथ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JUMLA",
-                "municipality" => "Hima Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जुम्ला',
+                'municipality' => 'हिमा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JUMLA",
-                "municipality" => "Tila Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जुम्ला',
+                'municipality' => 'तिला गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JUMLA",
-                "municipality" => "Sinja Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जुम्ला',
+                'municipality' => 'सिन्जा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JUMLA",
-                "municipality" => "Guthichaur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जुम्ला',
+                'municipality' => 'गुठीचौर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JUMLA",
-                "municipality" => "Tatopani Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जुम्ला',
+                'municipality' => 'तातोपानी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JUMLA",
-                "municipality" => "Patrasi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जुम्ला',
+                'municipality' => 'पत्रासी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JUMLA",
-                "municipality" => "Kanakasundari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जुम्ला',
+                'municipality' => 'कनकसुन्दरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JUMLA",
-                "municipality" => "Chandannath Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जुम्ला',
+                'municipality' => 'चन्दननाथ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "KALIKOT",
-                "municipality" => "Mahawai Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'कालिकोट',
+                'municipality' => 'महावाई गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "KALIKOT",
-                "municipality" => "Palata Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'कालिकोट',
+                'municipality' => 'पलाता गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "KALIKOT",
-                "municipality" => "Naraharinath Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'कालिकोट',
+                'municipality' => 'नरहरिनाथ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "KALIKOT",
-                "municipality" => "Pachaljharana Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'कालिकोट',
+                'municipality' => 'पाँचलझरना गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "KALIKOT",
-                "municipality" => "Subha Kalika Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'कालिकोट',
+                'municipality' => 'शुभ कालिका गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "KALIKOT",
-                "municipality" => "Sanni Tribeni Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'कालिकोट',
+                'municipality' => 'सन्नी त्रिवेणी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "KALIKOT",
-                "municipality" => "Khandachakra Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'कालिकोट',
+                'municipality' => 'खंडचक्र नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "KALIKOT",
-                "municipality" => "Raskot Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'कालिकोट',
+                'municipality' => 'रास्कोट नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "KALIKOT",
-                "municipality" => "Tilagufa Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'कालिकोट',
+                'municipality' => 'तिलागुफा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DAILEKH",
-                "municipality" => "Bhairabi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'दैलेख',
+                'municipality' => 'भैरवी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DAILEKH",
-                "municipality" => "Mahabu Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'दैलेख',
+                'municipality' => 'महाबु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DAILEKH",
-                "municipality" => "Gurans Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'दैलेख',
+                'municipality' => 'गुराँस गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DAILEKH",
-                "municipality" => "Naumule Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'दैलेख',
+                'municipality' => 'नौमुले गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DAILEKH",
-                "municipality" => "Bhagawatimai Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'दैलेख',
+                'municipality' => 'भगवतीमाई गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DAILEKH",
-                "municipality" => "Thantikandh Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'दैलेख',
+                'municipality' => 'ठान्टिकाण्ड गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DAILEKH",
-                "municipality" => "Dungeshwor Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'दैलेख',
+                'municipality' => 'डुङ्गेश्वर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DAILEKH",
-                "municipality" => "Aathabis Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'दैलेख',
+                'municipality' => 'आठबिस नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DAILEKH",
-                "municipality" => "Dullu Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'दैलेख',
+                'municipality' => 'दुल्लु नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DAILEKH",
-                "municipality" => "Chamunda Bindrasaini Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'दैलेख',
+                'municipality' => 'चामुण्डा बिन्द्रसैनी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "DAILEKH",
-                "municipality" => "Narayan Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'दैलेख',
+                'municipality' => 'नारायण नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JAJARKOT",
-                "municipality" => "Kuse Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जाजरकोट',
+                'municipality' => 'कुसे गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JAJARKOT",
-                "municipality" => "Shiwalaya Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जाजरकोट',
+                'municipality' => 'शिवालय गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JAJARKOT",
-                "municipality" => "Barekot Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जाजरकोट',
+                'municipality' => 'बारेकोट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JAJARKOT",
-                "municipality" => "Junichande Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जाजरकोट',
+                'municipality' => 'जुनिचन्दे गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JAJARKOT",
-                "municipality" => "Nalagad Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जाजरकोट',
+                'municipality' => 'नालागड नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JAJARKOT",
-                "municipality" => "Bheri Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जाजरकोट',
+                'municipality' => 'भेरी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "JAJARKOT",
-                "municipality" => "Chhedagad Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'जाजरकोट',
+                'municipality' => 'छेडागढ नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "RUKUM WEST",
-                "municipality" => "Tribeni Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'रुकुम पश्चिम',
+                'municipality' => 'त्रिवेणी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "RUKUM WEST",
-                "municipality" => "Sani Bheri Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'रुकुम पश्चिम',
+                'municipality' => 'सानी भेरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "RUKUM WEST",
-                "municipality" => "Banfikot Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'रुकुम पश्चिम',
+                'municipality' => 'बनफिकोट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "RUKUM WEST",
-                "municipality" => "Aathbiskot Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'रुकुम पश्चिम',
+                'municipality' => 'आठबिस्कोट नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "RUKUM WEST",
-                "municipality" => "Chaurjahari Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'रुकुम पश्चिम',
+                'municipality' => 'चौरजहारी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "RUKUM WEST",
-                "municipality" => "Musikot Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'रुकुम पश्चिम',
+                'municipality' => 'मुसिकोट नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SALYAN",
-                "municipality" => "Kumakh Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सल्यान',
+                'municipality' => 'कुमाख गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SALYAN",
-                "municipality" => "Darma Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सल्यान',
+                'municipality' => 'डार्मा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SALYAN",
-                "municipality" => "Kapurkot Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सल्यान',
+                'municipality' => 'कपुरकोट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SALYAN",
-                "municipality" => "Kalimati Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सल्यान',
+                'municipality' => 'कालीमाटी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SALYAN",
-                "municipality" => "Tribeni Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सल्यान',
+                'municipality' => 'त्रिवेणी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SALYAN",
-                "municipality" => "Chhatreshwori Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सल्यान',
+                'municipality' => 'छत्रेश्वरी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SALYAN",
-                "municipality" => "Siddha Kumakh Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सल्यान',
+                'municipality' => 'सिद्ध कुमाख गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SALYAN",
-                "municipality" => "Sharada Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सल्यान',
+                'municipality' => 'शारदा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SALYAN",
-                "municipality" => "Bangad Kupinde Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सल्यान',
+                'municipality' => 'बांगद कुपिन्दे नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SALYAN",
-                "municipality" => "Bagchaur Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सल्यान',
+                'municipality' => 'बागचौर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SURKHET",
-                "municipality" => "Chaukune Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सुर्खेत',
+                'municipality' => 'चौकुने गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SURKHET",
-                "municipality" => "Simta Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सुर्खेत',
+                'municipality' => 'चौकुने गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SURKHET",
-                "municipality" => "Chingad Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सुर्खेत',
+                'municipality' => 'चिंगाड गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SURKHET",
-                "municipality" => "Barahtal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सुर्खेत',
+                'municipality' => 'बारहताल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SURKHET",
-                "municipality" => "Gurbhakot Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सुर्खेत',
+                'municipality' => 'गुर्भाकोट नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SURKHET",
-                "municipality" => "Panchpuri Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सुर्खेत',
+                'municipality' => 'पञ्चपुरी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SURKHET",
-                "municipality" => "Bheriganga Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सुर्खेत',
+                'municipality' => 'भेरीगंगा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SURKHET",
-                "municipality" => "Lekbeshi Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सुर्खेत',
+                'municipality' => 'लेकबेशी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Karnali Province",
-                "district" => "SURKHET",
-                "municipality" => "Birendranagar Municipality",
-                "type" => "Municipality"
+                'province' => 'कर्णाली प्रदेश',
+                'district' => 'सुर्खेत',
+                'municipality' => 'वीरेन्द्रनगर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJURA",
-                "municipality" => "Gaumul Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बाजुरा',
+                'municipality' => 'गौमुल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJURA",
-                "municipality" => "Himali Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बाजुरा',
+                'municipality' => 'हिमाली गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJURA",
-                "municipality" => "Jagannath Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बाजुरा',
+                'municipality' => 'जगन्नाथ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJURA",
-                "municipality" => "Khaptad Chhededaha Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बाजुरा',
+                'municipality' => 'खप्तड छेडेदह गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJURA",
-                "municipality" => "Swami Kartik Khaapar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बाजुरा',
+                'municipality' => 'स्वामी कार्तिक खापर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJURA",
-                "municipality" => "Badimalika Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बाजुरा',
+                'municipality' => 'बडिमालिका नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJURA",
-                "municipality" => "Tribeni Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बाजुरा',
+                'municipality' => 'त्रिवेणी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJURA",
-                "municipality" => "Budhiganga Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बाजुरा',
+                'municipality' => 'बुढीगंगा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJURA",
-                "municipality" => "Budhinanda Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बाजुरा',
+                'municipality' => 'बुढीनन्द नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJHANG",
-                "municipality" => "Masta Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बझाङ',
+                'municipality' => 'मस्टा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJHANG",
-                "municipality" => "Thalara Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बझाङ',
+                'municipality' => 'थलारा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJHANG",
-                "municipality" => "Talkot Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बझाङ',
+                'municipality' => 'तलकोट गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJHANG",
-                "municipality" => "Surma Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बझाङ',
+                'municipality' => 'सुर्मा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJHANG",
-                "municipality" => "SaiPaal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बझाङ',
+                'municipality' => 'सैपाल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJHANG",
-                "municipality" => "Durgathali Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बझाङ',
+                'municipality' => 'दुर्गाथली गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJHANG",
-                "municipality" => "Bithadchir Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बझाङ',
+                'municipality' => 'बिथडचिर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJHANG",
-                "municipality" => "Kedarseu Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बझाङ',
+                'municipality' => 'केदारसिउ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJHANG",
-                "municipality" => "Khaptadchhanna Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बझाङ',
+                'municipality' => 'खप्तड छान्ना गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJHANG",
-                "municipality" => "Chabispathivera Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बझाङ',
+                'municipality' => 'छबिस पाथीभेरा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJHANG",
-                "municipality" => "JayaPrithivi Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बझाङ',
+                'municipality' => 'जय पृथ्वी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAJHANG",
-                "municipality" => "Bungal Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बझाङ',
+                'municipality' => 'बुंगल नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DARCHULA",
-                "municipality" => "Lekam Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'दार्चुला',
+                'municipality' => 'लेकम गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DARCHULA",
-                "municipality" => "Naugad Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'दार्चुला',
+                'municipality' => 'नौगाड गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DARCHULA",
-                "municipality" => "Byas Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'दार्चुला',
+                'municipality' => 'ब्यास गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DARCHULA",
-                "municipality" => "Dunhu Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'दार्चुला',
+                'municipality' => 'दुन्हु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DARCHULA",
-                "municipality" => "Marma Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'दार्चुला',
+                'municipality' => 'मर्मा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DARCHULA",
-                "municipality" => "Apihimal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'दार्चुला',
+                'municipality' => 'अपि हिमाल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DARCHULA",
-                "municipality" => "Malikaarjun Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'दार्चुला',
+                'municipality' => 'माल्लिकार्जुन गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DARCHULA",
-                "municipality" => "Mahakali Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'दार्चुला',
+                'municipality' => 'महाकाली नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DARCHULA",
-                "municipality" => "Shailyashikhar Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'दार्चुला',
+                'municipality' => 'शैल्यशिखर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAITADI",
-                "municipality" => "Sigas Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बैतडी',
+                'municipality' => 'सिगास गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAITADI",
-                "municipality" => "Shivanath Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बैतडी',
+                'municipality' => 'शिवनाथ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAITADI",
-                "municipality" => "Surnaya Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बैतडी',
+                'municipality' => 'सुर्नाया गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAITADI",
-                "municipality" => "Dilasaini Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बैतडी',
+                'municipality' => 'डिलासैनी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAITADI",
-                "municipality" => "Pancheshwar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बैतडी',
+                'municipality' => 'पञ्चेश्वर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAITADI",
-                "municipality" => "Dogadakedar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बैतडी',
+                'municipality' => 'दोगडाकेदार गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAITADI",
-                "municipality" => "Melauli Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बैतडी',
+                'municipality' => 'मेलौली नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAITADI",
-                "municipality" => "Dasharathchanda Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बैतडी',
+                'municipality' => 'दशरथचन्द नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAITADI",
-                "municipality" => "Purchaudi Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बैतडी',
+                'municipality' => 'पुर्चौडी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "BAITADI",
-                "municipality" => "Patan Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'बैतडी',
+                'municipality' => 'पाटन नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DADELDHURA",
-                "municipality" => "Alital Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डडेल्धुरा',
+                'municipality' => 'अलिताल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DADELDHURA",
-                "municipality" => "Ajaymeru Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डडेल्धुरा',
+                'municipality' => 'अजयमेरु गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DADELDHURA",
-                "municipality" => "Bhageshwar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डडेल्धुरा',
+                'municipality' => 'भागेश्वर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DADELDHURA",
-                "municipality" => "Nawadurga Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डडेल्धुरा',
+                'municipality' => 'नवदुर्गा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DADELDHURA",
-                "municipality" => "Ganayapdhura Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डडेल्धुरा',
+                'municipality' => 'गन्यापधुरा गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DADELDHURA",
-                "municipality" => "Amargadhi Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डडेल्धुरा',
+                'municipality' => 'अमरगढी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DADELDHURA",
-                "municipality" => "Parashuram Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डडेल्धुरा',
+                'municipality' => 'परशुराम नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DOTI",
-                "municipality" => "Sayal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डोटी',
+                'municipality' => 'सायल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DOTI",
-                "municipality" => "Adharsha Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डोटी',
+                'municipality' => 'आदर्श गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DOTI",
-                "municipality" => "Jorayal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डोटी',
+                'municipality' => 'जोरयाल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DOTI",
-                "municipality" => "Badikedar Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डोटी',
+                'municipality' => 'बडीकेदार गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DOTI",
-                "municipality" => "Purbichauki Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डोटी',
+                'municipality' => 'पुर्बीचौकी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DOTI",
-                "municipality" => "K I Singh Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डोटी',
+                'municipality' => 'के आई सिंह गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DOTI",
-                "municipality" => "Bogtan Foodsil Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डोटी',
+                'municipality' => 'बोगटान फूडसिल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DOTI",
-                "municipality" => "Dipayal Silgadi Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डोटी',
+                'municipality' => 'दिपायल सिलगढी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "DOTI",
-                "municipality" => "Shikhar Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'डोटी',
+                'municipality' => 'शिखर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "ACHHAM",
-                "municipality" => "Dhakari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'अछाम',
+                'municipality' => 'ढकारी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "ACHHAM",
-                "municipality" => "Mellekh Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'अछाम',
+                'municipality' => 'मेल्लेख गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "ACHHAM",
-                "municipality" => "Chaurpati Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'अछाम',
+                'municipality' => 'चौरपाटी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "ACHHAM",
-                "municipality" => "Ramaroshan Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'अछाम',
+                'municipality' => 'रामरोशन गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "ACHHAM",
-                "municipality" => "Turmakhad Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'अछाम',
+                'municipality' => 'तुर्मखाद गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "ACHHAM",
-                "municipality" => "Bannigadhi Jayagadh Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'अछाम',
+                'municipality' => 'बान्नीगढी जयगढ गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "ACHHAM",
-                "municipality" => "Sanphebagar Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'अछाम',
+                'municipality' => 'साँफेबगर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "ACHHAM",
-                "municipality" => "Mangalsen Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'अछाम',
+                'municipality' => 'मंगलसेन नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "ACHHAM",
-                "municipality" => "Kamalbazar Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'अछाम',
+                'municipality' => 'कमलबजार नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "ACHHAM",
-                "municipality" => "Panchadewal Binayak Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'अछाम',
+                'municipality' => 'पञ्चदेवल विनायक नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KAILALI",
-                "municipality" => "Chure Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कैलाली',
+                'municipality' => 'चुरे गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KAILALI",
-                "municipality" => "Janaki Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कैलाली',
+                'municipality' => 'जानकी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KAILALI",
-                "municipality" => "Kailari Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कैलाली',
+                'municipality' => 'कैलारी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KAILALI",
-                "municipality" => "Joshipur Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कैलाली',
+                'municipality' => 'जोशीपुर गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KAILALI",
-                "municipality" => "Mohanyal Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कैलाली',
+                'municipality' => 'मोहन्याल गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KAILALI",
-                "municipality" => "Bardagoriya Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कैलाली',
+                'municipality' => 'बर्दगोरिया गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KAILALI",
-                "municipality" => "Tikapur Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कैलाली',
+                'municipality' => 'टीकापुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KAILALI",
-                "municipality" => "Ghodaghodi Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कैलाली',
+                'municipality' => 'घोडाघोडी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KAILALI",
-                "municipality" => "Bhajani Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कैलाली',
+                'municipality' => 'भजनी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KAILALI",
-                "municipality" => "Dhangadhi Sub-Metropolitian City",
-                "type" => "Sub-Metropolitian City"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कैलाली',
+                'municipality' => 'धनगढी उपमहानगरपालिका',
+                'type' => 'उपमहानगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KAILALI",
-                "municipality" => "Gauriganga Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कैलाली',
+                'municipality' => 'गौरीगंगा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KAILALI",
-                "municipality" => "Godawari Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कैलाली',
+                'municipality' => 'गोदावरी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KAILALI",
-                "municipality" => "Lamkichuha Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कैलाली',
+                'municipality' => 'लम्की चुहा नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KANCHANPUR",
-                "municipality" => "Beldandi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कञ्चनपुर',
+                'municipality' => 'बेलडाँडी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KANCHANPUR",
-                "municipality" => "Laljhadi Rural Municipality",
-                "type" => "Rural Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कञ्चनपुर',
+                'municipality' => 'लालझाडी गाउँपालिका',
+                'type' => 'गाउँपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KANCHANPUR",
-                "municipality" => "Punarbas Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कञ्चनपुर',
+                'municipality' => 'पुनर्वास नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KANCHANPUR",
-                "municipality" => "Krishnapur Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कञ्चनपुर',
+                'municipality' => 'कृष्णपुर नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KANCHANPUR",
-                "municipality" => "Mahakali Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कञ्चनपुर',
+                'municipality' => 'महाकाली नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KANCHANPUR",
-                "municipality" => "Bedkot Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कञ्चनपुर',
+                'municipality' => 'बेदकोट नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KANCHANPUR",
-                "municipality" => "Belauri Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कञ्चनपुर',
+                'municipality' => 'बेलौरी नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KANCHANPUR",
-                "municipality" => "Bhimdatta Municipality",
-                "type" => "Municipality"
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कञ्चनपुर',
+                'municipality' => 'भीमदत्त नगरपालिका',
+                'type' => 'नगरपालिका'
             ],
             [
-                "province" => "Sudurpaschim Province",
-                "district" => "KANCHANPUR",
-                "municipality" => "Shuklaphanta Municipality",
-                "type" => "Municipality"
-            ]
-
+                'province' => 'सुदूरपश्चिम प्रदेश',
+                'district' => 'कञ्चनपुर',
+                'municipality' => 'शुक्लाफाँटा नगरपालिका',
+                'type' => 'नगरपालिका'
+            ],
         ];
         foreach ($muncipalities as $muncipality) {
             Municipality::firstOrCreate($muncipality);

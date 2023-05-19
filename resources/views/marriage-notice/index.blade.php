@@ -18,27 +18,27 @@
                                     <input type="hidden" name="darta_number"
                                         value="{{ $_GET['darta_number'] ? $_GET['darta_number'] : '' }}">
                                 @endisset
-    
+
                                 @isset($_GET['marriage_date'])
                                     <input type="hidden" name="marriage_date" value="{{ $_GET['marriage_date'] }}">
                                 @endisset
-    
+
                                 @isset($_GET['bride_name'])
                                     <input type="hidden" name="bride_name" value="{{ $_GET['bride_name'] }}">
                                 @endisset
-    
+
                                 @isset($_GET['groom_name'])
                                     <input type="hidden" name="groom_name" value="{{ $_GET['groom_name'] }}">
                                 @endisset
-    
+
                                 @isset($_GET['user_id'])
                                     <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
                                 @endisset
-    
+
                                 @isset($_GET['bride_father_name'])
                                     <input type="hidden" name="bride_father_name" value="{{ $_GET['bride_father_name'] }}">
                                 @endisset
-    
+
                                 @isset($_GET['groom_father_name'])
                                     <input type="hidden" name="groom_father_name" value="{{ $_GET['groom_father_name'] }}">
                                 @endisset
@@ -127,11 +127,10 @@
                             <div class="row">
                                 <div class="mb-2 col-md-3">
                                     @isset($old)
-                                        <input type="text" class="form-control" placeholder="दर्ता न."
-                                            name="darta_number" value="{{ $old->darta_number }}">
+                                        <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number"
+                                            value="{{ $old->darta_number }}">
                                     @else
-                                        <input type="text" class="form-control" placeholder="दर्ता न."
-                                            name="darta_number">
+                                        <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number">
                                     @endisset
                                 </div>
                                 <div class="mb-2 col-md-3">
@@ -240,8 +239,9 @@
                                 @foreach ($marriages as $marriage)
                                     <tr style="white-space: nowrap;">
                                         <td>{{ $loop->iteration }}</td>
-
-                                        <td>{{ $marriage->book->code }}</td>
+                                      
+                                            <td>{{ $marriage->book->code ?? "" }}</td>
+                                        
                                         <td>{{ $marriage->reg_number }}</td>
                                         <td>{{ $marriage->entry_date }}</td>
                                         <td>{{ $marriage->marriage_date }}</td>
@@ -511,7 +511,7 @@
                 var route = "{{ route('marriage.printdetail', 'id') }}";
                 route = route.replace('id', $(this).attr('id'));
                 $('#detail_print').attr("href", route);
-                
+
                 family_data = "";
                 var num = "";
                 for (let i = 0; i < response.data.marriage_withness.length; i++) {

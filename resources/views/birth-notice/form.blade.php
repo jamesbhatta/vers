@@ -47,7 +47,8 @@
                             <div class="row">
                                 <div class=" col-md-4 mb-3">
                                     <label><span class="text-danger">*</span> दर्ता न.</label>
-                                    <input type="text" class="form-control" name="reg_number" value="{{old('reg_number', $birth->reg_number)}}">
+                                    <input type="text" class="form-control" name="reg_number"
+                                        value="{{ old('reg_number', $birth->reg_number) }}">
                                     @error('reg_number')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -55,7 +56,7 @@
                                 <div class="form-group col-md-4 mb-3">
                                     <label><span class="text-danger">*</span> दर्ता मिति</label>
                                     <input type="text" name="entry_date" id="darta_miti" class="form-control"
-                                        value="{{old("entry_date",$birth->entry_date)}}" />
+                                        value="{{ old('entry_date', $birth->entry_date) }}" />
                                     @error('entry_date')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -112,8 +113,8 @@
                                         <select name="physical_disable" class="custom-select">
                                             {{-- <option selected disabled class="m-5" value="">छान्न्नुहोस्। </option> --}}
                                             <option
-                                            {{ $birth->physical_disable == 'छैन' || old('physical_disable') == 'छैन' ? 'selected' : '' }}
-                                            value="छैन">छैन</option>
+                                                {{ $birth->physical_disable == 'छैन' || old('physical_disable') == 'छैन' ? 'selected' : '' }}
+                                                value="छैन">छैन</option>
                                             <option
                                                 {{ $birth->physical_disable == 'छ' || old('physical_disable') == 'छ' ? 'selected' : '' }}
                                                 value="छ">छ</option>
@@ -510,7 +511,7 @@
                                     <x-mother-tongue :name="'mother_mother_toung'" :id="'mother_mother_toung'" :userdata="$birth" />
                                 </div>
 
-                                
+
                                 <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> पेशा</label>
                                     <select class="custom-select" name="mother_occupation" id="mother_occupation">
@@ -695,6 +696,14 @@
                         $("#mother_country_where_baby_born").val("").change();
                     }
                 });
+            });
+
+            $(document).ready(function() {
+                function relationship() {
+                    var selectElement = document.getElementById("mySelect");
+                    var selectedOption = selectElement.options[selectElement.selectedIndex].text;
+                    document.getElementById("selectedValue").textContent = selectedOption;
+                }
             });
         </script>
     @endpush
