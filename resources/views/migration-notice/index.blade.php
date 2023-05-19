@@ -195,10 +195,8 @@
                                                     class="action-btn text-primary" data-toggle="tooltip"
                                                     data-placement="top" title="Add Family"><i
                                                         class="fas fa-plus-circle "></i></a>
-                                                <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"
-                                                    data-toggle="tooltip" data-placement="top" title="Show detail"
-                                                    class="action-btn text-primary show"
-                                                    id="{{ $migrationCertificate->id }}"><i class="fa fa-eye"></i></a>
+                                                <a href="{{ route('migration.show', $migrationCertificate) }}" 
+                                                    class="action-btn text-primary show" target="_blank"><i class="fa fa-eye"></i></a>
                                                 <a href="{{ route('migration.edit', $migrationCertificate->id) }}"
                                                     data-toggle="tooltip" data-placement="top"
                                                     title="Edit migration notice" class="action-btn text-primary"><i
