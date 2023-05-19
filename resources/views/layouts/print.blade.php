@@ -15,11 +15,11 @@
     @livewireStyles
 </head>
 
-<body>
+<body class="bg-white">
 
     <div id="app1">
         @auth
-            <div id="content-area" class="flex-grow-1">
+            <div class="flex-grow-1">
 
 
                 <div class="p-3 min-height" style="overflow-x: hidden">
