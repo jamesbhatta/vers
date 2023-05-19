@@ -263,11 +263,11 @@
                                             <td>{{ $birth->birth_place }}</td>
 
                                             <td class="text-nowrap text-right">
-
-                                                <a class="action-btn text-primary show" style="cursor: pointer"
+                                                <a href="{{route('birth.show',$birth)}}" class="action-btn text-primary show" ><i class="far fa-eye"></i></a>
+                                                {{-- <a class="action-btn text-primary show" style="cursor: pointer"
                                                     data-toggle="modal" data-target=".bd-example-modal-lg"
                                                     id="{{ $birth->id }}" data-toggle="modal"
-                                                    data-target=".bd-example-modal-lg"><i class="far fa-eye"></i></a>
+                                                    data-target=".bd-example-modal-lg"><i class="far fa-eye"></i></a> --}}
                                                 <a class="action-btn text-primary" data-toggle="tooltip"
                                                     data-placement="top" title="Edit birth notice"
                                                     href="{{ route('birth.edit', $birth->id) }}"><i

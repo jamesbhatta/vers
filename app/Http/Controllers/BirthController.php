@@ -291,6 +291,11 @@ class BirthController extends Controller
 
     public function printDetail(Birth $birth)
     {
+
+        return view('birth-notice.show', compact('birth'));
+
+
+        
         $html = '<style>.kantipur{} .kalimati{font-size: 10pt;}.my_table th, .my_table td{border: 1px solid #ccc;padding: 7px 10px;border-collapse: collapse;}</style>';
         $html .= '<h1 style="text-align:center">जन्मको सूचना फाराम</h1>';
         $html .= '<div class="container"><div class="col-12"><table class="my_table col-12" style="border-collapse: collapse;width:100%"><tr><td>प्रदेश</td><td>' . $birth->province . '</td><td>स्थानीय पञ्जिकाधिकारी</td><td class="kantipur">' . $birth->administrator . '</td></tr><tr><td>जिल्ला</td><td>' . $birth->district . '</td><td>दर्ता न.</td><td>' . $birth->reg_number . '</td></tr><tr><td>ग.पा. / न.पा</td><td>' . $birth->municipality . '</td><td>दर्ता मिति</td><td>' . $birth->entry_date . '</td></tr></table></div>';
