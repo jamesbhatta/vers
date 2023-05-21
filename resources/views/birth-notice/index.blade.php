@@ -245,13 +245,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                     @foreach ($births as $birth)
                                         <tr style="white-space: nowrap;">
                                             <td>{{ $loop->iteration }}</td>
-
                                             <td>{{ $birth->book->code ?? "" }}</td>
-
                                             <td>{{ $birth->reg_number }}</td>
                                             <td>{{ $birth->name }}</td>
                                             <td>{{ $birth->gender }}</td>
@@ -284,10 +281,11 @@
                                                 </form>
                                             </td>
                                         </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            {{ $births->links() }}
                     </div>
                  
 

@@ -32,7 +32,7 @@ class DeathController extends Controller
     }
     public function index()
     {
-        $deaths = Death::orderBy('id', 'desc')->get();
+        $deaths = Death::orderBy('id', 'desc')->paginate(50);
         $title = 'मृत्यु दर्ता सूचना फाराम ';
         return view('death-notice.index', compact('deaths', 'title'));
     }
@@ -209,7 +209,7 @@ class DeathController extends Controller
         }
         $old = $request;
         // return $request;
-        $deaths = $deaths->orderBy('id', 'desc')->get();
+        $deaths = $deaths->orderBy('id', 'desc')->paginate(50);
         return view('death-notice.index', compact('deaths', 'old'));
     }
 

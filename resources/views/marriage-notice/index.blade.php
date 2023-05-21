@@ -239,9 +239,9 @@
                                 @foreach ($marriages as $marriage)
                                     <tr style="white-space: nowrap;">
                                         <td>{{ $loop->iteration }}</td>
-                                      
-                                            <td>{{ $marriage->book->code ?? "" }}</td>
-                                        
+
+                                        <td>{{ $marriage->book->code ?? '' }}</td>
+
                                         <td>{{ $marriage->reg_number }}</td>
                                         <td>{{ $marriage->entry_date }}</td>
                                         <td>{{ $marriage->marriage_date }}</td>
@@ -257,7 +257,9 @@
                                                 title="Add withness"
                                                 href="{{ route('marriageWithness.create', $marriage) }}"><i
                                                     class="fas fa-plus-circle"></i></a>
-                                            <a href="{{route('marriage.show', $marriage)}}" class="action-btn text-primary show" target="_blank"><i class="far fa-eye"></i></a>
+                                            <a href="{{ route('marriage.show', $marriage) }}"
+                                                class="action-btn text-primary show" target="_blank"><i
+                                                    class="far fa-eye"></i></a>
                                             <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top"
                                                 title="Edit marriage notice"
                                                 href="{{ route('marriage.edit', $marriage->id) }}"><i
@@ -278,9 +280,10 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $marriages->links() }}
 
                     {{-- =======modal===== --}}
-                    <div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog"
+                    {{-- <div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog"
                         aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg ">
                             <div class="modal-content">
@@ -294,7 +297,6 @@
                                             <tr>
                                                 <td>प्रदेश</td>
                                                 <td id="province"></td>
-                                                {{-- <td rowspan="3" style="width: 20%"></td> --}}
                                                 <td>स्थानीय पञ्जिकाधिकारी</td>
                                                 <td id="administrator"></td>
                                             </tr>
@@ -433,7 +435,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

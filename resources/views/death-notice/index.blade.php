@@ -274,6 +274,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $deaths->links() }}
                 </div>
             </div>
         </div>

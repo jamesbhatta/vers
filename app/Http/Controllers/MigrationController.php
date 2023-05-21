@@ -32,7 +32,7 @@ class MigrationController extends Controller
     {
         $mysetting = Mysetting::get();
         $family = Family::get();
-        $migrationCertificates = MigrationCertificate::get();
+        $migrationCertificates = MigrationCertificate::latest()->paginate(50);
         return view('migration-notice.index', compact('migrationCertificates', 'family', 'mysetting'));
     }
     public function filter(Request $request)
@@ -72,7 +72,7 @@ class MigrationController extends Controller
         }
         $old = $request;
 
-        $migrationCertificates = $migrationCertificates->with('user', 'book')->get();
+        $migrationCertificates = $migrationCertificates->with('user', 'book')->paginate(50);
         return view('migration-notice.index', compact('migrationCertificates', 'old'));
     }
     public function listPrint(Request $request)

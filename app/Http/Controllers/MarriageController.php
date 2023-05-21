@@ -25,7 +25,7 @@ class MarriageController extends Controller
     public function index()
     {
         $title = 'विवाह दर्ता सूचना फाराम ';
-        $marriages = Marriage::orderBy('id', 'desc')->get();
+        $marriages = Marriage::orderBy('id', 'desc')->paginate(50);
         return view('marriage-notice.index', compact('marriages', 'title'));
     }
 
@@ -168,7 +168,7 @@ class MarriageController extends Controller
                 $marriages = $marriages->where('entry_date', $request->from);
             }
         }
-        $marriages = $marriages->orderBy('id', 'desc')->get();
+        $marriages = $marriages->orderBy('id', 'desc')->paginate(50);
         $old = $request;
         return view('marriage-notice.index', compact('marriages', 'old'));
     }

@@ -26,7 +26,7 @@ class BirthController extends Controller
     {
         // return $dataTable->render('birth-notice.index');
         $title = 'जन्म दर्ता सूचना फाराम ';
-        $births = Birth::orderBy('id', 'desc')->get();
+        $births = Birth::orderBy('id', 'desc')->paginate(50);
         return view('birth-notice.index', compact('births', 'title'));
     }
 
@@ -171,7 +171,7 @@ class BirthController extends Controller
             }
         }
 
-        $births = $births->orderBy('id', 'desc')->get();
+        $births = $births->orderBy('id', 'desc')->paginate(50);
         $old = $request;
         // return $births;
         return view('birth-notice.index', compact('births', 'old'));
