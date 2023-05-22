@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Birth;
+use App\Book;
 use App\DataTables\BirthsDataTable;
 use App\Exports\BirthExport;
 use App\Http\Requests\StoreBirthRequest;
@@ -52,7 +53,8 @@ class BirthController extends Controller
         $user = User::findOrFail(Auth::user()->id);
         $data = $request->validated();
         if ($request->hasFile('file')) {
-            $fileName = $request->reg_number . '-' . Str::slug($request->name) . '.' . $request->file->getClientOriginalExtension();
+            $bookCode = Book::findOrFail($request->book_id);
+            $fileName = $bookCode->code . '-' . $request->reg_number. '-'.rand(0,9999) . '.' . $request->file->getClientOriginalExtension();
             $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
         $user->birth()->create($data);
@@ -103,7 +105,8 @@ class BirthController extends Controller
             if ($birth->file != null) {
                 Storage::delete($birth->file);
             }
-            $fileName = $request->reg_number . '-' . Str::slug($request->name) . '.' . $request->file->getClientOriginalExtension();
+            $bookCode = Book::findOrFail($request->book_id);
+            $fileName = $bookCode->code . '-' . $request->reg_number. '-'.rand(0,9999) . '.' . $request->file->getClientOriginalExtension();
             $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
 

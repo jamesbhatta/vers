@@ -258,7 +258,11 @@
                                         <td class="text-right">
 
                                             <a href="{{ route('death.show', $death) }}"
-                                                class="action-btn text-primary show" target="_blank"><i class="far fa-eye"></i></a>
+                                                class="action-btn text-primary show" target="_blank"><i
+                                                    class="far fa-eye"></i></a>
+                                            <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top"
+                                                title="Edit birth notice" href="{{ route('death.edit', $death->id) }}"><i
+                                                    class="far fa-edit"></i></a>
                                             <form action="{{ route('death.delete', $death->id) }}" method="post"
                                                 onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
                                                 class="form-inline d-inline">
@@ -280,4 +284,3 @@
         </div>
     </div>
 @endsection
-

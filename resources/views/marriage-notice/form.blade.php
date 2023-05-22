@@ -460,18 +460,13 @@
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-xl-6">
-                                        <img id="output" class="output_modal"
-                                            src="{{ asset('storage/' . $marriage->file) }}" style="height: 150px"
-                                            data-toggle="modal" data-target=".img-model">
-                                        <div class="modal fade img-model" tabindex="-1" role="dialog"
-                                            aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content p-3">
-                                                    <img id="img_model" style="height: 90vh; object-fit: contain;">
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="col-xl-6">
+                                        @if ($marriage->file)
+                                            <a href="{{ asset('storage/' . $marriage->file) }}" target="_blank">
+                                               <div><i class="fas fa-file-image"  style="font-size: 100px;"></i></div>
+                                               <div>View File</div> 
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group col-xl-12">

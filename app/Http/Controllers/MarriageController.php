@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use App\Exports\MarriageExport;
 use App\Http\Requests\StoreMarriageRequest;
 use App\Http\Requests\UpdateMarriageRequest;
@@ -51,7 +52,8 @@ class MarriageController extends Controller
         $user = User::findOrFail(Auth::user()->id);
         $data = $request->validated();
         if ($request->hasFile('file')) {
-            $fileName = $request->reg_number . '-' . Str::slug($request->name) . '.' . $request->file->getClientOriginalExtension();
+            $bookCode = Book::findOrFail($request->book_id);
+            $fileName = $bookCode->code . '-' . $request->reg_number . '-' . rand(0, 9999) . '.' . $request->file->getClientOriginalExtension();
             $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
         $marriage = $user->marriage()->create($data);
@@ -85,8 +87,8 @@ class MarriageController extends Controller
         }
         $marriageWithnesss = $marriage->marriageWithness()->get();
         $title = 'विवाह दर्ता सूचना फाराम ';
-        
-        return view('marriage-notice.form', compact('marriage', 'title','marriageWithnesss','marriageWithness'));
+
+        return view('marriage-notice.form', compact('marriage', 'title', 'marriageWithnesss', 'marriageWithness'));
     }
 
     /**
@@ -103,7 +105,9 @@ class MarriageController extends Controller
             if ($marriage->file != null) {
                 Storage::delete($marriage->file);
             }
-            $fileName = $request->reg_number . '-' . Str::slug($request->name) . '.' . $request->file->getClientOriginalExtension();
+
+            $bookCode = Book::findOrFail($request->book_id);
+            $fileName = $bookCode->code . '-' . $request->reg_number . '-' . rand(0, 9999) . '.' . $request->file->getClientOriginalExtension();
             $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
 

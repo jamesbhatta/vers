@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use App\Death;
 use App\Exports\DeathExport;
 use App\Http\Requests\StoreDeathRequest;
@@ -98,7 +99,9 @@ class DeathController extends Controller
         // $date=date_create();
 
         if ($request->hasFile('file')) {
-            $data['file'] = $request->file('file')->store('image');
+            $bookCode = Book::findOrFail($request->book_id);
+            $fileName = $bookCode->code . '-' . $request->reg_number . '-' . rand(0, 9999) . '.' . $request->file->getClientOriginalExtension();
+            $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
         $user->death()->create($data);
         return redirect()
@@ -143,7 +146,10 @@ class DeathController extends Controller
             if ($death->file != null) {
                 Storage::delete($death->file);
             }
-            $data['file'] = $request->file('file')->store('image');
+
+            $bookCode = Book::findOrFail($request->book_id);
+            $fileName = $bookCode->code . '-' . $request->reg_number . '-' . rand(0, 9999) . '.' . $request->file->getClientOriginalExtension();
+            $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
 
         $death->update($data);

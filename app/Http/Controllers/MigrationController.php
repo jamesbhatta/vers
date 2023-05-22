@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use App\Exports\MigrationCertificateExport;
 use Illuminate\Support\Facades\DB;
 use App\Family;
@@ -219,8 +220,9 @@ class MigrationController extends Controller
         $data = $request->validated();
 
         if ($request->hasFile('file')) {
-            $fileName = $request->reg_number . '-' . Str::slug($request->province) . '.' . $request->file->getClientOriginalExtension();
-            $data['file'] = $request->file('file')->storeAs('image', $fileName);
+            $bookCode = Book::findOrFail($request->book_id);
+            $fileName = $bookCode->code . '-' . $request->reg_number . '-' . rand(0, 9999) . '.' . $request->file->getClientOriginalExtension();
+            $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
         // return $data;
         $migrationCertificate = $user->migrationCertificate()->create($data);
@@ -243,7 +245,8 @@ class MigrationController extends Controller
             if ($migrationCertificate->file != null) {
                 Storage::delete($migrationCertificate->file);
             }
-            $fileName = $request->reg_number . '-' . Str::slug($request->migration_province) . '.' . $request->file->getClientOriginalExtension();
+            $bookCode = Book::findOrFail($request->book_id);
+            $fileName = $bookCode->code . '-' . $request->reg_number . '-' . rand(0, 9999) . '.' . $request->file->getClientOriginalExtension();
             $data['file'] = $request->file('file')->storeAs('image', $fileName, 'local');
         }
         $migrationCertificate->update($data);
