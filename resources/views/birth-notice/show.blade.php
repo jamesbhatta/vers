@@ -161,11 +161,7 @@
                         <td>ठेगाना</td>
                         <td id="relative_address">{{ $birth->relative_address }}</td>
                     </tr>
-                    <tr>
-                        <td>घ</td>
-                        <td>मिति</td>
-                        <td id="date">{{ $birth->date }}</td>
-                    </tr>
+                   
                 </table>
             </div>
         </div>
