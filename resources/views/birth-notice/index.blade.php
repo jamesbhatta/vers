@@ -270,9 +270,7 @@
                                                 @if ($birth->file)
                                                     <a href="{{ asset('storage/' . $birth->file) }}"
                                                         data-toggle="tooltip" data-placement="top" title="File view"
-                                                        target="_blank">
-                                                        <div><i class="fas fa-file-image"></i></div>
-                                                        <div>View File</div>
+                                                        target="_blank"><i class="fas fa-file-image"></i>
                                                     </a>
                                                 @endif
                                                 <a class="action-btn text-primary" data-toggle="tooltip"
