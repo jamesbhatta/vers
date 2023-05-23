@@ -169,7 +169,7 @@
                 @endif
             @endforeach
         </select> --}}
-        <input type="text" class="form-control" name="administrator" wire:model="administrator" readonly>
+        <input type="text" class="form-control" name="administrator" wire:model="administrator" >
         @error('administrator')
         <small class="text-danger">{{ $message }}</small>
     @enderror
