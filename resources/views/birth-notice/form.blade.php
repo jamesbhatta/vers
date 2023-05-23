@@ -656,6 +656,9 @@
                                     <option value="हजुर बुबा"
                                         {{ $birth->relationship == 'हजुर बुबा' || old('relationship') == 'हजुर बुबा' ? 'selected' : '' }}>
                                         हजुर बुबा</option>
+                                    <option value="दाजु"
+                                        {{ $birth->relationship == 'दाजु' || old('relationship') == 'दाजु' ? 'selected' : '' }}>
+                                        दाजु</option>
 
                                 </select>
 
