@@ -136,74 +136,35 @@
                         <form action="{{ route('death.filter') }}" method="GET" role="search">
                             <div class="row">
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number"
-                                            value="{{ $old->reg_number }}">
-                                    @else
-                                        <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number">
-                                    @endisset
+                                    <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" id="nepali-datepicker"
-                                            placeholder="दर्ता मिति(From)" name="from" value="{{ $old->from }}">
-                                    @else
-                                        <input type="text" class="form-control myText" id="nepali-datepicker1"
-                                            placeholder="दर्ता मिति(From)" name="from">
-                                    @endisset
+                                    <input type="text" class="form-control myText" id="nepali-datepicker1"
+                                        placeholder="दर्ता मिति(From)" name="from">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" id="nepali-datepicker2"
-                                            placeholder="दर्ता मिति(To)" name="to" value="{{ $old->to }}">
-                                    @else
-                                        <input type="text" class="form-control myText" id="nepali-datepicker3"
-                                            placeholder="दर्ता मिति(To)" name="to">
-                                    @endisset
+                                    <input type="text" class="form-control myText" id="nepali-datepicker3"
+                                        placeholder="दर्ता मिति(To)" name="to">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" placeholder="नाम" name="name"
-                                            value="{{ $old->name }}">
-                                    @else
-                                        <input type="text" class="form-control myText" placeholder="नाम" name="name">
-                                    @endisset
+
+                                    <input type="text" class="form-control myText" placeholder="नाम" name="name">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control" id="nepali-datepicker"
-                                            placeholder="जन्म मिति" name="dob" value="{{ $old->dob }}">
-                                    @else
-                                        <input type="text" class="form-control" id="nepali-datepicker"
-                                            placeholder="जन्म मिति" name="dob">
-                                    @endisset
+                                    <input type="text" class="form-control" id="nepali-datepicker"
+                                        placeholder="जन्म मिति" name="dob">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control" id="nepali-datepicker1"
-                                            placeholder=" मरेको मिति" name="death_date" value="{{ $old->death_date }}">
-                                    @else
-                                        <input type="text" class="form-control" id="nepali-datepicker1"
-                                            placeholder=" मरेको मिति" name="death_date">
-                                    @endisset
+                                    <input type="text" class="form-control" id="nepali-datepicker1"
+                                        placeholder=" मरेको मिति" name="death_date">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" placeholder=" बुबाको नाम"
-                                            name="father_name" value="{{ $old->father_name }}">
-                                    @else
-                                        <input type="text" class="form-control myText" placeholder=" बुबाको नाम"
-                                            name="father_name">
-                                    @endisset
+                                    <input type="text" class="form-control myText" placeholder=" बुबाको नाम"
+                                        name="father_name">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" placeholder="हजुरबुबाको नाम"
-                                            name="grandfather_name" value="{{ $old->grandfather_name }}">
-                                    @else
-                                        <input type="text" class="form-control myText" placeholder="हजुरबुबाको नाम"
-                                            name="grandfather_name">
-                                    @endisset
+                                    <input type="text" class="form-control myText" placeholder="हजुरबुबाको नाम"
+                                        name="grandfather_name">
                                 </div>
                                 <div class="mb-2 col-md-3">
                                     <x-book-select :bookType="'मृत्यु दर्ता'" />
@@ -234,11 +195,13 @@
                                     <th>दर्ता मिति</th>
                                     <th>नाम,थर</th>
                                     <th>जन्म मिति</th>
-                                    {{-- <th>उमेर</th> --}}
                                     <th>मरेको मिति</th>
                                     <th>मरेको ठाउँ</th>
                                     <th>मृत्युको कारण</th>
                                     <th>वैवाहिक स्थिति</th>
+                                    <th>बुबाको नाम</th>
+                                    <th>हजुर-बुबाको नाम</th>
+                                    <th>Entry By</th>
                                     <th class="text-right">Action</th>
                                 </tr>
                             </thead>
@@ -255,11 +218,20 @@
                                         <td>{{ $death->death_place }}</td>
                                         <td>{{ $death->cause_death }}</td>
                                         <td>{{ $death->marital_status }}</td>
+                                        <td>{{ $death->father_name }}</td>
+                                        <td>{{ $death->grandfather_name }}</td>
+                                        <td>{{ $death->user->name }}</td>
                                         <td class="text-right">
 
                                             <a href="{{ route('death.show', $death) }}"
                                                 class="action-btn text-primary show" target="_blank"><i
                                                     class="far fa-eye"></i></a>
+                                            @if ($death->file)
+                                                <a href="{{ asset('storage/' . $death->file) }}" data-toggle="tooltip"
+                                                    data-placement="top" title="File view" target="_blank"><i
+                                                        class="fas fa-file-image"></i>
+                                                </a>
+                                            @endif
                                             <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top"
                                                 title="Edit birth notice" href="{{ route('death.edit', $death->id) }}"><i
                                                     class="far fa-edit"></i></a>
@@ -278,7 +250,26 @@
                             </tbody>
                         </table>
                     </div>
-                    {{ $deaths->links() }}
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <p class="text-sm text-gray-700 leading-5">
+                                {!! __('Showing') !!}
+                                @if ($deaths->firstItem())
+                                    <span class="font-medium">{{ $deaths->firstItem() }}</span>
+                                    {!! __('to') !!}
+                                    <span class="font-medium">{{ $deaths->lastItem() }}</span>
+                                @else
+                                    {{ $deaths->count() }}
+                                @endif
+                                {!! __('of') !!}
+                                <span class="font-medium">{{ $deaths->total() }}</span>
+                                {!! __('results') !!}
+                            </p>
+                        </div>
+                        <div>
+                            {{ $deaths->links() }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
