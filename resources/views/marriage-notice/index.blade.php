@@ -126,76 +126,40 @@
                         <form action="{{ route('marriage.filter') }}" method="GET" role="search">
                             <div class="row">
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number"
-                                            value="{{ $old->darta_number }}">
-                                    @else
-                                        <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number">
-                                    @endisset
+
+                                    <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" id="nepali-datepicker"
-                                            placeholder="दर्ता मिति(From)" name="from" value="{{ $old->from }}">
-                                    @else
-                                        <input type="text" class="form-control myText" id="nepali-datepicker1"
-                                            placeholder="दर्ता मिति(From)" name="from">
-                                    @endisset
+
+                                    <input type="text" class="form-control myText" id="nepali-datepicker1"
+                                        placeholder="दर्ता मिति(From)" name="from">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" id="nepali-datepicker2"
-                                            placeholder="दर्ता मिति(To)" name="to" value="{{ $old->to }}">
-                                    @else
-                                        <input type="text" class="form-control myText" id="nepali-datepicker3"
-                                            placeholder="दर्ता मिति(To)" name="to">
-                                    @endisset
+
+                                    <input type="text" class="form-control myText" id="nepali-datepicker3"
+                                        placeholder="दर्ता मिति(To)" name="to">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control" id="nepali-datepicker"
-                                            placeholder="विवाह मिति" name="marriage_date" value="{{ $old->marriage_date }}">
-                                    @else
-                                        <input type="text" class="form-control" id="nepali-datepicker"
-                                            placeholder="विवाह मिति" name="marriage_date">
-                                    @endisset
+                                    <input type="text" class="form-control" id="nepali-datepicker"
+                                        placeholder="विवाह मिति" name="marriage_date">
                                 </div>
 
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" placeholder="दुलाहाको नाम"
-                                            name="bride_name" value="{{ $old->bride_name }}">
-                                    @else
-                                        <input type="text" class="form-control myText" placeholder="दुलाहाको नाम"
-                                            name="bride_name">
-                                    @endisset
+                                    <input type="text" class="form-control myText" placeholder="दुलाहाको नाम"
+                                        name="bride_name">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" placeholder="दुलहीको नाम"
-                                            name="groom_name" value="{{ $old->groom_name }}">
-                                    @else
-                                        <input type="text" class="form-control myText" placeholder="दुलहीको नाम"
-                                            name="groom_name">
-                                    @endisset
+                                    <input type="text" class="form-control myText" placeholder="दुलहीको नाम"
+                                        name="groom_name">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" placeholder="दुलहको बाबुको नाम"
-                                            name="bride_father_name" value="{{ $old->bride_father_name }}">
-                                    @else
-                                        <input type="text" class="form-control myText" placeholder="दुलहीको बाबुको नाम"
-                                            name="bride_father_name">
-                                    @endisset
+                                    <input type="text" class="form-control myText" placeholder="दुलहीको बाबुको नाम"
+                                        name="bride_father_name">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" placeholder="दुलहीको बाबुको नाम"
-                                            name="groom_father_name" value="{{ $old->groom_father_name }}">
-                                    @else
-                                        <input type="text" class="form-control myText" placeholder="दुलहीको बाबुको नाम"
-                                            name="groom_father_name">
-                                    @endisset
+
+                                    <input type="text" class="form-control myText" placeholder="दुलहीको बाबुको नाम"
+                                        name="groom_father_name">
                                 </div>
                                 <div class="mb-2 col-md-3">
                                     <x-book-select :bookType="'विवाह दर्ता'" />
@@ -232,6 +196,7 @@
                                     <th>दुलहीको नाम</th>
                                     <th>दुलहीको बाजेको नाम</th>
                                     <th>दुलहीको बाबुको नाम</th>
+                                    <th>Entry By</th>
                                     <th class="text-right">Action</th>
                                 </tr>
                             </thead>
@@ -252,11 +217,18 @@
                                         <td>{{ $marriage->groom_name }}</td>
                                         <td>{{ $marriage->groom_grandfather_name }}</td>
                                         <td>{{ $marriage->groom_father_name }}</td>
+                                        <td>{{ $marriage->user->name }}</td>
                                         <td class="text-right" style="white-space: nowrap;">
                                             <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top"
                                                 title="Add withness"
                                                 href="{{ route('marriageWithness.create', $marriage) }}"><i
                                                     class="fas fa-plus-circle"></i></a>
+                                            @if ($marriage->file)
+                                                <a href="{{ asset('storage/' . $marriage->file) }}" data-toggle="tooltip"
+                                                    data-placement="top" title="File view" target="_blank"><i
+                                                        class="fas fa-file-image"></i>
+                                                </a>
+                                            @endif
                                             <a href="{{ route('marriage.show', $marriage) }}"
                                                 class="action-btn text-primary show" target="_blank"><i
                                                     class="far fa-eye"></i></a>
@@ -280,162 +252,26 @@
                             </tbody>
                         </table>
                     </div>
-                    {{ $marriages->links() }}
-
-                    {{-- =======modal===== --}}
-                    {{-- <div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog"
-                        aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg ">
-                            <div class="modal-content">
-                                <div class="col-12 pt-3 d-flex justify-content-end">
-                                    <a href="" class="btn btn-info" target="_blank" id="detail_print">Print</a>
-                                </div>
-                                <h1 class="h2 text-center py-5 font-weight-bold">विवाहको सूचना फाराम </h1>
-                                <div class="container">
-                                    <div class="col-12">
-                                        <table class="my_table col-12">
-                                            <tr>
-                                                <td>प्रदेश</td>
-                                                <td id="province"></td>
-                                                <td>स्थानीय पञ्जिकाधिकारी</td>
-                                                <td id="administrator"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>जिल्ला</td>
-                                                <td id="district"></td>
-                                                <td>दर्ता न.</td>
-                                                <td id="reg_number"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>ग.पा. / न.पा</td>
-                                                <td id="municipality"></td>
-                                                <td>दर्ता मिति</td>
-                                                <td id="entry_date"></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <label class="col-12 text-center mt-5 font-weight-bold">सामाजिक परम्परा अनुसार विवाह
-                                        दर्ता कानुन ऐन २०२८ अनुसार मिति <span id="marriage_date"></span> मा <span
-                                            id="marriage_address"></span> मा विवाह सम्पन्न भएको हुनाले निम्न लिखित विवरण
-                                        खुलाई सूचना दिन आएको छु । कानुन अनुसार दर्ता गरिपाऊ ।</label>
-
-                                    <label class="col-12 text-center mt-5 font-weight-bold">दुलाहा-दुलहीको विवरण</label>
-
-
-                                    <div class="col-xl-12">
-                                        <table class="my_table col-12" id="myTable">
-                                            <tr>
-                                                <th>विवरण</th>
-                                                <th>दुलाहाको विवरण</th>
-                                                <th>दुलहीको विवरण</th>
-                                            </tr>
-                                            <tr>
-                                                <td>नाम,थर</td>
-                                                <td id="bride_name"></td>
-                                                <td id="groom_name"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>जन्म मिति</td>
-                                                <td id="bride_dob"></td>
-                                                <td id="groom_dob"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>जन्म भएको देश</td>
-                                                <td id="bride_birth_country"></td>
-                                                <td id="groom_birth_country"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>नागरिकता (ना.प्र.नं)</td>
-                                                <td id="bride_citizenship_number"></td>
-                                                <td id="groom_citizenship_number"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>नागरिकता जारी मिति</td>
-                                                <td id="bride_citizenship_date"></td>
-                                                <td id="groom_citizenship_date"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>नागरिकता लिएको जिल्ला</td>
-                                                <td id="bride_citizenship_district"></td>
-                                                <td id="groom_citizenship_district"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>स्थाई ठेगाना</td>
-                                                <td id="bride_temp_address"></td>
-                                                <td id="groom_temp_address"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>शिक्षा</td>
-                                                <td id="bride_education"></td>
-                                                <td id="groom_education"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>धर्म</td>
-                                                <td id="bride_religion"></td>
-                                                <td id="groom_religion"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>मातृभाषा</td>
-                                                <td id="bride_mother_tongue"></td>
-                                                <td id="groom_mother_tongue"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>बाजेको नाम</td>
-                                                <td id="bride_grandfather_name"></td>
-                                                <td id="groom_grandfather_name"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>बाबुको नाम</td>
-                                                <td id="bride_father_name"></td>
-                                                <td id="groom_father_name"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>पूर्व वैवाहिक स्थिति</td>
-                                                <td id="bride_pre_marrige_status"></td>
-                                                <td id="groom_pre_marrige_status"></td>
-                                            </tr>
-
-                                        </table>
-                                    </div>
-
-                                    <label class="col-12 text-center mt-5 font-weight-bold">साक्षीको विवरण</label>
-                                    <div class="col-12">
-                                        <table class="my_table col-12">
-                                            <thead>
-                                                <th>
-                                                    SN
-                                                </th>
-                                                <th>
-                                                    नाम
-                                                </th>
-                                                <th>
-                                                    ठेगाना
-                                                </th>
-                                                <th>
-                                                    दुलाहा-दुलही संगको नाता
-                                                </th>
-                                                <th>
-                                                    मिति
-                                                </th>
-                                            </thead>
-                                            <tbody id="withnesss">
-                                            </tbody>
-
-                                        </table>
-
-                                    </div>
-                                    <label class="col-12 text-center mt-5 font-weight-bold">सम्बन्धित फाइल</label>
-
-                                    <div class="col-12 mb-3">
-
-                                        <img id="related_file" src="" class="img-fluid "
-                                            alt="सम्बन्धित फाइल फेला परेन" style="width:70%;position:relative;left:15%">
-
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <p class="text-sm text-gray-700 leading-5">
+                                {!! __('Showing') !!}
+                                @if ($marriages->firstItem())
+                                    <span class="font-medium">{{ $marriages->firstItem() }}</span>
+                                    {!! __('to') !!}
+                                    <span class="font-medium">{{ $marriages->lastItem() }}</span>
+                                @else
+                                    {{ $marriages->count() }}
+                                @endif
+                                {!! __('of') !!}
+                                <span class="font-medium">{{ $marriages->total() }}</span>
+                                {!! __('results') !!}
+                            </p>
                         </div>
-                    </div> --}}
+                        <div>
+                            {{ $marriages->links() }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
