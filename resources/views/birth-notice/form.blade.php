@@ -842,9 +842,12 @@
                 } else if (relationship === "आमा") {
                     relative_name.value = mother_name;
                     relative_address.value = mother_parmanent_address;
-                } else {
+                } else if (relationship === "हजुर बुबा") {
                     relative_name.value = grandfather_name;
                     relative_address.value = father_parmanent_address;
+                }else{
+                    relative_name.value = "";
+                    relative_address.value = "";
                 }
             }
         </script>
