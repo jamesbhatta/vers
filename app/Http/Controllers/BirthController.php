@@ -179,9 +179,10 @@ class BirthController extends Controller
         }
 
         $births = $births->orderBy('id', 'desc')->paginate(50);
-        $old = $request;
+        $births->appends(request()->except('page'));
+       
         // return $births;
-        return view('birth-notice.index', compact('births', 'old'));
+        return view('birth-notice.index', compact('births'));
     }
 
     public function listPrint(Request $request)
