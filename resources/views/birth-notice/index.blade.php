@@ -248,7 +248,7 @@
                                     @foreach ($births as $birth)
                                         <tr style="white-space: nowrap;">
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $birth->book->code ?? "" }}</td>
+                                            <td>{{ $birth->book->code ?? '' }}</td>
                                             <td>{{ $birth->reg_number }}</td>
                                             <td>{{ $birth->name }}</td>
                                             <td>{{ $birth->gender }}</td>
@@ -260,11 +260,21 @@
                                             <td>{{ $birth->user->name }}</td>
 
                                             <td class="text-nowrap text-right">
-                                                <a href="{{route('birth.show',$birth)}}" class="action-btn text-primary show" target="_blank" ><i class="far fa-eye"></i></a>
+                                                <a href="{{ route('birth.show', $birth) }}"
+                                                    class="action-btn text-primary show" target="_blank"><i
+                                                        class="far fa-eye"></i></a>
                                                 {{-- <a class="action-btn text-primary show" style="cursor: pointer"
                                                     data-toggle="modal" data-target=".bd-example-modal-lg"
                                                     id="{{ $birth->id }}" data-toggle="modal"
                                                     data-target=".bd-example-modal-lg"><i class="far fa-eye"></i></a> --}}
+                                                @if ($birth->file)
+                                                    <a href="{{ asset('storage/' . $birth->file) }}"
+                                                        data-toggle="tooltip" data-placement="top" title="File view"
+                                                        target="_blank">
+                                                        <div><i class="fas fa-file-image"></i></div>
+                                                        <div>View File</div>
+                                                    </a>
+                                                @endif
                                                 <a class="action-btn text-primary" data-toggle="tooltip"
                                                     data-placement="top" title="Edit birth notice"
                                                     href="{{ route('birth.edit', $birth->id) }}"><i
@@ -281,13 +291,13 @@
                                                 </form>
                                             </td>
                                         </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                            {{ $births->links() }}
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        {{ $births->links() }}
                     </div>
-                 
+
 
                 </div>
             </div>
