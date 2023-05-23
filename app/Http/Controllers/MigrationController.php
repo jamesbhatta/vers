@@ -53,6 +53,9 @@ class MigrationController extends Controller
         if ($request->migration_date) {
             $migrationCertificates = $migrationCertificates->where('migration_date', 'like', '%' . $request->migration_date . '%');
         }
+        if ($request->type) {
+            $migrationCertificates = $migrationCertificates->where('type', $request->type);
+        }
         if ($request->book_id) {
             $migrationCertificates = $migrationCertificates->where('book_id', $request->book_id);
         }

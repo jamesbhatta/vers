@@ -44,38 +44,6 @@
                             </form>
                         </div>
 
-
-                        {{-- Filtered data in Excel --}}
-                        {{-- <form action="{{ route('migration.excel') }}" method="GET" role="search">
-                            @isset($_GET['reg_number'])
-                                <input type="hidden" name="reg_number"
-                                    value="{{ $_GET['reg_number'] ? $_GET['reg_number'] : '' }}">
-                            @endisset
-                            @isset($_GET['user_id'])
-                                <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
-                            @endisset
-
-                            @isset($_GET['book_id'])
-                                <input type="hidden" name="book_id" value="{{ $_GET['book_id'] }}">
-                            @endisset
-
-                            @isset($_GET['migration_date'])
-                                <input type="hidden" name="migration_date" value="{{ $_GET['migration_date'] }}">
-                            @endisset
-                            @isset($_GET['from'])
-                                <input type="hidden" name="from" value="{{ $_GET['from'] }}">
-                            @endisset
-                            @isset($_GET['to'])
-                                <input type="hidden" name="to" value="{{ $_GET['to'] }}">
-                            @endisset
-
-                            <div class="col-lg-1">
-                                <button
-                                    class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-excel"
-                                    type="submit" style="background-color:#17A2B8; color: #fff;"><i
-                                        class="fas fa-file-excel mr-2 mt-1"></i> Excel</button>
-                            </div>
-                        </form> --}}
                         <a href="{{ route('migration.create') }}"
                             class="btn bg-success text-white my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex"
                             style="height:42px"><i class="fas fa-plus-circle mr-2 mt-1"></i>@lang('navigation.add_new')</a>
@@ -102,50 +70,31 @@
                         <form action="{{ route('migration.filter') }}" method="get">
                             <div class="row">
                                 <div class="col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number"
-                                            value="{{ $old->reg_number }}">
-                                    @else
-                                        <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number">
-                                    @endisset
+                                    <input type="text" class="form-control" placeholder="दर्ता न." name="reg_number">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" id="nepali-datepicker"
-                                            placeholder="दर्ता मिति(From)" name="from" value="{{ $old->from }}">
-                                    @else
-                                        <input type="text" class="form-control myText" id="nepali-datepicker"
-                                            placeholder="दर्ता मिति(From)" name="from">
-                                    @endisset
+                                    <input type="text" class="form-control myText" id="nepali-datepicker"
+                                        placeholder="दर्ता मिति(From)" name="from">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" id="nepali-datepicker2"
-                                            placeholder="दर्ता मिति(To)" name="to" value="{{ $old->to }}">
-                                    @else
-                                        <input type="text" class="form-control myText" id="nepali-datepicker2"
-                                            placeholder="दर्ता मिति(To)" name="to">
-                                    @endisset
+                                    <input type="text" class="form-control myText" id="nepali-datepicker2"
+                                        placeholder="दर्ता मिति(To)" name="to">
                                 </div>
-                                {{-- <div class="col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control" id="nepali-datepicker1"
-                                            placeholder=" दर्ता मिति" name="entry_date" value="{{ $old->entry_date }}">
-                                    @else
-                                        <input type="text" class="form-control" id="nepali-datepicker1"
-                                            placeholder=" दर्ता मिति" name="entry_date">
-                                    @endisset
-                                </div> --}}
-
                                 <div class="col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control" id="nepali-datepicker3"
-                                            placeholder=" बसाई सराईको मिति" name="migration_date"
-                                            value="{{ $old->migration_date }}">
-                                    @else
-                                        <input type="text" class="form-control" id="nepali-datepicker3"
-                                            placeholder=" बसाई सराईको मिति" name="migration_date">
-                                    @endisset
+                                    <input type="text" class="form-control" id="nepali-datepicker3"
+                                        placeholder=" बसाई सराईको मिति" name="migration_date">
+                                </div>
+                                <div class="col-md-3">
+                                    <select class="custom-select" name="type">
+                                        <option selected disabled class="m-5" value="">बसाईसराईको प्रकार छान्न्नुहोस्।
+                                        </option>
+                                        <option class="m-5" value="बसाई सरी आएको">बसाई सरी
+                                            आएको
+                                        </option>
+                                        <option class="m-5" value="बसाई सरी जाने">बसाई सरी
+                                            जाने
+                                        </option>
+                                    </select>
                                 </div>
                                 <div class="mb-2 col-md-3">
                                     <x-book-select :bookType="'बसाईसराई दर्ता'" />
@@ -175,6 +124,7 @@
                                         <th>दर्ता मिति</th>
                                         <th>बसाईसराईको प्रकार</th>
                                         <th>बसाई सराईको मिति </th>
+                                        <th>Entry By</th>
                                         <th class="text-right">ACTION</th>
                                     </tr>
                                 </thead>
@@ -182,21 +132,29 @@
                                     @foreach ($migrationCertificates as $migrationCertificate)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            
-                                                <td>{{ $migrationCertificate->book->code ?? "" }}</td>
-                                           
+
+                                            <td>{{ $migrationCertificate->book->code ?? '' }}</td>
+
                                             <td>{{ $migrationCertificate->reg_number }}</td>
 
                                             <td>{{ $migrationCertificate->entry_date }}</td>
                                             <td>{{ $migrationCertificate->type }}</td>
                                             <td>{{ $migrationCertificate->migration_date }}</td>
+                                            <td>{{ $migrationCertificate->user->name }}</td>
                                             <td class="float-right d-flex">
                                                 <a href="{{ route('migration.add-family', $migrationCertificate->id) }}"
                                                     class="action-btn text-primary" data-toggle="tooltip"
                                                     data-placement="top" title="Add Family"><i
                                                         class="fas fa-plus-circle "></i></a>
-                                                <a href="{{ route('migration.show', $migrationCertificate) }}" 
-                                                    class="action-btn text-primary show" target="_blank"><i class="fa fa-eye"></i></a>
+                                                @if ($migrationCertificate->file)
+                                                    <a href="{{ asset('storage/' . $migrationCertificate->file) }}"
+                                                        data-toggle="tooltip" data-placement="top" title="File view"
+                                                        target="_blank"><i class="fas fa-file-image"></i>
+                                                    </a>
+                                                @endif
+                                                <a href="{{ route('migration.show', $migrationCertificate) }}"
+                                                    class="action-btn text-primary show" target="_blank"><i
+                                                        class="fa fa-eye"></i></a>
                                                 <a href="{{ route('migration.edit', $migrationCertificate->id) }}"
                                                     data-toggle="tooltip" data-placement="top"
                                                     title="Edit migration notice" class="action-btn text-primary"><i
@@ -219,7 +177,27 @@
                                 </tbody>
                             </table>
                         </div>
-                        {{ $migrationCertificates->links() }}
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="text-sm text-gray-700 leading-5">
+                                    {!! __('Showing') !!}
+                                    @if ($migrationCertificates->firstItem())
+                                        <span class="font-medium">{{ $migrationCertificates->firstItem() }}</span>
+                                        {!! __('to') !!}
+                                        <span class="font-medium">{{ $migrationCertificates->lastItem() }}</span>
+                                    @else
+                                        {{ $migrationCertificates->count() }}
+                                    @endif
+                                    {!! __('of') !!}
+                                    <span class="font-medium">{{ $migrationCertificates->total() }}</span>
+                                    {!! __('results') !!}
+                                </p>
+                            </div>
+                            <div>
+                                {{ $migrationCertificates->links() }}
+                            </div>
+                        </div>
+
                     </div>
                     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
                         aria-labelledby="myLargeModalLabel" aria-hidden="true">
