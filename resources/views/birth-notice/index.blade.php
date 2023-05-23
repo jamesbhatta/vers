@@ -155,7 +155,7 @@
                                         <th>बाबुको नाम</th>
                                         <th>आमाको नाम</th>
                                         <th>हजुरबुबाको नाम</th>
-                                        <th>जन्म स्थान</th>
+                                        {{-- <th>जन्म स्थान</th> --}}
                                         <th>Entry By</th>
                                         <th class="text-right">Action</th>
                                     </tr>
@@ -172,7 +172,7 @@
                                             <td>{{ $birth->father_name }}</td>
                                             <td>{{ $birth->mother_name }}</td>
                                             <td>{{ $birth->grandfather_name }}</td>
-                                            <td>{{ $birth->birth_place }}</td>
+                                            {{-- <td>{{ $birth->birth_place }}</td> --}}
                                             <td>{{ $birth->user->name }}</td>
 
                                             <td class="text-nowrap text-right">
