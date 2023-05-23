@@ -40,7 +40,7 @@
         <label for=""><span class="text-danger">*</span> हजुरबुबाको नाम</label>
         <div class="input-group mb-2">
 
-            <input type="text" name="grandfather_name" value="{{ old('grandfather_name',$death->grandfather_name) }}" class="form-control myText" />
+            <input type="text" name="grandfather_name" value="{{ old('grandfather_name',$death->grandfather_name) }}" class="form-control myText" id="grandfather_name" />
         </div>
         @error('grandfather_name')
             <small class="text-danger">{{ $message }}</small>

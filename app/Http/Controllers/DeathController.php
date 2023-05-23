@@ -8,6 +8,7 @@ use App\Exports\DeathExport;
 use App\Http\Requests\StoreDeathRequest;
 use App\Http\Requests\UpdateDeathRequest;
 use App\User;
+use App\WithnessRelationship;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -45,8 +46,9 @@ class DeathController extends Controller
      */
     public function create(Death $death)
     {
+        $withnessRelationships = WithnessRelationship::get();
         $title = 'मृत्यु दर्ता सूचना फाराम ';
-        return view('death-notice.form', compact('death', 'title'));
+        return view('death-notice.form', compact('death', 'title','withnessRelationships'));
     }
 
     /**
@@ -128,8 +130,9 @@ class DeathController extends Controller
      */
     public function edit(Death $death)
     {
+        $withnessRelationships = WithnessRelationship::get();
         $title = 'मृत्यु दर्ता सूचना फाराम ';
-        return view('death-notice.form', compact('death', 'title'));
+        return view('death-notice.form', compact('death', 'title','withnessRelationships'));
     }
 
     /**

@@ -1,5 +1,3 @@
-
-
 @extends('layouts.app')
 @section('content')
     <div class="container-fluid">
@@ -35,7 +33,7 @@
                             @isset($_GET['book_id'])
                                 @php
                                     $book_id = $_GET['book_id'];
-
+                                    
                                 @endphp
                             @endisset
                             <livewire:municipality :death="$death" :book="$book_id" />
@@ -45,7 +43,8 @@
                                 <div class="row">
                                     <div class=" col-md-4 mb-3">
                                         <label><span class="text-danger">*</span> दर्ता न.</label>
-                                        <input type="text" class="form-control" name="reg_number" value="{{old('reg_number', $death->reg_number)}}">
+                                        <input type="text" class="form-control" name="reg_number"
+                                            value="{{ old('reg_number', $death->reg_number) }}">
                                         @error('reg_number')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -53,7 +52,7 @@
                                     <div class="form-group col-xl-4 col-lg-4 col-md-6 mb-3">
                                         <label><span class="text-danger">*</span> दर्ता मिति</label>
                                         <input type="text" name="entry_date" id="darta_miti" class="form-control"
-                                            value="{{old("entry_date",$death->entry_date)}}" />
+                                            value="{{ old('entry_date', $death->entry_date) }}" />
                                         @error('entry_date')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -71,14 +70,14 @@
 
                                 <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span>उमेर</label>
-                                    <input type="number" name="age"  class="form-control"
+                                    <input type="number" name="age" class="form-control"
                                         value="{{ old('age', $death->age) }}">
                                     @error('age')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <x-mother-tongue :name="'mother_tongue'" :id="'mother_tongue1'" :userdata="$death"/>
+                                    <x-mother-tongue :name="'mother_tongue'" :id="'mother_tongue1'" :userdata="$death" />
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> मरेको मिति </label>
@@ -168,7 +167,7 @@
                                     <div class="input-group mb-2">
 
                                         <input type="text" name="spouse" value="{{ old('spouse', $death->spouse) }}"
-                                            class="form-control myText"/>
+                                            class="form-control myText" />
                                     </div>
                                     @error('spouse')
                                         <small class="text-danger">{{ $message }}</small>
@@ -183,7 +182,8 @@
                                     <div class="input-group mb-2">
 
                                         <input type="text" name="father_name"
-                                            value="{{ old('father_name', $death->father_name) }}" class="form-control myText" />
+                                            value="{{ old('father_name', $death->father_name) }}"
+                                            class="form-control myText" id="father_name" />
                                     </div>
                                     @error('father_name')
                                         <small class="text-danger">{{ $message }}</small>
@@ -236,7 +236,8 @@
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                    <x-country-form :label="'जन्म भएको देश'" :name="'birth_country'" :id="'birth_country1'" :usercountry="$death" />
+                                    <x-country-form :label="'जन्म भएको देश'" :name="'birth_country'" :id="'birth_country1'"
+                                        :usercountry="$death" />
 
                                 </div>
 
@@ -247,7 +248,8 @@
                                     <div class="input-group mb-2">
 
                                         <input type="text" name="address"
-                                            value="{{ old('address', $death->address) }}" class="form-control myText" />
+                                            value="{{ old('address', $death->address) }}" class="form-control myText"
+                                            id="address" />
                                     </div>
                                     @error('address')
                                         <small class="text-danger">{{ $message }}</small>
@@ -335,8 +337,68 @@
                         </div>
                         <hr>
                         <h4 class="font-weight-bold pt-3">मृतकको साक्षी विवरण </h4>
-                        {{-- <div class="row"> --}}
-                        <x-sachi-form :death="$death" :relation="'मृतक'" />
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="">नवजात शिशुको संगको नाता</label>
+                                <select id="relationship" name="relationship" class="custom-select myText"
+                                    value="{{ old('relationship', $death->relationship) }}" onchange="withnessSelect()">
+                                    <option value="" disabled selected>छान्नुहोस्</option>
+                                    @foreach ($withnessRelationships as $withnessRelationship)
+                                        <option value="{{ $withnessRelationship->relationship }}"
+                                            {{ $death->relationship == $withnessRelationship->relationship || old('relationship') == $withnessRelationship->relationship ? 'selected' : '' }}>
+                                            {{ $withnessRelationship->relationship }}</option>
+                                    @endforeach
+                                </select>
+
+                                @error('relationship')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label><span class="text-danger ">*</span> साक्षीको नाम </label>
+
+                                <input type="text" name="relative_name" class="form-control myText"
+                                    value="{{ old('relative_name', $death->relative_name) }}" id="relative_name">
+                                @error('relative_name')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for=""><span class="text-danger">*</span> साक्षीको ठेगाना</label>
+                                <div class="input-group mb-2">
+
+                                    <input type="text" name="relative_address" class="form-control myText"
+                                        value="{{ old('relative_address', $death->relative_address) }}"
+                                        id="relative_address" />
+                                </div>
+                                @error('relative_address')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <div class="d-flex align-items-center col-12">
+                                <div class="form-group col-xl-6">
+                                    <label for="">फाइल (max size: 2 MB | jpeg, png, jpg, pdf)</label>
+                                    <div class="input-group mb-2">
+
+                                        <input type="file" name=file class="file-brows" id="fileInput" />
+                                    </div>
+                                    @error('file')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="col-xl-6">
+                                    @if ($death->file)
+                                        <a href="{{ asset('storage/' . $death->file) }}" target="_blank">
+                                            <div><i class="fas fa-file-image" style="font-size: 100px;"></i></div>
+                                            <div>View File</div>
+                                        </a>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <x-sachi-form :death="$death" :relation="'मृतक'" /> --}}
 
 
                         <div class="card mt-3 p-3">
@@ -383,5 +445,30 @@
                 margin-top: 27px;
             }
         </style>
+    @endpush
+    @push('script')
+        <script>
+            function withnessSelect() {
+                var relationship = document.getElementById("relationship").value;
+                var father_name = document.getElementById("father_name").value;
+                var address = document.getElementById("address").value;
+
+                var grandfather_name = document.getElementById("grandfather_name").value;
+
+                var relative_name = document.getElementById("relative_name");
+
+                if (relationship === "बुवा") {
+                    document.getElementById("relative_name").value = father_name;
+                    document.getElementById("relative_address").value = address;
+
+                } else if (relationship === "हजुर बुबा") {
+                    relative_name.value = grandfather_name;
+                    document.getElementById("relative_address").value = address;
+                } else {
+                    relative_name.value = "";
+                    relative_address.value = "";
+                }
+            }
+        </script>
     @endpush
 @endsection
