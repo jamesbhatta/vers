@@ -77,6 +77,8 @@ class MigrationController extends Controller
         $old = $request;
 
         $migrationCertificates = $migrationCertificates->with('user', 'book')->paginate(50);
+        $migrationCertificates->appends(request()->except('page'));
+
         return view('migration-notice.index', compact('migrationCertificates', 'old'));
     }
     public function listPrint(Request $request)

@@ -219,6 +219,8 @@ class DeathController extends Controller
         $old = $request;
         // return $request;
         $deaths = $deaths->orderBy('id', 'desc')->paginate(50);
+        $deaths->appends(request()->except('page'));
+        
         return view('death-notice.index', compact('deaths', 'old'));
     }
 

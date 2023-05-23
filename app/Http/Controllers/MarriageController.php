@@ -173,6 +173,8 @@ class MarriageController extends Controller
             }
         }
         $marriages = $marriages->orderBy('id', 'desc')->paginate(50);
+        $marriages->appends(request()->except('page'));
+
         $old = $request;
         return view('marriage-notice.index', compact('marriages', 'old'));
     }
