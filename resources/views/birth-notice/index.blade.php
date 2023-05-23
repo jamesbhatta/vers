@@ -60,53 +60,6 @@
                             </form>
                         </div>
 
-                        {{-- Filtered data in Excel --}}
-                        {{-- <form action="{{ route('birth.excel') }}" method="GET" role="search">
-                            @isset($_GET['darta_number'])
-                                <input type="hidden" name="darta_number"
-                                    value="{{ $_GET['darta_number'] ? $_GET['darta_number'] : '' }}">
-                            @endisset
-
-                            @isset($_GET['name'])
-                                <input type="hidden" name="name" value="{{ $_GET['name'] }}">
-                            @endisset
-
-                            @isset($_GET['dob'])
-                                <input type="hidden" name="dob" value="{{ $_GET['dob'] }}">
-                            @endisset
-                            @isset($_GET['user_id'])
-                                <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
-                            @endisset
-                            @isset($_GET['father_name'])
-                                <input type="hidden" name="father_name" value="{{ $_GET['father_name'] }}">
-                            @endisset
-
-                            @isset($_GET['mother_name'])
-                                <input type="hidden" name="mother_name" value="{{ $_GET['mother_name'] }}">
-                            @endisset
-
-                            @isset($_GET['grandfather_name'])
-                                <input type="hidden" name="grandfather_name" value="{{ $_GET['grandfather_name'] }}">
-                            @endisset
-
-                            @isset($_GET['book_id'])
-                                <input type="hidden" name="book_id" value="{{ $_GET['book_id'] }}">
-                            @endisset
-
-                            @isset($_GET['from'])
-                                <input type="hidden" name="from" value="{{ $_GET['from'] }}">
-                            @endisset
-                            @isset($_GET['to'])
-                                <input type="hidden" name="to" value="{{ $_GET['to'] }}">
-                            @endisset
-
-                            <div class="col-lg-1">
-                                <button
-                                    class="btn my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-excel"
-                                    type="submit" style="background-color:#17A2B8; color: #fff;"><i
-                                        class="fas fa-file-excel mr-2 mt-1"></i> Excel</button>
-                            </div>
-                        </form> --}}
                         <a href="{{ route('birth.create') }}"
                             class="btn bg-success text-white my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex"
                             style="height:42px"><i class="fas fa-plus-circle mr-2 mt-1"></i>@lang('navigation.add_new')</a>
@@ -129,82 +82,45 @@
                         <form action="{{ route('birth.filter') }}" method="GET" role="search">
                             <div class="row">
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" placeholder="नाम" name="name"
-                                            value="{{ $old->name }}">
-                                    @else
-                                        <input type="text" class="form-control myText" placeholder="नाम" name="name">
-                                    @endisset
+                                    <input type="text" class="form-control myText" placeholder="नाम" name="name">
+
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number"
-                                            value="{{ $old->darta_number }}">
-                                    @else
-                                        <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number">
-                                    @endisset
+                                    <input type="text" class="form-control" placeholder="दर्ता न." name="darta_number">
                                 </div>
 
 
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" id="nepali-datepicker"
-                                            placeholder="दर्ता मिति(From)" name="from" value="{{ $old->from }}">
-                                    @else
-                                        <input type="text" class="form-control myText" id="nepali-datepicker1"
-                                            placeholder="दर्ता मिति(From)" name="from">
-                                    @endisset
+                                    <input type="text" class="form-control myText" id="nepali-datepicker1"
+                                        placeholder="दर्ता मिति(From)" name="from">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" id="nepali-datepicker2"
-                                            placeholder="दर्ता मिति(To)" name="to" value="{{ $old->to }}">
-                                    @else
-                                        <input type="text" class="form-control myText" id="nepali-datepicker3"
-                                            placeholder="दर्ता मिति(To)" name="to">
-                                    @endisset
+                                    <input type="text" class="form-control myText" id="nepali-datepicker3"
+                                        placeholder="दर्ता मिति(To)" name="to">
+
                                 </div>
                                 @isset($_GET['book_id'])
                                     <input type="hidden" name="book_id" value="{{ $_GET['book_id'] }}">
                                 @endisset
 
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control" placeholder="जन्म मिति" name="dob"
-                                            id="nepali-datepicker" value="{{ $old->dob }}">
-                                    @else
-                                        <input type="text" class="form-control" placeholder="जन्म मिति" name="dob"
-                                            id="nepali-datepicker">
-                                    @endisset
+                                    <input type="text" class="form-control" placeholder="जन्म मिति" name="dob"
+                                        id="nepali-datepicker">
+
 
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" placeholder="बाबुको नाम"
-                                            name="father_name" value="{{ $old->father_name }}">
-                                    @else
-                                        <input type="text" class="form-control myText" placeholder="बाबुको नाम"
-                                            name="father_name">
-                                    @endisset
+                                    <input type="text" class="form-control myText" placeholder="बाबुको नाम"
+                                        name="father_name">
                                 </div>
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" placeholder=" आमाको नाम"
-                                            name="mother_name" value="{{ $old->mother_name }}">
-                                    @else
-                                        <input type="text" class="form-control myText" placeholder=" आमाको नाम"
-                                            name="mother_name">
-                                    @endisset
+                                    <input type="text" class="form-control myText" placeholder=" आमाको नाम"
+                                        name="mother_name">
                                 </div>
 
                                 <div class="mb-2 col-md-3">
-                                    @isset($old)
-                                        <input type="text" class="form-control myText" placeholder="  हजुरबुबाको नाम"
-                                            name="grandfather_name" value="{{ $old->grandfather_name }}">
-                                    @else
-                                        <input type="text" class="form-control myText" placeholder="  हजुरबुबाको नाम"
-                                            name="grandfather_name">
-                                    @endisset
+                                    <input type="text" class="form-control myText" placeholder="  हजुरबुबाको नाम"
+                                        name="grandfather_name">
                                 </div>
                                 <div class="mb-2 col-md-3">
                                     <x-book-select :bookType="'जन्म दर्ता'" />
@@ -293,7 +209,26 @@
                                 </tbody>
                             </table>
                         </div>
-                        {{ $births->links() }}
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="text-sm text-gray-700 leading-5">
+                                    {!! __('Showing') !!}
+                                    @if ($births->firstItem())
+                                        <span class="font-medium">{{ $births->firstItem() }}</span>
+                                        {!! __('to') !!}
+                                        <span class="font-medium">{{ $births->lastItem() }}</span>
+                                    @else
+                                        {{ $births->count() }}
+                                    @endif
+                                    {!! __('of') !!}
+                                    <span class="font-medium">{{ $births->total() }}</span>
+                                    {!! __('results') !!}
+                                </p>
+                            </div>
+                            <div>
+                                {{ $births->links() }}
+                            </div>
+                        </div>
                     </div>
 
 
