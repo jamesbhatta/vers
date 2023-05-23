@@ -45,11 +45,16 @@
                 <i class="fas fa-city pr-3"></i>साबिकको ठेगाना
             </a>
         </li>
-
         <li class="nav-item bg-transparent">
             <a class="nav-link fontSize" href="{{ route('book.index') }}" onmouseover="this.style.color='black'"
                 onmouseout="this.style.color='white'">
                 <i class="fas fa-book pr-3"></i>किताब
+            </a>
+        </li>
+        <li class="nav-item bg-transparent">
+            <a class="nav-link fontSize" href="{{ route('withness-relationship.index') }}" onmouseover="this.style.color='black'"
+                onmouseout="this.style.color='white'">
+                <i class="fas fa-heart pr-3"></i> नाता / सम्बन्ध
             </a>
         </li>
 

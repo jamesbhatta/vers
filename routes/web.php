@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\MarriageWithnessController;
+use App\Http\Controllers\WithnessRelationshipController;
 
 Auth::routes(['register' => false]);
 Route::get('/', [IndexController::class, 'index'])->name('index');
@@ -131,6 +132,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('book/edit/{book}', [BookController::class, 'edit'])->name('book.edit');
     Route::delete('book/delete/{book}', [BookController::class, 'delete'])->name('book.delete');
     Route::put('book/update/{book}', [BookController::class, 'update'])->name('book.update');
+
+    //for withness relationship
+    Route::get('withness-relationship', [WithnessRelationshipController::class, 'index'])->name('withness-relationship.index');
+    Route::post('withness-relationship', [WithnessRelationshipController::class, 'store'])->name('withness-relationship.store');
+    Route::get('withness-relationship/edit/{withnessRelationship}', [WithnessRelationshipController::class, 'edit'])->name('withness-relationship.edit');
+    Route::put('withness-relationship/update/{withnessRelationship}', [WithnessRelationshipController::class, 'update'])->name('withness-relationship.update');
+    Route::delete('withness-relationship/{withnessRelationship}', [WithnessRelationshipController::class, 'destroy'])->name('withness-relationship.delete');
+
+
 });
 
 
