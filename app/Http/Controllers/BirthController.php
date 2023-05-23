@@ -9,6 +9,7 @@ use App\Exports\BirthExport;
 use App\Http\Requests\StoreBirthRequest;
 use App\Http\Requests\UpdateBirthRequest;
 use App\User;
+use App\WithnessRelationship;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -38,8 +39,9 @@ class BirthController extends Controller
      */
     public function create(Birth $birth)
     {
+        $withnessRelationships = WithnessRelationship::get();
         $title = 'जन्म दर्ता सूचना फाराम ';
-        return view('birth-notice.form', compact('birth', 'title'));
+        return view('birth-notice.form', compact('birth', 'title','withnessRelationships'));
     }
 
     /**
@@ -87,8 +89,10 @@ class BirthController extends Controller
         $birth = Birth::where('id', $birth->id)
             ->with('book')
             ->first();
+        $withnessRelationships = WithnessRelationship::get();
+
         // return $birth;
-        return view('birth-notice.form', compact('birth', 'title'));
+        return view('birth-notice.form', compact('birth', 'title','withnessRelationships'));
     }
 
     /**

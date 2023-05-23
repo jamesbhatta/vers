@@ -69,33 +69,40 @@
                             <div class="row">
                                 <div class="form-group col-md-4">
                                     <label><span class="text-danger">*</span> नाम,थर </label>
-                                    <input type="text" name="name" value="{{ old('name',$birth->name) }}" class="form-control myText" />
+                                    <input type="text" name="name" value="{{ old('name', $birth->name) }}"
+                                        class="form-control myText" />
                                     @error('name')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                            
+
                                 <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> जन्म मिति</label>
                                     <div class="input-group mb-2">
                                         <input type="text" id="dob" name="dob" class="form-control"
-                                            value="{{ old('dob',$birth->dob) }}" />
+                                            value="{{ old('dob', $birth->dob) }}" />
                                     </div>
                                     @error('dob')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                            
-                            
+
+
                                 <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> लिङ्ग</label>
                                     <div class="input-group mb-2">
                                         <select class="custom-select" name="gender">
                                             <option class="m-5" selected disabled value="">छान्न्नुहोस्। </option>
                                             <div>
-                                                <option value="पुरुष" {{ $birth->gender == "पुरुष" || old('gender')=="पुरुष" ? 'selected' : '' }}>पुरुष</option>
-                                                <option value="महिला" {{ $birth->gender == "महिला" || old('gender')=="महिला" ? 'selected' : '' }}>महिला</option>
-                                                <option value="अन्य" {{ $birth->gender == "अन्य" || old('gender')=="अन्य" ? 'selected' : '' }}>अन्य</option>
+                                                <option value="पुरुष"
+                                                    {{ $birth->gender == 'पुरुष' || old('gender') == 'पुरुष' ? 'selected' : '' }}>
+                                                    पुरुष</option>
+                                                <option value="महिला"
+                                                    {{ $birth->gender == 'महिला' || old('gender') == 'महिला' ? 'selected' : '' }}>
+                                                    महिला</option>
+                                                <option value="अन्य"
+                                                    {{ $birth->gender == 'अन्य' || old('gender') == 'अन्य' ? 'selected' : '' }}>
+                                                    अन्य</option>
                                             </div>
                                         </select>
                                     </div>
@@ -103,7 +110,7 @@
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-                             
+
                                 <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> जन्म स्थान</label>
                                     <select class="custom-select" name="birth_place">
@@ -128,7 +135,7 @@
                                 <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> जन्मेको किसिम</label>
                                     <select class="custom-select" name="birth_type">
-                                       <div>
+                                        <div>
                                             <option
                                                 {{ $birth->birth_type == 'सिङ्गो' || old('birth_type') == 'सिङ्गो' ? 'selected' : '' }}
                                                 value="सिङ्गो">सिङ्गो</option>
@@ -144,15 +151,15 @@
                                 <div class="form-group col-md-4">
                                     <label><span class="text-danger">*</span> कुनै पनि शारीरिक विकृति </label>
                                     <div class="input-group mb-2">
-                                      <select name="physical_disable" class="custom-select">
-                                          <option
+                                        <select name="physical_disable" class="custom-select">
+                                            <option
                                                 {{ $birth->physical_disable == 'छैन' || old('physical_disable') == 'छैन' ? 'selected' : '' }}
                                                 value="छैन">छैन</option>
                                             <option
                                                 {{ $birth->physical_disable == 'छ' || old('physical_disable') == 'छ' ? 'selected' : '' }}
                                                 value="छ">छ</option>
                                         </select>
-                                   </div>
+                                    </div>
                                     @error('physical_disable')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
@@ -160,8 +167,10 @@
                                 <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> हजुरबुबाको नाम</label>
                                     <div class="input-group mb-2">
-                            
-                                        <input type="text" name="grandfather_name" value="{{ old('grandfather_name',$birth->grandfather_name) }}" class="form-control myText" id="grandfather_name" />
+
+                                        <input type="text" name="grandfather_name"
+                                            value="{{ old('grandfather_name', $birth->grandfather_name) }}"
+                                            class="form-control myText" id="grandfather_name" />
                                     </div>
                                     @error('grandfather_name')
                                         <small class="text-danger">{{ $message }}</small>
@@ -647,19 +656,11 @@
                                 <select id="relationship" name="relationship" class="custom-select myText"
                                     value="{{ old('relationship', $birth->relationship) }}" onchange="withnessSelect()">
                                     <option value="" disabled selected>छान्नुहोस्</option>
-                                    <option value="बुवा"
-                                        {{ $birth->relationship == 'बुवा' || old('relationship') == 'बुवा' ? 'selected' : '' }}>
-                                        बुवा</option>
-                                    <option value="आमा"
-                                        {{ $birth->relationship == 'आमा' || old('relationship') == 'आमा' ? 'selected' : '' }}>
-                                        आमा</option>
-                                    <option value="हजुर बुबा"
-                                        {{ $birth->relationship == 'हजुर बुबा' || old('relationship') == 'हजुर बुबा' ? 'selected' : '' }}>
-                                        हजुर बुबा</option>
-                                    <option value="दाजु"
-                                        {{ $birth->relationship == 'दाजु' || old('relationship') == 'दाजु' ? 'selected' : '' }}>
-                                        दाजु</option>
-
+                                    @foreach ($withnessRelationships as $withnessRelationship)
+                                        <option value="{{ $withnessRelationship->relationship }}"
+                                            {{ $birth->relationship == $withnessRelationship->relationship || old('relationship') == $withnessRelationship->relationship ? 'selected' : '' }}>
+                                            {{ $withnessRelationship->relationship }}</option>
+                                    @endforeach
                                 </select>
 
                                 @error('relationship')
@@ -688,18 +689,7 @@
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-                            {{-- 
-                            <div class="form-group col-md-4">
-                                <label for=""> साक्षी मिति</label>
-                                <div class="input-group mb-2">
 
-                                    <input type="text" name="date" id="sachi_nepali_datepicker"
-                                        value="{{ old('date', $birth->date) }}" class="form-control" />
-                                </div>
-                                @error('date')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div> --}}
                             <div class="d-flex align-items-center col-12">
                                 <div class="form-group col-xl-6">
                                     <label for="">फाइल (max size: 2 MB | jpeg, png, jpg, pdf)</label>
@@ -714,8 +704,8 @@
                                 <div class="col-xl-6">
                                     @if ($birth->file)
                                         <a href="{{ asset('storage/' . $birth->file) }}" target="_blank">
-                                           <div><i class="fas fa-file-image"  style="font-size: 100px;"></i></div>
-                                           <div>View File</div> 
+                                            <div><i class="fas fa-file-image" style="font-size: 100px;"></i></div>
+                                            <div>View File</div>
                                         </a>
                                     @endif
                                 </div>
@@ -814,9 +804,6 @@
     @endpush
     @push('script')
         <script>
-           
-
-
             function withnessSelect() {
                 var relationship = document.getElementById("relationship").value;
                 var father_name = document.getElementById("father_name").value;
@@ -826,7 +813,7 @@
                 var father_parmanent_address = document.getElementById("father_parmanent_address").value;
 
                 var grandfather_name = document.getElementById("grandfather_name").value;
-               
+
 
                 var relative_name = document.getElementById("relative_name");
                 var relative_address = document.getElementById("relative_address");
@@ -836,7 +823,7 @@
                 console.log(father_name.value);
                 if (relationship === "बुवा") {
                     console.log(father_name);
-                    document.getElementById("relative_name").value= father_name;
+                    document.getElementById("relative_name").value = father_name;
                     document.getElementById("relative_address").value = father_parmanent_address;
 
                 } else if (relationship === "आमा") {
@@ -845,7 +832,7 @@
                 } else if (relationship === "हजुर बुबा") {
                     relative_name.value = grandfather_name;
                     relative_address.value = father_parmanent_address;
-                }else{
+                } else {
                     relative_name.value = "";
                     relative_address.value = "";
                 }
