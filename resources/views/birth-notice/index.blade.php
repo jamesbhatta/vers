@@ -236,11 +236,11 @@
                                         <th>नाम</th>
                                         <th>लिङ्ग</th>
                                         <th>जन्म मिति</th>
-                                        <th>मरेको मिति</th>
                                         <th>बाबुको नाम</th>
                                         <th>आमाको नाम</th>
                                         <th>हजुरबुबाको नाम</th>
                                         <th>जन्म स्थान</th>
+                                        <th>Entry By</th>
                                         <th class="text-right">Action</th>
                                     </tr>
                                 </thead>
@@ -253,11 +253,11 @@
                                             <td>{{ $birth->name }}</td>
                                             <td>{{ $birth->gender }}</td>
                                             <td>{{ $birth->dob }}</td>
-                                            <td>{{ $birth->death_date }}</td>
                                             <td>{{ $birth->father_name }}</td>
                                             <td>{{ $birth->mother_name }}</td>
                                             <td>{{ $birth->grandfather_name }}</td>
                                             <td>{{ $birth->birth_place }}</td>
+                                            <td>{{ $birth->user->name }}</td>
 
                                             <td class="text-nowrap text-right">
                                                 <a href="{{route('birth.show',$birth)}}" class="action-btn text-primary show" target="_blank" ><i class="far fa-eye"></i></a>
