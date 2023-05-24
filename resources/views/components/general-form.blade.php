@@ -9,7 +9,7 @@
     </div>
 
     <div class="form-group col-md-4">
-        <label for=""><span class="text-danger">*</span> जन्म मिति</label>
+        <label for=""> जन्म मिति</label>
         <div class="input-group mb-2">
             <input type="text" id="dob" name="dob" class="form-control"
                 value="{{ old('dob',$death->dob) }}" />
