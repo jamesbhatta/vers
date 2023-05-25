@@ -192,28 +192,28 @@
                                 <div class="form-group col-md-4">
                                     <label> धर्म </label>
                                     <select class="custom-select" name="bride_religion">
-                                        <option selected class="m-5" value="">छान्न्नुहोस्। </option>
-                                        <div>
-                                            <option value="हिन्दु"
-                                                {{ $marriage->bride_religion == 'हिन्दु' || old('bride_religion') == 'हिन्दु' ? 'selected' : '' }}>
-                                                हिन्दु
-                                            </option>
-                                            <option value="बौद्ध"
-                                                {{ $marriage->bride_religion == 'बौद्ध' || old('bride_religion') == 'बौद्ध' ? 'selected' : '' }}>
-                                                बौद्ध
-                                            </option>
-                                            <option value="क्रिश्चियन"
-                                                {{ $marriage->bride_religion == 'क्रिश्चियन' || old('bride_religion') == 'क्रिश्चियन' ? 'selected' : '' }}>
-                                                क्रिश्चियन </option>
-                                            <option value="मुस्लिम"
-                                                {{ $marriage->bride_religion == 'मुस्लिम' || old('bride_religion') == 'मुस्लिम' ? 'selected' : '' }}>
-                                                मुस्लिम
-                                            </option>
-                                            <option value="अन्य"
-                                                {{ $marriage->bride_religion == 'अन्य' || old('bride_religion') == 'अन्य' ? 'selected' : '' }}>
-                                                अन्य
-                                            </option>
-                                        </div>
+                                        {{-- <option selected class="m-5" value="">छान्न्नुहोस्। </option> --}}
+
+                                        <option value="हिन्दु"
+                                            {{ $marriage->bride_religion == 'हिन्दु' || old('bride_religion') == 'हिन्दु' ? 'selected' : '' }}>
+                                            हिन्दु
+                                        </option>
+                                        <option value="बौद्ध"
+                                            {{ $marriage->bride_religion == 'बौद्ध' || old('bride_religion') == 'बौद्ध' ? 'selected' : '' }}>
+                                            बौद्ध
+                                        </option>
+                                        <option value="क्रिश्चियन"
+                                            {{ $marriage->bride_religion == 'क्रिश्चियन' || old('bride_religion') == 'क्रिश्चियन' ? 'selected' : '' }}>
+                                            क्रिश्चियन </option>
+                                        <option value="मुस्लिम"
+                                            {{ $marriage->bride_religion == 'मुस्लिम' || old('bride_religion') == 'मुस्लिम' ? 'selected' : '' }}>
+                                            मुस्लिम
+                                        </option>
+                                        <option value="अन्य"
+                                            {{ $marriage->bride_religion == 'अन्य' || old('bride_religion') == 'अन्य' ? 'selected' : '' }}>
+                                            अन्य
+                                        </option>
+
                                     </select>
                                     @error('bride_religion')
                                         <small class="text-danger">{{ $message }}</small>
@@ -373,28 +373,28 @@
                                 <div class="form-group col-md-4">
                                     <label> धर्म </label>
                                     <select class="custom-select" name="groom_religion">
-                                        <option selected class="m-5" value="">छान्न्नुहोस्। </option>
-                                        <div>
-                                            <option value="हिन्दु"
-                                                {{ $marriage->groom_religion == 'हिन्दु' || old('groom_religion') == 'हिन्दु' ? 'selected' : '' }}>
-                                                हिन्दु
-                                            </option>
-                                            <option value="बौद्ध"
-                                                {{ $marriage->groom_religion == 'बौद्ध' || old('groom_religion') == 'बौद्ध' ? 'selected' : '' }}>
-                                                बौद्ध
-                                            </option>
-                                            <option value="क्रिश्चियन"
-                                                {{ $marriage->groom_religion == 'क्रिश्चियन' || old('groom_religion') == 'क्रिश्चियन' ? 'selected' : '' }}>
-                                                क्रिश्चियन </option>
-                                            <option value="मुस्लिम"
-                                                {{ $marriage->groom_religion == 'मुस्लिम' || old('groom_religion') == 'मुस्लिम' ? 'selected' : '' }}>
-                                                मुस्लिम
-                                            </option>
-                                            <option value="अन्य"
-                                                {{ $marriage->groom_religion == 'अन्य' || old('groom_religion') == 'अन्य' ? 'selected' : '' }}>
-                                                अन्य
-                                            </option>
-                                        </div>
+                                        {{-- <option selected class="m-5" value="">छान्न्नुहोस्। </option> --}}
+
+                                        <option value="हिन्दु"
+                                            {{ $marriage->groom_religion == 'हिन्दु' || old('groom_religion') == 'हिन्दु' ? 'selected' : '' }}>
+                                            हिन्दु
+                                        </option>
+                                        <option value="बौद्ध"
+                                            {{ $marriage->groom_religion == 'बौद्ध' || old('groom_religion') == 'बौद्ध' ? 'selected' : '' }}>
+                                            बौद्ध
+                                        </option>
+                                        <option value="क्रिश्चियन"
+                                            {{ $marriage->groom_religion == 'क्रिश्चियन' || old('groom_religion') == 'क्रिश्चियन' ? 'selected' : '' }}>
+                                            क्रिश्चियन </option>
+                                        <option value="मुस्लिम"
+                                            {{ $marriage->groom_religion == 'मुस्लिम' || old('groom_religion') == 'मुस्लिम' ? 'selected' : '' }}>
+                                            मुस्लिम
+                                        </option>
+                                        <option value="अन्य"
+                                            {{ $marriage->groom_religion == 'अन्य' || old('groom_religion') == 'अन्य' ? 'selected' : '' }}>
+                                            अन्य
+                                        </option>
+
                                     </select>
                                     @error('groom_religion')
                                         <small class="text-danger">{{ $message }}</small>
@@ -463,8 +463,8 @@
                                     <div class="col-xl-6">
                                         @if ($marriage->file)
                                             <a href="{{ asset('storage/' . $marriage->file) }}" target="_blank">
-                                               <div><i class="fas fa-file-image"  style="font-size: 100px;"></i></div>
-                                               <div>View File</div> 
+                                                <div><i class="fas fa-file-image" style="font-size: 100px;"></i></div>
+                                                <div>View File</div>
                                             </a>
                                         @endif
                                     </div>
@@ -591,8 +591,7 @@
                                                 <a href="{{ route('marriageWithness.edit', [$marriage, $marriageWithness]) }}"
                                                     class="action-btn text-primary"><i class="fa fa-edit"></i></a>
                                                 <span class="mx-2"></span>
-                                                <form
-                                                    action="{{ route('marriageWithness.delete', $marriageWithness) }}"
+                                                <form action="{{ route('marriageWithness.delete', $marriageWithness) }}"
                                                     method="post"
                                                     onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
                                                     class="form-inline d-inline">

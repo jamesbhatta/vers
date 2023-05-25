@@ -261,29 +261,28 @@
                                     <div class="input-group mb-2">
 
                                         <select class="custom-select" name="religion">
-                                            <option class="m-5" value="">छान्न्नुहोस्। </option>
-                                            <div>
-                                                <option value="हिन्दु"
-                                                    {{ $death->religion == 'हिन्दु' || old('religion') == 'हिन्दु' ? 'selected' : '' }}>
-                                                    हिन्दु
-                                                </option>
-                                                <option value="मुस्लिम"
-                                                    {{ $death->religion == 'मुस्लिम' || old('religion') == 'मुस्लिम' ? 'selected' : '' }}>
-                                                    मुस्लिम
-                                                </option>
-                                                <option value="रिस्चियन"
-                                                    {{ $death->religion == 'क्रिस्चियन' || old('religion') == 'क्रिस्चियन' ? 'selected' : '' }}>
-                                                    क्रिस्चियन
-                                                </option>
-                                                <option value="बौद्ध"
-                                                    {{ $death->religion == 'बौद्ध' || old('religion') == 'बौद्ध' ? 'selected' : '' }}>
-                                                    बौद्ध
-                                                </option>
-                                                <option value="अन्य"
-                                                    {{ $death->religion == 'अन्य' || old('religion') == 'अन्य' ? 'selected' : '' }}>
-                                                    अन्य
-                                                </option>
-                                            </div>
+                                            {{-- <option class="m-5" value="">छान्न्नुहोस्। </option> --}}
+
+                                            <option value="हिन्दु"
+                                                {{ $death->religion == 'हिन्दु' || old('religion') == 'हिन्दु' ? 'selected' : '' }}>
+                                                हिन्दु
+                                            </option>
+                                            <option value="मुस्लिम"
+                                                {{ $death->religion == 'मुस्लिम' || old('religion') == 'मुस्लिम' ? 'selected' : '' }}>
+                                                मुस्लिम
+                                            </option>
+                                            <option value="रिस्चियन"
+                                                {{ $death->religion == 'क्रिस्चियन' || old('religion') == 'क्रिस्चियन' ? 'selected' : '' }}>
+                                                क्रिस्चियन
+                                            </option>
+                                            <option value="बौद्ध"
+                                                {{ $death->religion == 'बौद्ध' || old('religion') == 'बौद्ध' ? 'selected' : '' }}>
+                                                बौद्ध
+                                            </option>
+                                            <option value="अन्य"
+                                                {{ $death->religion == 'अन्य' || old('religion') == 'अन्य' ? 'selected' : '' }}>
+                                                अन्य
+                                            </option>
                                         </select>
                                     </div>
                                     @error('religion')

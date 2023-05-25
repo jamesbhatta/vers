@@ -286,8 +286,8 @@
                                 <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> धर्म</label>
                                     <select class="custom-select" name="father_religion" id="father_religion">
-                                        <option selected disabled class="m-5" value="">छान्न्नुहोस्।
-                                        </option>
+                                        {{-- <option class="m-5" value="">छान्न्नुहोस्।
+                                        </option> --}}
                                         <div>
                                             <option
                                                 {{ $birth->father_religion == 'हिन्दु' || old('father_religion') == 'हिन्दु' ? 'selected' : '' }}
@@ -318,25 +318,25 @@
                                 <div class="form-group col-md-4">
                                     <label for=""><span class="text-danger">*</span> पेशा</label>
                                     <select class="custom-select" name="father_occupation" id="father_occupation">
-                                        <option selected disabled class="m-5" value="">छान्न्नुहोस्।
-                                        </option>
-                                        <div>
-                                            <option
-                                                {{ $birth->father_occupation == 'सरकारी सेवा' || old('father_occupation') == 'सरकारी सेवा' ? 'selected' : '' }}
-                                                value="सरकारी सेवा">सरकारी सेवा</option>
-                                            <option
-                                                {{ $birth->father_occupation == 'गैर सरकारी सेवा' || old('father_occupation') == 'गैर सरकारी सेवा' ? 'selected' : '' }}
-                                                value="गैर सरकारी सेवा">गैर सरकारी सेवा </option>
-                                            <option
-                                                {{ $birth->father_occupation == 'कृषि' || old('father_occupation') == 'कृषि' ? 'selected' : '' }}
-                                                value="कृषि">कृषि </option>
-                                            <option
-                                                {{ $birth->father_occupation == 'व्यवसाय' || old('father_occupation') == 'व्यवसाय' ? 'selected' : '' }}
-                                                value="व्यवसाय">व्यवसाय </option>
-                                            <option
-                                                {{ $birth->father_occupation == 'अन्य' || old('father_occupation') == 'अन्य' ? 'selected' : '' }}
-                                                value="अन्य">अन्य</option>
-                                        </div>
+                                        {{-- <option selected disabled class="m-5" value="">छान्न्नुहोस्।
+                                        </option> --}}
+                                        <option
+                                            {{ $birth->father_occupation == 'कृषि' || old('father_occupation') == 'कृषि' ? 'selected' : '' }}
+                                            value="कृषि">कृषि </option>
+                                        <option
+                                            {{ $birth->father_occupation == 'सरकारी सेवा' || old('father_occupation') == 'सरकारी सेवा' ? 'selected' : '' }}
+                                            value="सरकारी सेवा">सरकारी सेवा</option>
+                                        <option
+                                            {{ $birth->father_occupation == 'गैर सरकारी सेवा' || old('father_occupation') == 'गैर सरकारी सेवा' ? 'selected' : '' }}
+                                            value="गैर सरकारी सेवा">गैर सरकारी सेवा </option>
+
+                                        <option
+                                            {{ $birth->father_occupation == 'व्यवसाय' || old('father_occupation') == 'व्यवसाय' ? 'selected' : '' }}
+                                            value="व्यवसाय">व्यवसाय </option>
+                                        <option
+                                            {{ $birth->father_occupation == 'अन्य' || old('father_occupation') == 'अन्य' ? 'selected' : '' }}
+                                            value="अन्य">अन्य</option>
+
                                     </select>
                                     @error('father_occupation')
                                         <small class="text-danger">{{ $message }}</small>
