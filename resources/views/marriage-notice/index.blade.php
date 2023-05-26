@@ -57,50 +57,6 @@
                             </form>
                         </div>
 
-                        {{-- Filtered data in excel --}}
-                        {{-- <form action="{{ route('marriage.excel') }}" method="GET" role="search">
-                            @isset($_GET['darta_number'])
-                                <input type="hidden" name="darta_number"
-                                    value="{{ $_GET['darta_number'] ? $_GET['darta_number'] : '' }}">
-                            @endisset
-
-                            @isset($_GET['marriage_date'])
-                                <input type="hidden" name="marriage_date" value="{{ $_GET['marriage_date'] }}">
-                            @endisset
-
-                            @isset($_GET['user_id'])
-                                <input type="hidden" name="user_id" value="{{ $_GET['user_id'] }}">
-                            @endisset
-
-                            @isset($_GET['bride_name'])
-                                <input type="hidden" name="bride_name" value="{{ $_GET['bride_name'] }}">
-                            @endisset
-
-                            @isset($_GET['groom_name'])
-                                <input type="hidden" name="groom_name" value="{{ $_GET['groom_name'] }}">
-                            @endisset
-
-                            @isset($_GET['bride_father_name'])
-                                <input type="hidden" name="bride_father_name" value="{{ $_GET['bride_father_name'] }}">
-                            @endisset
-
-                            @isset($_GET['groom_father_name'])
-                                <input type="hidden" name="groom_father_name" value="{{ $_GET['groom_father_name'] }}">
-                            @endisset
-                            @isset($_GET['from'])
-                                <input type="hidden" name="from" value="{{ $_GET['from'] }}">
-                            @endisset
-                            @isset($_GET['to'])
-                                <input type="hidden" name="to" value="{{ $_GET['to'] }}">
-                            @endisset
-                            <div class="col-lg-1">
-                                <button
-                                    class="btn my-0  rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex btn-excel"
-                                    type="submit" style="background-color:#17A2B8; color: #fff;"><i
-                                        class="fas fa-file-excel mr-2 mt-1"></i> Excel</button>
-                            </div>
-                        </form> --}}
-
                         {{-- Add new Data --}}
                         <a href="{{ route('marriage.create') }}"
                             class="btn bg-success text-white my-0 rounded z-depth-0 font-16px py-2 px-4 waves-effect waves-light d-flex"
@@ -219,10 +175,10 @@
                                         <td>{{ $marriage->groom_father_name }}</td>
                                         <td>{{ $marriage->user->name }}</td>
                                         <td class="text-right" style="white-space: nowrap;">
-                                            <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top"
+                                            {{-- <a class="action-btn text-primary" data-toggle="tooltip" data-placement="top"
                                                 title="Add withness"
                                                 href="{{ route('marriageWithness.create', $marriage) }}"><i
-                                                    class="fas fa-plus-circle"></i></a>
+                                                    class="fas fa-plus-circle"></i></a> --}}
                                             @if ($marriage->file)
                                                 <a href="{{ asset('storage/' . $marriage->file) }}" data-toggle="tooltip"
                                                     data-placement="top" title="File view" target="_blank"><i

@@ -58,7 +58,7 @@ class MarriageController extends Controller
         }
         $marriage = $user->marriage()->create($data);
         return redirect()
-            ->route('marriageWithness.create', compact('marriage'))
+            ->route('marriage.index')
             ->with('success', 'New marriage notice successfully registered.');
     }
 

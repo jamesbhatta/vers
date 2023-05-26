@@ -110,36 +110,33 @@
                 </table>
             </div>
 
-            <label class="col-12 text-center mt-5 font-weight-bold">साक्षीको विवरण</label>
-            <div class="col-12">
+            <label class="col-12 text-center mt-5 font-weight-bold">यसमा लेखेको विवरण साचो हो, झुठा ठहरे कानुन बमोजिम साहुला बुझाउला भनि
+                सहिछाप गर्ने, सूचकको विवरण </label>
+            <div class="col-12 mb-4">
                 <table class="my_table col-12">
-                    <thead>
-                        <th>
-                            SN
-                        </th>
-                        <th>
-                            नाम
-                        </th>
-                        <th>
-                            ठेगाना
-                        </th>
-                        <th>
-                            दुलाहा-दुलही संगको नाता
-                        </th>
-                        <th>
-                            मिति
-                        </th>
-                    </thead>
                     <tbody>
-                        @foreach ($marriage->marriageWithness as $marriageWithness)
+                        <tr>
+                            <th>
+                                नाम
+                            </th>
+                            <td id="bride_name">{{ $marriage->bride_name }}</td>
+                            <td id="groom_name">{{ $marriage->groom_name }}</td>
+                        </tr>
+                        <tr>
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $marriageWithness->relative_name }}</td>
-                                <td>{{ $marriageWithness->relationship }}</td>
-                                <td>{{ $marriageWithness->relative_address }}</td>
-                                <td>{{ $marriageWithness->date }}</td>
+                                <th>ठेगाना</th>
+                                <td id="bride_temp_address">{{ $marriage->bride_temp_address }}</td>
+                                <td id="groom_temp_address">{{ $marriage->groom_temp_address }}</td>
                             </tr>
-                        @endforeach
+                        </tr>
+                        <tr>
+                            <tr>
+                                <th>मिति</th>
+                             <td>{{ $marriage->entry_date }}</td>
+                             <td>{{ $marriage->entry_date }}</td>
+                            </tr>
+                        </tr>
+
                     </tbody>
 
                 </table>
