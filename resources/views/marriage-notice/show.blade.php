@@ -18,7 +18,7 @@
                         <td id="reg_number">{{ $marriage->reg_number }}</td>
                     </tr>
                     <tr>
-                        <td>ग.पा. / न.पा</td>
+                        <td>गा.पा. / न.पा</td>
                         <td id="municipality">{{ $marriage->municipality }}</td>
                         <td>दर्ता मिति</td>
                         <td id="entry_date">{{ $marriage->entry_date }}</td>
