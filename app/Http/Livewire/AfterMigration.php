@@ -16,15 +16,6 @@ class AfterMigration extends Component
 
     public function mount()
     {
-
-
-        // $mysetting=Mysetting::where('id', Auth::user()->id)->first();
-        // if ($mysetting) {
-        //     $this->province =$mysetting->default_province;
-        //     $this->district = $mysetting->default_district;
-        //     $this->municipality = $mysetting->default_municipality;
-        //     $this->vdc = $mysetting->default_vdc;
-        // }
         if ($this->afterMigration->id) {
             $this->province = $this->afterMigration->migration_province;
             $this->district = $this->afterMigration->migration_district;

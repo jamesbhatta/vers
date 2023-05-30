@@ -86,7 +86,7 @@
                     <p style="border-bottom: dashed 1px rgb(132, 132, 132);" class="px-3 mx-1" id=migration_district>
                         {{ $migrationCertificate->migration_district }}</p> जिल्ला &nbsp;
                     <p style="border-bottom: dashed 1px rgb(132, 132, 132);" class="px-3 mx-1" id=migration_municipality>
-                        {{ $migrationCertificate->migration_municipality }}</p>
+                        {{ $migrationCertificate->migration_municipality ?? $migrationCertificate->migration_vdc  }}</p>
                     <p class="mb-2"></p>
                     न.पा./गा.वि.स. वडा नं. &nbsp;<p style="border-bottom: dashed 1px rgb(132, 132, 132);" class="px-3 mx-1" id=migration_ward>
                         {{ $migrationCertificate->migration_ward }} </p>

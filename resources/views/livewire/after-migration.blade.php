@@ -1,8 +1,8 @@
 <div class="row">
     <div class="form-group col-md-4">
-        <label for=""><span class="text-danger">*</span>&nbspप्रदेश</label>
+        <label for="">प्रदेश</label>
         <select class="custom-select" name="migration_province" wire:model="province">
-            <option class="m-5">प्रदेश छान्न्नुहोस्। </option>
+            <option value="" class="m-5">प्रदेश छान्न्नुहोस्। </option>
             @php
                 $provinces = '';
             @endphp
@@ -23,9 +23,9 @@
         @enderror
     </div>
     <div class="form-group col-md-4">
-        <label for=""><span class="text-danger">*</span>&nbspजिल्ला </label>
+        <label for="">जिल्ला </label>
         <select class="custom-select" name="migration_district" wire:model="district">
-            <option class="m-5">जिल्ला छान्न्नुहोस्। </option>
+            <option value="" class="m-5">जिल्ला छान्न्नुहोस्। </option>
             @php
                 $districts = '';
             @endphp
@@ -49,10 +49,10 @@
     </div>
 
     <div class="form-group col-md-4">
-        <label for=""><span class="text-danger">*</span>&nbspनगरपालिका </label>
+        <label for="">नगरपालिका </label>
 
         <select class="custom-select" name="migration_municipality" wire:model="municipality">
-            <option class="m-5">नगरपालिका छान्न्नुहोस्। </option>
+            <option value="" class="m-5">नगरपालिका छान्न्नुहोस्। </option>
             @php
                 $municipalitys = '';
             @endphp
@@ -79,7 +79,7 @@
     <div class="form-group col-md-4">
         <label for="">साबिकको ठेगाना</label>
         <label for="">साबिकको ठेगाना </label>
-        <input type="text" class="form-control" name="migration_vdc" id="migration_vdc">
+        <input type="text" class="form-control" name="migration_vdc" id="migration_vdc" wire:model="vdc">
         @error('migration_vdc')
             <small class="text-danger">{{ $message }}</small>
         @enderror
