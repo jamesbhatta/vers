@@ -81,7 +81,7 @@
         <div class="p-3 mt-2">
             <div style="text-align: justify" class="">
                 <div class="row" style="text-align: justify">
-                    (२) कहाँ
+                    (२) कहाँ {{$migrationCertificate->type == "बसाई सरी आएको" ? "बाट" : ""}}
                     <p class="px-3 mx-1" id=type>{{ $migrationCertificate->type }}</p>
                     <p style="border-bottom: dashed 1px rgb(132, 132, 132);" class="px-3 mx-1" id=migration_district>
                         {{ $migrationCertificate->migration_district }}</p> जिल्ला &nbsp;
