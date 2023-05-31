@@ -167,6 +167,26 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="text-sm text-gray-700 leading-5">
+                                            {!! __('Showing') !!}
+                                            @if ($books->firstItem())
+                                                <span class="font-medium">{{ $books->firstItem() }}</span>
+                                                {!! __('to') !!}
+                                                <span class="font-medium">{{ $books->lastItem() }}</span>
+                                            @else
+                                                {{ $books->count() }}
+                                            @endif
+                                            {!! __('of') !!}
+                                            <span class="font-medium">{{ $books->total() }}</span>
+                                            {!! __('results') !!}
+                                        </p>
+                                    </div>
+                                    <div>
+                                        {{ $books->links() }}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
