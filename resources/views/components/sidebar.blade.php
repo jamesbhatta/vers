@@ -71,6 +71,13 @@
                     <i class="fa fa-users pr-3"></i>@lang('navigation.users')
                 </a>
             </li>
+            <br>
+            <li class="nav-item bg-transparent">
+                <a class="nav-link fontSize" href="{{ route('admin.logs') }}" onmouseover="this.style.color='black'"
+                    onmouseout="this.style.color='white'">
+                    <i class="fa fa-bug pr-3"></i>Logs
+                </a>
+            </li>
         @endrole
     </ul>
 </div>
