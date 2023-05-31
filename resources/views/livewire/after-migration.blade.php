@@ -77,8 +77,7 @@
     </div>
 
     <div class="form-group col-md-4">
-        <label for="">साबिकको ठेगाना</label>
-        <label for="">साबिकको ठेगाना </label>
+        <label for="">साबिकको गा.वि.स.</label>
         <input type="text" class="form-control" name="migration_vdc" id="migration_vdc" wire:model="vdc">
         @error('migration_vdc')
             <small class="text-danger">{{ $message }}</small>

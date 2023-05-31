@@ -50,6 +50,8 @@ class FamilyController extends Controller
                 'gender' => ['required'],
                 'mothertongue' => ['nullable'],
                 'description' => ['nullable'],
+                'relationship' => ['nullable'],
+
             ]),
         );
         return redirect()
@@ -102,6 +104,7 @@ class FamilyController extends Controller
                 'gender' => ['required'],
                 'mothertongue' => ['nullable'],
                 'description' => ['nullable'],
+                'relationship' => ['nullable'],
             ]),
         );
         $migrationCertificate = MigrationCertificate::findOrFail($family->migration_certificate_id);
