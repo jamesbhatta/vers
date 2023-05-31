@@ -149,6 +149,7 @@
                                         <th>#</th>
                                         <th>किताब कोड</th>
                                         <th>दर्ता न.</th>
+                                        <th>दर्ता मिति</th>
                                         <th>नाम</th>
                                         <th>लिङ्ग</th>
                                         <th>जन्म मिति</th>
@@ -166,6 +167,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $birth->book->code ?? '' }}</td>
                                             <td>{{ $birth->reg_number }}</td>
+                                            <td>{{ $birth->entry_date }}</td>
                                             <td>{{ $birth->name }}</td>
                                             <td>{{ $birth->gender }}</td>
                                             <td>{{ $birth->dob }}</td>
