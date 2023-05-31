@@ -21,9 +21,11 @@ class BookController extends Controller
 
     public function store(BookRequest $request, Book $book)
     {
-       $book = Book::create($request->validated());
+        $book = Book::create($request->validated());
         $book->save();
-        return redirect()->route('book.index')->with('success', 'New record added.');
+        return redirect()
+            ->route('book.index')
+            ->with('success', 'New record added.');
     }
 
     public function edit(Book $book)
@@ -35,12 +37,33 @@ class BookController extends Controller
     {
         $book->update($request->validated());
         $book->save();
-        return redirect()->route('book.index')->with('success', 'Selected book updated succssfully.');
+        return redirect()
+            ->route('book.index')
+            ->with('success', 'Selected book updated succssfully.');
     }
 
     public function delete(Book $book)
     {
         $book->delete();
-        return redirect()->back()->with('success', 'selected book removed successfully');
+        return redirect()
+            ->back()
+            ->with('success', 'selected book removed successfully');
+    }
+
+    public function filter(Request $request)
+    {
+        $books = new Book();
+        if ($request->code) {
+            $books = $books->where('code', 'like', '%' . $request->code . '%');
+        }
+        if ($request->book_type) {
+            $books = $books->where('book_type', $request->book_type);
+        }
+       
+        $books = $books->latest()->paginate(50);
+        $books->appends(request()->except('page'));
+       
+        // return $books;
+        return view('books.list', compact('books'));
     }
 }

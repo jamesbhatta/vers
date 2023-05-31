@@ -131,6 +131,7 @@ Route::group(['middleware' => ['auth', 'role:super-admin']], function () {
     Route::get('book/edit/{book}', [BookController::class, 'edit'])->name('book.edit');
     Route::delete('book/delete/{book}', [BookController::class, 'delete'])->name('book.delete');
     Route::put('book/update/{book}', [BookController::class, 'update'])->name('book.update');
+    Route::get('book/filter', [BookController::class, 'filter'])->name('book.filter');
 
     //for withness relationship
     Route::get('withness-relationship', [WithnessRelationshipController::class, 'index'])->name('withness-relationship.index');

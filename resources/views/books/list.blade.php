@@ -23,7 +23,43 @@
                         {{ session()->get('success') }}
                     </div>
                 @endif
-
+                <div class="card">
+                    <div class="card-body" id="cardBody">
+                        <form action="{{ route('book.filter') }}" method="GET" role="search">
+                            <div class="row">
+                                <div class="col-xl-3">
+                                    <div class="form-group">
+                                        <label>किताब प्रकार</label>
+                                        <select name="book_type" class="custom-select" id="">
+                                            <option value="">किताबको प्रकार छानुहोस</option>
+                                            <option value="जन्म दर्ता">जन्म दर्ता
+                                            </option>
+                                            <option value="मृत्यु दर्ता">मृत्यु
+                                                दर्ता</option>
+                                            <option value="विवाह दर्ता">विवाह
+                                                दर्ता</option>
+                                            <option value="बसाईसराई दर्ता">
+                                                बसाईसराई दर्ता</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3">
+                                    <div class="form-group">
+                                        <label>किताब कोड</label>
+                                        <input type="text" name="code" class="form-control">
+                                        @error('code')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                </div>
+                          
+                                <div class="col-xl-3 mt-md-4">
+                                    <input type="submit" value="Search" class="btn bg-success mt-md-2">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
                 <div class="row">
 
