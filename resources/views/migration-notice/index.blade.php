@@ -115,7 +115,7 @@
                 <div class="box mt-3">
                     <div class="box__body">
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table" style="white-space: nowrap;">
                                 <thead class="thead-light">
                                     <tr class="text-uppercase">
                                         <th>#</th>
