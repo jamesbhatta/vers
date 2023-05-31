@@ -25,7 +25,7 @@ class BookRequest extends FormRequest
     {
         return [
             'book_type'=>'required',
-            'code'=>'required',
+            'code'=>'required|unique:books',
             'from'=>'required',
             'to'=>'nullable',
             'province'=>'nullable',

@@ -29,9 +29,9 @@
 
                     <div class="col-xl-12">
                         <div class="box mt-3">
-                            <div class="box__body" style="width: 100%;overflow-x:scroll">
+                            <div class="box__body">
                                 {{-- {!! $dataTable->table() !!} --}}
-                                <table class="table table-responsive-sm" id="myTable">
+                                <table class="table table-responsive-sm"  style="white-space: nowrap;">
                                     <thead class="thead-light">
                                         <tr class="text-uppercase">
                                             <th>#</th>
