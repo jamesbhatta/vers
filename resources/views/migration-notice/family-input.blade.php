@@ -225,7 +225,7 @@
                         <td>{{ $family->relationship }}</td>
                         <td>{{ $family->birthplace }}</td>
                         <td>{{ $family->citizenship }}</td>
-                        <td> {{ $family->address }}</td>
+                        <td> {{ $family->permanent_address }}</td>
                         <td>{{ $family->age }}</td>
                         <td>{{ $family->education }}</td>
                         <td class="text-nowrap text-right">
