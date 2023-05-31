@@ -30,73 +30,74 @@
                     <div class="col-xl-12">
                         <div class="box mt-3">
                             <div class="box__body">
-                                {{-- {!! $dataTable->table() !!} --}}
-                                <table class="table table-responsive-sm"  style="white-space: nowrap;">
-                                    <thead class="thead-light">
-                                        <tr class="text-uppercase">
-                                            <th>#</th>
-                                            <th>किताब कोड</th>
-                                            <th>किताब प्रकार</th>
-                                            <th>पञ्जिकाधिकारी</th>
-                                            <th>देखी</th>
-                                            <th>सम्म</th>
-                                            <th>कुल रेकर्ड</th>
-                                            <th>सूचना फाराम</th>
-                                            <th class="text-right">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($books as $book)
-                                            <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $book->code }}</td>
-                                                <td>{{ $book->book_type }}</td>
-                                                <td>{{ $book->registaar }}</td>
-                                                <td>{{ $book->from }}</td>
-                                                <td>{{ $book->to }}</td>
-                                                <td>
-                                                    @if ($book->book_type == 'जन्म दर्ता')
-                                                        {{ \App\Birth::where('book_id', $book->id)->count() }}
-                                                    @elseif($book->book_type == 'मृत्यु दर्ता')
-                                                        {{ \App\Death::where('book_id', $book->id)->count() }}
-                                                    @elseif($book->book_type == 'विवाह दर्ता')
-                                                        {{ \App\Marriage::where('book_id', $book->id)->count() }}
-                                                    @elseif($book->book_type == 'बसाईसराई दर्ता')
-                                                    {{ \App\MigrationCertificate::where('book_id', $book->id)->count() }}
-                                                    @endif
-                                                </td>
-                                                <td>
-                                                    @if ($book->book_type == 'जन्म दर्ता')
-                                                        <a href="{{ route('birth.create') }}?book_id={{ $book->id }}"
-                                                            class="btn btn-info">Add</a>
-                                                    @elseif($book->book_type == 'मृत्यु दर्ता')
-                                                        <a href="{{ route('death.create') }}?book_id={{ $book->id }}"
-                                                            class="btn btn-info">Add</a>
-                                                    @elseif($book->book_type == 'विवाह दर्ता')
-                                                        <a href="{{ route('marriage.create') }}?book_id={{ $book->id }}"
-                                                            class="btn btn-info">Add</a>
-                                                    @elseif($book->book_type == 'बसाईसराई दर्ता')
-                                                        <a href="{{ route('migration.create') }}?book_id={{ $book->id }}"
-                                                            class="btn btn-info">Add</a>
-                                                    @endif
-                                                </td>
-                                                <td class="text-nowrap text-right">
-
-                                                    <a class="action-btn text-primary"
-                                                        href="{{ route('book.edit', $book->id) }}"><i
-                                                            class="far fa-edit"></i></a>
-                                                    <form action="{{ route('book.delete', $book->id) }}" method="post"
-                                                        onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
-                                                        class="form-inline d-inline">
-                                                        @csrf
-                                                        @method('delete')
-                                                        <button type="submit" class="action-btn text-danger"><i
-                                                                class="far fa-trash-alt"></i></button>
-                                                    </form>
-                                                </td>
+                                <div class="table-responsive">
+                                    {{-- {!! $dataTable->table() !!} --}}
+                                    <table class="table" style="white-space: nowrap;">
+                                        <thead class="thead-light">
+                                            <tr class="text-uppercase">
+                                                <th>#</th>
+                                                <th>किताब कोड</th>
+                                                <th>किताब प्रकार</th>
+                                                <th>पञ्जिकाधिकारी</th>
+                                                <th>देखी</th>
+                                                <th>सम्म</th>
+                                                <th>कुल रेकर्ड</th>
+                                                <th>सूचना फाराम</th>
+                                                <th class="text-right">Action</th>
                                             </tr>
-                                        @endforeach
-                                        {{-- @foreach ($births as $birth)
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($books as $book)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ $book->code }}</td>
+                                                    <td>{{ $book->book_type }}</td>
+                                                    <td>{{ $book->registaar }}</td>
+                                                    <td>{{ $book->from }}</td>
+                                                    <td>{{ $book->to }}</td>
+                                                    <td>
+                                                        @if ($book->book_type == 'जन्म दर्ता')
+                                                            {{ \App\Birth::where('book_id', $book->id)->count() }}
+                                                        @elseif($book->book_type == 'मृत्यु दर्ता')
+                                                            {{ \App\Death::where('book_id', $book->id)->count() }}
+                                                        @elseif($book->book_type == 'विवाह दर्ता')
+                                                            {{ \App\Marriage::where('book_id', $book->id)->count() }}
+                                                        @elseif($book->book_type == 'बसाईसराई दर्ता')
+                                                            {{ \App\MigrationCertificate::where('book_id', $book->id)->count() }}
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        @if ($book->book_type == 'जन्म दर्ता')
+                                                            <a href="{{ route('birth.create') }}?book_id={{ $book->id }}"
+                                                                class="btn btn-info">Add</a>
+                                                        @elseif($book->book_type == 'मृत्यु दर्ता')
+                                                            <a href="{{ route('death.create') }}?book_id={{ $book->id }}"
+                                                                class="btn btn-info">Add</a>
+                                                        @elseif($book->book_type == 'विवाह दर्ता')
+                                                            <a href="{{ route('marriage.create') }}?book_id={{ $book->id }}"
+                                                                class="btn btn-info">Add</a>
+                                                        @elseif($book->book_type == 'बसाईसराई दर्ता')
+                                                            <a href="{{ route('migration.create') }}?book_id={{ $book->id }}"
+                                                                class="btn btn-info">Add</a>
+                                                        @endif
+                                                    </td>
+                                                    <td class="text-nowrap text-right">
+
+                                                        <a class="action-btn text-primary"
+                                                            href="{{ route('book.edit', $book->id) }}"><i
+                                                                class="far fa-edit"></i></a>
+                                                        <form action="{{ route('book.delete', $book->id) }}" method="post"
+                                                            onsubmit="return confirm('के तपाईँ निश्चित हुनुहुन्छ?')"
+                                                            class="form-inline d-inline">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button type="submit" class="action-btn text-danger"><i
+                                                                    class="far fa-trash-alt"></i></button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            {{-- @foreach ($births as $birth)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $birth->reg_number }}</td>
@@ -127,8 +128,9 @@
                                                 </td>
                                             </tr>
                                         @endforeach --}}
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -149,7 +151,7 @@
         var WinPrint = window.open();
         WinPrint.document.write(prtContent.outerHTML);
         WinPrint.document.close();
-        WinPrint.foc    us();
+        WinPrint.foc us();
         WinPrint.print();
         WinPrint.close();
     });
