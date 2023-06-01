@@ -15,77 +15,101 @@
             background-color: #1c4267;
             color: white;
         }
+
+        .cards-footer {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
     </style>
 @endpush
 
 @section('content')
     <div class="container-fluid">
-        <div class="p-3 mt-5">
-            {{-- <div class="card p-3 mb-5 border-0">
-                <h3>Welcome {{ Auth::user()->name }},</h3>
-                <label>In {{ __('app.full_name') }}</label>
-                <h1 class="font-weight-bold text-uppercase">{{ App\Mysetting::first()->default_province }}</h1>
-                <h2 class="font-weight-bold text-uppercase">{{ App\Mysetting::first()->default_district }}</h2>
-                <h3 class="font-weight-bold text-uppercase">{{ App\Mysetting::first()->default_municipality }}</h3>
-            </div> --}}
-            {{-- <div class="row pb-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card bg-primary">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-8">
+                                <h3 class="h3 text-white">{{ $birth }}</h3> <label class="text-white">जम्मा जन्मको
+                                    सूचना
+                                    फाराम</label>
+                            </div>
+                            <div class="col-4"><span class="card-icon"><i data-v-b3c5cf30=""
+                                        class="fas fa-baby fa-3x"></i></span>
+                            </div>
 
-                <div class="row d-flex col-12 ml-2">
-                    <div class="col-xl-3 col-lg-3">
-                        <a href="{{ route('birth.index') }}" class="card text-decoration-none text-white bg-success p-3">
-                            <div class="d-block">
-                                <div class="d-flex">
-                                    <div><i class="fas fa-users fa-3x"></i></div>
-                                    <div class="pt-1 col-10 text-right"><label class="px-2 col-12 "
-                                            style="font-size: 35px;">{{ App\Birth::count() }}</label></div>
-                                </div>
-                                <div class="font-weight-bold text-uppercase mt-2">कुल जन्म दर्ता</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xl-3 col-lg-3">
-                        <a href="{{ route('marriage.index') }}" class="card text-decoration-none text-white bg-warning p-3">
-                            <div class="d-block">
-                                <div class="d-flex">
-                                    <div><i class="fas fa-users fa-3x"></i></div>
-                                    <div class="pt-1 col-10 text-right"><label class="px-2 col-12 "
-                                            style="font-size: 35px;">{{ App\Marriage::count() }}</label></div>
-                                </div>
-                                <div class="font-weight-bold text-uppercase mt-2">कुल विवाह दर्ता</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xl-3 col-lg-3">
-                        <a href="{{ route('death.index') }}" class="card text-decoration-none text-white bg-danger p-3">
-                            <div class="d-block">
-                                <div class="d-flex">
-                                    <div><i class="fas fa-users fa-3x"></i></div>
-                                    <div class="pt-1 col-10 text-right"><label class="px-2 col-12 "
-                                            style="font-size: 35px;">{{ App\Death::count() }}</label></div>
-                                </div>
-                                <div class="font-weight-bold text-uppercase mt-2">कुल मृत्यु दर्ता</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xl-3 col-lg-3">
-                        <a href="{{ route('migration.index') }}"
-                            class="card text-decoration-none text-white bg-[#4338ca] p-3">
-                            <div class="d-block">
-                                <div class="d-flex">
-                                    <div><i class="fas fa-users fa-3x"></i></div>
-                                    <div class="pt-1 col-10 text-right"><label class="px-2 col-12 "
-                                            style="font-size: 35px;">{{ App\MigrationCertificate::count() }}</label></div>
-                                </div>
-                                <div class="font-weight-bold text-uppercase mt-2">कुल बसाईसराई दर्ता</div>
-                            </div>
-                        </a>
-                    </div>
 
+                        </div>
+                    </div>
+                    <div class="cards-footer">
+                        <label class="my-2 col-12 text-white">जन्म दर्ता किताब - {{ $birthBook }}</i>
+                        </label>
+                    </div>
                 </div>
-            </div> --}}
-            {{-- <div class="box p-3" style="width: 50%">
-                <canvas id="myChart"></canvas>
-            </div> --}}
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-danger">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-8">
+                                <h3 class="h3 text-white">{{ $death }}</h3> <label class="text-white">जम्मा मृत्युको
+                                    सूचना
+                                    फाराम</label>
+                            </div>
+                            <div class="col-4"><span class="card-icon"><i data-v-b3c5cf30=""
+                                        class="fas fa-bolt fa-3x"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards-footer">
+                        <label class="my-2 col-12 text-white">मृत्यु दर्ता किताब - {{ $deathBook }}</i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-8">
+                                <h3 class="h3 text-white">{{ $marriage }}</h3> <label class="text-white">जम्मा विवाहको
+                                    सूचना
+                                    फाराम</label>
+                            </div>
+                            <div class="col-4"><span class="card-icon"><i data-v-b3c5cf30=""
+                                        class="fas fa-restroom fa-3x"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards-footer">
+                        <label class="my-2 col-12 text-white">विवाह दर्ता किताब - {{ $marriageBook }}</i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-info">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-8">
+                                <h3 class="h3 text-white">{{ $migrationCertificate }}</h3> <label class="text-white">जम्मा
+                                    बसाईसराई सूचना फाराम</label>
+                            </div>
+                            <div class="col-4"><span class="card-icon"><i data-v-b3c5cf30=""
+                                        class="fas fa-exchange-alt fa-3x"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards-footer">
+                        <label class="my-2 col-12 text-white">बसाईसराई दर्ता किताब -
+                            {{ $migrationCertificateBook }}</i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="p-3 mt-4">
             <h3 class="h3 font-weight-bold text-center">व्यक्तिगत घटना दर्ता प्रणाली</h3>
             <h3 class="h3 font-weight-bold text-center">Vital Event Registration System</h3>
             <br>
@@ -93,7 +117,8 @@
                 <h1 class="h4 font-weight-bold text-uppercase text-center mt-1">
                     {{ App\Mysetting::first()->default_province }}
                 </h1>
-                <h2 class="h5 font-weight-bold text-uppercase text-center">{{ App\Mysetting::first()->default_district }}
+                <h2 class="h5 font-weight-bold text-uppercase text-center">
+                    {{ App\Mysetting::first()->default_district }}
                 </h2>
                 <h3 class="h6 font-weight-bold text-uppercase text-center">
                     {{ App\Mysetting::first()->default_municipality }}
@@ -105,31 +130,7 @@
 
 @push('scripts')
     <script src="https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js"></script>
-    <!-- Chartisan -->
-    {{-- <script src="https://unpkg.com/@chartisan/chartjs@^2.1.0/dist/chartisan_chartjs.umd.js"></script> --}}
-
-    {{-- <script src="{{ asset('assets/table2excel/dist/jquery.table2excel.js') }}"></script> --}}
     <script>
-        // $(function() {
-        //     $("#js-export-business-by-type-table-btn").click(function(e) {
-        //         var table = $('#js-business-by-type-table');
-        //         if (table && table.length) {
-        //             var preserveColors = (table.hasClass('table2excel_with_colors') ? true : false);
-        //             $(table).table2excel({
-        //                 exclude: ".noExl",
-        //                 name: "Business By Type",
-        //                 filename: "business-by-type-" + new Date().toISOString().replace(
-        //                     /[\-\:\.]/g, "") + ".xls",
-        //                 fileext: ".xls",
-        //                 exclude_img: true,
-        //                 exclude_links: true,
-        //                 exclude_inputs: true,
-        //                 preserveColors: preserveColors
-        //             });
-        //         }
-        //     });
-
-        // });
         var currentYear = NepaliFunctions.GetCurrentBsYear();
         var baisakh = currentYear + '-03' + '-07';
         // console.log(baisakh);

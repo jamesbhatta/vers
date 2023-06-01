@@ -1,4 +1,4 @@
-<link rel="icon" href="{{ asset(config('constants.mohrain_logo.logo_sm')) }}">
+<link rel="icon" href="{{ asset('image/Nepal.png') }}">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <link href="{{ asset('assets/mdb/css/bootstrap.min.css') }}" rel="stylesheet">
