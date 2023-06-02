@@ -33,9 +33,22 @@ class BookController extends Controller
         return view('books.form', compact('book'));
     }
 
-    public function update(BookRequest $request, Book $book)
+    public function update(Request $request, Book $book)
     {
-        $book->update($request->validated());
+        $book->update(
+            $request->validate([
+                'book_type' => 'required',
+                'code' => ['required','unique:books,code,'.$book->id],
+                'from' => 'required',
+                'to' => 'nullable',
+                'province' => 'nullable',
+                'district' => 'nullable',
+                'municipality' => 'nullable',
+                'ward_no' => 'nullable',
+                'vdc' => 'nullable',
+                'registaar' => 'required',
+            ]),
+        );
         $book->save();
         return redirect()
             ->route('book.index')
@@ -59,10 +72,10 @@ class BookController extends Controller
         if ($request->book_type) {
             $books = $books->where('book_type', $request->book_type);
         }
-       
+
         $books = $books->latest()->paginate(50);
         $books->appends(request()->except('page'));
-       
+
         // return $books;
         return view('books.list', compact('books'));
     }
