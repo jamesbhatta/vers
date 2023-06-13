@@ -167,7 +167,7 @@
                                     <div class="input-group mb-2">
 
                                         <input type="text" name="spouse" value="{{ old('spouse', $death->spouse) }}"
-                                            class="form-control myText" />
+                                            class="form-control myText" id="spouse" />
                                     </div>
                                     @error('spouse')
                                         <small class="text-danger">{{ $message }}</small>
@@ -453,6 +453,7 @@
                 var address = document.getElementById("address").value;
 
                 var grandfather_name = document.getElementById("grandfather_name").value;
+                var spouse = document.getElementById("spouse").value;
 
                 var relative_name = document.getElementById("relative_name");
 
@@ -462,6 +463,9 @@
 
                 } else if (relationship === "हजुर बुबा") {
                     relative_name.value = grandfather_name;
+                    document.getElementById("relative_address").value = address;
+                } else if (relationship === "पत्नी" || relationship === "पति") {
+                    relative_name.value = spouse;
                     document.getElementById("relative_address").value = address;
                 } else {
                     relative_name.value = "";

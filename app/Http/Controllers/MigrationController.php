@@ -104,9 +104,6 @@ class MigrationController extends Controller
         if ($request->user_id) {
             $migrationCertificates = $migrationCertificates->where('user_id', $request->user_id);
         }
-        if ($request->book_id) {
-            $migrationCertificates = $migrationCertificates->where('book_id', $request->book_id);
-        }
 
         if ($request->from) {
             if ($request->to) {
