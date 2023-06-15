@@ -17,7 +17,7 @@ class BookSelect extends Component
     public function __construct($bookType)
     {
         $this->bookType = $bookType;
-        $this->books = Book::Where('book_type', $bookType)->get();
+        $this->books = Book::Where('book_type', $bookType)->orderBy('code','desc')->get();
     }
 
     /**
