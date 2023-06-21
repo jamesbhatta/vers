@@ -153,7 +153,9 @@ class MarriageController extends Controller
         if ($request->groom_name) {
             $marriages = $marriages->where('groom_name', 'like', '%' . $request->groom_name . '%');
         }
-
+        if ($request->book_id) {
+            $marriages = $marriages->where('book_id', $request->book_id);
+        }
         if ($request->user_id) {
             $marriages = $marriages->where('user_id', $request->user_id);
         }
