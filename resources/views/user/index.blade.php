@@ -21,16 +21,15 @@
                     </div>
                 </div>
             </div>
-            <div class="box__body">
-                <table class="table table-responsive-sm">
+            <div class="box__body table-responsive-sm">
+                <table class="table" style="white-space: nowrap">
                     <thead>
                         <tr class="text-uppercase ">
                             <th>S.N</th>
                             <th>Name</th>
                             <th>Username</th>
                             <th>Email</th>
-                            <th>Department</th>
-
+                            <th>Entry Count</th>
                             <th>Role</th>
                             <th></th>
                         </tr>
@@ -43,7 +42,10 @@
                                 <td>{{ $user->username }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>
-                                  {{$user->ward_id ? $user->ward->ward_name : ""}}
+                                    @php
+                                        $count = count($user->birth)+count($user->death)+count($user->marriage)+count($user->migrationCertificate);
+                                    @endphp
+                                    {{ $count }}
                                 </td>
                                 <td>
                                     @foreach ($user->getRoleNames() as $role)
