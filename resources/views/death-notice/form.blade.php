@@ -338,7 +338,7 @@
                         <h4 class="font-weight-bold pt-3">मृतकको साक्षी विवरण </h4>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="">नवजात शिशुको संगको नाता</label>
+                                <label for="">मृतकको संगको नाता</label>
                                 <select id="relationship" name="relationship" class="custom-select myText"
                                     value="{{ old('relationship', $death->relationship) }}" onchange="withnessSelect()">
                                     <option value="" disabled selected>छान्नुहोस्</option>
