@@ -86,7 +86,8 @@
                                 </div>
                                 <div class="col-md-3">
                                     <select class="custom-select" name="type">
-                                        <option selected disabled class="m-5" value="">बसाईसराईको प्रकार छान्न्नुहोस्।
+                                        <option selected disabled class="m-5" value="">बसाईसराईको प्रकार
+                                            छान्न्नुहोस्।
                                         </option>
                                         <option class="m-5" value="बसाई सरी आएको">बसाई सरी
                                             आएको
@@ -101,6 +102,9 @@
                                 </div>
                                 <div class="mb-2 col-md-3">
                                     <x-user-select />
+                                </div>
+                                <div class="mb-2 col-md-3">
+                                    <x-family-select />
                                 </div>
 
                                 <div class="col-md-1">
@@ -122,7 +126,9 @@
                                         <th>किताब कोड</th>
                                         <th>दर्ता नं.</th>
                                         <th>दर्ता मिति</th>
-                                        <th>बसाईसराईको प्रकार</th>
+                                        <th>गा.वि.स./वार्ड नं.</th>
+                                        {{-- <th>बसाईसराईको प्रकार</th> --}}
+                                        <th>ठेगाना</th>
                                         <th>बसाई सराईको मिति </th>
                                         <th>Entry By</th>
                                         <th class="text-right">ACTION</th>
@@ -138,7 +144,24 @@
                                             <td>{{ $migrationCertificate->reg_number }}</td>
 
                                             <td>{{ $migrationCertificate->entry_date }}</td>
-                                            <td>{{ $migrationCertificate->type }}</td>
+                                            <td>{{ $migrationCertificate->vdc }}-{{ $migrationCertificate->ward_num }}
+                                            </td>
+                                            {{-- <td>{{ $migrationCertificate->type }}</td> --}}
+                                            <td>
+                                                <div>
+                                                    <b>{{ $migrationCertificate->type }} ठेगाना :</b>
+                                                    
+                                                </div>
+                                                <div>
+                                                    {{ $migrationCertificate->migration_province }},
+                                                </div>
+                                                <div>
+                                                    {{ $migrationCertificate->migration_district }},
+                                                    {{ $migrationCertificate->migration_municipality }} -
+                                                    {{ $migrationCertificate->migration_ward }}
+                                                    ({{ $migrationCertificate->migration_village }})
+                                                </div>
+                                            </td>
                                             <td>{{ $migrationCertificate->migration_date }}</td>
                                             <td>{{ $migrationCertificate->user->name }}</td>
                                             <td class="float-right d-flex">
