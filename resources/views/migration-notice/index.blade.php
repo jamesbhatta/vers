@@ -159,7 +159,7 @@
                                                     {{ $migrationCertificate->migration_district }},
                                                     {{ $migrationCertificate->migration_municipality }} -
                                                     {{ $migrationCertificate->migration_ward }}
-                                                    ({{ $migrationCertificate->migration_village }})
+                                                    {{ $migrationCertificate->migration_village }}
                                                 </div>
                                             </td>
                                             <td>{{ $migrationCertificate->migration_date }}</td>
