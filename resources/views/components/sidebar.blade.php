@@ -73,6 +73,12 @@
             </li>
             <br>
             <li class="nav-item bg-transparent">
+                <a class="nav-link fontSize" href="{{ url('backup') }}" onmouseover="this.style.color='black'"
+                    onmouseout="this.style.color='white'">
+                    <i class="fa fa-download pr-3"></i>Backup
+                </a>
+            </li>
+            <li class="nav-item bg-transparent">
                 <a class="nav-link fontSize" href="{{ route('admin.logs') }}" onmouseover="this.style.color='black'"
                     onmouseout="this.style.color='white'">
                     <i class="fa fa-bug pr-3"></i>Logs
