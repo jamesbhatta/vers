@@ -25,6 +25,7 @@
         "mpdf/mpdf": "*",
         "nao-pon/flysystem-google-drive": "~1.1",
         "niklasravnsborg/laravel-pdf": "*",
+        "pavel-mironchik/laravel-backup-panel": "*",
         "qcod/laravel-settings": "^1.0",
         "rap2hpoutre/laravel-log-viewer": "^1.7",
         "spatie/laravel-backup": "^6.11",

@@ -14,10 +14,12 @@ use App\Http\Controllers\MarriageWithnessController;
 use App\Http\Controllers\WithnessRelationshipController;
 
 Auth::routes(['register' => false]);
-Route::get('/', [IndexController::class, 'index'])->name('index');
+// Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
 Route::group(['middleware' => ['auth', 'role:super-admin']], function () {
+    Route::view('backup', 'laravel_backup_panel::layout')->name('laravel-backup-panel.index');
+
     Route::resources([
         'user' => 'UserController',
         'province' => 'ProvinceController',
