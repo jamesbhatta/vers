@@ -103,9 +103,9 @@
                                 <div class="mb-2 col-md-3">
                                     <x-user-select />
                                 </div>
-                                <div class="mb-2 col-md-3">
+                                {{-- <div class="mb-2 col-md-3">
                                     <x-family-select />
-                                </div>
+                                </div> --}}
 
                                 <div class="col-md-1">
                                     <button type="submit" class="btn btn-info bg-info">Filter</button>
