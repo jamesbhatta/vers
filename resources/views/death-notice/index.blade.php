@@ -194,7 +194,7 @@
                                     <th>दर्ता न.</th>
                                     <th>दर्ता मिति</th>
                                     <th>नाम,थर</th>
-                                    <th>जन्म मिति</th>
+                                    <th>उमेर</th>
                                     <th>मरेको मिति</th>
                                     <th>मरेको ठाउँ</th>
                                     <th>मृत्युको कारण</th>
@@ -213,7 +213,7 @@
                                         <td>{{ $death->reg_number }}</td>
                                         <td>{{ $death->entry_date }}</td>
                                         <td>{{ $death->name }}</td>
-                                        <td>{{ $death->dob }}</td>
+                                        <td>{{ $death->age }}</td>
                                         <td>{{ $death->death_date }}</td>
                                         <td>{{ $death->death_place }}</td>
                                         <td>{{ $death->cause_death }}</td>
