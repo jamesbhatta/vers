@@ -66,6 +66,8 @@ Route::group(['middleware' => ['auth', 'role:super-admin']], function () {
     Route::get('/migration-notice/print/{migrationCertificate}', [MigrationController::class, 'print'])->name('migration.print');
 
     //For family add
+    Route::get('/family', [FamilyController::class, 'index'])->name('family.index');
+    Route::get('/family/filter', [FamilyController::class, 'filter'])->name('family.filter');
     Route::get('/family/create', [FamilyController::class, 'create'])->name('family.create');
     Route::post('/family/store/{migrationCertificate}', [FamilyController::class, 'store'])->name('family.store');
     Route::get('/family/{family}/edit/{migrationCertificate}', [FamilyController::class, 'edit'])->name('family.edit');

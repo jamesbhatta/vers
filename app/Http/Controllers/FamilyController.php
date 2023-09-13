@@ -16,6 +16,8 @@ class FamilyController extends Controller
      */
     public function index()
     {
+        $families = Family::orderBy('name')->paginate(50);
+        return view('migration-notice.family-index', compact('families'));
     }
 
     /**
@@ -51,7 +53,6 @@ class FamilyController extends Controller
                 'mothertongue' => ['nullable'],
                 'description' => ['nullable'],
                 'relationship' => ['nullable'],
-
             ]),
         );
         return redirect()
@@ -108,7 +109,7 @@ class FamilyController extends Controller
             ]),
         );
         $migrationCertificate = MigrationCertificate::findOrFail($family->migration_certificate_id);
-        
+
         return redirect()->route('migration.edit', $migrationCertificate);
     }
 
@@ -124,5 +125,50 @@ class FamilyController extends Controller
         return redirect()
             ->back()
             ->with('success', 'Family Member deleted successfully');
+    }
+
+    public function filter(Request $request)
+    {
+        $families = new Family();
+        if ($request->name) {
+            $families = $families->where('name', 'like', '%' . $request->name . '%');
+        }
+        if ($request->gender) {
+            $families = $families->where('gender', $request->gender);
+        }
+
+        if ($request->relationship) {
+            $families = $families->where('relationship', $request->relationship);
+        }
+        if ($request->birthplace) {
+            $families = $families->where('birthplace', 'like', '%' . $request->birthplace . '%');
+        }
+
+        if ($request->citizenship) {
+            $families = $families->where('citizenship', $request->citizenship);
+        }
+        if ($request->age) {
+            $families = $families->where('age', $request->age);
+        }
+        if ($request->education) {
+            $families = $families->where('education', $request->education);
+        }
+        if ($request->religion) {
+            $families = $families->where('religion', $request->religion);
+        }
+        if ($request->mothertongue) {
+            $families = $families->where('mothertongue', $request->mothertongue);
+        }
+
+        if ($request->permanent_address) {
+            $families = $families->where('permanent_address', 'like', '%' . $request->permanent_address . '%');
+        }
+        if ($request->temporary_address) {
+            $families = $families->where('temporary_address', 'like', '%' . $request->temporary_address . '%');
+        }
+
+        $families = $families->orderBy('id', 'desc')->paginate(50);
+        $families->appends(request()->except('page'));
+        return view('migration-notice.family-index', compact('families'));
     }
 }

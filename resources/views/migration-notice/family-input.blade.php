@@ -208,6 +208,7 @@
                 <tr class="text-uppercase">
                     <th>#</th>
                     <th>नाम,थर</th>
+                    <th>लिङ्ग</th>
                     <th>नाता / सम्बन्ध</th>
                     <th> जन्मस्थान </th>
                     <th>नागरिकता न.</th>
@@ -222,6 +223,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $family->name }}</td>
+                        <td>{{ $family->gender }}</td>
                         <td>{{ $family->relationship }}</td>
                         <td>{{ $family->birthplace }}</td>
                         <td>{{ $family->citizenship }}</td>

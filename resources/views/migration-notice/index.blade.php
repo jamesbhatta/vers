@@ -103,10 +103,13 @@
                                 <div class="mb-2 col-md-3">
                                     <x-user-select />
                                 </div>
-                                {{-- <div class="mb-2 col-md-3">
-                                    <x-family-select />
-                                </div> --}}
+                                <div class="mb-2 col-md-3">
+                                    <a href="{{route('family.index')}}"
+                                        class="btn btn-sm btn-primary bg-primary text-white">
+                                        Search By Family
+                                    </a>
 
+                                </div>
                                 <div class="col-md-1">
                                     <button type="submit" class="btn btn-info bg-info">Filter</button>
                                 </div>
@@ -150,7 +153,7 @@
                                             <td>
                                                 <div>
                                                     <b>{{ $migrationCertificate->type }} ठेगाना :</b>
-                                                    
+
                                                 </div>
                                                 <div>
                                                     {{ $migrationCertificate->migration_province }},
