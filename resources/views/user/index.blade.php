@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <div class="box__body table-responsive-sm">
+            <div class="box__body table-responsive">
                 <table class="table" style="white-space: nowrap">
                     <thead>
                         <tr class="text-uppercase ">

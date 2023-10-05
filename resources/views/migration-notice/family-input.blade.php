@@ -203,7 +203,7 @@
 </div>
 <div class="box mt-3 ">
     <div class="box__body">
-        <table class="table table-responsive-sm m-3"  style="white-space: nowrap" >
+        <table class="table table-responsive m-3"  style="white-space: nowrap" >
             <thead class="thead-light">
                 <tr class="text-uppercase">
                     <th>#</th>
