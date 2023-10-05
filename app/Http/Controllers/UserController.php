@@ -17,9 +17,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $title = "User";
-        $users = User::get();
-        return view('user.index', compact('users','title'));
+        $title = 'User';
+        $users = User::latest()->paginate(10);
+        return view('user.index', compact('users', 'title'));
     }
 
     /**
@@ -29,9 +29,9 @@ class UserController extends Controller
      */
     public function create(User $user)
     {
-        $title = "User";
+        $title = 'User';
         $roles = Role::get();
-        return view('user.form', compact('user', 'roles','title'));
+        return view('user.form', compact('user', 'roles', 'title'));
     }
 
     /**
@@ -47,21 +47,23 @@ class UserController extends Controller
             'email' => 'required',
             'username' => 'required',
             'roles' => 'required',
-            'password' => 'required|confirmed'
+            'password' => 'required|confirmed',
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'username' => $request->username,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
         ]);
 
         if ($user) {
             $user->syncRoles($request->roles);
         }
 
-        return redirect()->route('user.index')->with('success', 'User has been added with username ' . $user->username);
+        return redirect()
+            ->route('user.index')
+            ->with('success', 'User has been added with username ' . $user->username);
     }
 
     /**
@@ -89,7 +91,7 @@ class UserController extends Controller
         // return $user->getRoleNames();
         $roles = Role::latest()->get();
 
-        return view('user.form', compact('user', 'roles','title'));
+        return view('user.form', compact('user', 'roles', 'title'));
     }
 
     /**
@@ -99,19 +101,22 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,User $user)
+    public function update(Request $request, User $user)
     {
         Gate::authorize('user.edit');
 
-         $user->update($request->validate([
-            'name'=>'required',
-            'username'=>'required',
-
-        ]));
-        if($request->roles){
+        $user->update(
+            $request->validate([
+                'name' => 'required',
+                'username' => 'required',
+            ]),
+        );
+        if ($request->roles) {
             $user->syncRoles($request->roles);
         }
-        return redirect()->route('user.index')->with('success', 'Account has been updated for  ');
+        return redirect()
+            ->route('user.index')
+            ->with('success', 'Account has been updated for  ');
     }
 
     /**
@@ -123,7 +128,9 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('user.index')->with('success', 'User has been deleted');
+        return redirect()
+            ->route('user.index')
+            ->with('success', 'User has been deleted');
     }
 
     public function profile(User $user)
@@ -132,13 +139,17 @@ class UserController extends Controller
     }
     public function profileUpdate(Request $request, User $user)
     {
-        $user->update($request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'username' => 'required',
-        ]));
+        $user->update(
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required',
+                'username' => 'required',
+            ]),
+        );
 
-        return redirect()->back()->with('success', 'Your profile updated successfully');
+        return redirect()
+            ->back()
+            ->with('success', 'Your profile updated successfully');
     }
 
     public function password(User $user)
@@ -151,9 +162,7 @@ class UserController extends Controller
         $request->validate([
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-        $user->update(
-            ['password' => Hash::make($request->password)]
-        );
+        $user->update(['password' => Hash::make($request->password)]);
         return redirect()
             ->back()
             ->with('success', 'User password Changed');
