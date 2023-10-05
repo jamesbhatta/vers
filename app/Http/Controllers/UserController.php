@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index()
     {
         $title = 'User';
-        $users = User::with(['birth','death','marriage','migrationCertificate'])->latest()->paginate(10);
+        $users = User::with(['birth','death','marriage','migrationCertificate'])->latest()->paginate(50);
         return view('user.index', compact('users', 'title'));
     }
 
